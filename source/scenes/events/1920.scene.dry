@@ -1,0 +1,12 @@
+title: 1920
+subtitle: A new year
+on-arrival: {!
+// see post_event.scene.dry for changes.
+Q.economic_growth += 0;
+!}
+tags: event
+view-if: year = 1920 and month = 1
+priority: 10
+max-visits: 1
+
+WIP
