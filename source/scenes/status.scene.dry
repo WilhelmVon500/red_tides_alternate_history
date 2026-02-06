@@ -134,11 +134,11 @@ if (Q.sa_strength) {
 
 <span style="color: #D3D3A9;">**JDO**</span> Militarization: [+ jdo_militancy : militancy +]
 
-{!<span class="tooltip-text" title="The Reichsbanner Schwarz-Rot-Gold is a popular organization for defending democracy, mostly affiliated with the SPD." style="color: #E3000F;">!}**Reichsbanner**{!</span>!} Strength: [+ rb_strength_2 +] thousand
+[? if rb_exist: {!<span class="tooltip-text" title="The Reichsbanner Schwarz-Rot-Gold is a popular organization for defending democracy, mostly affiliated with the SPD." style="color: #E3000F;">!}**Reichsbanner**{!</span>!} Strength: [+ rb_strength_2 +] thousand ?]
 
 [? if rb_exist: <span style="color: #E3000F;">**Reichsbanner**</span> Militarization: [+ rb_militancy : militancy +] ?]
 
-[? if rb_exist: {!<span class="tooltip-text" title="The RFB (Rotfrontkämpferbund) is a communist group associated with the KPD." style="color: #8B0000;">!}**RFB**{!</span>!} Strength: [+ rfb_strength_2 +] thousand ?]
+{!<span class="tooltip-text" title="The RFB (Rotfrontkämpferbund) is a communist group associated with the KPD." style="color: #8B0000;">!}**RFB**{!</span>!} Strength: [+ rfb_strength_2 +] thousand
 
 <span style="color: #8B0000;">**RFB**</span> Militarization: [+ rfb_militancy : militancy +]
 
