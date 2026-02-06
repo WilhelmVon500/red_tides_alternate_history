@@ -102,7 +102,7 @@ Reichsbank President: [+ reichsbank_president +] ([?if reichsbank_president_part
 
 {!<span class="tooltip-text" title="National Liberal Party" style="color: var(--nlp-color);">!}**NLP**{!</span>!}: National Liberalism ([+nlp_leader+])
 
-{!<span class="tooltip-text" title="Communist Party of Germany" style="color: #8B0000;">!}**KPD**{!</span>!}: Marxism-Leninism (Brandler)
+{!<span class="tooltip-text" title="Communist Party of Germany" style="color: #8B0000;">!}**KPD**{!</span>!}: Marxism-Leninism ([+kpd_leader+])
 
 [? if uspd_exist: {!<span class="tooltip-text" title="Independent Social Democratic Party of Germany" style="color: #D47B9B;">!}**USPD**{!</span>!}: Centrist Marxism (Haase) ?]
 
@@ -118,7 +118,7 @@ Reichsbank President: [+ reichsbank_president +] ([?if reichsbank_president_part
 
 {!<span class="tooltip-text" title="German National People's Party" style="color: #3F7BC1;">!}**DNVP**{!</span>!}: National Conservatism (Westarp)
 
-{!<span class="tooltip-text" title="German Worker's Party" style="color: #096300;">!}**DAP**{!</span>!}: Völkisch Nationalism (Drexler)
+{!<span class="tooltip-text" title="German Worker's Party" style="color: #096300;">!}**DAP**{!</span>!}: Völkisch Nationalism ([+dap_leader+])
 
 = Internal Factions of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>
 
