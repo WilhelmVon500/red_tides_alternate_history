@@ -189,9 +189,9 @@ Q.new_middle_spd = 7;
 Q.new_middle_fvp = 25;
 Q.new_middle_z = 10;
 Q.new_middle_nlp = 20;
-Q.new_middle_wp = 13;
+Q.new_middle_wp = 8;
 Q.new_middle_rlb = 0;
-Q.new_middle_dnvp = 10;
+Q.new_middle_dnvp = 15;
 Q.new_middle_dap = 5;
 Q.new_middle_other = 5;
 
@@ -235,11 +235,11 @@ Q.catholics_kpd = 0;
 Q.catholics_uspd = 5;
 Q.catholics_spd = 15;
 Q.catholics_fvp = 0;
-Q.catholics_z = 60;
+Q.catholics_z = 57;
 Q.catholics_nlp = 2;
 Q.catholics_wp = 0;
 Q.catholics_rlb = 0;
-Q.catholics_dnvp = 7;
+Q.catholics_dnvp = 10;
 Q.catholics_dap = 0;
 Q.catholics_other = 11;
 
