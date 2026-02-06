@@ -171,77 +171,77 @@ Q.parties = ['nlp', 'kpd', 'uspd', 'spd', 'fvp', 'z', 'wp', 'rlb', 'dnvp', 'dap'
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
-Q.workers_kpd = 20;
-Q.workers_uspd = 20;
-Q.workers_spd = 60;
-Q.workers_fvp = 0;
+Q.workers_kpd = 8;
+Q.workers_uspd = 27;
+Q.workers_spd = 45;
+Q.workers_fvp = 7;
 Q.workers_z = 5;
-Q.workers_nlp = 0;
+Q.workers_nlp = 3;
 Q.workers_wp = 0;
 Q.workers_rlb = 0;
-Q.workers_dnvp = 5;
-Q.workers_dap = 0;
-Q.workers_other = 10;
+Q.workers_dnvp = 2;
+Q.workers_dap = 1;
+Q.workers_other = 2;
 
 Q.new_middle_kpd = 1;
-Q.new_middle_uspd = 5;
-Q.new_middle_spd = 5;
+Q.new_middle_uspd = 4;
+Q.new_middle_spd = 7;
 Q.new_middle_fvp = 25;
 Q.new_middle_z = 10;
-Q.new_middle_nlp = 25;
-Q.new_middle_wp = 0;
+Q.new_middle_nlp = 20;
+Q.new_middle_wp = 13;
 Q.new_middle_rlb = 0;
 Q.new_middle_dnvp = 10;
 Q.new_middle_dap = 5;
-Q.new_middle_other = 15;
+Q.new_middle_other = 5;
 
 Q.old_middle_kpd = 0;
 Q.old_middle_uspd = 0;
 Q.old_middle_spd = 5;
 Q.old_middle_fvp = 10;
 Q.old_middle_z = 5;
-Q.old_middle_nlp = 25;
-Q.old_middle_wp = 0;
+Q.old_middle_nlp = 22;
+Q.old_middle_wp = 26;
 Q.old_middle_rlb = 0;
 Q.old_middle_dnvp = 25;
-Q.old_middle_dap = 10;
-Q.old_middle_other = 10;
+Q.old_middle_dap = 5;
+Q.old_middle_other = 2;
 
 Q.rural_kpd = 0;
 Q.rural_uspd = 5;
 Q.rural_spd = 10;
 Q.rural_fvp = 5;
 Q.rural_z = 5;
-Q.rural_nlp = 15;
+Q.rural_nlp = 3;
 Q.rural_wp = 0;
-Q.rural_rlb = 0;
+Q.rural_rlb = 10;
 Q.rural_dnvp = 45;
-Q.rural_dap = 5;
-Q.rural_other = 10;
+Q.rural_dap = 4;
+Q.rural_other = 13;
 
-Q.unemployed_kpd = 30;
-Q.unemployed_uspd = 40;
+Q.unemployed_kpd = 35;
+Q.unemployed_uspd = 20;
 Q.unemployed_spd = 25;
 Q.unemployed_fvp = 0;
-Q.unemployed_z = 1;
+Q.unemployed_z = 2;
 Q.unemployed_nlp = 0;
 Q.unemployed_wp = 0;
 Q.unemployed_rlb = 0;
-Q.unemployed_dnvp = 5;
-Q.unemployed_dap = 15;
-Q.unemployed_other = 9;
+Q.unemployed_dnvp = 3;
+Q.unemployed_dap = 10;
+Q.unemployed_other = 5;
 
 Q.catholics_kpd = 0;
 Q.catholics_uspd = 5;
 Q.catholics_spd = 15;
 Q.catholics_fvp = 0;
-Q.catholics_z = 50;
-Q.catholics_nlp = 5;
+Q.catholics_z = 60;
+Q.catholics_nlp = 2;
 Q.catholics_wp = 0;
 Q.catholics_rlb = 0;
-Q.catholics_dnvp = 5;
+Q.catholics_dnvp = 7;
 Q.catholics_dap = 0;
-Q.catholics_other = 12;
+Q.catholics_other = 11;
 
 
 // Current Reichstag composition
