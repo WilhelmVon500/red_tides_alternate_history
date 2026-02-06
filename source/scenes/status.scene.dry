@@ -130,21 +130,21 @@ if (Q.sa_strength) {
 
 = Paramilitaries
 
-{!<span class="tooltip-text" title="The Young German Order is a national liberal paramilitary organization of our party.">!}**JDO**{!</span>!} Strength: [+ jdo_strength_2 +] thousand
+{!<span class="tooltip-text" title="The Young German Order is a national liberal paramilitary organization of our party." style="color: #D3D3A9;">!}**JDO**{!</span>!} Strength: [+ jdo_strength_2 +] thousand
 
-JDO Militarization: [+ jdo_militancy : militancy +]
+<span style="color: #D3D3A9;">**JDO**</span> Militarization: [+ jdo_militancy : militancy +]
 
-{!<span class="tooltip-text" title="The Reichsbanner Schwarz-Rot-Gold is a popular organization for defending democracy, mostly affiliated with the SPD.">!}**Reichsbanner**{!</span>!} Strength: [+ rb_strength_2 +] thousand
+{!<span class="tooltip-text" title="The Reichsbanner Schwarz-Rot-Gold is a popular organization for defending democracy, mostly affiliated with the SPD." style="color: #E3000F;">!}**Reichsbanner**{!</span>!} Strength: [+ rb_strength_2 +] thousand
 
-Reichsbanner Militarization: [+ rb_militancy : militancy +]
+<span style="color: #E3000F;">**Reichsbanner**</span> Militarization: [+ rb_militancy : militancy +]
 
-{!<span class="tooltip-text" title="The RFB (Rotfrontkämpferbund) is a communist group associated with the KPD.">!}**RFB**{!</span>!} Strength: [+ rfb_strength_2 +] thousand
+{!<span class="tooltip-text" title="The RFB (Rotfrontkämpferbund) is a communist group associated with the KPD." style="color: #8B0000;">!}**RFB**{!</span>!} Strength: [+ rfb_strength_2 +] thousand
 
-RFB Militarization: [+ rfb_militancy : militancy +]
+<span style="color: #8B0000;">**RFB**</span> Militarization: [+ rfb_militancy : militancy +]
 
-{!<span class="tooltip-text" title="The Stahlhelm is a right-wing organization of war veterans associated with the DNVP.">!}**Stahlhelm**{!</span>!} Strength: [+ sh_strength_2 +] thousand
+{!<span class="tooltip-text" title="The Stahlhelm is a right-wing organization of war veterans associated with the DNVP." style="color: #3F7BC1;">!}**Stahlhelm**{!</span>!} Strength: [+ sh_strength_2 +] thousand
 
-Stahlhelm Militarization: [+ sh_militancy : militancy +]
+<span style="color: #3F7BC1;">**Stahlhelm**</span> Militarization: [+ sh_militancy : militancy +]
 
 {!<span class="tooltip-text" title="The SA (Sturmabteilung) is the DAP's paramilitary." style="color: #096300;">!}**SA**{!</span>!} Strength: [+ sa_strength_2 +] thousand
 
