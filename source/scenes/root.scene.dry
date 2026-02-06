@@ -211,13 +211,13 @@ Q.rural_kpd = 0;
 Q.rural_uspd = 5;
 Q.rural_spd = 10;
 Q.rural_fvp = 5;
-Q.rural_z = 5;
+Q.rural_z = 6;
 Q.rural_nlp = 3;
 Q.rural_wp = 0;
-Q.rural_rlb = 10;
-Q.rural_dnvp = 45;
+Q.rural_rlb = 13;
+Q.rural_dnvp = 50;
 Q.rural_dap = 4;
-Q.rural_other = 13;
+Q.rural_other = 4;
 
 Q.unemployed_kpd = 35;
 Q.unemployed_uspd = 20;
