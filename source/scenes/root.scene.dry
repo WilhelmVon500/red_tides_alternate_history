@@ -356,11 +356,7 @@ Q.n_advisors = 3;
 // timer - this decrements by 1 every turn, and is set to 5 whenever an advisor action is used, so that you can only use one advisor action every 5 months.
 // let's just put all of the timers here...
 // most party affairs and government affairs cards are on a timer.
-Q.timers = ['advisor_action', 'fundraising', 'ideology',
-            'inter_party_relationships', 'international_relations',
-            'media', 'enemies', 'party_organizations', 'rally', 
-            'young_german_order', 'shuffle_leadership',
-            'streetfighting', 'peoples_party', 'party_disunity',
+Q.timers = ['advisor_action', 'inter_party_relationships', 'shuffle_leadership',
             // govt
             'fiscal_policy',
             // events
@@ -368,20 +364,24 @@ Q.timers = ['advisor_action', 'fundraising', 'ideology',
 Q.advisor_action_timer = 0;
 // party affairs timers
 Q.shuffle_leadership_timer = 0;
-// n_elections is the number of elections that have happened since the start of the game.
-Q.n_elections = 0;
-// number of elections without a clear majority.
-Q.no_majority_elections = 0;
+Q.inter_party_relationships_timer = 0;
+// government affairs timers
+Q.fiscal_policy_timer = 0;
+// event timers
+
+
+
+
 // elections are not on a timer, but rather there is an indicator for whether you're in an electoral cycle.
 Q.in_election = 1;
 Q.next_election_year = 1924;
 Q.next_election_month = 5;
 Q.next_election_time = 5;
-// government affairs timers
-Q.fiscal_policy_timer = 0;
-Q.foreign_policy_timer = 0;
-Q.coalition_affairs_timer = 0;
-// event timers
+// n_elections is the number of elections that have happened since the start of the game.
+Q.n_elections = 0;
+// number of elections without a clear majority.
+Q.no_majority_elections = 0;
+
 
 
 // all the initial advisors are centrists.
