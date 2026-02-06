@@ -81,6 +81,10 @@ Q.kpd_leader = "Liebknecht";
 Q.z_leader = "Trimborn";
 Q.dap_leader = "Drexler";
 
+Q.nlp_leader = "Stresemann";
+Q.nlp_color = "#98C22C";
+
+
 // hmm... maybe we can play nice with Hindenburg???
 Q.hindenburg_relation = 25;
 // whether or not hindenburg can dismiss the government.
@@ -169,7 +173,7 @@ Q.workers_spd = 60;
 Q.workers_kpd = 20;
 Q.workers_z = 5;
 Q.workers_ddp = 0;
-Q.workers_dvp = 0;
+Q.workers_nlp = 0;
 Q.workers_dnvp = 5;
 Q.workers_nsdap = 0;
 Q.workers_other = 10;
@@ -178,7 +182,7 @@ Q.old_middle_spd = 5;
 Q.old_middle_kpd = 0;
 Q.old_middle_z = 5;
 Q.old_middle_ddp= 10;
-Q.old_middle_dvp = 25;
+Q.old_middle_nlp = 25;
 Q.old_middle_dnvp = 25;
 Q.old_middle_nsdap = 10;
 Q.old_middle_other = 10;
@@ -187,7 +191,7 @@ Q.new_middle_spd = 5;
 Q.new_middle_kpd = 1;
 Q.new_middle_z = 10;
 Q.new_middle_ddp= 25;
-Q.new_middle_dvp = 25;
+Q.new_middle_nlp = 25;
 Q.new_middle_dnvp = 10;
 Q.new_middle_nsdap = 5;
 Q.new_middle_other = 15;
@@ -196,7 +200,7 @@ Q.rural_spd = 10;
 Q.rural_kpd = 0;
 Q.rural_z = 5;
 Q.rural_ddp= 5;
-Q.rural_dvp = 15;
+Q.rural_nlp = 15;
 Q.rural_dnvp = 45;
 Q.rural_nsdap = 5;
 Q.rural_other = 10;
@@ -205,7 +209,7 @@ Q.unemployed_spd = 25;
 Q.unemployed_kpd = 55;
 Q.unemployed_z = 1;
 Q.unemployed_ddp = 0;
-Q.unemployed_dvp = 0;
+Q.unemployed_nlp = 0;
 Q.unemployed_dnvp = 5;
 Q.unemployed_nsdap = 15;
 Q.unemployed_other = 9;
@@ -214,7 +218,7 @@ Q.catholics_spd = 15;
 Q.catholics_kpd = 2;
 Q.catholics_z = 50;
 Q.catholics_ddp = 0;
-Q.catholics_dvp = 5;
+Q.catholics_nlp = 5;
 Q.catholics_dnvp = 5;
 Q.catholics_nsdap = 0;
 Q.catholics_other = 12;
@@ -230,7 +234,7 @@ Q.spd_r = 26;
 Q.kpd_r = 9;
 Q.z_r = 17;
 Q.ddp_r = 6;
-Q.dvp_r = 10;
+Q.nlp_r = 10;
 Q.dnvp_r = 20;
 Q.nsdap_r = 3;
 Q.other_r = 9;
@@ -240,7 +244,7 @@ Q.old_spd_r = 26;
 Q.old_kpd_r = 9;
 Q.old_z_r = 17;
 Q.old_ddp_r = 6;
-Q.old_dvp_r = 10;
+Q.old_nlp_r = 10;
 Q.old_dnvp_r = 20;
 Q.old_nsdap_r = 3;
 Q.old_other_r = 9;
@@ -277,9 +281,6 @@ Q.in_nlp_majority = 0;
 
 // if you're in a coalition, this is an incremental counter for how many times dissent has happened.
 Q.coalition_dissent = 0;
-
-// does the SPD tolerate the government even if it is not a participant?
-Q.spd_toleration = 0;
 
 // is the current government a presidential minority government?
 Q.minority_government = 0;
