@@ -385,11 +385,8 @@ Q.coalition_affairs_timer = 0;
 
 
 // all the initial advisors are centrists.
-Q.wels_advisor = 1; // Otto Wels
+Q.stresemann_advisor = 1; // Gustav Stresemann
 Q.muller_advisor = 1; // Hermann Müller
-Q.muller_dead = 0;
-// okay I know Arthur Crispien was a leader irl but i couldn't find much interesting about him...
-Q.crispien_advisor = 0; // Arthur Crispien
 Q.hilferding_advisor = 1; // Rudolf Hilferding
 
 // left advisors
