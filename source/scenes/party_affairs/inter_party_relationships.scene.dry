@@ -1,0 +1,79 @@
+title: Inter-Party Relationships
+new-page: true
+view-if: inter_party_relationships_timer <= 0
+tags: party_affairs
+is-card: true
+on-arrival: month_actions += 1; inter_party_relationships_timer = 6;
+card-image: img/weimar_coalition.jpg
+
+= Inter-Party Relationships
+
+The <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> cannot govern by itself. Because we do not have an electoral majority, we need the support of other parties. We can reach out and build connections with these parties, or perhaps we can stand alone.
+
+- @liberals: Strengthen our bonds with the left-liberal <span style="color: #FFD800;">Progressive People's Party</span>[?if wp_exist: and conservative-liberal <span style="color: #B8996F;">Economic Party</span>?].
+- @center: Strengthen our bonds with the Catholic <span style="color: #000000;">Center Party</span>.
+- @spd: Work towards repairing relationships with the <span style="color: #E3000F;">Social Democratic Party</span>.
+- @nlp_alone: The <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> can stand alone for now.
+- @easy_discard
+
+
+@liberals
+subtitle: -1 resources
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: resources -= 1; fvp_relation += 5*(1 - dissent); wp_relation += 5*(1 - dissent)
+
+The <span style="color: #FFD800;">**FVP**</span> [? if wp_exist: and the <span style="color: #B8996F;">**WP**</span> ?] has been one of our closest allies through the course of the Republic.
+
+
+@center
+subtitle: -1 resources
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: resources -= 1;
+go-to: center_op if z_in_government and not nlp_in_government; center_coalition if nlp_in_government and z_in_government; center_op_2 if not z_in_government and not nlp_in_government
+
+@center_op
+on-arrival: z_relation += 5*(1 - dissent)
+
+We are currently in opposition to the government that includes the <span style="color: #000000;">Center Party</span>, but that does not preclude the general building of feelings of good will.
+
+@center_coalition
+on-arrival: z_relation += 8*(1 - dissent)
+
+We are currently coalition partners with them, so improving relations comes naturally.
+
+@center_op_2
+on-arrival: z_relation += 8*(1 - dissent)
+
+We are currently both in opposition, so improving relations comes naturally.
+
+
+@spd
+subtitle: -1 resources
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: resources -= 1;
+go-to: spd_op if spd_in_government and not nlp_in_government; spd_coalition if nlp_in_government and spd_in_government; spd_op_2 if not spd_in_government and not nlp_in_government
+
+@spd_op
+on-arrival: spd_relation += 2*(1 - dissent)
+
+We are currently in opposition to the government that includes the <span style="color: #E3000F;">Social Democrats</span>, but that does not preclude the general reconciliation.
+
+@spd_coalition
+on-arrival: spd_relation += 4*(1 - dissent)
+
+We are currently coalition partners with them, so improving relations comes naturally.
+
+@spd_op_2
+on-arrival: spd_relation += 4*(1 - dissent)
+
+We are currently both in opposition, so improving relations comes naturally.
+
+
+@nlp_alone
+
+Whether it is because we *cannot* or *will not*, we do not make ties with other parties at this moment.
+
+- @return: Continue...
