@@ -35,21 +35,21 @@ Chancellor: [+ chancellor +] ([+ chancellor_party +])
 
 Reichstag composition:
 
-[? if uspd_exist: {!<span class="tooltip-text" title="Independent Social Democratic Party of Germany">USPD</span>!}: [+ uspd_r +]% ?]
+{!<span class="tooltip-text" title="National Liberal Party">NLP</span>!}: [+ nlp_seats +] ([+ nlp_r +]%)
 
-{!<span class="tooltip-text" title="Social Democratic Party of Germany">SPD</span>!}: [+ spd_r +]%
+{!<span class="tooltip-text" title="Communist Party of Germany">KPD</span>!}: [+ kpd_seats +] ([+ kpd_r +]%)
 
-{!<span class="tooltip-text" title="Center Party + Bavarian People's Party">Z + BVP</span>!}: [+ z_r +]%
+[? if uspd_exist: {!<span class="tooltip-text" title="Independent Social Democratic Party of Germany">USPD</span>!}: [+ uspd_seats +] ([+ uspd_r +]%) ?]
 
-{!<span class="tooltip-text" title="Communist Party of Germany">KPD</span>!}: [+ kpd_r +]%
+{!<span class="tooltip-text" title="Social Democratic Party of Germany">SPD</span>!}: [+ spd_seats +] ([+ spd_r +]%)
 
-{!<span class="tooltip-text" title="Progressive People's Party">!}FVP{!</span>!}: [+ fvp_r +]%
+{!<span class="tooltip-text" title="Progressive People's Party">!}FVP{!</span>!}: [+ fvp_seats +] ([+ fvp_r +]%)
 
-{!<span class="tooltip-text" title="German People's Party">DVP</span>!}: [+ dvp_r +]%
+{!<span class="tooltip-text" title="Center Party + Bavarian People's Party">Z + BVP</span>!}: [+ z_seats +] ([+ z_r +]%)
 
-{!<span class="tooltip-text" title="German National People's Party">DNVP</span>!}: [+ dnvp_r +]%
+{!<span class="tooltip-text" title="German National People's Party">DNVP</span>!}: [+ dnvp_seats +] ([+ dnvp_r +]%)
 
-{!<span class="tooltip-text" title="German Worker's Party">DAP</span>!}: [+ dap_r +]%
+{!<span class="tooltip-text" title="German Worker's Party">DAP</span>!}: [+ dap_seats +] ([+ dap_r +]%)
 
 Others: [+ other_r +]%
 
@@ -74,17 +74,15 @@ Economic growth: [+ economic_growth_2 +]%
 = Inter-party Relations
 
 
+{!<span class="tooltip-text" title="Communist Party of Germany">KPD</span>!}: [+ kpd_relation : relationships +]
+
 [? if uspd_exist: {!<span class="tooltip-text" title="Independent Social Democratic Party of Germany">USPD</span>!}: [+ uspd_relation : relationships +] ?]
 
 {!<span class="tooltip-text" title="Social Democratic Party of Germany">SPD</span>!}: [+ spd_relation : relationships +]
 
-{!<span class="tooltip-text" title="Center Party">Z</span>!}: [+ z_relation : relationships +]
-
 {!<span class="tooltip-text" title="Progressive People's Party">!}FVP{!</span>!}: [+ fvp_relation : relationships +]
 
-{!<span class="tooltip-text" title="German People's Party">DVP</span>!}: [+ dvp_relation : relationships +]
-
-{!<span class="tooltip-text" title="Communist Party of Germany">KPD</span>!}: [+ kpd_relation : relationships +]
+{!<span class="tooltip-text" title="Center Party">Z</span>!}: [+ z_relation : relationships +]
 
 {!<span class="tooltip-text" title="German National People's Party">DNVP</span>!}: [+ dnvp_relation : relationships +]
 
@@ -160,17 +158,17 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 (if the election were to be held now):
 
+NLP: [+ nlp_votes +]%
+
+KPD: [+ kpd_votes +]%
+
 [? if uspd_exist: USPD: [+ uspd_votes +]% ?]
 
 SPD: [+ spd_votes +]%
 
-Z + BVP: [+ z_votes +]%
-
-KPD: [+ kpd_votes +]%
-
 FVP: [+ fvp_votes +]%
 
-DVP: [+ dvp_votes +]%
+Z + BVP: [+ z_votes +]%
 
 DNVP: [+ dnvp_votes +]%
 
@@ -180,16 +178,16 @@ Others: [+ other_votes +]%
 
 **Detailed results for each demographic**
 
-Workers: SPD: [+ workers_spd_display +]%, Z: [+ workers_z_display +]%, KPD: [+ workers_kpd_display +]%, [? if uspd_exist: USPD: [+ workers_uspd_display +]%, ?]FVP: [+ workers_fvp_display +]%, DVP: [+ workers_dvp_display +]%; DNVP: [+ workers_dnvp_display +]%, DAP: [+ workers_dap_display +]%, Others: [+ workers_other_display +]%
+Workers: KPD: [+ workers_kpd_display +]%, [? if uspd_exist: USPD: [+ workers_uspd_display +]%, ?]SPD: [+ workers_spd_display +]%, FVP: [+ workers_fvp_display +]%, Z: [+ workers_z_display +]%, NLP: [+ workers_nlp_display +]%; DNVP: [+ workers_dnvp_display +]%, DAP: [+ workers_dap_display +]%, Others: [+ workers_other_display +]%
 
-New Middle Class: SPD: [+ new_middle_spd_display +]%, Z: [+ new_middle_z_display +]%, KPD: [+ new_middle_kpd_display +]%, [? if uspd_exist: USPD: [+ new_middle_uspd_display +]%, ?]FVP: [+ new_middle_fvp_display +]%, DVP: [+ new_middle_dvp_display +]%; DNVP: [+ new_middle_dnvp_display +]%, DAP: [+ new_middle_dap_display +]%, Others: [+ new_middle_other_display +]%
+New Middle Class: KPD: [+ new_middle_kpd_display +]%, [? if uspd_exist: USPD: [+ new_middle_uspd_display +]%, ?]SPD: [+ new_middle_spd_display +]%, FVP: [+ new_middle_fvp_display +]%, Z: [+ new_middle_z_display +]%, NLP: [+ new_middle_nlp_display +]%; DNVP: [+ new_middle_dnvp_display +]%, DAP: [+ new_middle_dap_display +]%, Others: [+ new_middle_other_display +]%
 
-Old Middle Class: SPD: [+ old_middle_spd_display +]%, Z: [+ old_middle_z_display +]%, KPD: [+ old_middle_kpd_display +]%, [? if uspd_exist: USPD: [+ old_middle_uspd_display +]%, ?]FVP: [+ old_middle_fvp_display +]%, DVP: [+ old_middle_dvp_display +]%; DNVP: [+ old_middle_dnvp_display +]%, DAP: [+ old_middle_dap_display +]%, Others: [+ old_middle_other_display +]%
+Old Middle Class: KPD: [+ old_middle_kpd_display +]%, [? if uspd_exist: USPD: [+ old_middle_uspd_display +]%, ?]SPD: [+ old_middle_spd_display +]%, FVP: [+ old_middle_fvp_display +]%, Z: [+ old_middle_z_display +]%, NLP: [+ old_middle_nlp_display +]%; DNVP: [+ old_middle_dnvp_display +]%, DAP: [+ old_middle_dap_display +]%, Others: [+ old_middle_other_display +]%
 
-Rural: SPD: [+ rural_spd_display +]%, Z: [+ rural_z_display +]%, KPD: [+ rural_kpd_display +]%, [? if uspd_exist: USPD: [+ rural_uspd_display +]%, ?]FVP: [+ rural_fvp_display +]%, DVP: [+ rural_dvp_display +]%; DNVP: [+ rural_dnvp_display +]%, DAP: [+ rural_dap_display +]%, Others: [+ rural_other_display +]%
+Rural: KPD: [+ rural_kpd_display +]%, [? if uspd_exist: USPD: [+ rural_uspd_display +]%, ?]SPD: [+ rural_spd_display +]%, FVP: [+ rural_fvp_display +]%, Z: [+ rural_z_display +]%, NLP: [+ rural_nlp_display +]%; DNVP: [+ rural_dnvp_display +]%, DAP: [+ rural_dap_display +]%, Others: [+ rural_other_display +]%
 
-Unemployed: SPD: [+ unemployed_spd_display +]%, Z: [+ unemployed_z_display +]%, KPD: [+ unemployed_kpd_display +]%, [? if uspd_exist: USPD: [+ unemployed_uspd_display +]%, ?]FVP: [+ unemployed_fvp_display +]%, DVP: [+ unemployed_dvp_display +]%; DNVP: [+ unemployed_dnvp_display +]%, DAP: [+ unemployed_dap_display +]%, Others: [+ unemployed_other_display +]%
+Unemployed: KPD: [+ unemployed_kpd_display +]%, [? if uspd_exist: USPD: [+ unemployed_uspd_display +]%, ?]SPD: [+ unemployed_spd_display +]%, FVP: [+ unemployed_fvp_display +]%, Z: [+ unemployed_z_display +]%, NLP: [+ unemployed_nlp_display +]%; DNVP: [+ unemployed_dnvp_display +]%, DAP: [+ unemployed_dap_display +]%, Others: [+ unemployed_other_display +]%
 
-Catholics: SPD: [+ catholics_spd_display +]%, Z: [+ catholics_z_display +]%, KPD: [+ catholics_kpd_display +]%, [? if uspd_exist: USPD: [+ catholics_uspd_display +]%, ?]FVP: [+ catholics_fvp_display +]%, DVP: [+ catholics_dvp_display +]%; DNVP: [+ catholics_dnvp_display +]%, DAP: [+ catholics_dap_display +]%, Others: [+ catholics_other_display +]%
+Catholics: KPD: [+ catholics_kpd_display +]%, [? if uspd_exist: USPD: [+ catholics_uspd_display +]%, ?]SPD: [+ catholics_spd_display +]%, FVP: [+ catholics_fvp_display +]%, Z: [+ catholics_z_display +]%, NLP: [+ catholics_nlp_display +]%; DNVP: [+ catholics_dnvp_display +]%, DAP: [+ catholics_dap_display +]%, Others: [+ catholics_other_display +]%
 
 Support for the Republic: [+ pro_republic_disp +]%
