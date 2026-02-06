@@ -84,8 +84,8 @@ Q.nlp_name = "NLP";
 Q.nlp_color = "#98C22C";
 
 Q.uspd_exist = 1;
-Q.wp_exist = 0;
-Q.rlb_exist = 0;
+Q.wp_exist = 1;
+Q.rlb_exist = 1;
 
 
 Q.nlp_prussia = 1;
