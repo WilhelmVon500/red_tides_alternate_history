@@ -74,8 +74,8 @@ Q.spd_relation = 35;
 Q.fvp_relation = 60;
 Q.z_relation = 50;
 Q.wp_relation = 60;
-Q.rlb_relation = 30;
-Q.dnvp_relation = 30;
+Q.rlb_relation = 35;
+Q.dnvp_relation = 35;
 Q.dap_relation = 0;
 
 Q.kpd_leader = "Brandler";
