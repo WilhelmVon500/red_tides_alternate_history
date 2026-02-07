@@ -110,7 +110,7 @@ Reichsbank President: [+ reichsbank_president +] ([?if reichsbank_president_part
 
 {!<span class="tooltip-text" title="Progressive People's Party" style="color: #FFD800;">!}**FVP**{!</span>!}: Left Liberalism (Fischbeck)
 
-{!<span class="tooltip-text" title="Center Party" style="color: #000000;">!}**Z**{!</span>!}: Centre to Centre-Left ([+z_leader+])
+{!<span class="tooltip-text" title="Center Party" style="color: #000000;">!}**Z**{!</span>!}: Centre to Centre-Right ([+z_leader+])
 
 [? if wp_exist: {!<span class="tooltip-text" title="Economic Party" style="color: #B8996F;">!}**WP**{!</span>!}: Liberal Conservatism (Drewitz) ?]
 
