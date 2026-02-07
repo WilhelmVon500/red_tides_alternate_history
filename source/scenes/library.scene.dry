@@ -444,8 +444,8 @@ if (d3 && window) {
     if (!Q.historical_mode || Q.game_over) {
         var lines_2 = d3.linegraph(true, true,
             Q.parties,
-            {'kpd': '#8B0000', 'uspd': '#D47B9B', 'spd': '#E3000F', fvp: '#FFD800', 'z': '#000000', 'nlp': Q.nlp_color, 'wp': '#B8996F'; 'rlb': '#52AE6F', 'other': '#909090', 'dnvp': '#3F7BC1', 'dap': '#096300'},
-            {'kpd': 'KPD', 'uspd': 'USPD', 'spd': 'SPD', fvp: 'FVP', 'z': 'Z + BVP', 'nlp': Q.nlp_name, 'wp': 'WP'; 'rlb': 'RLB', 'other': 'Others', 'dnvp': 'DNVP', 'dap': 'DAP'});
+            {'kpd': '#8B0000', 'uspd': '#D47B9B', 'spd': '#E3000F', fvp: '#FFD800', 'z': '#000000', 'nlp': Q.nlp_color, 'wp': '#B8996F', 'rlb': '#52AE6F', 'other': '#909090', 'dnvp': '#3F7BC1', 'dap': '#096300'},
+            {'kpd': 'KPD', 'uspd': 'USPD', 'spd': 'SPD', fvp: 'FVP', 'z': 'Z + BVP', 'nlp': Q.nlp_name, 'wp': 'WP', 'rlb': 'RLB', 'other': 'Others', 'dnvp': 'DNVP', 'dap': 'DAP'});
         lines_2.width(width).height(400);
         d3.select("#party_support_history").datum(Q.party_support_records).call(lines_2);
     }
