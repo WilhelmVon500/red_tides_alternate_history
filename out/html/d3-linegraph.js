@@ -19,10 +19,10 @@ d3.linegraph = function(noTicks, noDots, parties, partyColors, partyNames, dataM
         parties = ['nlp', 'kpd', 'uspd', 'spd', 'fvp', 'z', 'wp', 'rlb', 'dnvp', 'dap', 'other'];
     }
     if (!partyColors) {
-        partyColors = {'kpd': '#8B0000', 'uspd': '#D47B9B', 'spd': '#E3000F', fvp: '#FFD800', 'z': '#000000', 'nlp': Q.nlp_color, 'wp': '#B8996F'; 'rlb': '#52AE6F', 'other': '#909090', 'dnvp': '#3F7BC1', 'dap': '#096300'};
+        partyColors = {'kpd': '#8B0000', 'uspd': '#D47B9B', 'spd': '#E3000F', fvp: '#FFD800', 'z': '#000000', 'nlp': Q.nlp_color, 'wp': '#B8996F', 'rlb': '#52AE6F', 'other': '#909090', 'dnvp': '#3F7BC1', 'dap': '#096300'};
     }
     if (!partyNames) {
-        partyNames = {'kpd': 'KPD', 'uspd': 'USPD', 'spd': 'SPD', fvp: 'FVP', 'z': 'Z + BVP', 'nlp': Q.nlp_name, 'wp': 'WP'; 'rlb': 'RLB', 'other': 'Others', 'dnvp': 'DNVP', 'dap': 'DAP'};
+        partyNames = {'kpd': 'KPD', 'uspd': 'USPD', 'spd': 'SPD', fvp: 'FVP', 'z': 'Z + BVP', 'nlp': Q.nlp_name, 'wp': 'WP', 'rlb': 'RLB', 'other': 'Others', 'dnvp': 'DNVP', 'dap': 'DAP'};
     }
     if (!additionalMonths) {
         additionalMonths = 10;
