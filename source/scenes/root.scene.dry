@@ -359,7 +359,8 @@ Q.n_advisors = 3;
 // timer - this decrements by 1 every turn, and is set to 5 whenever an advisor action is used, so that you can only use one advisor action every 5 months.
 // let's just put all of the timers here...
 // most party affairs and government affairs cards are on a timer.
-Q.timers = ['advisor_action', 'inter_party_relationships', 'shuffle_leadership',
+Q.timers = ['advisor_action', 'shuffle_leadership', 'inter_party_relationships',
+            'enemies',
             // govt
             'fiscal_policy',
             // events
@@ -368,6 +369,7 @@ Q.advisor_action_timer = 0;
 // party affairs timers
 Q.shuffle_leadership_timer = 0;
 Q.inter_party_relationships_timer = 0;
+Q.enemies_timer = 0;
 // government affairs timers
 Q.fiscal_policy_timer = 0;
 // event timers
