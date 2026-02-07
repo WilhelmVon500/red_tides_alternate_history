@@ -12,7 +12,7 @@ Whether or not we are in an electoral campaign, the party is always trying to br
 
 - @workers: The urban working class.
 - @new_middle: The "new middle class" of government employees and white-collar workers, our traditional support base.
-- @old_middle: The "old middle class" of small independent businessmen and artisans.
+- @old_middle: The "old middle class" of small independent businessmen and artisans, our traditional support base.
 - @rural: Rural workers and small farmers, who have felt neglected by us in the past.
 - @unemployed: The unemployed.
 - @catholics: Catholics, who typically support the <span style="color: #000000;">Center Party</span>.
@@ -31,7 +31,7 @@ We have increased our campaigning among the workers.
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; new_middle_nlp += 6*(1-dissent);
+on-arrival: resources -= 1; new_middle_nlp += 5*(1-dissent);
 
 We have increased our campaigning among the new middle class.
 
@@ -39,7 +39,7 @@ We have increased our campaigning among the new middle class.
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; old_middle_nlp += 7*(1-dissent);
+on-arrival: resources -= 1; old_middle_nlp += 5*(1-dissent);
 
 We have increased our campaigning among the old middle class.
 
