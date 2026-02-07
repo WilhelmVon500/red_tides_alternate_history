@@ -295,12 +295,13 @@ if (Q.month_actions >= 1) {
 
     ////////////////////////// annual support changes
     if (Q.year == 1922) {
-        Q.unemployed -= 2/12;
-        Q.inflation += 2/12;
-
         Q.workers_spd += 2/12;
         Q.unemployed_kpd += 3/12;
         Q.upper_middle_wp += 6/12;
+
+        if (Q.month <= 6) {
+            Q.inflation += 3;
+        }
     }
 
 
