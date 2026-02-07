@@ -68,11 +68,14 @@ Q.industrialists_nlp = 0;
 // organizations
 
 // inter-party relations
-Q.z_relation = 50;
-Q.fvp_relation = 60;
+Q.kpd_relation = 0;
+Q.uspd_relation = 15;
 Q.spd_relation = 35;
-Q.dnvp_relation = 10;
-Q.kpd_relation = 10;
+Q.fvp_relation = 60;
+Q.z_relation = 50;
+Q.wp_relation = 60;
+Q.rlb_relation = 30;
+Q.dnvp_relation = 30;
 Q.dap_relation = 0;
 
 Q.kpd_leader = "Brandler";
