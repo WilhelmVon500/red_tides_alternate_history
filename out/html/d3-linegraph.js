@@ -16,13 +16,13 @@ function addMonths(date, months) {
 d3.linegraph = function(noTicks, noDots, parties, partyColors, partyNames, dataMax, dataMin, additionalMonths) {
     /* params */
     if (!parties) {
-        parties = ['spd', 'kpd', 'ddp', 'z', 'dvp', 'dnvp', 'nsdap', 'other'];
+        parties = ['nlp', 'kpd', 'uspd', 'spd', 'fvp', 'z', 'wp', 'rlb', 'dnvp', 'dap', 'other'];
     }
     if (!partyColors) {
-        partyColors = {'spd': '#E3000F', 'kpd': '#8B0000', 'ddp': '#DCCA4A', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3f7bc1', 'nsdap': '#954B00', 'other': '#a0a0a0'};
+        partyColors = {'kpd': '#8B0000', 'uspd': '#D47B9B', 'spd': '#E3000F', fvp: '#FFD800', 'z': '#000000', 'nlp': Q.nlp_color, 'wp': '#B8996F'; 'rlb': '#52AE6F', 'other': '#909090', 'dnvp': '#3F7BC1', 'dap': '#096300'};
     }
     if (!partyNames) {
-        partyNames = {'spd': 'SPD', 'kpd': 'KPD', 'ddp': 'DDP', 'z': 'Z + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others'};
+        partyNames = {'kpd': 'KPD', 'uspd': 'USPD', 'spd': 'SPD', fvp: 'FVP', 'z': 'Z + BVP', 'nlp': Q.nlp_name, 'wp': 'WP'; 'rlb': 'RLB', 'other': 'Others', 'dnvp': 'DNVP', 'dap': 'DAP'};
     }
     if (!additionalMonths) {
         additionalMonths = 10;
@@ -44,7 +44,7 @@ d3.linegraph = function(noTicks, noDots, parties, partyColors, partyNames, dataM
 
       // Declare the x (horizontal position) scale.
       const maxDate = d3.max(dates);
-      const xScale = d3.scaleUtc([new Date(1928, 0), addMonths(maxDate, additionalMonths)], [marginLeft, width - marginRight]);
+      const xScale = d3.scaleUtc([new Date(1922, 0), addMonths(maxDate, additionalMonths)], [marginLeft, width - marginRight]);
 
       var xaxis = d3.axisBottom()
         .tickFormat(d3.timeFormat('%b %Y'))
@@ -60,9 +60,11 @@ d3.linegraph = function(noTicks, noDots, parties, partyColors, partyNames, dataM
       // Declare the y (vertical position) scale.
       if (!dataMax) {
           const maxSPD = d3.max(data, d => d.spd);
-          const maxNSDAP = d3.max(data, d => d.nsdap);
-          dataMax = maxSPD >= maxNSDAP ? maxSPD + 10 : maxNSDAP + 10;
-          dataMin = 0;
+          const maxNLP = d3.max(data, d => d.nlp);
+          const maxDAP = d3.max(data, d => d.dap);
+
+          const overallMax = d3.max([maxSPD, maxNLP, maxDAP]);
+          dataMax = overallMax + 10;
       }
       const yScale = d3.scaleLinear([dataMin, dataMax], [height - marginBottom, marginTop]);
 
