@@ -1,0 +1,16 @@
+title: Treaty of Rapallo signed!
+subtitle: Germany and Soviet Russia sign a treaty
+tags: event
+view-if: year = 1922 and month = 4
+priority: 2
+max-visits: 1
+
+An international treaty has been signed between Germany and Soviet Russia, marking a diplomatic breakthrough. The Treaty of Rapallo establishes diplomatic and economic relations, mutually renouncing financial claims from the Great War and paving the way for trade and cooperation. This, however, will cause outrage from Entente Nations.
+
+- @signed
+
+@signed
+title: Foreign Minister [+ foreign_minister +]
+on-arrival: soviet_relation += 2; west_relation -= 1; economic_growth += 0.5
+
+Despite our misgivings about the treaty, it still represents a step forward from our post-war isolation.
