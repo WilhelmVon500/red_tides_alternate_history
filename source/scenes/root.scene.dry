@@ -217,8 +217,8 @@ Q.rural_fvp = 5;
 Q.rural_z = 6;
 Q.rural_nlp = 3;
 Q.rural_wp = 0;
-Q.rural_rlb = 14;
-Q.rural_dnvp = 50;
+Q.rural_rlb = 12;
+Q.rural_dnvp = 52;
 Q.rural_dap = 4;
 Q.rural_other = 3;
 
