@@ -1,0 +1,98 @@
+title: Fiscal Policy
+new-page: true
+is-card: true
+tags: govt_affairs, cabinet
+on-arrival: fiscal_policy_timer += 6; month_actions += 1
+view-if: nlp_in_government and finance_minister_party = nlp_name and fiscal_policy_timer = 0
+card-image: img/portraits/MoldenhauerPaul.jpg
+go-to: fiscal_menu
+#subtitle: Issues of taxation, budget, and tariffs.
+
+= Fiscal Policy
+
+Fiscal policy involves issues of taxation and budget.
+
+
+@fiscal_menu
+
+Upper-income tax rates: [+ upper_tax_rates : taxation +]
+
+Lower-income tax rates: [+ lower_tax_rates : taxation +]
+
+- @raise_rich: Increase taxes on the rich.
+- @raise_poor
+- @raise_overall: Increase overall taxes.
+- @cut_rich
+- @cut_poor
+- @cut_overall: Cut overall taxes.
+- @raise_progressive: Make the tax system more progressive by raising taxes on the rich and cutting them for the poor.
+- @regressive
+- @root: Do not change the tax system.
+- @easy_discard
+- @cancel_advisor_action
+
+@raise_progressive
+subtitle: This does not change overall revenue. [? if lower_tax_rates < -5 : Lower-class tax rates are too low to cut anymore. ?] [? if upper_tax_rates > 5 : Upper-class tax rates are too high to increase. ?]
+choose-if: lower_tax_rates >= -5 and upper_tax_rates <= 5
+on-arrival: workers_nlp += 3*(1-dissent); old_middle_nlp -= 4; new_middle_nlp -= 4; wp_relation -= 4; upper_tax_rates += 1; lower_tax_rates -= 1; capital_strike_progress += 1; capital_strike_progress += 1 if upper_tax_rates > 1; capital_strike_progress += 1 if upper_tax_rates > 3; new_middle_nlp -= 2 if upper_tax_rates > 1; old_middle_nlp -= 2 if upper_tax_rates > 1
+
+WIP
+
+@raise_rich
+subtitle: +2 budget
+unavailable-subtitle: Tax rates are already too high.
+choose-if: upper_tax_rates <= 5
+on-arrival: upper_tax_rates += 1; capital_strike_progress += 1; capital_strike_progress += 1 if upper_tax_rates > 1; capital_strike_progress += 1 if upper_tax_rates > 3; workers_nlp += 4*(1-dissent); old_middle_nlp -= 6; new_middle_nlp -= 4; budget += 2; wp_relation -= 4; unemployed += 1; inflation -= 0.6; economic_growth -= 0.4; new_middle_nlp -= 2 if upper_tax_rates > 1; old_middle_nlp -= 2 if upper_tax_rates > 1;
+
+WIP
+
+@raise_poor
+title: Raise consumption taxes, which disproportionately affect the poor.
+subtitle: +2 budget
+unavailable-subtitle: Tax rates are already too high.
+choose-if: lower_tax_rates <= 5
+on-arrival: budget += 2; workers_nlp -= 5; lower_tax_rates += 1; workers_nlp -= 5 if lower_tax_rates >= 2;
+
+WIP
+
+@cut_overall
+subtitle: -3 budget
+unavailable-subtitle: -3 budget - [? if upper_tax_rates < -5 or lower_tax_rates < -5 : Tax rates are already too low. ?]
+choose-if: budget >= 3 and upper_tax_rates >= -5 and lower_tax_rates >= -5
+on-arrival: budget -= 3; upper_tax_rates -= 1; lower_tax_rates -= 1; new_middle_nlp += 5*(1-dissent); old_middle_nlp += 5*(1-dissent); workers_nlp += 3*(1-dissent); unemployed -= 1.5 if unemployed >= 5; capital_strike_progress -= 1 if upper_tax_rates < 0; inflation += 1; economic_growth += 0.6;
+
+WIP
+
+@cut_poor
+title: Cut consumption taxes for the poor.
+subtitle: -2 budget
+unavailable-subtitle: -2 budget - [? if lower_tax_rates < -5: Tax rates are already too low. ?]
+choose-if: budget >= 2 and lower_tax_rates >= -5
+on-arrival: budget -= 2; lower_tax_rates -= 1; workers_nlp += 5*(1-dissent); unemployed -= 0.7 if unemployed >= 5; inflation += 0.6; economic_growth += 0.4;
+
+WIP
+
+@cut_rich
+title: Cut income taxes for the rich.
+subtitle: -2 budget
+unavailable-subtitle: -2 budget - [? if upper_tax_rates < -5: Tax rates are already too low. ?]
+choose-if: budget >= 2 and upper_tax_rates >= -5
+on-arrival: budget -= 2; upper_tax_rates -= 1; new_middle_nlp += 5*(1-dissent); old_middle_nlp += 5*(1-dissent); wp_relation += 4*(1-dissent); unemployed -= 0.7 if unemployed >= 5; capital_strike_progress -= 1 if upper_tax_rates < 0; inflation += 0.6; economic_growth += 0.4;
+
+WIP
+
+@raise_overall
+subtitle: +3 budget
+unavailable-subtitle: Tax rates are already too high.
+choose-if: upper_tax_rates <= 5 and lower_tax_rates <= 5
+on-arrival: budget += 3; new_middle_nlp -= 4; old_middle_nlp -= 4; workers_nlp -= 4; unemployed += 2; lower_tax_rates += 1; upper_tax_rates += 1; capital_strike_progress += 1 if upper_tax_rates > 1; capital_strike_progress += 1 if upper_tax_rates > 2; workers_nlp -= 5 if lower_tax_rates > 1; inflation -= 1.1; economic_growth -= 0.6; new_middle_nlp -= 2 if upper_tax_rates > 1; old_middle_nlp -= 2 if upper_tax_rates > 1;
+
+WIP
+
+@regressive
+title: Lower taxes on the rich, while increasing consumption taxes (which affect the working class more).
+subtitle: This does not change overall revenue. [? if upper_tax_rates < -5 : Rich tax rates are too low to cut anymore. ?] [? if lower_tax_rates > 5 : Lower-class tax rates are too high to increase. ?]
+choose-if: lower_tax_rates <= 5 and upper_tax_rates >= -5
+on-arrival: workers_nlp -= 6; new_middle_nlp += 5*(1-dissent); old_middle_nlp += 5*(1-dissent); wp_relation += 5; upper_tax_rates -= 1; lower_tax_rates += 1; workers_nlp -= 5 if lower_tax_rates >= 2; capital_strike_progress -= 1 if upper_tax_rates < 0;
+
+WIP
