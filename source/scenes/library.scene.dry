@@ -85,7 +85,9 @@ Reichstag composition:
 
 <span style="color: #FFD800;">**FVP**</span>: [+ fvp_seats +] ([+ fvp_r +]%)
 
-<span style="color: #000000;">**Z**</span> + <span style="color: #69A2BE;">**BVP**</span>: [+ z_seats +] ([+ z_r +]%)
+<span style="color: #000000;">**Z**</span>: [+ z_minus_bvp_seats +] ([+ z_minus_bvp_r +]%)
+
+<span style="color: #69A2BE;">**BVP**</span>: [+ bvp_seats +] ([+ bvp_r +]%)
 
 [? if wp_exist: <span style="color: #B8996F;">**WP**</span>: [+ wp_seats +] ([+ wp_r +]%) ?]
 
