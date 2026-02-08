@@ -45,7 +45,9 @@ Reichstag composition:
 
 {!<span class="tooltip-text" title="Progressive People's Party" style="color: #FFD800;">!}**FVP**{!</span>!}: [+ fvp_seats +] ([+ fvp_r +]%)
 
-<span class="tooltip-text" title="Center Party + Bavarian People's Party"><span style="color: #000000;">**Z**</span> + <span style="color: #69A2BE;">**BVP**</span></span>: [+ z_seats +] ([+ z_r +]%)
+<span class="tooltip-text" title="Center Party" style="color: #000000;">**Z**</span>: [+ z_minus_bvp_seats +] ([+ z_minus_bvp_r +]%)
+
+<span class="tooltip-text" title="Bavarian People's Party" style="color: #69A2BE;">**BVP**</span>: [+ bvp_seats +] ([+ bvp_r +]%)
 
 [? if wp_exist: {!<span class="tooltip-text" title="Economic Party" style="color: #B8996F;">!}**WP**{!</span>!}: [+ wp_seats +] ([+ wp_r +]%) ?]
 
