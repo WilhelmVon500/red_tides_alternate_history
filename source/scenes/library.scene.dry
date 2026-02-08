@@ -487,11 +487,11 @@ if (d3 && window) {
 
 [? if rlb_exist: {!<tr><td><div class="box" style='background-color:#52AE6F'> </div></td> <td>!}RLB: {!</td><td>!} [+ rlb_seats +] ([+ rlb_r +]%) {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#909090'> </div></td><td>!} Other parties: {!</td><td>!} [+ other_seats +] ([+ other_r +]%) {!</td></tr>!}
-
 {!<tr><td><div class="box" style='background-color:#3F7BC1'> </div></td> <td>!}DNVP: {!</td><td>!} [+ dnvp_seats +] ([+ dnvp_r +]%) {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#096300'> </div></td> <td>!}DAP: {!</td><td>!} [+ dap_seats +] ([+ dap_r +]%) {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#909090'> </div></td><td>!} Other parties: {!</td><td>!} [+ other_seats +] ([+ other_r +]%) {!</td></tr>!}
 {!</table>!}
 
 = Election history
