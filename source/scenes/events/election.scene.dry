@@ -390,7 +390,7 @@ go-to: coalition_menu
 
 [? if rlb_exist: {!<tr><td><div class="box" style='background-color:#52AE6F'> </div> !}RLB: {!</td><td>!} [+ rlb_election_votes +] {!</td><td>!} [+ votes_change_rlb +] {!</td><td>!} [+ rlb_seats +] ([+ rlb_r +]%) {!</td><td>!} [+ str_seats_change_rlb +] ([+ str_change_rlb +]%) {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#909090'> </div></td><td>!} Other parties: {!</td><td>!} [+ other_election_votes +] {!</td><td>!} [+ votes_change_other +] {!</td><td>!} [+ other_seats +] ([+ other_r +]%) {!</td><td>!} [+ str_seats_change_other +] ([+ str_change_other +]%) {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#909090'> </div> !} Other parties: {!</td><td>!} [+ other_election_votes +] {!</td><td>!} [+ votes_change_other +] {!</td><td>!} [+ other_seats +] ([+ other_r +]%) {!</td><td>!} [+ str_seats_change_other +] ([+ str_change_other +]%) {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#3F7BC1'> </div> !}DNVP: {!</td><td>!} [+ dnvp_election_votes +] {!</td><td>!} [+ votes_change_dnvp +] {!</td><td>!} [+ dnvp_seats +] ([+ dnvp_r +]%) {!</td><td>!} [+ str_seats_change_dnvp +] ([+ str_change_dnvp +]%) {!</td></tr>!}
 
