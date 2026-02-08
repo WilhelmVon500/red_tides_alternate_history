@@ -117,6 +117,14 @@ for (var party of Q.parties) {
 
 
 
+
+Q.old_bvp_votes = Q.bvp_election_votes;
+Q.old_bvp_r = Q.bvp_r;
+Q.old_bvp_seats = Q.bvp_seats;
+Q.old_z_minus_bvp_votes = Q.z_minus_bvp_election_votes;
+Q.old_z_minus_bvp_r = Q.z_minus_bvp_r;
+Q.old_z_minus_bvp_seats = Q.z_minus_bvp_seats;
+
 Q.bvp_election_votes = parseFloat((Q.z_election_votes*0.2).toFixed(1));
 if (Q.bvp_election_votes > 3.6) {
     Q.bvp_election_votes = 3.6;
@@ -180,12 +188,6 @@ var sign2 = Q.str_seats_change_z > 0
   : '<img src="img/steady.png"> ';
 Q.str_seats_change_z = sign2 + Math.abs(Math.round(Q.str_seats_change_z));
 
-Q.old_bvp_votes = Q.bvp_election_votes;
-Q.old_bvp_r = Q.bvp_r;
-Q.old_bvp_seats = Q.bvp_seats;
-Q.old_z_minus_bvp_votes = Q.z_minus_bvp_election_votes;
-Q.old_z_minus_bvp_r = Q.z_minus_bvp_r;
-Q.old_z_minus_bvp_seats = Q.z_minus_bvp_seats;
 
 
 Q.largest_party = 'SPD';
@@ -201,12 +203,18 @@ if (Q.nlp_r >= Q.spd_r && Q.nlp_r >= Q.dap_r && Q.nlp_r >= Q.kpd_r) {
     Q.largest_party = Q.nlp_name;
 }
 
-// coalitions
-Q.weimar_coalition = Q.spd_r + Q.fvp_r + Q.z_minus_bvp_r;
 
-Q.anti_democratic_coalition = Q.kpd_r + Q.dap_r + Q.dnvp_r;
+
+// coalitions
+Q.weimar_coalition = parseFloat((Q.spd_r + Q.fvp_r + Q.z_minus_bvp_r).toFixed(1));
+
+Q.anti_democratic_coalition = parseFloat((Q.kpd_r + Q.dap_r + Q.dnvp_r).toFixed(1));
 
 Q.leverage = Q.nlp_r + 5;
+
+
+
+
 
 // Reset government and ministers...
 Q.nlp_in_government = 0;
@@ -242,8 +250,8 @@ Q.reichswehr_minister = 'Vacant';
 Q.reichswehr_minister_party = 'I';
 
 
-Q.strike_term_seen = 0;
 
+Q.strike_term_seen = 0;
 
 var election_result = {'date': new Date(Q.year, Q.month - 1)};
 for (var party of Q.parties) {
