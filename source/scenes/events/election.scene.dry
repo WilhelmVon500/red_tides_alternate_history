@@ -153,7 +153,7 @@ var sign2 = Q.str_seats_change_bvp > 0
   : '<img src="img/steady.png"> ';
 Q.str_seats_change_bvp = sign2 + Math.abs(Math.round(Q.str_seats_change_bvp));
 
-Q.votes_change_z = parseFloat((Q.z_minus_election_votes - Q.old_z_minus_bvp_votes).toFixed(1));
+Q.votes_change_z = parseFloat((Q.z_minus_bvp_election_votes - Q.old_z_minus_bvp_votes).toFixed(1));
 var sign2 = Q.votes_change_z > 0 
 ? '<img src="img/arrowup.png"> ' 
 : Q.votes_change_z < 0 
