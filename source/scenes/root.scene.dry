@@ -164,7 +164,7 @@ Q.catholics = 30;
 
 Q.inflation = 175.0;
 
-Q.economic_growth = 13.0;
+Q.economic_growth = 9.4;
 
 // economic expansion timer
 Q.economic_expansion = 0;
