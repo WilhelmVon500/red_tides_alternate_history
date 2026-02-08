@@ -278,6 +278,21 @@ Q.dnvp_r = 14.6;
 Q.dap_r = 0;
 Q.other_r = 2.3;
 
+// old results
+Q.kpd_election_votes = 1.0;
+Q.uspd_election_votes = 19.9;
+Q.spd_election_votes = 25.0;
+Q.fvp_election_votes = 5.8;
+Q.z_election_votes = 17.9;
+Q.z_minus_bvp_election_votes = 14.1;
+Q.bvp_election_votes = 3.8;
+Q.nlp_election_votes = 12.9;
+Q.wp_election_votes = 0;
+Q.rlb_election_votes = 0;
+Q.dnvp_election_votes = 14.5;
+Q.dap_election_votes = 0;
+Q.other_election_votes = 3.0;
+
 // isn't formed yet, but may be formed
 
 
