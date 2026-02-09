@@ -411,44 +411,39 @@ Q.no_majority_elections = 0;
 
 
 
-// all the initial advisors are centrists.
+// initial advisors
 Q.stresemann_advisor = 1; // Gustav Stresemann
-Q.muller_advisor = 1; // Hermann Müller
-Q.hilferding_advisor = 1; // Rudolf Hilferding
 
-// left advisors
-Q.sender_advisor = 0; // Toni Sender
-Q.levi_advisor = 0; // Paul Levi
-Q.levi_dead = 0;
-Q.rosenfeld_advisor = 0; // Kurt Rosenfeld
-Q.seydewitz_advisor = 0; // Max Seydewitz
+// left stresemannite advisors
+Q.kardorff_advisor = 0; // Siegfried Kardorff
+Q.dietrich_advisor = 0; // Hermann Dietrich
+Q.curtius_advisor = 0; // Julius Curtius
+Q.morath_advisor = 0; // Albrecht Morath
+Q.schiffer_advisor = 0; // Eugen Schiffer
+Q.koch_weser_advisor = 0; // Erich Koch-Weser
 
-// centrist alternate advisors
-Q.pfulf_advisor = 0; // Antonie Pfülf
-Q.breitscheid_advisor = 0; // Rudolf Breitscheid
+// right stresemannite advisors
+Q.jarres_advisor = 0; // Karl Jarres
+Q.luther_advisor = 0; // Hans Luther
+Q.moldenhauer_advisor = 0; // Paul Moldenhauer
+Q.heinze_advisor = 0; // Rudolf Heinze
+Q.dohna_schlodien_advisor = 0; // Alexander zu Dohna-Schlodien
+Q.schacht_advisor = 0; // Hjalmar Schacht
 
-// Reformist advisors
-Q.severing_advisor = 0; // Carl Severing
-Q.braun_advisor = 0; // Otto Braun
-Q.juchacz_advisor = 0; // Marie Juchacz
-Q.baade_advisor = 0; // Fritz Baade
+// labor advisors
+Q.thiel_advisor = 0; // Otto Thiel
+Q.bechly_advisor = 0; // Hans Bechly
+Q.wildermuth_advisor = 0; // Hermann-Eberhard Wildermuth
 
-// Labor advisors
-Q.leipart_advisor = 0; // Theodor Leipart
-Q.aufhauser_advisor = 0; // Siegfried Aufhäuser
-Q.woytinsky_advisor = 0; // Wladimir Woytinsky (post-1930)
-Q.wissell_advisor = 0; // Rudolf Wissell
+// industrialist advisors
+Q.raumer_advisor = 0; // Hans Raumer
+Q.stinnes_advisor = 0; // Hugo Stinnes
+Q.scholz_advisor = 0; // Ernst Scholz
+Q.cuno_advisor = 0; // Wilhelm Cuno
+Q.dingeldey_advisor = 0; // Eduard Dingeldey
 
-// Revisionist advisors
-Q.mierendorff_advisor = 0; // Carlo Mierendorf (post-1930)
-
-Q.leber_advisor = 0; // Julius Leber (post-1930)
-Q.schumacher_advisor = 0; // Kurt Schumacher (post-1930)
-
-// Nonfactional advisors
-Q.hirschfeld_advisor = 0; // Magnus Hirschfeld
-Q.radbruch_advisor = 0; // Gustav Radbruch
-Q.stampfer_advisor = 0; // Friedrich Stampfer
+// nonfactional advisors
+Q.mahraun_advisor = 0; // Artur Mahraun
 !}
 set-bg: img/map_2.jpg
 new-page: true
