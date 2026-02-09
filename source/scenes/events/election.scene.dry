@@ -402,6 +402,8 @@ go-to: coalition_menu
 
 Weimar Coalition (<span style="color: #E3000F;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #FFD800;">**FVP**</span>): [+ weimar_coalition +]%
 
+Right Coalition (<span style="color: #3F7BC1;">**DNVP**</span> + <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #69A2BE;">**BVP**</span>[? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span>?]): [+ right_coalition +]%
+
 [? if anti_democratic_coalition >= 50 : Together, the anti-democratic KPD, DNVP, and DAP have a majority in the Reichstag. A stable governing majority will be almost impossible. ?]
 
 There are some potential coalition arrangements.
