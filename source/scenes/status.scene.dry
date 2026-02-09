@@ -126,13 +126,13 @@ Reichsbank President: [+ reichsbank_president +] ([?if reichsbank_president_part
 
 = Internal Factions of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>
 
-{!<span class="tooltip-text" title="The Left is interested in radical, transformative policies and cooperation with the KPD.">Left</span>!} strength: [+ left_strength : strength +], dissent: [+ left_dissent : dissent +]
+[? if left_stresemannite_nlp: {!<span class="tooltip-text" title="WIP.">Left-wing Stresemannites</span>!} strength: [+ left_strength : strength +], dissent: [+ left_dissent : dissent +] ?]
 
-{!<span class="tooltip-text" title="The Center is a faction of Center Marxists, between reform and revolution.">Center</span>!} strength: [+ center_strength : strength +], dissent: [+ center_dissent : dissent +]
+[? if right_stresemannite_nlp: {!<span class="tooltip-text" title="WIP.">Right-wing Stresemannites</span>!} strength: [+ center_strength : strength +], dissent: [+ center_dissent : dissent +] ?]
 
-{!<span class="tooltip-text" title="Labor's goal is economic reform and benefits for organized workers.">Labor</span>!} strength: [+ labor_strength : strength +], dissent: [+ labor_dissent : dissent +]
+[? if labor_nlp: {!<span class="tooltip-text" title="WIP.">Labor</span>!} strength: [+ labor_strength : strength +], dissent: [+ labor_dissent : dissent +] ?]
 
-{!<span class="tooltip-text" title="Reformists are pragmatic participants in government, and seek to expand the welfare state and defend democracy.">Reformist</span>!} strength: [+ reformist_strength : strength +], dissent: [+ reformist_dissent : dissent +]
+[? if industrialists_nlp: {!<span class="tooltip-text" title="WIP.">Industrialist</span>!} strength: [+ reformist_strength : strength +], dissent: [+ reformist_dissent : dissent +] ?]
 
 
 @paramilitaries
