@@ -222,6 +222,8 @@ Q.in_nlp_majority = 0;
 Q.coalition_dissent = 0;
 Q.minority_government = 0;
 
+Q.vice_chancellor = 'Vacant';
+Q.vice_chancellor_party = 'I';
 Q.foreign_minister = 'Vacant';
 Q.foreign_minister_party = 'I';
 Q.interior_minister = 'Vacant';
@@ -409,6 +411,31 @@ Right Coalition (<span style="color: #3F7BC1;">**DNVP**</span> + <span style="co
 There are some potential coalition arrangements.
 
 @coalition_menu
+
+- @weimar_coalition
+
+
+
+
+
+@weimar_coalition
+title: We can form a Weimar Coalition.
+subtitle: <span style="color: #E3000F;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #FFD800;">**FVP**</span> ([+ weimar_coalition +]%)
+view-if: weimar_coalition >= 50
+on-arrival: in_weimar_coalition = 1; spd_in_government = 1; z_in_government = 1; fvp_in_government = 1; foreign_minister = 'Rathenau'; foreign_minister_party = 'FVP'; interior_minister = 'Wirth'; interior_minister_party = 'Z'; justice_minister = 'Radbruch'; justice_minister_party = 'SPD'; finance_minister = 'Erzberger'; finance_minister_party = 'Z'; economic_minister = 'Schmidt'; economic_minister_party = 'SPD'; labor_minister = 'Wissel'; labor_minister_party = 'SPD'; agriculture_minister = 'Hermes'; agriculture_minister_party = 'Z'; reichswehr_minister = 'Gessler'; reichswehr_minister_party = 'FVP';
+
+The <span style="color: #E3000F;">**SPD**</span> enough votes to form a "Weimar Coalition" government consisting of the <span style="color: #E3000F;">**SPD**</span>, <span style="color: #000000;">Center Party</span> and <span style="color: #FFD800;">**FVP**</span>.
+
+Who will be the chancellor?
+
+- @muller_weimar_chancellor
+
+@muller_weimar_chancellor
+title: Hermann Müller for Chancellor
+subtitle: Müller is popular within the <span style="color: #E3000F;">**SPD**</span>, and is the preferred candidate of the <span style="color: #000000;">Center</span> and the <span style="color: #FFD800;">**FVP**</span>.
+on-arrival: chancellor = "Müller"; chancellor_party = "SPD"; vice_chancellor = "Erzberger"; vice_chancellor_party = "Z";
+
+Müller's appointment as chancellor is approved by all members of the coalition.
 
 
 
