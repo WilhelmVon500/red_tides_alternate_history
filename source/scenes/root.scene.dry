@@ -61,7 +61,7 @@ Q.industrialist_dissent = 5;
 Q.left_stresemannite_nlp = 1;
 Q.right_stresemannite_nlp = 1;
 Q.labor_nlp = 1;
-Q.industrialists_nlp = 1;
+Q.industrialist_nlp = 1;
 
 
 
