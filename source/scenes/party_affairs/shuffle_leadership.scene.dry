@@ -21,7 +21,7 @@ Removing advisors will increase dissent from their faction of the party, while s
 
 @rm_main
 title: Remove advisors.
-tags: center_advisor, left_advisor, reformist_advisor, labor_advisor, neorev_advisor, nonfactional_advisor 
+tags: left_stresemannite_advisor, right_stresemannite_advisor, labor_advisor, industrialist_advisor, nonfactional_advisor 
 frequency: 1
 
 - #remove_advisor
@@ -245,43 +245,37 @@ go-to: advisor_menu
 
 @advisor_menu
 title: Add other advisors.
-tags: center_advisor, left_advisor, reformist_advisor, labor_advisor, neorev_advisor, nonfactional_advisor
+tags: left_stresemannite_advisor, right_stresemannite_advisor, labor_advisor, industrialist_advisor, nonfactional_advisor
 frequency: 1
 
 
-- @centrist: Add Centrists
-- @left: Add Leftists
-- @reformist: Add Reformists
+- @left_stresemannite: Add Left-wing Stresemannites
+- @right_stresemannite: Add Right-wing Stresemannites
 - @labor: Add Labor
-- @neorev: Add Neorevisionists
+- @industrialist: Add Industrialists
 - @nonfactional: Add non-factional advisors
 - @rm_main: Remove advisors instead.
 - @remove_none: Stop changing advisors.
 
-@centrist
+@left_stresemannite
 view-if: n_advisors < 3
 
-- #center_advisor
+- #left_stresemannite_advisor
 
-@reformist
+@right_stresemannite
 view-if: n_advisors < 3
 
-- #reformist_advisor
-
-@left
-view-if: n_advisors < 3
-
-- #left_advisor
+- #right_stresemannite_advisor
 
 @labor
 view-if: n_advisors < 3
 
 - #labor_advisor
 
-@neorev
-view-if: neorevisionism > 0 and n_advisors < 3
+@industrialist
+view-if: n_advisors < 3
 
-- #neorev_advisor
+- #industrialist_advisor
 
 @nonfactional
 view-if: n_advisors < 3
