@@ -1,0 +1,9 @@
+title: Stalemate in Genoa
+subtitle: The international economic conference in Genoa has lapsed into a stalemate.
+tags: event
+view-if: year = 1922 and month = 5
+on-arrival: west_relation -=1; inflation += 30;
+priority: 2
+max-visits: 1
+
+An international conference has collapsed into deadlock at Genoa, following our agreement with the Soviet Russia. The Stalemate in Genoa sees negotiations falter amid mutual suspicions between Germany, Soviet Russia, and the Entente powers, with no reparations relief or economic aid secured. This leaves us isolated and vulnerable to ongoing financial pressures.
