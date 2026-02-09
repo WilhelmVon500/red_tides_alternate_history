@@ -10,7 +10,7 @@ An international treaty has been signed between Germany and Soviet Russia, marki
 - @signed
 
 @signed
-title: Foreign Minister [+ foreign_minister +]
+title: Foreign Minister [+ foreign_minister +] has signed the treaty.
 on-arrival: soviet_relation += 2; west_relation -= 1; economic_growth += 0.5
 
 Despite our misgivings about the treaty, it still represents a step forward from our post-war isolation.
