@@ -196,6 +196,7 @@ if (Q.nlp_r >= Q.spd_r && Q.nlp_r >= Q.dap_r && Q.nlp_r >= Q.kpd_r) {
 
 // coalitions
 Q.weimar_coalition = parseFloat((Q.spd_r + Q.fvp_r + Q.z_minus_bvp_r).toFixed(1));
+Q.right_coalition = parseFloat((Q.dnvp_r + Q.nlp_r + Q.z_r + Q.wp_r + Q.rlb_r).toFixed(1));
 
 Q.anti_democratic_coalition = parseFloat((Q.kpd_r + Q.dap_r + Q.dnvp_r).toFixed(1));
 
@@ -215,7 +216,7 @@ Q.kpd_in_government = 0;
 Q.dap_in_government = 0;
 
 Q.in_weimar_coalition = 0;
-Q.in_grand_coalition = 0;
+Q.in_right_coalition = 0;
 Q.in_nlp_majority = 0;
 
 Q.coalition_dissent = 0;
