@@ -132,7 +132,7 @@ Reichsbank President: [+ reichsbank_president +] ([?if reichsbank_president_part
 
 [? if labor_nlp: {!<span class="tooltip-text" title="WIP.">Labor</span>!} strength: [+ labor_strength : strength +], dissent: [+ labor_dissent : dissent +] ?]
 
-[? if industrialists_nlp: {!<span class="tooltip-text" title="WIP.">Industrialist</span>!} strength: [+ reformist_strength : strength +], dissent: [+ reformist_dissent : dissent +] ?]
+[? if industrialist_nlp: {!<span class="tooltip-text" title="WIP.">Industrialist</span>!} strength: [+ reformist_strength : strength +], dissent: [+ reformist_dissent : dissent +] ?]
 
 
 @paramilitaries
