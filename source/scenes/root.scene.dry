@@ -320,7 +320,7 @@ Q.kpd_in_government = 0;
 Q.dap_in_government = 0;
 
 Q.in_weimar_coalition = 1;
-Q.in_grand_coalition = 0;
+Q.in_right_coalition = 0;
 Q.in_nlp_majority = 0;
 
 // if you're in a coalition, this is an incremental counter for how many times dissent has happened.
