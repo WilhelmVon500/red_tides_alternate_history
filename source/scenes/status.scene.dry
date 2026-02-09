@@ -126,13 +126,13 @@ Reichsbank President: [+ reichsbank_president +] ([?if reichsbank_president_part
 
 = Internal Factions of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>
 
-[? if left_stresemannite_nlp: {!<span class="tooltip-text" title="WIP.">Left-wing Stresemannites</span>!} strength: [+ left_strength : strength +], dissent: [+ left_dissent : dissent +] ?]
+[? if left_stresemannite_nlp: {!<span class="tooltip-text" title="WIP.">Left-wing Stresemannites</span>!} strength: [+ left_stresemannite_strength : strength +], dissent: [+ left_stresemannite_dissent : dissent +] ?]
 
-[? if right_stresemannite_nlp: {!<span class="tooltip-text" title="WIP.">Right-wing Stresemannites</span>!} strength: [+ center_strength : strength +], dissent: [+ center_dissent : dissent +] ?]
+[? if right_stresemannite_nlp: {!<span class="tooltip-text" title="WIP.">Right-wing Stresemannites</span>!} strength: [+ right_stresemannite_strength : strength +], dissent: [+ right_stresemannite_dissent : dissent +] ?]
 
 [? if labor_nlp: {!<span class="tooltip-text" title="WIP.">Labor</span>!} strength: [+ labor_strength : strength +], dissent: [+ labor_dissent : dissent +] ?]
 
-[? if industrialist_nlp: {!<span class="tooltip-text" title="WIP.">Industrialist</span>!} strength: [+ reformist_strength : strength +], dissent: [+ reformist_dissent : dissent +] ?]
+[? if industrialist_nlp: {!<span class="tooltip-text" title="WIP.">Industrialist</span>!} strength: [+ industrialist_strength : strength +], dissent: [+ industrialist_dissent : dissent +] ?]
 
 
 @paramilitaries
