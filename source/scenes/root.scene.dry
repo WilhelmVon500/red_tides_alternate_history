@@ -330,6 +330,8 @@ Q.coalition_dissent = 0;
 Q.minority_government = 0;
 
 // ministries - which parties control the ministries?
+Q.vice_chancellor = 'Erzberger';
+Q.vice_chancellor_party = 'Z';
 Q.foreign_minister = 'Rathenau';
 Q.foreign_minister_party = 'FVP';
 Q.interior_minister = 'Wirth';
