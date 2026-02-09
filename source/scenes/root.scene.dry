@@ -46,22 +46,22 @@ Q.dissent = 0.05;
 Q.dissent_percent = 5;
 
 // factions
-Q.factions = ['left', 'center', 'labor', 'industrialist'];
+Q.factions = ['left_stresemannite', 'right_stresemannite', 'labor', 'industrialist'];
 // should this be normalized to 100%?
-Q.left_strength = 15;
-Q.left_dissent = 20;
-Q.center_strength = 30;
-Q.center_dissent = 0;
-Q.labor_strength = 25;
-Q.labor_dissent = 5;
-Q.industrialist_strength = 25;
+Q.left_stresemannite_strength = 25;
+Q.left_stresemannite_dissent = 5;
+Q.right_stresemannite_strength = 30;
+Q.right_stresemannite_dissent = 0;
+Q.labor_strength = 10;
+Q.labor_dissent = 15;
+Q.industrialist_strength = 15;
 Q.industrialist_dissent = 5;
 
 // secret events...
-Q.unions_independent = 0;
-Q.centrists_resign = 0;
-Q.labor_nlp = 0;
-Q.industrialists_nlp = 0;
+Q.left_stresemannite_nlp = 1;
+Q.right_stresemannite_nlp = 1;
+Q.labor_nlp = 1;
+Q.industrialists_nlp = 1;
 
 
 
