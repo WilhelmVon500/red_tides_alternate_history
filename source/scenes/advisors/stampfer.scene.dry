@@ -1,23 +1,12 @@
-title: Friedrich Stampfer
+title: Gustav Stresemann
 is-pinned-card: true
-tags: advisor
-card-image: img/portraits/StampferFriedrich.jpg
-view-if: stampfer_advisor = 1
+tags: advisor, left_stresemannite
+card-image: img/portraits/StresemannGustav.jpg
+view-if: stresemann_advisor
 new-page: true 
 
-= Friedrich Stampfer
+= Gustav Stresemann
 
-Friedrich Stampfer is the long-time editor-in-chief of Vorwärts, our party newspaper, and also a Reichstag member. He was historically part of the Majority SPD that supported our participation in the Great War, but also supports cooperation with the KPD to save the Republic.
+WIP.
 
-- @kpd_cooperation
 - @root: Return to main
-
-
-@kpd_cooperation
-title: Cooperation with the KPD
-subtitle: Could we build closer ties with the KPD?
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-choose-if: advisor_action_timer = 0
-on-arrival: advisor_action_timer = 6; left_strength += 2; kpd_relation += 4*(1-dissent); reformist_dissent += 2
-
-Stampfer works towards closer ties with the KPD through our media.
