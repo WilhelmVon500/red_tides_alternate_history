@@ -21,7 +21,7 @@ if (Q.economic_growth) {
 Resources available: [+ resources +]
 
 <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> position: [? if nlp_in_government : in government - ?][? if not nlp_in_government and not nlp_toleration: opposition - ?]
-[? if in_weimar_coalition: Weimar Coalition ?][? if in_grand_coalition: Grand Coalition ?][? if in_nlp_majority: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> majority ?]
+[? if in_weimar_coalition: Weimar Coalition ?][? if in_right_coalition: Right Coalition ?][? if in_nlp_majority: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> majority ?]
 
 [? if nlp_in_government and not in_nlp_majority: Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
