@@ -5,8 +5,6 @@ tags: party_affairs
 view-if: schild_timer <= 0
 card-image: img/schild.jpg
 on-arrival: month_actions += 1; schild_timer += 6; schild_militarization_cost = 2 if schild_militancy > 0.15 else schild_militarization_cost = 1; schild_militarization_cost = 3 if schild_militancy > 0.25
-max-visits: 6
-#subtitle: Paramilitary organizing in defense of the republic.
 
 = Der Schild
 
