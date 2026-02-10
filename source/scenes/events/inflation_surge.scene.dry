@@ -2,7 +2,7 @@ title: Inflation Surge
 subtitle: WIP
 tags: event
 view-if: year = 1922 and month = 7
-on-arrival: inflation += 300; economic_growth -= 5;
+on-arrival: inflation += 300; economic_growth -= 5; workers_kpd += 3; unemployed_kpd += 3;
 priority: 2
 max-visits: 1
 
