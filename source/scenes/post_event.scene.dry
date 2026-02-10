@@ -257,10 +257,10 @@ if (Q.month_actions >= 1) {
         Q.unemployed_uspd -= 3/12;
 
 
-        if (Q.month <= 6) {
+        if (Q.month <= 7) {
             Q.inflation += 3;
         }
-        if (Q.month >= 7) {
+        if (Q.month >= 8) {
             Q.inflation += 70;
         }
     }
