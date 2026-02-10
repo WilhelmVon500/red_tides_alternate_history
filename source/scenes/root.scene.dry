@@ -97,10 +97,10 @@ Q.prussia_leader_party = "SPD";
 
 // The array of forces - paramilitary groups
 // Number of members in 1922 (in thousands)
-// Reichsbanner, stahlhelm, SA, rotfrontkämpferbund, JDO
-Q.jdo_strength = 100;
-Q.jdo_militancy = 0.2;
-Q.jdo_banned = 0;
+// Reichsbanner, stahlhelm, SA, rotfrontkämpferbund, Schild
+Q.schild_strength = 200;
+Q.schild_militancy = 0.05;
+Q.schild_banned = 0;
 
 Q.rb_exist = 0;
 Q.rb_strength = 0;
@@ -464,11 +464,11 @@ Creator of the mod does not support or justify extremist ideologies. This mod is
 - @1922_historical: Begin (historical mode)
 
 @1922_easy
-on-arrival: difficulty = -1; resources = 4; dues = 3; jdo_strength = 125; kpd_relation = 29; z_relation = 54; spd_relation = 49; budget = 5;
+on-arrival: difficulty = -1; resources = 4; dues = 3; schild_strength = 225; kpd_relation = 29; z_relation = 54; spd_relation = 49; budget = 5;
 go-to: 1922_main
 
 @1922_hard
-on-arrival: difficulty = 1; resources = 0; dues = 1; jdo_strength = 70; reformist_dissent = 25; left_dissent = 30; labor_dissent = 25; center_dissent = 25; z_relation = 41; kpd_relation = 16; dvp_relation = 31; budget = 3;
+on-arrival: difficulty = 1; resources = 0; dues = 1; schild_strength = 170; reformist_dissent = 25; left_dissent = 30; labor_dissent = 25; center_dissent = 25; z_relation = 41; kpd_relation = 16; dvp_relation = 31; budget = 3;
 go-to: 1922_main
 
 @1922_historical
@@ -478,7 +478,7 @@ Q.difficulty = 2;
 Q.historical_mode = 1;
 Q.resources = 2;
 Q.dues = 1;
-Q.jdo_strength = 100;
+Q.schild_strength = 200;
 Q.reformist_dissent = 25;
 Q.left_dissent = 30;
 Q.labor_dissent = 25;
