@@ -137,8 +137,8 @@ Reichsbank President: [+ reichsbank_president +] ([?if reichsbank_president_part
 
 @paramilitaries
 on-arrival: {!
-if (Q.jdo_strength) {
-    Q.jdo_strength_2 = Q.jdo_strength.toFixed(1);
+if (Q.schild_strength) {
+    Q.schild_strength_2 = Q.schild_strength.toFixed(1);
 }
 if (Q.rb_strength) {
     Q.rb_strength_2 = Q.rb_strength.toFixed(1);
@@ -156,11 +156,11 @@ if (Q.sa_strength) {
 
 = Paramilitaries
 
-{!<span class="tooltip-text" title="The Young German Order is a national liberal paramilitary organization of our party." style="color: #D3D3A9;">!}**JDO**{!</span>!} Strength: [+ jdo_strength_2 +] thousand
+{!<span class="tooltip-text" title="WIP." style="color: #D3D3A9;">!}**Der Schild**{!</span>!} Strength: [+ schild_strength_2 +] thousand
 
-<span style="color: #D3D3A9;">**JDO**</span> Militarization: [+ jdo_militancy : militancy +]
+<span style="color: #D3D3A9;">**Der Schild**</span> Militarization: [+ schild_militancy : militancy +]
 
-[? if rb_exist: {!<span class="tooltip-text" title="The Reichsbanner Schwarz-Rot-Gold is a popular organization for defending democracy, mostly affiliated with the SPD." style="color: #E3000F;">!}**Reichsbanner**{!</span>!} Strength: [+ rb_strength_2 +] thousand ?]
+[? if rb_exist: {!<span class="tooltip-text" title="The Reichsbanner Schwarz-Rot-Gold is an organization for defending democracy, affiliated with the SPD." style="color: #E3000F;">!}**Reichsbanner**{!</span>!} Strength: [+ rb_strength_2 +] thousand ?]
 
 [? if rb_exist: <span style="color: #E3000F;">**Reichsbanner**</span> Militarization: [+ rb_militancy : militancy +] ?]
 
