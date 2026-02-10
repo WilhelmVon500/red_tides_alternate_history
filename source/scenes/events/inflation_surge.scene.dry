@@ -11,5 +11,6 @@ WIP
 - @response: Havenstein's response is, as always, printing more money.
 
 @response
+on-arrival: inflation += 50; budget += 1;
 
 The Reichsbank responds to the crisis with printing more money.
