@@ -183,52 +183,6 @@ if (Q.month_actions >= 1) {
         Q.economic_growth -= 0.3;
     }
 
-    //////////////////////////////// Education & Science support/economic changes
-    if (Q.major_curriculum && Q.major_curriculum == "democratic") {
-        if (Q.pro_republic < 60) {
-            Q.pro_republic += 0.5;
-        } 
-    }
-    if (Q.minor_curriculum && Q.minor_curriculum == "democratic") {
-        if (Q.pro_republic < 60) {
-            Q.pro_republic += 0.3;
-        } 
-    }
-    // science bonus to economic growth
-    // education bonus
-    Q.science_bonus = 0;
-    if (Q.education_science) {
-        Q.science_bonus += Q.education_science;
-    }
-    if (Q.science) {
-        if (Q.science >= 1) {
-            Q.science_bonus += 1;
-        } else if (Q.science >= 3) {
-            Q.science_bonus += 2;
-        } else if (Q.science >= 5) {
-            Q.science_bonus += 3;
-        }
-    }
-    if (Q.applied_research && Q.applied_research >= 1) {
-        Q.science_bonus += 0.5*Q.applied_research;
-    }
-    // cap the science bonus at 6
-    if (Q.science_bonus > 6) {
-        Q.science_bonus = 6;
-    }
-    console.log(Q.science_bonus);
-    // this is kinda messy but basically more science -> higher levels of baseline growth
-    if (Q.science_bonus >= 1) {
-        if (Q.return_to_normalcy && Q.economic_growth < Q.science_bonus + 3) {
-            Q.economic_growth += 0.1;
-        }
-        if (Q.return_to_normalcy && Q.economic_growth < Q.science_bonus) {
-            Q.economic_growth += 0.1;
-        }
-        if (Q.economic_growth < Q.science_bonus - 3) {
-            Q.economic_growth += 0.1;
-        }
-    }
     // accumulated economic growth/decline
     // Maybe there should be differences for positive/negative growth?
     if (Q.economic_growth < 0) {
@@ -295,11 +249,19 @@ if (Q.month_actions >= 1) {
     ////////////////////////// annual support changes
     if (Q.year == 1922) {
         Q.workers_spd += 2/12;
+        Q.upper_middle_wp += 5/12;
+
+        Q.workers_kpd += 3/12;
+        Q.workers_uspd -= 3/12;
         Q.unemployed_kpd += 3/12;
-        Q.upper_middle_wp += 6/12;
+        Q.unemployed_uspd -= 3/12;
+
 
         if (Q.month <= 6) {
             Q.inflation += 3;
+        }
+        if (Q.month >= 7) {
+            Q.inflation += 70;
         }
     }
 
