@@ -24,7 +24,7 @@ WIP
 choose-if: resources >= schild_militarization_cost
 unavailable-subtitle: Not enough resources ([+ schild_militarization_cost +] needed).
 subtitle: -[+ schild_militarization_cost +] resources
-on-arrival: resources -= schild_militarization_cost; schild_investment += 1; schild_strength += 50; schild_militancy += 0.05; new_middle_nlp += 2*(1-dissent); old_middle_nlp += 2*(1-dissent);
+on-arrival: resources -= schild_militarization_cost; schild_investment += 1; schild_strength += 25; schild_militancy += 0.05; new_middle_nlp += 2*(1-dissent); old_middle_nlp += 2*(1-dissent);
 
 Some in our party decry the increasing militarization of the Der Schild. They say it is emulating the far-right nationalists or the communists, and risks alienating our allies in the centrist parties.
 
@@ -45,6 +45,6 @@ Der Schild is already serving the purpose it needs to serve. There is no reason 
 
 @cut_schild
 subtitle: +1 resources
-on-arrival: resources += 1; schild_strength -= 50; schild_militancy -= 0.05; new_middle_nlp -= 2; old_middle_nlp -= 2;
+on-arrival: resources += 1; schild_strength -= 25; schild_militancy -= 0.05; new_middle_nlp -= 2; old_middle_nlp -= 2;
 
 Cutting resources to Der Schild causes a drop in the membership, and leads some would-be members to join more right-wing paramilitaries instead.
