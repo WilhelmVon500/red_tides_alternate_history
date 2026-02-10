@@ -1,0 +1,50 @@
+title: Der Schild
+new-page: true
+is-card: true
+tags: party_affairs
+view-if: schild_timer <= 0
+card-image: img/schild.jpg
+on-arrival: month_actions += 1; schild_timer += 6; schild_militarization_cost = 2 if schild_militancy > 0.15 else schild_militarization_cost = 1; schild_militarization_cost = 3 if schild_militancy > 0.25
+max-visits: 6
+#subtitle: Paramilitary organizing in defense of the republic.
+
+= Der Schild
+
+The *Reichsbanner Schwarz-Rot-Gold* is a mass organization for the defense of the Republic against the extremists who threaten it. Some would call it a paramilitary, although currently it is hardly any sort of military. It is officially associated with the pro-democratic parties -the SPD, Center, and [+ ddp_name +], but by far the largest component is with the SPD.
+
+- @militant: Fund more military-style training and equipment for Der Schild.
+- @militant_2: Use our existing resources to support more training for Der Schild.
+- @same: Keep Der Schild as it is.
+- @cut_schild: Cut funding for Der Schild.
+- @easy_discard
+- @cancel_advisor_action
+
+
+@militant
+choose-if: resources >= schild_militarization_cost
+unavailable-subtitle: Not enough resources ([+ schild_militarization_cost +] needed).
+subtitle: -[+ schild_militarization_cost +] resources
+on-arrival: resources -= schild_militarization_cost; schild_investment += 1; schild_strength += 50; schild_militancy += 0.05; new_middle_nlp += 2*(1-dissent); old_middle_nlp += 2*(1-dissent);
+
+Some in our party decry the increasing militarization of the Der Schild. They say it is emulating the far-right nationalists or the communists, and risks alienating our allies in the centrist parties.
+
+
+@militant_2
+view-if: funded_schild >= 1
+on-arrival: schild_militancy += 0.02; funded_schild -= 1
+
+As we have already funded resources towards Der Schild, we can invest in building up their militancy.
+
+
+@same
+
+Der Schild is already serving the purpose it needs to serve. There is no reason to change what already works.
+
+- @return: Continue...
+
+
+@cut_schild
+subtitle: +1 resources
+on-arrival: resources += 1; schild_strength -= 50; schild_militancy -= 0.05; new_middle_nlp -= 2; old_middle_nlp -= 2;
+
+Cutting resources to Der Schild causes a drop in the membership, and leads some would-be members to join more right-wing paramilitaries instead.
