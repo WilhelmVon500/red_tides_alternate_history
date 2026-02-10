@@ -28,7 +28,7 @@ go-to: media
 choose-if: resources > 0
 unavailable-subtitle: Not enough resources.
 subtitle: -1 resources
-on-arrival: resources -= 1; schild_strength += 25; schild_militancy += 0.01; schild_timer = 0; funded_schild += 1;
+on-arrival: resources -= 1; schild_strength += 15; schild_militancy += 0.01; schild_timer = 0; funded_schild += 1;
 
 We have increased recruiting to Der Schild.
 
