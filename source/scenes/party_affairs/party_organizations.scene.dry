@@ -22,7 +22,7 @@ choose-if: resources > 0
 unavailable-subtitle: Not enough resources.
 subtitle: -1 resources
 on-arrival: resources -= 1; media_timer = 0;
-go-to: media
+#go-to: media
 
 @der_schild
 choose-if: resources > 0
