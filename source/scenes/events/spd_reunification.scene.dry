@@ -37,12 +37,19 @@ Q.rural_kpd += (0.8*Q.rural_uspd);
 Q.unemployed_kpd += (0.8*Q.unemployed_uspd);
 Q.catholics_kpd += (0.8*Q.catholics_uspd);
 
-Q.workers_spd += (0.8*Q.workers_uspd);
-Q.new_middle_spd += (0.8*Q.new_middle_uspd);
-Q.old_middle_spd += (0.8*Q.old_middle_uspd);
-Q.rural_spd += (0.8*Q.rural_uspd);
-Q.unemployed_spd += (0.8*Q.unemployed_uspd);
-Q.catholics_spd += (0.8*Q.catholics_uspd);
+Q.workers_spd += (0.2*Q.workers_uspd);
+Q.new_middle_spd += (0.2*Q.new_middle_uspd);
+Q.old_middle_spd += (0.2*Q.old_middle_uspd);
+Q.rural_spd += (0.2*Q.rural_uspd);
+Q.unemployed_spd += (0.2*Q.unemployed_uspd);
+Q.catholics_spd += (0.2*Q.catholics_uspd);
+
+Q.workers_uspd = 0;
+Q.new_middle_uspd = 0;
+Q.old_middle_uspd = 0;
+Q.rural_uspd = 0;
+Q.unemployed_uspd = 0;
+Q.catholics_uspd = 0;
 !}
 
 WIP
