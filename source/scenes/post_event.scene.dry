@@ -333,6 +333,8 @@ if (Q.month_actions >= 1) {
         Q.unemployed_rlb = 0;
         Q.catholics_rlb = 0;
     }
+
+    d3.select("#party_support_history").datum(Q.party_support_records).call(lines_2)
 }
 Q.has_event = 0;
 // check if there are any cards in #event, and then go to main if not.
