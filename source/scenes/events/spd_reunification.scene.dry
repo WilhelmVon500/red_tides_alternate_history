@@ -1,0 +1,48 @@
+title: <span style="color: #E3000F;">Social Democrats</span> reunify!
+subtitle: The <span style="color: #D47B9B;">**USPD**</span> merged into the <span style="color: #E3000F;">**SPD**</span>
+tags: event
+view-if: year = 1922 and month = 9
+max-visits: 1
+
+WIP
+
+- @reunification
+
+@reunification
+title: Most of <span style="color: #D47B9B;">Independent Social Democrats</span> in Reichstag join the <span style="color: #E3000F;">**SPD**</span>.
+on-arrival: {!
+Q.uspd_seats = 0;
+Q.uspd_r = 0;
+
+Q.kpd_seats = Math.round(Q.kpd_seats + 25);
+Q.kpd_r = parseFloat((Q.kpd_r += 5.4).toFixed(1));
+
+Q.spd_seats = Math.round(Q.spd_seats + 67);
+Q.spd_r = parseFloat((Q.spd_r += 14.6).toFixed(1));
+!}
+
+WIP
+
+- @voters
+
+@voters
+title: The <span style="color: #8B0000;">**KPD**</span> surges in polls!
+on-arrival: {!
+Q.uspd_exist = 0;
+
+Q.workers_kpd += (0.8*Q.workers_uspd);
+Q.new_middle_kpd += (0.8*Q.new_middle_uspd);
+Q.old_middle_kpd += (0.8*Q.old_middle_uspd);
+Q.rural_kpd += (0.8*Q.rural_uspd);
+Q.unemployed_kpd += (0.8*Q.unemployed_uspd);
+Q.catholics_kpd += (0.8*Q.catholics_uspd);
+
+Q.workers_spd += (0.8*Q.workers_uspd);
+Q.new_middle_spd += (0.8*Q.new_middle_uspd);
+Q.old_middle_spd += (0.8*Q.old_middle_uspd);
+Q.rural_spd += (0.8*Q.rural_uspd);
+Q.unemployed_spd += (0.8*Q.unemployed_uspd);
+Q.catholics_spd += (0.8*Q.catholics_uspd);
+!}
+
+WIP
