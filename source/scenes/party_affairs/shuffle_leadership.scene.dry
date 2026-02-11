@@ -96,6 +96,15 @@ Wildermuth has been removed as an advisor. The Labor faction disapproves.
 # industrialist
 
 
+@remove_scholz
+title: Remove Scholz
+view-if: scholz_advisor
+on-arrival: scholz_advisor = 0; industrialist_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Scholz has been removed as an advisor. The Industrialist faction disapproves.
+
 @remove_raumer
 title: Remove Raumer
 view-if: raumer_advisor
@@ -251,6 +260,18 @@ Hermann-Eberhard Wildermuth is now an advisor.
 
 # industrialist
 
+
+@add_scholz
+title: Ernst Scholz
+subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
+is-card: true
+card-image: img/portraits/ScholzErnst.jpg
+tags: industrialist_advisor
+view-if: not scholz_advisor and n_advisors < 3 and industrialist_nlp
+on-arrival: scholz_advisor = 1; n_advisors += 1; industrialist_strength += 5;
+go-to: advisor_menu
+
+Ernst Scholz is now an advisor.
 
 @add_raumer
 title: Hans Raumer
