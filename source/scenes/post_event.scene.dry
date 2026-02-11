@@ -210,7 +210,7 @@ if (Q.month_actions >= 1) {
 
     ///////////////////////////// change party support based on pro_republic
     // if pro_republic is less than the support of the Weimar coalition, reduce SPD support...
-    WIP
+    // WIP
 
     ////////////////////////// annual support changes
     if (Q.year == 1922) {
