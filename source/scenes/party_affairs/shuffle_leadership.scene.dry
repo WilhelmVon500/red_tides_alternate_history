@@ -36,14 +36,67 @@ tags: remove_advisor
 
 # left stresemannite
 
+
 @remove_stresemann
 title: Remove Stresemann
-view-if: stresemann_advisor = 1
+view-if: stresemann_advisor
 on-arrival: stresemann_advisor = 0; left_stresemannite_dissent += 5; n_advisors -= 1
 tags: remove_advisor
 go-to: rm_main
 
 Stresemann has been removed as an advisor. The Left-wing Stresemannite faction disapproves.
+
+
+# right stresemannite
+
+
+@remove_luther
+title: Remove Luther
+view-if: luther_advisor
+on-arrival: luther_advisor = 0; right_stresemannite_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Luther has been removed as an advisor. The Right-wing Stresemannite faction disapproves.
+
+
+# labor
+
+
+@remove_thiel
+title: Remove Thiel
+view-if: thiel_advisor
+on-arrival: thiel_advisor = 0; labor_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Thiel has been removed as an advisor. The Labor faction disapproves.
+
+
+# industrialist
+
+
+@remove_raumer
+title: Remove Raumer
+view-if: raumer_advisor
+on-arrival: raumer_advisor = 0; industrialist_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Raumer has been removed as an advisor. The Industrialist faction disapproves.
+
+
+# nonfactional
+
+
+@remove_mahraun
+title: Remove Mahraun
+view-if: mahraun_advisor
+on-arrival: mahraun_advisor = 0; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Mahraun has been removed as an advisor.
 
 
 
@@ -101,6 +154,7 @@ view-if: n_advisors < 3
 
 # left stresemannite
 
+
 @add_stresemann
 title: Gustav Stresemann
 subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
@@ -108,7 +162,76 @@ is-card: true
 card-image: img/portraits/StresemannGustav.jpg
 tags: left_stresemannite_advisor
 view-if: not stresemann_advisor and n_advisors < 3
-on-arrival: stresemann_advisor = 1; n_advisors += 1
+on-arrival: stresemann_advisor = 1; n_advisors += 1; left_stresemannite_strength += 5;
 go-to: advisor_menu
 
 Gustav Stresemann is now an advisor.
+
+
+
+# right stresemannite
+
+
+@add_luther
+title: Hans Luther
+subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
+is-card: true
+card-image: img/portraits/LutherHans.jpg
+tags: right_stresemannite_advisor
+view-if: not luther_advisor and n_advisors < 3 and right_stresemannite_nlp
+on-arrival: luther_advisor = 1; n_advisors += 1; right_stresemannite_strength += 5;
+go-to: advisor_menu
+
+Hans Luther is now an advisor.
+
+
+
+# labor
+
+
+@add_thiel
+title: Otto Thiel
+subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
+is-card: true
+card-image: img/portraits/ThielOtto.jpg
+tags: labor_advisor
+view-if: not thiel_advisor and n_advisors < 3 and labor_nlp
+on-arrival: thiel_advisor = 1; n_advisors += 1; labor_strength += 5;
+go-to: advisor_menu
+
+Otto Thiel is now an advisor.
+
+
+
+# industrialist
+
+
+@add_raumer
+title: Hans Raumer
+subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
+is-card: true
+card-image: img/portraits/RaumerHans.jpg
+tags: industrialist_advisor
+view-if: not raumer_advisor and n_advisors < 3 and industrialist_nlp
+on-arrival: raumer_advisor = 1; n_advisors += 1; industrialist_strength += 5;
+go-to: advisor_menu
+
+Hans Raumer is now an advisor.
+
+
+
+# nonfactional
+
+
+@add_mahraun
+title: Artur Mahraun
+subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
+is-card: true
+card-image: img/portraits/MahraunArtur.jpg
+tags: nonfactional_advisor
+view-if: not mahraun_advisor and n_advisors < 3
+on-arrival: mahraun_advisor = 1; n_advisors += 1;
+go-to: advisor_menu
+
+Artur Mahraun is now an advisor.
+
