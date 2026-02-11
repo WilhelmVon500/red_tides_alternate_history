@@ -113,6 +113,42 @@ go-to: rm_main
 
 Luther has been removed as an advisor. The Right-wing Stresemannite faction disapproves.
 
+@remove_jarres
+title: Remove Jarres
+view-if: jarres_advisor
+on-arrival: jarres_advisor = 0; right_stresemannite_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Jarres has been removed as an advisor. The Right-wing Stresemannite faction disapproves.
+
+@remove_heinze
+title: Remove Heinze
+view-if: heinze_advisor
+on-arrival: heinze_advisor = 0; right_stresemannite_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Heinze has been removed as an advisor. The Right-wing Stresemannite faction disapproves.
+
+@remove_moldenhauer
+title: Remove Moldenhauer
+view-if: moldenhauer_advisor
+on-arrival: moldenhauer_advisor = 0; right_stresemannite_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Moldenhauer has been removed as an advisor. The Right-wing Stresemannite faction disapproves.
+
+@remove_dohna_schlodien
+title: Remove Dohna-Schlodien
+view-if: dohna_schlodien_advisor
+on-arrival: dohna_schlodien_advisor = 0; right_stresemannite_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Dohna-Schlodien has been removed as an advisor. The Right-wing Stresemannite faction disapproves.
+
 
 # labor
 
@@ -363,6 +399,53 @@ go-to: advisor_menu
 
 Hans Luther is now an advisor.
 
+@add_jarres
+title: Karl Jarres
+subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
+is-card: true
+card-image: img/portraits/JarresKarl.jpg
+tags: right_stresemannite_advisor
+view-if: not jarres_advisor and n_advisors < 3 and right_stresemannite_nlp
+on-arrival: jarres_advisor = 1; n_advisors += 1; right_stresemannite_strength += 5;
+go-to: advisor_menu
+
+Karl Jarres is now an advisor.
+
+@add_heinze
+title: Rudolf Heinze
+subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
+is-card: true
+card-image: img/portraits/HeinzeRudolf.jpg
+tags: right_stresemannite_advisor
+view-if: not heinze_advisor and n_advisors < 3 and right_stresemannite_nlp
+on-arrival: heinze_advisor = 1; n_advisors += 1; right_stresemannite_strength += 5;
+go-to: advisor_menu
+
+Rudolf Heinze is now an advisor.
+
+@add_moldenhauer
+title: Paul Moldenhauer
+subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
+is-card: true
+card-image: img/portraits/MoldenhauerPaul.jpg
+tags: right_stresemannite_advisor
+view-if: not moldenhauer_advisor and n_advisors < 3 and right_stresemannite_nlp
+on-arrival: moldenhauer_advisor = 1; n_advisors += 1; right_stresemannite_strength += 5;
+go-to: advisor_menu
+
+Paul Moldenhauer is now an advisor.
+
+@add_dohna_schlodien
+title: Alexander zu Dohna-Schlodien
+subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
+is-card: true
+card-image: img/portraits/DohnaSchlodienAlexander.jpg
+tags: right_stresemannite_advisor
+view-if: not dohna_schlodien_advisor and n_advisors < 3 and right_stresemannite_nlp
+on-arrival: dohna_schlodien_advisor = 1; n_advisors += 1; right_stresemannite_strength += 5;
+go-to: advisor_menu
+
+Alexander zu Dohna-Schlodien is now an advisor.
 
 
 # labor
