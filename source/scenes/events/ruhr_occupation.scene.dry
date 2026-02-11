@@ -2,9 +2,16 @@ title: Occupation of the Ruhr
 subtitle: The French and Belgians have had enough
 tags: event
 view-if: year = 1923 and month = 1
-on-arrival: ruhr_occupation = 1; weeks_enabled = 1; week = 1; economic_growth -= 10; budget -= 1;
+on-arrival: economic_growth -= 10; budget -= 1;
 face-image: img/ruhr_occupation.jpg
 priority: 10
 max-visits: 1
+
+WIP
+
+- @time_slows: Time slows down, as the Republic enters week-to-week struggle for survival.
+
+@time_slows
+on-arrival: ruhr_occupation = 1; weeks_enabled = 1; week = 1;
 
 WIP
