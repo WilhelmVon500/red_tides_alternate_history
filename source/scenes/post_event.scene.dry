@@ -107,6 +107,14 @@ if (Q.weeks_enabled && Q.month_actions >= 1 && Q.month_actions != Q.month_action
     if (Q.week >= 5) {
         Q.week = 1;
     }
+    if (Q.month_actions < 4) {
+        // decrement timers
+        for (timer of Q.timers) {
+            if (Q[timer+'_timer'] && Q[timer+'_timer'] > 0) {
+                Q[timer+'_timer'] -= 1;
+            }
+        }
+    }
 }
 
 
