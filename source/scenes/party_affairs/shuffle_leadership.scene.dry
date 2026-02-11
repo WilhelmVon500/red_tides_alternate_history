@@ -37,15 +37,6 @@ tags: remove_advisor
 # left stresemannite
 
 
-@remove_stresemann
-title: Remove Stresemann
-view-if: stresemann_advisor
-on-arrival: stresemann_advisor = 0; left_stresemannite_dissent += 5; n_advisors -= 1
-tags: remove_advisor
-go-to: rm_main
-
-Stresemann has been removed as an advisor. The Left-wing Stresemannite faction disapproves.
-
 @remove_dietrich
 title: Remove Dietrich
 view-if: dietrich_advisor
@@ -233,6 +224,15 @@ Dingeldey has been removed as an advisor. The Industrialist faction disapproves.
 # nonfactional
 
 
+@remove_stresemann
+title: Remove Stresemann
+view-if: stresemann_advisor
+on-arrival: stresemann_advisor = 0; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Stresemann has been removed as an advisor.
+
 @remove_mahraun
 title: Remove Mahraun
 view-if: mahraun_advisor
@@ -298,18 +298,6 @@ view-if: n_advisors < 3
 
 # left stresemannite
 
-
-@add_stresemann
-title: Gustav Stresemann
-subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
-is-card: true
-card-image: img/portraits/StresemannGustav.jpg
-tags: left_stresemannite_advisor
-view-if: not stresemann_advisor and n_advisors < 3
-on-arrival: stresemann_advisor = 1; n_advisors += 1; left_stresemannite_strength += 5;
-go-to: advisor_menu
-
-Gustav Stresemann is now an advisor.
 
 @add_dietrich
 title: Hermann Dietrich
@@ -556,6 +544,18 @@ Eduard Dingeldey is now an advisor.
 
 # nonfactional
 
+
+@add_stresemann
+title: Gustav Stresemann
+subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
+is-card: true
+card-image: img/portraits/StresemannGustav.jpg
+tags: nonfactional_advisor
+view-if: not stresemann_advisor and n_advisors < 3
+on-arrival: stresemann_advisor = 1; n_advisors += 1;
+go-to: advisor_menu
+
+Gustav Stresemann is now an advisor.
 
 @add_mahraun
 title: Artur Mahraun
