@@ -1,0 +1,9 @@
+title: Occupation of the Ruhr
+subtitle: The French and Belgians have had enough
+tags: event
+view-if: year = 1923 and month = 1
+on-arrival: week = 1; economic_growth -= 10; budget -= 1;
+priority: 10
+max-visits: 1
+
+WIP
