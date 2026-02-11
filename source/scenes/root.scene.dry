@@ -27,8 +27,9 @@ Q.month = 1;
 Q.month_actions = 0;
 
 Q.week = 0;
-Q.hyperinflation = 0;
 Q.weeks_enabled = 0;
+Q.hyperinflation = 0;
+Q.ruhr_occupation = 0;
 
 // 0 = normal difficulty, 1 = hard mode, 2 = hard mode no saves
 Q.difficulty = 0;
