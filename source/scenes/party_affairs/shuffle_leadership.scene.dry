@@ -73,6 +73,26 @@ go-to: rm_main
 Thiel has been removed as an advisor. The Labor faction disapproves.
 
 
+@remove_bechly
+title: Remove Bechly
+view-if: bechly_advisor
+on-arrival: bechly_advisor = 0; labor_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Bechly has been removed as an advisor. The Labor faction disapproves.
+
+
+@remove_wildermuth
+title: Remove Wildermuth
+view-if: wildermuth_advisor
+on-arrival: wildermuth_advisor = 0; labor_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Wildermuth has been removed as an advisor. The Labor faction disapproves.
+
+
 # industrialist
 
 
@@ -200,6 +220,32 @@ on-arrival: thiel_advisor = 1; n_advisors += 1; labor_strength += 5;
 go-to: advisor_menu
 
 Otto Thiel is now an advisor.
+
+
+@add_bechly
+title: Hans Bechly
+subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
+is-card: true
+card-image: img/portraits/BechlyHans.jpg
+tags: labor_advisor
+view-if: not bechly_advisor and n_advisors < 3 and labor_nlp
+on-arrival: bechly_advisor = 1; n_advisors += 1; labor_strength += 5;
+go-to: advisor_menu
+
+Hans Bechly is now an advisor.
+
+
+@add_wildermuth
+title: Hermann-Eberhard Wildermuth
+subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
+is-card: true
+card-image: img/portraits/WildermuthHermannEberhard.jpg
+tags: labor_advisor
+view-if: not wildermuth_advisor and n_advisors < 3 and labor_nlp
+on-arrival: wildermuth_advisor = 1; n_advisors += 1; labor_strength += 5;
+go-to: advisor_menu
+
+Hermann-Eberhard Wildermuth is now an advisor.
 
 
 
