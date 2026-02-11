@@ -436,7 +436,6 @@ Q.jarres_advisor = 0; // Karl Jarres
 Q.moldenhauer_advisor = 0; // Paul Moldenhauer
 Q.heinze_advisor = 0; // Rudolf Heinze
 Q.dohna_schlodien_advisor = 0; // Alexander zu Dohna-Schlodien
-Q.schacht_advisor = 0; // Hjalmar Schacht
 
 // labor advisors
 Q.thiel_advisor = 0; // Otto Thiel
