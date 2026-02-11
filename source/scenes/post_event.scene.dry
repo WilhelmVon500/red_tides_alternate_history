@@ -96,8 +96,27 @@ if (Q.dissent < 0) {
     Q.dissent = 0.95;
 }
 
+
+
+
+
+
+
+if (Q.weeks_enabled && Q.month_actions >= 1 && Q.month_actions != Q.month_actions_checked) {
+    Q.week += 1
+    if (Q.week >= 5) {
+        Q.week = 1;
+    }
+}
+
+
+
+
+
+Q.month_actions_checked = Q.month_actions;
+
 // 1. update dates
-if (Q.month_actions >= 1) {
+if ((Q.month_actions >= 1 && !Q.weeks_enabled) || (Q.month_actions >= 4 && Q.weeks_enabled)) {
     Q.time += 1;
     Q.month_actions = 0;
     Q.month += 1;
