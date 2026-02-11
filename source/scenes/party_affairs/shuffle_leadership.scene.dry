@@ -166,6 +166,33 @@ go-to: rm_main
 
 Raumer has been removed as an advisor. The Industrialist faction disapproves.
 
+@remove_cuno
+title: Remove Cuno
+view-if: cuno_advisor
+on-arrival: cuno_advisor = 0; industrialist_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Cuno has been removed as an advisor. The Industrialist faction disapproves.
+
+@remove_stinnes
+title: Remove Stinnes
+view-if: stinnes_advisor
+on-arrival: stinnes_advisor = 0; industrialist_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Stinnes has been removed as an advisor. The Industrialist faction disapproves.
+
+@remove_dingeldey
+title: Remove Dingeldey
+view-if: dingeldey_advisor
+on-arrival: dingeldey_advisor = 0; industrialist_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Dingeldey has been removed as an advisor. The Industrialist faction disapproves.
+
 
 # nonfactional
 
@@ -405,6 +432,42 @@ on-arrival: raumer_advisor = 1; n_advisors += 1; industrialist_strength += 5;
 go-to: advisor_menu
 
 Hans Raumer is now an advisor.
+
+@add_cuno
+title: Wilhelm Cuno
+subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
+is-card: true
+card-image: img/portraits/CunoWilhelm.jpg
+tags: industrialist_advisor
+view-if: not cuno_advisor and n_advisors < 3 and industrialist_nlp
+on-arrival: cuno_advisor = 1; n_advisors += 1; industrialist_strength += 5;
+go-to: advisor_menu
+
+Wilhelm Cuno is now an advisor.
+
+@add_stinnes
+title: Hugo Stinnes
+subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
+is-card: true
+card-image: img/portraits/StinnesHugo.jpg
+tags: industrialist_advisor
+view-if: not stinnes_advisor and n_advisors < 3 and industrialist_nlp
+on-arrival: stinnes_advisor = 1; n_advisors += 1; industrialist_strength += 5;
+go-to: advisor_menu
+
+Hugo Stinnes is now an advisor.
+
+@add_dingeldey
+title: Eduard Dingeldey
+subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
+is-card: true
+card-image: img/portraits/DingeldeyEduard.jpg
+tags: industrialist_advisor
+view-if: not dingeldey_advisor and n_advisors < 3 and industrialist_nlp
+on-arrival: dingeldey_advisor = 1; n_advisors += 1; industrialist_strength += 5;
+go-to: advisor_menu
+
+Eduard Dingeldey is now an advisor.
 
 
 
