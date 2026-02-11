@@ -410,7 +410,8 @@ Q.fiscal_policy_timer = 0;
 Q.in_election = 1;
 Q.next_election_year = 1924;
 Q.next_election_month = 5;
-Q.next_election_time = 5;
+Q.next_election_week = 1;
+Q.next_election_time = 29;
 // n_elections is the number of elections that have happened since the start of the game.
 Q.n_elections = 0;
 // number of elections without a clear majority.
