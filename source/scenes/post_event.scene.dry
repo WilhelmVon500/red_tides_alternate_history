@@ -199,46 +199,18 @@ if (Q.month_actions >= 1) {
     }
     /////////////////////////////// update opinions based on economy
     if (Q.unemployed > 15 && Q.pro_republic > 40) {
-        Q.pro_republic -= 1;
+        Q.pro_republic -= 4/12;
     }
     if (Q.unemployed > 30 && Q.pro_republic > 20) {
-        Q.pro_republic -= 1;
+        Q.pro_republic -= 4/12;
     }
     if (Q.inflation >= 8 && Q.pro_republic > 40) {
-        Q.pro_republic -= 1;
+        Q.pro_republic -= 3/12;
     }
 
     ///////////////////////////// change party support based on pro_republic
     // if pro_republic is less than the support of the Weimar coalition, reduce SPD support...
-    if (Q.pro_republic < (Q.spd_votes + Q.fvp_votes + Q.z_votes - 3)) {
-        if (Q.new_middle_spd > 0) {
-            Q.new_middle_spd -= 5/12;
-        }
-        if (Q.old_middle_spd > 0) {
-            Q.old_middle_spd -= 5/12;
-        }
-        if (Q.rural_spd > 0) {
-            Q.rural_spd -= 5/12;
-        }
-        if (Q.workers_spd_normalized > 30) {
-            Q.workers_spd -= 4/12;
-        }
-        if (Q.catholics_spd > 0) {
-            Q.catholics_spd -= 4/12;
-        }
-        if (Q.unemployed_spd_normalized > 10) {
-            Q.unemployed_spd -= 4/12;
-        }
-        if (Q.new_middle_fvp > 0) {
-            Q.new_middle_fvp -= 4/12;
-        }
-        if (Q.old_middle_fvp > 0) {
-            Q.old_middle_fvp -= 5/12;
-        }
-        if (Q.rural_fvp > 0) {
-            Q.rural_fvp -= 5/12;
-        }
-    }
+    WIP
 
     ////////////////////////// annual support changes
     if (Q.year == 1922) {
