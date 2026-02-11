@@ -420,6 +420,8 @@ Q.no_majority_elections = 0;
 
 // initial advisors
 Q.stresemann_advisor = 1; // Gustav Stresemann
+Q.luther_advisor = 1; // Hans Luther
+Q.scholz_advisor = 1; // Ernst Scholz
 
 // left stresemannite advisors
 Q.kardorff_advisor = 0; // Siegfried Kardorff
@@ -431,7 +433,6 @@ Q.koch_weser_advisor = 0; // Erich Koch-Weser
 
 // right stresemannite advisors
 Q.jarres_advisor = 0; // Karl Jarres
-Q.luther_advisor = 0; // Hans Luther
 Q.moldenhauer_advisor = 0; // Paul Moldenhauer
 Q.heinze_advisor = 0; // Rudolf Heinze
 Q.dohna_schlodien_advisor = 0; // Alexander zu Dohna-Schlodien
@@ -445,7 +446,6 @@ Q.wildermuth_advisor = 0; // Hermann-Eberhard Wildermuth
 // industrialist advisors
 Q.raumer_advisor = 0; // Hans Raumer
 Q.stinnes_advisor = 0; // Hugo Stinnes
-Q.scholz_advisor = 0; // Ernst Scholz
 Q.cuno_advisor = 0; // Wilhelm Cuno
 Q.dingeldey_advisor = 0; // Eduard Dingeldey
 
