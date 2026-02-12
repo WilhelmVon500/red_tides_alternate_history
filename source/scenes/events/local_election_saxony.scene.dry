@@ -1,0 +1,293 @@
+title: Saxony Landtag Election
+view-if: year = 1922 and month = 11
+new-page: true
+tags: event
+priority: 3
+//on-arrival: 
+
+= Elections, [+ month : month +] [+ year +]
+
+The Saxon state elections are to be held now.
+
+- @saxony: May we do our best...
+  
+@saxony
+on-arrival: {!
+for (var c of Q.classes) {
+    var class_votes = 0;
+    for (var party of Q.parties) {
+        if (Q[c + '_' + party] < 0) {
+            Q[c + '_' + party] = 0;
+        }
+        class_votes += Q[c + '_' + party];
+    }
+    for (var party of Q.parties) {
+        Q[c + '_' + party + '_normalized_saxony'] = Math.round(100 * Q[c + '_' + party] / class_votes);
+    }
+}
+
+             
+if (Q.year == 1922) {
+    var saxony_adjustment_factors = {
+        kpd: 1.1,
+        spd: 1.65,
+        fvp: 1.0,
+        z: 0.05,
+        nlp: 1.5,
+        wp: 1.5,
+        rlb: 0.1,
+        dnvp: 1.25,
+        dap: 0.25,
+        other: 0.3,
+    };
+}
+
+
+
+// Calculate support for each of the parties
+var total_support = 0;
+for (var party of Q.parties) {
+    var party_support = 0;
+    for (var c of Q.classes) {
+        if (Q.old_demographics) {
+            party_support += Q[c] * Q[c + '_' + party];
+        } else {
+            party_support += Q[c] * Q[c + '_' + party + '_normalized_saxony'];
+        }
+    }
+    // Apply adjustment factor
+    Q[party + '_support'] = party_support * saxony_adjustment_factors.party
+    total_support += Q[party + '_support'];
+}
+
+// Normalize support (fraction)
+for (var party of Q.parties) {
+    Q[party + '_normalized_saxony'] = Q[party + '_support'] / total_support;
+    Q[party + '_votes_saxony'] = Math.round(Q[party + '_normalized_saxony'] * 1000) / 10;
+}
+
+
+
+
+
+
+var new_party_sum = 0;
+for (var party of Q.parties) {Q[party + '_sl'] = 0;
+    Q[party + '_seats_saxony'] = 0;
+    if (Q[party + '_banned']) {
+        Q[party + '_election_votes_saxony'] = 0;
+    } else {
+        Q[party + '_election_votes_saxony'] = parseFloat((Q[party+'_votes_saxony']).toFixed(1));
+    }
+    new_party_sum += Q[party + '_election_votes_saxony'];
+}
+
+// calculate new party sum
+if (new_party_sum > 0) {
+    for (var party of Q.parties) {
+        if (Q[party + '_election_votes_saxony'] > 0 && !(Q[party + '_election_votes_saxony'] < Q.electoral_threshold) && !(Q.electoral_threshold > 1 && party == 'other')) {
+            Q[party + '_election_votes_saxony'] = parseFloat((Q[party + '_election_votes_saxony']*100/new_party_sum).toFixed(1));
+            Q[party + '_sl'] = parseFloat((Q[party + '_election_votes_saxony']).toFixed(1));
+        } else {
+            Q[party + '_election_votes_saxony'] = parseFloat((Q[party + '_election_votes_saxony']*100/new_party_sum).toFixed(1));
+            Q[party + '_sl'] = 0;
+        }
+        Q[party + '_sl'] = parseFloat((Q[party+'_sl']).toFixed(1));
+    }
+}
+
+for (var party of Q.parties) {
+        if (Q[party + '_sl'] > 0) {
+            Q[party + '_seats_saxony'] = Math.round(Q[party + '_sl'] * 0.96);
+        }
+}
+
+let allocatedSeats = 0;
+let remainders = [];
+
+for (var party of Q.parties) {
+    let rawSeats = Q[party + '_sl'] * 0.96;
+    let seats = Math.floor(rawSeats);
+    Q[party + '_seats_saxony'] = seats;
+    allocatedSeats += seats;
+    remainders.push({
+        party: party,
+        remainder: rawSeats - seats
+    });
+}
+
+let remainingSeats = 96 - allocatedSeats;
+remainders.sort((a, b) => b.remainder - a.remainder);
+for (let i = 0; i < remainingSeats && i < remainders.length; i++) {
+    let partyObj = remainders[i];
+    if (!partyObj || !partyObj.party) continue;
+
+    let party = partyObj.party;
+    Q[party + '_seats_saxony'] += 1;
+}
+
+
+
+             
+
+// coalitions
+Q.united_left_coalition_saxony = parseFloat((Q.spd_sl + Q.kpd_sl).toFixed(1));
+Q.right_coalition_saxony = parseFloat((Q.dnvp_sl + Q.nlp_sl + Q.z_sl + Q.wp_sl + Q.rlb_sl).toFixed(1));
+
+
+// Reset government and ministers...
+Q.in_nlp_majority_saxony = 0;
+Q.in_united_left_coalition_saxony = 0;
+Q.in_right_coalition_saxony = 0;
+Q.in_spd_kpd_toleration_saxony = 0;
+!}
+on-display: {!
+data = []
+if (Q.kpd_seats_saxony) {
+    data.push({
+        "id": "kpd",
+        "legend": "KPD",
+        "name": "KPD",
+        "seats": Math.round(Q.kpd_seats_saxony),
+    });
+}
+if (Q.uspd_exist && Q.uspd_seats_saxony) {
+    data.push({
+        "id": "uspd",
+        "legend": "USPD",
+        "name": "USPD",
+        "seats": Math.round(Q.uspd_seats_saxony),
+    });
+}
+if (Q.spd_seats_saxony) {
+    data.push({
+        "id": "spd",
+        "legend": "SPD",
+        "name": "SPD",
+        "seats": Math.round(Q.spd_seats_saxony),
+    });
+}
+if (Q.fvp_seats_saxony) {
+    data.push({
+        "id": "fvp",
+        "legend": "FVP",
+        "name": "FVP",
+        "seats": Math.round(Q.fvp_seats_saxony),
+    });
+}
+if (Q.z_seats_saxony) {
+    data.push({
+        "id": "z",
+        "legend": "Center",
+        "name": "Center",
+        "seats": Math.round(Q.z_seats_saxony),
+    });
+}
+if (Q.nlp_seats_saxony) {
+    data.push({
+        "id": "nlp",
+        "legend": Q.nlp_name,
+        "name": Q.nlp_name,
+        "seats": Math.round(Q.nlp_seats_saxony),
+    });
+}
+if (Q.wp_exist && Q.wp_seats_saxony) {
+    data.push({
+        "id": "wp",
+        "legend": "WP",
+        "name": "WP",
+        "seats": Math.round(Q.wp_seats_saxony),
+    });
+}
+if (Q.rlb_exist && Q.rlb_seats_saxony) {
+    data.push({
+        "id": "rlb",
+        "legend": "RLB",
+        "name": "RLB",
+        "seats": Math.round(Q.rlb_seats_saxony),
+    });
+}
+if (Q.other_seats_saxony) {
+    data.push({
+        "id": "other",
+        "legend": "Other",
+        "name": "Other",
+        "seats": Math.round(Q.other_seats_saxony),
+    });
+}
+if (Q.dnvp_seats_saxony) {
+    data.push({
+        "id": "dnvp",
+        "legend": "DNVP",
+        "name": "DNVP",
+        "seats": Math.round(Q.dnvp_seats_saxony),
+    });
+}
+if (Q.dap_seats_saxony) {
+    data.push({
+        "id": "dap",
+        "legend": "DAP",
+        "name": "DAP",
+        "seats": Math.round(Q.dap_seats_saxony),
+    });
+}
+
+if (window && d3) {
+    var width = 500; 
+    var height = 500;
+    var screenWidth = document.getElementById('content').offsetWidth;
+    if (screenWidth < width - 50) {
+        width = screenWidth - 50; 
+        height = width;
+        document.getElementById("reichstag").style.height = screenWidth/2 + "px";
+    } 
+
+    var parliament = d3.parliament();
+    parliament.width(width).height(height).innerRadiusCoef(0.4);
+    parliament.enter.fromCenter(true).smallToBig(true);
+    parliament.exit.toCenter(false).bigToSmall(true);
+    d3.select("#reichstag").datum(data).call(parliament);
+}
+!}
+go-to: saxony_coalition_menu
+
+= Election results
+
+{!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
+
+{!<table>!} 
+{!<tr><td>Party</td><td>Votes</td><td>Seats</td></tr>!}
+{!<tr><td><div class="box" style='background-color: var(--nlp-color); outline: 2px; outline-style: solid;'> </div> !} **[+nlp_name+]:** {!</td><td>!} **[+ nlp_election_votes_saxony +]%** {!</td><td>!} **[+ nlp_seats_saxony +]** **([+ nlp_sl +]%)** {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#8B0000'> </div> !} KPD: {!</td><td>!} [+ kpd_election_votes_saxony +]% {!</td><td>!} [+ kpd_seats_saxony +] ([+ kpd_sl +]%) {!</td></tr>!}
+
+[? if uspd_exist: {!<tr><td><div class="box" style='background-color:#D47B9B'> </div> !} USPD: {!</td><td>!} [+ uspd_election_votes_saxony +]% {!</td><td>!} [+ uspd_seats_saxony +] ([+ uspd_sl +]%) {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#E3000F'> </div> !} SPD: {!</td><td>!} [+ spd_election_votes_saxony +]% {!</td><td>!} [+ spd_seats_saxony +] ([+ spd_sl +]%) {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#FFD800'> </div> !} FVP: {!</td><td>!} [+ fvp_election_votes_saxony +]% {!</td><td>!} [+ fvp_seats_saxony +] ([+ fvp_sl +]%) {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#000000'> </div> !} Z: {!</td><td>!} [+ z_minus_bvp_election_votes_saxony +]% {!</td><td>!} [+ z_minus_bvp_seats_saxony +] ([+ z_minus_bvp_sl +]%) {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#69A2BE'> </div> !} BVP: {!</td><td>!} [+ bvp_election_votes_saxony +]% {!</td><td>!} [+ bvp_seats_saxony +] ([+ bvp_sl +]%) {!</td></tr>!}
+
+[? if wp_exist: {!<tr><td><div class="box" style='background-color:#B8996F'> </div> !} WP: {!</td><td>!} [+ wp_election_votes_saxony +]% {!</td><td>!} [+ wp_seats_saxony +] ([+ wp_sl +]%) {!</td></tr>!} ?]
+
+[? if rlb_exist: {!<tr><td><div class="box" style='background-color:#52AE6F'> </div> !} RLB: {!</td><td>!} [+ rlb_election_votes_saxony +]% {!</td><td>!} [+ rlb_seats_saxony +] ([+ rlb_sl +]%) {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#3F7BC1'> </div> !} DNVP: {!</td><td>!} [+ dnvp_election_votes_saxony +]% {!</td><td>!} [+ dnvp_seats_saxony +] ([+ dnvp_sl +]%) {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#096300'> </div> !} DAP: {!</td><td>!} [+ dap_election_votes_saxony +]% {!</td><td>!} [+ dap_seats_saxony +] ([+ dap_sl +]%) {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#909090'> </div> !} Other parties: {!</td><td>!} [+ other_election_votes_saxony +]% {!</td><td>!} [+ other_seats_saxony +] ([+ other_sl +]%) {!</td></tr>!}
+{!</table>!}
+
+**Potential coalitions:**
+
+United Left Coalition (<span style="color: #E3000F;">**SPD**</span> + <span style="color: #8B0000;">**KPD**</span>): [+ united_left_coalition_saxony +]%
+
+Right Coalition (<span style="color: #3F7BC1;">**DNVP**</span> + <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> [? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span> ?]+ <span style="color: #000000;">**Z**</span>): [+ right_coalition_saxony +]%
+  
+There are some potential coalition arrangements.
+
+@coalition_menu
