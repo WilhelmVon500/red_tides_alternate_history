@@ -26,20 +26,18 @@ for (var c of Q.classes) {
     }
 }
 
-             
+// Define adjustment factors
 if (Q.year == 1922) {
-    var saxony_adjustment_factors = {
-        kpd: 1.1,
-        spd: 1.65,
-        fvp: 1.0,
-        z: 0.05,
-        nlp: 1.5,
-        wp: 1.5,
-        rlb: 0.1,
-        dnvp: 1.25,
-        dap: 0.25,
-        other: 0.3,
-    };
+    Q.adjustmentFactors_kpd_saxony = 1.1;
+    Q.adjustmentFactors_spd_saxony = 1.65;
+    Q.adjustmentFactors_fvp_saxony = 1.0;
+    Q.adjustmentFactors_z_saxony = 0.05;
+    Q.adjustmentFactors_nlp_saxony = 1.5;
+    Q.adjustmentFactors_wp_saxony = 1.5;
+    Q.adjustmentFactors_rlb_saxony = 0.1;
+    Q.adjustmentFactors_dnvp_saxony = 1.25;
+    Q.adjustmentFactors_dap_saxony = 0.25;
+    Q.adjustmentFactors_other_saxony = 0.3;
 }
 
 
@@ -56,7 +54,7 @@ for (var party of Q.parties) {
         }
     }
     // Apply adjustment factor
-    Q[party + '_support'] = party_support * saxony_adjustment_factors[party];
+    Q[party + '_support'] = party_support * Q['adjustmentFactors_' + party + '_saxony'];
     total_support += Q[party + '_support'];
 }
 
