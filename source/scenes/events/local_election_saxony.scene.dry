@@ -3,6 +3,7 @@ view-if: year = 1922 and month = 11
 new-page: true
 tags: event
 priority: 3
+max-visits: 1
 #on-arrival: 
 
 = Saxony Landtag Elections, [+ month : month +] [+ year +]
