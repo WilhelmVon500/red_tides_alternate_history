@@ -56,7 +56,6 @@ for (var party of Q.parties) {
     // Apply adjustment factor
     Q[party + '_support'] = party_support * Q['adjustmentFactors_' + party + '_saxony'];
     total_support += Q[party + '_support'];
-    console.log(total_support)
 }
 
 // Normalize support (fraction)
@@ -64,10 +63,6 @@ for (var party of Q.parties) {
     Q[party + '_normalized_saxony'] = Q[party + '_support'] / total_support;
     Q[party + '_votes_saxony'] = Math.round(Q[party + '_normalized_saxony'] * 1000) / 10;
 }
-
-
-
-
 
 
 var new_party_sum = 0;
