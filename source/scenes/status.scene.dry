@@ -236,3 +236,15 @@ Unemployed: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>: [+
 Catholics: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>: [+ catholics_nlp_display +]%, <span style="color: #8B0000;">**KPD**</span>: [+ catholics_kpd_display +]%, [? if uspd_exist: <span style="color: #D47B9B;">**USPD**</span>: [+ catholics_uspd_display +]%, ?]<span style="color: #E3000F;">**SPD**</span>: [+ catholics_spd_display +]%, <span style="color: #FFD800;">**FVP**</span>: [+ catholics_fvp_display +]%, <span style="color: #000000;">**Z**</span>: [+ catholics_z_display +]%, [? if wp_exist: <span style="color: #B8996F;">**WP**</span>: [+ catholics_wp_display +]%, ?][? if rlb_exist: <span style="color: #52AE6F;">**RLB**</span>: [+ catholics_rlb_display +]%, ?]<span style="color: #3F7BC1;">**DNVP**</span>: [+ catholics_dnvp_display +]%, <span style="color: #096300;">**DAP**</span>: [+ catholics_dap_display +]%, <span style="color: #909090;">**Others**</span>: [+ catholics_other_display +]%
 
 Support for the Republic: [+ pro_republic_disp +]%
+
+
+
+@states
+
+= Saxony
+
+Minister-President: [+ saxony_leader +] ([?if saxony_leader_party=="SPD":<span style="color: #E3000F;">**SPD**</span>?])
+
+Government: WIP
+
+Next election: [+ next_election_month_saxony: month +] [+ next_election_year_saxony +]
