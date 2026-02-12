@@ -3,7 +3,7 @@ view-if: year = 1922 and month = 11
 new-page: true
 tags: event
 priority: 3
-//on-arrival: 
+#on-arrival: 
 
 = Elections, [+ month : month +] [+ year +]
 
