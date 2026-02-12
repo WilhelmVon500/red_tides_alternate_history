@@ -5,7 +5,7 @@ tags: event
 priority: 3
 #on-arrival: 
 
-= Elections, [+ month : month +] [+ year +]
+= Saxony Landtag Elections, [+ month : month +] [+ year +]
 
 The Saxon state elections are to be held now.
 
@@ -290,4 +290,4 @@ Right Coalition (<span style="color: #3F7BC1;">**DNVP**</span> + <span style="co
   
 There are some potential coalition arrangements.
 
-@coalition_menu
+@saxony_coalition_menu
