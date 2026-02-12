@@ -56,7 +56,7 @@ for (var party of Q.parties) {
         }
     }
     // Apply adjustment factor
-    Q[party + '_support'] = party_support * saxony_adjustment_factors.party
+    Q[party + '_support'] = party_support * saxony_adjustment_factors[party];
     total_support += Q[party + '_support'];
 }
 
