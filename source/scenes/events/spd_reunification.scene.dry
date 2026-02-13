@@ -29,7 +29,7 @@ WIP
 title: The <span style="color: #8B0000;">**KPD**</span> surges in polls!
 on-arrival: {!
 Q.uspd_exist = 0;
-Q.parties.pop('uspd');
+Q.parties = Q.parties.filter(party => party !== 'uspd');
 
 Q.workers_kpd += (0.8*Q.workers_uspd);
 Q.new_middle_kpd += (0.8*Q.new_middle_uspd);
