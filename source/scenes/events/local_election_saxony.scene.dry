@@ -135,12 +135,14 @@ for (var party of Q.parties) {
 
 // coalitions
 Q.united_left_coalition_saxony = parseFloat((Q.spd_sl + Q.kpd_sl).toFixed(1));
+Q.bourgeois_coalition_saxony = parseFloat((Q.nlp_sl + Q.fvp_sl + Q.z_sl + Q.wp_sl + Q.rlb_sl).toFixed(1));
 Q.right_coalition_saxony = parseFloat((Q.dnvp_sl + Q.nlp_sl + Q.z_sl + Q.wp_sl + Q.rlb_sl).toFixed(1));
 
 
 // Reset government and ministers...
 Q.in_nlp_majority_saxony = 0;
 Q.in_united_left_coalition_saxony = 0;
+Q.in_bourgeois_coalition_saxony = 0;
 Q.in_right_coalition_saxony = 0;
 Q.in_spd_kpd_toleration_saxony = 0;
 !}
@@ -286,6 +288,8 @@ go-to: saxony_coalition_menu
 **Potential coalitions:**
 
 United Left Coalition (<span style="color: #E3000F;">**SPD**</span> + <span style="color: #8B0000;">**KPD**</span>): [+ united_left_coalition_saxony +]%
+
+Bourgeois Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #FFD800;">**FVP**</span> [? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span> ?]+ <span style="color: #000000;">**Z**</span>): [+ bourgeois_coalition_saxony +]%
 
 Right Coalition (<span style="color: #3F7BC1;">**DNVP**</span> + <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> [? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span> ?]+ <span style="color: #000000;">**Z**</span>): [+ right_coalition_saxony +]%
   
