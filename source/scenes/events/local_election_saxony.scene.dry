@@ -29,7 +29,7 @@ for (var c of Q.classes) {
 
 // Define adjustment factors
 if (Q.year == 1922) {
-    Q.adjustmentFactors_kpd_saxony = 1.1;
+    Q.adjustmentFactors_kpd_saxony = 1.15;
     Q.adjustmentFactors_spd_saxony = 1.65;
     Q.adjustmentFactors_fvp_saxony = 1.0;
     Q.adjustmentFactors_z_saxony = 0.05;
