@@ -78,7 +78,10 @@ for (let i = 0; i < remainingSeats && i < remainders.length; i++) {
     Q[party + '_seats'] += 1;
 }
 
+
 for (var party of Q.parties) {
+    Q[party + '_r'] = parseFloat((Q[party + '_seats']/Q.reichstag_size).toFixed(1));
+
     Q['change_' + party + '_votes'] = Q[party + '_election_votes'] - Q['old_' + party + '_votes'];
     var sign2 = Q['change_' + party + '_votes'] > 0 
             ? '<img src="img/arrowup.png"> ' 
