@@ -264,9 +264,7 @@ go-to: saxony_coalition_menu
 
 {!<tr><td><div class="box" style='background-color:#FFD800'> </div> !} FVP: {!</td><td>!} [+ fvp_election_votes_saxony +]% {!</td><td>!} [+ fvp_seats_saxony +] ([+ fvp_sl +]%) {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#000000'> </div> !} Z: {!</td><td>!} [+ z_minus_bvp_election_votes_saxony +]% {!</td><td>!} [+ z_minus_bvp_seats_saxony +] ([+ z_minus_bvp_sl +]%) {!</td></tr>!}
-
-{!<tr><td><div class="box" style='background-color:#69A2BE'> </div> !} BVP: {!</td><td>!} [+ bvp_election_votes_saxony +]% {!</td><td>!} [+ bvp_seats_saxony +] ([+ bvp_sl +]%) {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#000000'> </div> !} Z: {!</td><td>!} [+ z_election_votes_saxony +]% {!</td><td>!} [+ z_seats_saxony +] ([+ z_sl +]%) {!</td></tr>!}
 
 [? if wp_exist: {!<tr><td><div class="box" style='background-color:#B8996F'> </div> !} WP: {!</td><td>!} [+ wp_election_votes_saxony +]% {!</td><td>!} [+ wp_seats_saxony +] ([+ wp_sl +]%) {!</td></tr>!} ?]
 
