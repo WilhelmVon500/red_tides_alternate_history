@@ -4,7 +4,7 @@ new-page: true
 tags: event
 priority: 3
 max-visits: 1
-#on-arrival: 
+on-arrival: next_election_year_saxony = next_election_year_saxony + 4;
 
 = Saxony Landtag Elections, [+ month : month +] [+ year +]
 
@@ -296,3 +296,45 @@ Right Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span
 There are some potential coalition arrangements.
 
 @saxony_coalition_menu
+
+- @kpd_tolerates_spd
+- @bourgeois_coalition_saxony
+- @right_coalition_saxony
+- @no_majority_saxony
+
+
+
+
+@kpd_tolerates_spd
+title: The <span style="color: #8B0000;">**KPD**</span> will tolerate Wilhelm Buck's cabinet.
+subtitle: At least not a United Left government...
+view-if: united_left_coalition_saxony >= 50 and year = 1922
+on-arrival: in_spd_kpd_toleration_saxony = 1;
+
+WIP
+
+
+@bourgeois_coalition_saxony
+title: We can form a Bourgeois Coalition.
+subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #FFD800;">**FVP**</span> [? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span> ?]+ <span style="color: #000000;">**Z**</span> ([+ bourgeois_coalition_saxony +]%)
+view-if: bourgeois_coalition_saxony >= 50
+on-arrival: in_bourgeois_coalition_saxony = 1;
+
+WIP
+
+
+@right_coalition_saxony
+title: We can form a Right Coalition.
+subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #3F7BC1;">**DNVP**</span> [? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span> ?]+ <span style="color: #000000;">**Z**</span> ([+ right_coalition_saxony +]%)
+view-if: right_coalition_saxony >= 50
+on-arrival: in_right_coalition_saxony = 1;
+
+WIP
+
+
+@no_majority_saxony
+title: There is no clear governing majority.
+view-if: bourgeois_coalition_saxony < 50 and right_coalition_saxony < 50 and united_left_coalition_saxony < 50
+#on-arrival: 
+
+There is no path to a majority government for now. The current government will stay in power as a minority coalition.
