@@ -291,7 +291,7 @@ United Left Coalition (<span style="color: #E3000F;">**SPD**</span> + <span styl
 
 Bourgeois Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #FFD800;">**FVP**</span> [? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span> ?]+ <span style="color: #000000;">**Z**</span>): [+ bourgeois_coalition_saxony +]%
 
-Right Coalition (<span style="color: #3F7BC1;">**DNVP**</span> + <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> [? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span> ?]+ <span style="color: #000000;">**Z**</span>): [+ right_coalition_saxony +]%
+Right Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #3F7BC1;">**DNVP**</span> [? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span> ?]+ <span style="color: #000000;">**Z**</span>): [+ right_coalition_saxony +]%
   
 There are some potential coalition arrangements.
 
