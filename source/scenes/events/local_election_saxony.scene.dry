@@ -126,7 +126,7 @@ for (let i = 0; i < remainingSeats && i < remainders.length; i++) {
 
 
 for (var party of Q.parties) {
-    Q[party + '_sl'] = parseFloat((Q[party + '_seats']/0.96).toFixed(1));
+    Q[party + '_sl'] = parseFloat((Q[party + '_seats_saxony']/0.96).toFixed(1));
 }
 
 
