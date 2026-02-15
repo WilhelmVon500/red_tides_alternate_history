@@ -1,5 +1,5 @@
 title: Saxony Landtag Election
-view-if: year = 1922 and month = 11
+view-if: (year = next_election_year_saxony and month >= next_election_month_saxony) or (year > next_election_year_saxony)
 new-page: true
 tags: event
 priority: 3
