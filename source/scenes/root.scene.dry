@@ -302,6 +302,10 @@ Q.other_election_votes = 3.0;
 
 
 // saxony
+Q.saxony_leader = "Buck";
+Q.saxony_leader_party = "SPD";
+Q.next_election_month_saxony = 11;
+Q.next_election_year_saxony = 1922;
 
 
 
