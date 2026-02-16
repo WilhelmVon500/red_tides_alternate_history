@@ -1,5 +1,5 @@
 title: Saxony Landtag Election
-view-if: (year = next_election_year_saxony and month >= next_election_month_saxony) or (year > next_election_year_saxony)
+view-if: (year = next_election_year_saxony and month >= next_election_month_saxony and not weeks_enabled) or (year = next_election_year_saxony and month >= next_election_month_saxony and week >= next_election_week_saxony) or (year > next_election_year_saxony)
 new-page: true
 tags: event
 priority: 3
