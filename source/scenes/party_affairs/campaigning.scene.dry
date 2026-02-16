@@ -23,7 +23,7 @@ Whether or not we are in an electoral campaign, the party is always trying to br
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; workers_nlp += 2*(1-dissent); workers_nlp -= 1 if unemployed >= 15; workers_nlp -= 0.5 if unemployed >= 25;
+on-arrival: resources -= 1; workers_nlp += 1*(1-dissent); workers_nlp -= 1 if unemployed >= 15; workers_nlp -= 0.5 if unemployed >= 25;
 
 We have increased our campaigning among the workers.
 
