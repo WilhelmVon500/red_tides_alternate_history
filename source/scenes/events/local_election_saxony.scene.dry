@@ -298,6 +298,7 @@ There are some potential coalition arrangements.
 @saxony_coalition_menu
 
 - @kpd_tolerates_spd
+- @united_left_coalition_saxony
 - @bourgeois_coalition_saxony
 - @right_coalition_saxony
 - @no_majority_saxony
@@ -310,6 +311,15 @@ title: The <span style="color: #8B0000;">**KPD**</span> will tolerate Wilhelm Bu
 subtitle: At least not a United Left government...
 view-if: united_left_coalition_saxony >= 50 and year = 1922
 on-arrival: in_spd_kpd_toleration_saxony = 1;
+
+WIP
+
+
+@united_left_coalition_saxony
+title: The Social Democrats form a coalition with the <span style="color: #8B0000;">**KPD**</span>!
+subtitle: <span style="color: #E3000F;">**SPD**</span> + <span style="color: #8B0000;">**KPD**</span> ([+ united_left_coalition_saxony +]%)
+view-if: united_left_coalition_saxony >= 50 and year != 1922
+on-arrival: in_united_left_coalition_saxony = 1;
 
 WIP
 
