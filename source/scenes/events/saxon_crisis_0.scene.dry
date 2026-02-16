@@ -1,0 +1,23 @@
+title: Collapse of the Saxon Cabinet
+subtitle: The <span style="color: #8B0000;">**KPD**</span> initiates a motion of no confidence.
+tags: event
+view-if: year = 1923 and month = 1 and week = 4
+max-visits: 1
+
+WIP
+
+- @vonc_saxony
+
+@vonc_saxony
+title: Wilhelm Buck is ousted.
+on-arrival: workers_kpd += 3; unemployed_kpd += 3;
+
+WIP
+
+- @zeigner
+
+@zeigner
+title: Zeigner forms a new government as a compromise candidate of the left.
+on-arrival: saxony_leader = "Zeigner"; saxony_leader_party = "SPD"; spd_relation -= 3;
+
+WIP
