@@ -17,7 +17,7 @@ WIP
 - @zeigner
 
 @zeigner
-title: Zeigner forms a new government as a compromise candidate of the left.
+title: Erich Zeigner forms a new government as a compromise candidate of the left.
 on-arrival: saxony_leader = "Zeigner"; saxony_leader_party = "SPD"; spd_relation -= 3;
 
 WIP
