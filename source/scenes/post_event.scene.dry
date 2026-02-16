@@ -96,8 +96,33 @@ if (Q.dissent < 0) {
     Q.dissent = 0.95;
 }
 
+
+
+
+
+
+
+if (Q.weeks_enabled && Q.month_actions >= 1 && Q.month_actions != Q.month_actions_checked) {
+    Q.week += 1
+    if (Q.week >= 5) {
+        Q.week = 1;
+    }
+    // decrement timers
+    for (timer of Q.timers) {
+        if (Q[timer+'_timer'] && Q[timer+'_timer'] > 0) {
+            Q[timer+'_timer'] -= 1;
+        }
+    }
+}
+
+
+
+
+
+Q.month_actions_checked = Q.month_actions;
+
 // 1. update dates
-if (Q.month_actions >= 1) {
+if ((Q.month_actions >= 1 && !Q.weeks_enabled) || (Q.month_actions >= 4 && Q.weeks_enabled)) {
     Q.time += 1;
     Q.month_actions = 0;
     Q.month += 1;
@@ -108,10 +133,12 @@ if (Q.month_actions >= 1) {
             Q.resources += 2;
         }
     }
-    // decrement timers
-    for (timer of Q.timers) {
-        if (Q[timer+'_timer'] && Q[timer+'_timer'] > 0) {
-            Q[timer+'_timer'] -= 1;
+    if (!Q.weeks_enabled) {
+        // decrement timers
+        for (timer of Q.timers) {
+            if (Q[timer+'_timer'] && Q[timer+'_timer'] > 0) {
+                Q[timer+'_timer'] -= 1;
+            }
         }
     }
     // append to historical party support records
@@ -287,7 +314,7 @@ if (typeof window !== "undefined" && window.generateBar) {
 !}
 go-to: events_choice if has_event = 1; main if has_event = 0 and difficulty >= 0; main.main_easy if has_event = 0 and difficulty < 0
 
-= [+ month : month +] [+ year +]
+= [+ month : month +] [+ year +][? if weeks_enabled:, Week [+ week +]?]
 
 @events_choice
 
