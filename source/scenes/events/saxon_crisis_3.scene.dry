@@ -1,0 +1,79 @@
+title: Müller's cabinet has collapsed
+subtitle: The <span style="color: #000000;">Center Party</span> ministers resign
+tags: event
+view-if: year = 1923 and month = 3 and week = 2
+on-arrival: in_weimar_coalition = 0; spd_in_government = 0; z_in_government = 0; fvp_in_government = 0;
+max-visits: 1
+
+Following the formation of a United Left coalition in Saxony, the <span style="color: #000000;">Center Party</span> has decided to end their coalition with the <span style="color: #E3000F;">**SPD**</span>.
+
+- @our_chance: Does this mean we have a chance to be included in the next government?
+
+The <span style="color: #000000;">Center Party</span> now looks for new partners on the right, asking us to take part in forming a new cabinet, which will include the <span style="color: #3F7BC1;">**DNVP**</span>.
+
+- @refuse: Refuse to participate in such government.
+- @luther: Hans Luther
+- @hergt: Oskar Hergt
+- @wirth: Joseph Wirth
+- @marx: Wilhelm Marx
+
+
+@luther
+unavailable-subtitle: We do not have enough leverage.
+choose-if: false
+
+
+@hergt
+unavailable-subtitle: The <span style="color: #000000;">Center Party</span> doesn't want the <span style="color: #3F7BC1;">**DNVP**</span> to play a leading role.
+choose-if: false
+
+
+@wirth
+unavailable-subtitle: He is too left-wing for the <span style="color: #3F7BC1;">**DNVP**</span>.
+choose-if: false
+
+
+@refuse
+unavailable-subtitle: We are not refusing this opportunity to enter the government for the first time since 1919.
+choose-if: false
+
+
+@marx
+subtitle: Wilhelm Marx is acceptable to all parties.
+on-arrival: {!
+Q.in_right_coalition = 1;
+Q.nlp_in_government = 1;
+Q.z_in_government = 1;
+Q.dnvp_in_government = 1;
+
+Q.chancellor = "Marx";
+Q.chancellor_party = 'Z';
+Q.vice_chancellor = 'Westarp';
+Q.vice_chancellor_party = 'DNVP';
+!}
+
+All parties of the coalition can support Marx for Chancellorship. Kuno Westarp of the <span style="color: #3F7BC1;">**DNVP**</span> has been given the Vice-Chancellor position.
+
+- @government: The bigger parties don't let us choose our ministries.
+
+@government
+on-arrival: {!
+Q.foreign_minister = 'Simons';
+Q.foreign_minister_party = 'I';
+Q.interior_minister = 'Jarres';
+Q.interior_minister_party = nlp_name;
+Q.justice_minister = 'Marx';
+Q.justice_minister_party = 'Z';
+Q.finance_minister = 'Moldenhauer';
+Q.finance_minister_party = nlp_name;
+Q.economic_minister = 'Hermes';
+Q.economic_minister_party = 'Z';
+Q.labor_minister = 'Brauns';
+Q.labor_minister_party = 'Z';
+Q.agriculture_minister = 'Schiele';
+Q.agriculture_minister_party = 'DNVP';
+Q.reichswehr_minister = 'Seeckt';
+Q.reichswehr_minister_party = 'I';
+!}
+
+Unfortunately, the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> is too small to dictate its terms to leading partners. We have been given Finance and Interior ministries.
