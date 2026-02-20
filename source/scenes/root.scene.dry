@@ -264,9 +264,9 @@ Q.z_seats = 83;
 Q.z_minus_bvp_seats = 65;
 Q.bvp_seats = 18;
 Q.nlp_seats = 60;
-Q.wp_seats = 0;
+Q.wp_seats = 3;
 Q.rlb_seats = 0;
-Q.dnvp_seats = 67;
+Q.dnvp_seats = 64;
 Q.dap_seats = 0;
 Q.other_seats = 11;
 
@@ -278,9 +278,9 @@ Q.z_r = 18.1;
 Q.z_minus_bvp_r = 14.2;
 Q.bvp_r = 3.9;
 Q.nlp_r = 13.1;
-Q.wp_r = 0;
+Q.wp_r = 0.7;
 Q.rlb_r = 0;
-Q.dnvp_r = 14.6;
+Q.dnvp_r = 13.9;
 Q.dap_r = 0;
 Q.other_r = 2.3;
 
