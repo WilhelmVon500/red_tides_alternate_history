@@ -9,6 +9,7 @@ Following the formation of a United Left coalition in Saxony, the <span style="c
 
 - @our_chance: Does this mean we have a chance to be included in the next government?
 
+@our_chance
 The <span style="color: #000000;">Center Party</span> now looks for new partners on the right, asking us to take part in forming a new cabinet, which will include the <span style="color: #3F7BC1;">**DNVP**</span>.
 
 - @refuse: Refuse to participate in such government.
@@ -22,21 +23,17 @@ The <span style="color: #000000;">Center Party</span> now looks for new partners
 unavailable-subtitle: We do not have enough leverage.
 choose-if: false
 
-
 @hergt
 unavailable-subtitle: The <span style="color: #000000;">Center Party</span> doesn't want the <span style="color: #3F7BC1;">**DNVP**</span> to play a leading role.
 choose-if: false
-
 
 @wirth
 unavailable-subtitle: He is too left-wing for the <span style="color: #3F7BC1;">**DNVP**</span>.
 choose-if: false
 
-
 @refuse
 unavailable-subtitle: We are not refusing this opportunity to enter the government for the first time since 1919.
 choose-if: false
-
 
 @marx
 subtitle: Wilhelm Marx is acceptable to all parties.
@@ -64,10 +61,10 @@ Q.interior_minister = 'Jarres';
 Q.interior_minister_party = nlp_name;
 Q.justice_minister = 'Marx';
 Q.justice_minister_party = 'Z';
-Q.finance_minister = 'Moldenhauer';
-Q.finance_minister_party = nlp_name;
-Q.economic_minister = 'Hermes';
-Q.economic_minister_party = 'Z';
+Q.finance_minister = 'Erzberger';
+Q.finance_minister_party = 'Z';
+Q.economic_minister = 'Cuno';
+Q.economic_minister_party = nlp_name;
 Q.labor_minister = 'Brauns';
 Q.labor_minister_party = 'Z';
 Q.agriculture_minister = 'Schiele';
@@ -76,4 +73,4 @@ Q.reichswehr_minister = 'Seeckt';
 Q.reichswehr_minister_party = 'I';
 !}
 
-Unfortunately, the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> is too small to dictate its terms to leading partners. We have been given Finance and Interior ministries.
+Unfortunately, the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> is too small to dictate its terms to leading partners. We have been given Economic and Interior ministries.
