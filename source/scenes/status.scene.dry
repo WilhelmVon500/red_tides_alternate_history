@@ -33,7 +33,7 @@ President: [+ president +] ([?if president_party == "SPD": <span style="color: #
 
 Chancellor: [+ chancellor +] ([?if chancellor_party == "SPD": <span style="color: #E3000F;">**SPD**</span>?][?if chancellor_party == "Z": <span style="color: #000000;">**Z**</span>?])
 
-Vice-Chancellor: [+ vice_chancellor +] ([?if vice_chancellor_party == "Z": <span style="color: #000000;">**Z**</span>?])
+Vice-Chancellor: [+ vice_chancellor +] ([?if vice_chancellor_party == "Z": <span style="color: #000000;">**Z**</span>?][?if vice_chancellor_party == "DNVP": <span style="color: #3F7BC1;">**DNVP**</span>?])
 
 Reichstag composition:
 
