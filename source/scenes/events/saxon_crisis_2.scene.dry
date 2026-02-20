@@ -1,7 +1,7 @@
 title: Müller's cabinet has collapsed
 subtitle: The <span style="color: #000000;">Center Party</span> ministers resign
 tags: event
-view-if: year = 1923 and month = 3 and week = 2
+view-if: year = 1923 and month = 3 and week = 1
 on-arrival: in_weimar_coalition = 0; spd_in_government = 0; z_in_government = 0; fvp_in_government = 0;
 max-visits: 1
 
