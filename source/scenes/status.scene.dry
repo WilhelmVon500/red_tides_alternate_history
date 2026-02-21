@@ -53,7 +53,7 @@ Reichstag composition:
 
 [? if wp_exist: {!<span class="tooltip-text" title="Economic Party" style="color: #B8996F;">!}**WP**{!</span>!}: [+ wp_seats +] ([+ wp_r +]%) ?]
 
-[? if rlb_exist: {!<span class="tooltip-text" title="Imperial Rural League" style="color: #52AE6F;">!}**RLB**{!</span>!}: [+ rlb_seats +] ([+ rlb_r +]%) ?]
+[? if rlb_exist: {!<span class="tooltip-text" title="National Rural League" style="color: #52AE6F;">!}**RLB**{!</span>!}: [+ rlb_seats +] ([+ rlb_r +]%) ?]
 
 {!<span class="tooltip-text" title="German National People's Party" style="color: #3F7BC1;">!}**DNVP**{!</span>!}: [+ dnvp_seats +] ([+ dnvp_r +]%)
 
@@ -96,7 +96,7 @@ Reichsbank President: [+ reichsbank_president +] ([?if reichsbank_president_part
 
 [? if wp_exist: {!<span class="tooltip-text" title="Economic Party" style="color: #B8996F;">!}**WP**{!</span>!}: [+ wp_relation : relationships +] ?]
 
-[? if rlb_exist: {!<span class="tooltip-text" title="Imperial Rural League" style="color: #52AE6F;">!}**RLB**{!</span>!}: [+ rlb_relation : relationships +] ?]
+[? if rlb_exist: {!<span class="tooltip-text" title="National Rural League" style="color: #52AE6F;">!}**RLB**{!</span>!}: [+ rlb_relation : relationships +] ?]
 
 {!<span class="tooltip-text" title="German National People's Party" style="color: #3F7BC1;">!}**DNVP**{!</span>!}: [+ dnvp_relation : relationships +]
 
@@ -118,7 +118,7 @@ Reichsbank President: [+ reichsbank_president +] ([?if reichsbank_president_part
 
 [? if wp_exist: {!<span class="tooltip-text" title="Economic Party" style="color: #B8996F;">!}**WP**{!</span>!}: Liberal Conservatism (Drewitz) ?]
 
-[? if rlb_exist: {!<span class="tooltip-text" title="Imperial Rural League" style="color: #52AE6F;">!}**RLB**{!</span>!}: Agrarian Conservatism (Hepp) ?]
+[? if rlb_exist: {!<span class="tooltip-text" title="National Rural League" style="color: #52AE6F;">!}**RLB**{!</span>!}: Agrarian Conservatism (Hepp) ?]
 
 {!<span class="tooltip-text" title="German National People's Party" style="color: #3F7BC1;">!}**DNVP**{!</span>!}: National Conservatism (Westarp)
 
