@@ -150,7 +150,7 @@ Foreign: [+ foreign_minister +] ([?if foreign_minister_party=="I":<span style="c
 
 Interior: [+ interior_minister +] ([?if interior_minister_party=="I":<span style="color: #808080;">**I**</span>?][?if interior_minister_party=="Z":<span style="color: #000000;">**Z**</span>?][?if interior_minister_party==nlp_name:<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?])
 
-Justice: [+ justice_minister +] ([?if justice_minister_party=="I":<span style="color: #808080;">**I**</span>?][?if justice_minister_party=="Z":<span style="color: #000000;">**Z**</span>?])
+Justice: [+ justice_minister +] ([?if justice_minister_party=="I":<span style="color: #808080;">**I**</span>?][?if justice_minister_party=="FVP":<span style="color: #FFD800;">**FVP**</span>?][?if justice_minister_party=="Z":<span style="color: #000000;">**Z**</span>?])
 
 Finance: [+ finance_minister +] ([?if finance_minister_party=="I":<span style="color: #808080;">**I**</span>?][?if finance_minister_party=="Z":<span style="color: #000000;">**Z**</span>?])
 
