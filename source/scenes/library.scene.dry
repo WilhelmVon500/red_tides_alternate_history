@@ -185,27 +185,41 @@ Catholics: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>: [+ 
 @parties
 go-to: menu
 
+**NLP** - *Nationalliberale Partei* (National Liberal Party) - this is us. Born from the interests of business and the industrialists during the German Empire, we have endured the Empire’s collapse and reformation into a Republic. We are the party of a rational and sovereign Weimar Republic, guided by the example set by our party’s current leader: Gustav Stresemann. We are the Republic’s rightmost shield, but the ongoing hyperinflation crisis has gravely shaken the minds of many party members, seeing it necessary to lean into more right-leaning policies and rhetoric to attract disaffected voters.
+
 **KPD** - *Kommunistische Partei Deutschlands* (German Communist Party) - a radical left-wing offshoot of the SPD that emerged in the aftermath of the German Revolution of 1918, they follow the path of Moscow, opposing parliamentary democracy in favor of a Soviet-style revolution.
 
 Current relations: [+ kpd_relation : relationships +]
 
-**SPD** - *Sozialdemokratische Partei Deutschlands* (Social Democratic Party of Germany) - WIP
+[? if uspd_exist: **USPD** - *Unabhängige Sozialdemokratische Partei Deutschlands* (Independent Social Democratic Party of Germany) - a left-wing to far-left Marxist party, formed after the SPD’s pro-war declaration in WW1 by the pacifist and internationalist wings. Vying for the working classes in the same vein as their more reformist counterparts, the USPD has recently experienced a period of reconciliation with the SPD, and are increasingly warming up to the idea of unifying the Social Democrats. ?]
+
+[? if uspd_exist: Current relations: [+ uspd_relation : relationships +] ?]
+
+**SPD** - *Sozialdemokratische Partei Deutschlands* (Social Democratic Party of Germany) - [? if uspd_exist: a rump left-wing socialist party composed of the SPD’s reformists, ‘center marxists’ and moderate labour unions. The self-proclaimed Defenders of the Republic, they have turned towards a doctrine of measured cooperation with Zentrum and the FVP. In recent months, tensions between the splinter USPD and the SPD have diminished, and talks of reunification have borne fruit. ?][? if not uspd_exist: a left-wing socialist party which recently reunified with the pacifist USPD. With their recent merger, the SPD has once again taken its place as the dominant party of the working class and of the Republic they helped to shape. While they maintain their cooperation with Z and the FVP, their leftist wing’s pressure on the party leadership has made them less willing to compromise with bourgeois parties such as us. ?]
 
 Current relations: [+ spd_relation : relationships +]
-
-**Z** - *Zentrumspartei* (Center Party) - WIP
-
-Current relations: [+ z_relation : relationships +]
 
 **FVP** - *Fortschrittliche Volkspartei* (Progressive People’s Party) - a center-left party brought by the merger of various left-liberal parties. Their voter base consists of the intelligentsia and white collar workers, often overlapping with our own base. While the idea of merging the two Liberal parties has been passed around, both we and the FVP are content with the current state of affairs.
 
 Current relations: [+ fvp_relation : relationships +]
 
+**Z** - *Zentrumspartei* (Center Party) - WIP
+
+Current relations: [+ z_relation : relationships +]
+
+[? if wp_exist: **WP** - *Wirtschaftspartei* (Economic Party) - WIP. ?]
+
+[? if wp_exist: Current relations: [+ wp_relation : relationships +] ?]
+
+[? if rlb_exist: **RLB** - *Reichslandbund* (National Rural League) - WIP. ?]
+
+[? if rlb_exist: Current relations: [+ rlb_relation : relationships +] ?]
+
 **DNVP** - *Deutschnationale Volkspartei* (German National People's Party) - a right-wing nationalist-conservative party, with authoritarian, monarchist, and racist elements. It is supported by the former aristocracy, rural landowners, and conservative Lutherans.
 
 Current relations: [+ dnvp_relation : relationships +]
 
-**DAP** - *Deutsche Arbeiterpartei* - (German Worker's Party) - WIP
+**DAP** - *Deutsche Arbeiterpartei* - (German Worker's Party) - a far-right National Volkisch party established in the wake of the Kaiserreich’s collapse. Groups and parties supportive of the Volkisch movement have usually been a fringe force in German politics, but the recent surge in revanchism amongst disaffected veterans and nationalists, coupled with the growing hyperinflation crisis has left a niche for the DAP to exploit and thrive. Though minuscule for now, they could become a nuisance if the Republic’s decay which feeds its growth goes uninterrupted for too long.
 
 Current relations: [+ dap_relation : relationships +]
 
@@ -239,7 +253,7 @@ Strength: [+ sh_strength +] thousand
 
 Militarization: [+ sh_militancy : militancy +]
 
-**Sturmabteilung (SA)**: This is the nazi paramilitary group.
+**Sturmabteilung (SA)**: This is the far-right paramilitary group.
 
 Strength: [+ sa_strength +] thousand
 
