@@ -1,0 +1,68 @@
+title: Questions of Ideology
+new-page: true
+is-card: true
+tags: party_affairs
+view-if: ideology_timer = 0
+on-arrival: month_actions += 1; old_ideology = ideology; ideology_timer = 18
+card-image: img/nlp_founders.jpg
+
+= Questions of Ideology
+
+The <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> is torn between many different ideological currents. What should be our primary ideological guidance for now?
+
+[? if ideology != 0 : We have previously chosen a [+ ideology +] ideology. Changing it will likely have drawbacks. ?]
+
+- @left_stresemannite: Left-wing Stresemannite.
+- @right_stresemannite: Right-wing Stresemannite.
+- @labor: Labor.
+- @industrialist: Industrialist.
+- @easy_discard
+
+@left_stresemannite
+on-arrival: {!
+if (Q.ideology && Q.ideology != "Left-wing Stresemannite") {
+    Q.changed = 1;
+}
+!}
+go-to: changed if changed = 1
+on-departure: ideology = "Left-wing Stresemannite"; left_stresemannite_strength += 10; left_stresemannite_dissent -= 5; spd_relation += 3; dnvp_relation -= 5;
+
+WIP.
+
+@right_stresemannite
+on-arrival: {!
+if (Q.ideology && Q.ideology != "Right-wing Stresemannite") {
+    Q.changed = 1;
+}
+!}
+go-to: changed if changed = 1
+on-departure: ideology = "Right-wing Stresemannite"; right_stresemannite_strength += 10; right_stresemannite_dissent -= 10; left_stresemannite_dissent -= 5;
+
+WIP.
+
+@labor
+on-arrival: {!
+if (Q.ideology && Q.ideology != "labor") {
+    Q.changed = 1;
+}
+!}
+go-to: changed if changed = 1
+on-departure: ideology = "labor"; labor_strength += 10; labor_dissent -= 5;
+
+WIP.
+
+@industrialist
+on-arrival: {!
+if (Q.ideology && Q.ideology != "industrialist") {
+    Q.changed = 1;
+}
+!}
+go-to: changed if changed = 1
+on-departure: ideology = "industrialist"; industrialist_strength += 10; industrialist_dissent -= 5; spd_relation -= 3;
+
+WIP.
+
+@changed
+on-arrival: left_stresemannite_dissent += 5; right_stresemannite_dissent += 5; labor_dissent += 5; industrialist_dissent += 5
+
+We have changed ideologies. Many in the party feel unmoored.
