@@ -405,6 +405,7 @@ Q.n_advisors = 3;
 // most party affairs and government affairs cards are on a timer.
 Q.timers = ['advisor_action', 'shuffle_leadership', 'inter_party_relationships',
             'enemies', 'fundraising', 'schild', 'party_organizations',
+            'ideology',
             // govt
             'fiscal_policy',
             // events
@@ -417,6 +418,7 @@ Q.enemies_timer = 0;
 Q.fundraising_timer = 0;
 Q.schild_timer = 0;
 Q.party_organizations_timer = 0;
+Q.ideology_timer = 0;
 // government affairs timers
 Q.fiscal_policy_timer = 0;
 // event timers
