@@ -12,10 +12,10 @@ The <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> is torn bet
 
 [? if ideology != 0 : We have previously chosen a [+ ideology +] ideology. Changing it will likely have drawbacks. ?]
 
-- @left_stresemannite: Left-wing Stresemannite.
-- @right_stresemannite: Right-wing Stresemannite.
-- @labor: Labor.
-- @industrialist: Industrialist.
+- @left_stresemannite: The party should emphasize Stresemann’s spirit of pragmatic cooperation between the Weimar Parties and us.
+- @right_stresemannite: The party should emphasize Stresemann’s nationalistic zeal whilst maintaining the status of Republican by Reason.
+- @labor: We must pursue the idea of the Volksgemeinschaft, poaching nationalistic elements of the worker’s movement.
+- @industrialist: Our contacts with big business should be deepened, the industrial magnates need a party to represent them.
 - @easy_discard
 
 @left_stresemannite
@@ -27,7 +27,7 @@ if (Q.ideology && Q.ideology != "Left-wing Stresemannite") {
 go-to: changed if changed = 1
 on-departure: ideology = "Left-wing Stresemannite"; left_stresemannite_strength += 10; left_stresemannite_dissent -= 5; spd_relation += 3; dnvp_relation -= 5;
 
-WIP.
+Our party has largely survived thanks to the efforts of our party leader, Gustav Stresemann. A key element in his leadership has been a spirit of pragmatism towards the traditionally republican parties of the <span style="color: #E3000F;">**SPD**</span>, <span style="color: #000000;">**Z**</span>, and the <span style="color: #FFD800;">**FVP**</span>; we should continue to work with the Weimar Parties if it furthers our interests.
 
 @right_stresemannite
 on-arrival: {!
@@ -38,7 +38,7 @@ if (Q.ideology && Q.ideology != "Right-wing Stresemannite") {
 go-to: changed if changed = 1
 on-departure: ideology = "Right-wing Stresemannite"; right_stresemannite_strength += 10; right_stresemannite_dissent -= 10; left_stresemannite_dissent -= 5;
 
-WIP.
+Our party has largely survived thanks to the efforts of our party leader, Gustav Stresemann. With him at the helm, he has consistently shown himself to be an ardent nationalist with a more compromising approach to politics compared to the <span style="color: #3F7BC1;">**DNVP**</span>; emulating his steady yet flexible style of governance will further cement the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> as the Party of Reason.
 
 @labor
 on-arrival: {!
@@ -49,7 +49,7 @@ if (Q.ideology && Q.ideology != "labor") {
 go-to: changed if changed = 1
 on-departure: ideology = "labor"; labor_strength += 10; labor_dissent -= 5;
 
-WIP.
+The simmering discontent brought by the German Empire’s defeat in WW1 [? if uspd_exist: and the splintering of the <span style="color: #E3000F;">**SPD**</span>’s dominance ?] has opened a path for more right-leaning movements to gain traction amongst the working classes. Some of our own party members — particularly those who are also part of the DHV (German National Association of Commercial Employees), and led by a relative newcomer in Otto Thiel — have begun calling for a greater focus on the worker in our party manifesto.
 
 @industrialist
 on-arrival: {!
@@ -60,7 +60,7 @@ if (Q.ideology && Q.ideology != "industrialist") {
 go-to: changed if changed = 1
 on-departure: ideology = "industrialist"; industrialist_strength += 10; industrialist_dissent -= 5; spd_relation -= 3;
 
-WIP.
+The <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has had a special mutually beneficial relationship with the classes of industrial magnates and small business owners since its creation, one which has become somewhat strained with Stresemann’s stance of cautious acceptance towards the Weimar Republic. By secretly holding meetings with business owners, and accepting some “gifts” in exchange for policies more favourable for business, we can maintain their trust and funding.
 
 @changed
 on-arrival: left_stresemannite_dissent += 5; right_stresemannite_dissent += 5; labor_dissent += 5; industrialist_dissent += 5
