@@ -21,7 +21,9 @@ In our media and campaign materials, who should we consider as our main opponent
 @anti_dem
 on-arrival: enemies = "anti-democratic parties"; new_middle_kpd -= 2; new_middle_dap -= 2; old_middle_kpd -= 2; old_middle_dap -= 2; dap_relation -= 5; kpd_relation -= 5;
 
-WIP
+Most of the party applauds our antagonist attitude towards potential threats to democracy, aside from a few outspoken nationalists with little standing within the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>.
+[? if kpd_votes + dap_votes < 9.3: However, with the perceived lack of public support for the staunchly anti-democratic parties in the eyes of the electorate, this line of attack falls flat and is mainly seen as an attempt to fear monger. ?]
+[? if kpd_votes + dap_votes >= 9.3: With the <span style="color: #8B0000;">**KPD**</span> and <span style="color: #096300;">**DAP**</span> beginning to emerge as forces of agitation against the Republic, many civil servants and petite bourgeoisie have turned to us as a force of stability. ?]
 
 @dap
 on-arrival: enemies = "DAP"; new_middle_dap -= 3; old_middle_dap -= 3; rural_dap -= 2; dap_relation -= 5;
@@ -36,4 +38,4 @@ WIP
 @socialist
 on-arrival: enemies = "socialist parties"; workers_kpd -= 2; workers_uspd -= 2; workers_spd -= 2; spd_relation -= 5; uspd_relation -= 5; kpd_relation -= 5; coalition_dissent += 1 if nlp_in_government and spd_in_government;
 
-WIP
+Attacks on the <span style="color: #8B0000;">**KPD**</span> are supported by all; the <span style="color: #8B0000;">**KPD**</span> is despised by the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> and right. The attacks upon the democratic <span style="color: #E3000F;">**SPD**</span>, however, have drawn criticism from the left of our party and may make it harder for our parties to reconcile.
