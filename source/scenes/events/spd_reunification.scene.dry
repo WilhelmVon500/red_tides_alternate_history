@@ -4,7 +4,7 @@ tags: event
 view-if: year = 1922 and month = 9
 max-visits: 1
 
-WIP
+From the onset of WW1 and the <span style="color: #E3000F;">**SPD**</span>’s subsequent splitting due to conflicts between the pacifist Independents and the ‘social patriotic’ party leadership, the <span style="color: #D47B9B;">**USPD**</span> and <span style="color: #E3000F;">**SPD**</span> have often clashed. Many times has the <span style="color: #D47B9B;">**USPD**</span> accused the <span style="color: #E3000F;">**SPD**</span> of being traitors to the cause of a proper Republic without the tethers of the old guard, ever since the <span style="color: #E3000F;">**SPD**</span>’s role in the November Revolution was mired with compromise towards the reactionary remnants. However, the tides have begun to shift; the <span style="color: #D47B9B;">**USPD**</span>’s policy of rejecting bourgeois cooperation has become more of a liability, with the <span style="color: #E3000F;">**SPD**</span>’s attempted efforts in stabilizing the Republic legitimizing their position. Additionally, the original reason for the <span style="color: #D47B9B;">**USPD**</span>’s split — the <span style="color: #E3000F;">**SPD**</span>’s support for participation in WW1 — has largely been overshadowed by their common interests in negotiating with the Entente nations to lower reparations along with the threat brought by the assassination of Walther Rathenau, a prominent Jewish industrialist known for presiding over the Treaty of Rapallo. Thus, after months of negotiations between the two parties, the <span style="color: #E3000F;">**SPD**</span> has finally reunified. 
 
 - @reunification
 
@@ -21,7 +21,7 @@ Q.spd_seats = Math.round(Q.spd_seats + 67);
 Q.spd_r = parseFloat((Q.spd_r += 14.6).toFixed(1));
 !}
 
-WIP
+With most of the delegates from the <span style="color: #D47B9B;">**USPD**</span> and their affiliated labour unions accepting the final decision of the <span style="color: #E3000F;">**SPD**</span>, the merger goes through smoothly. Arthur Crispien and Hermann Müller, along with various leaders from both parties attend the unification congress, marking the end of the <span style="color: #D47B9B;">**USPD**</span> as a major competitor to the <span style="color: #E3000F;">**SPD**</span>’s influence over the working class. The few who don’t join, belonging to an internal clique of Moscow-sympathetic Independents, leave to join the <span style="color: #8B0000;">**KPD**</span>, and a tiny minority opt to remain in the <span style="color: #D47B9B;">**USPD**</span>, essentially presiding over the party’s rotting corpse.
 
 - @voters
 
@@ -51,6 +51,11 @@ Q.old_middle_uspd = 0;
 Q.rural_uspd = 0;
 Q.unemployed_uspd = 0;
 Q.catholics_uspd = 0;
+
+
+Q.workers_dap += 2;
+Q.unemployed_dap += 3;
 !}
 
-WIP
+The end of the <span style="color: #D47B9B;">**USPD**</span> has left the more radical workers with two choices to vote on, and the <span style="color: #8B0000;">**KPD**</span> has capitalized on this opportunity. By agitating against the Republic for its inability to deal with the current hyperinflation crisis, much of the former <span style="color: #D47B9B;">**USPD**</span>’s voters look to the <span style="color: #8B0000;">**KPD**</span> as the only viable alternative to the more establishment-friendly <span style="color: #E3000F;">**SPD**</span>. Interestingly, the <span style="color: #096300;">**DAP**</span> has also begun to rail against the Republic, blaming the detached liberal democracy and perceived abandonment of national pride and values for its current position. Most do not listen, but a few are lured by their slogans.
+
