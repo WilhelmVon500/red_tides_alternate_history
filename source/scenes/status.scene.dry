@@ -37,29 +37,29 @@ Vice-Chancellor: [+ vice_chancellor +] ([?if vice_chancellor_party == "Z": <span
 
 Reichstag composition:
 
-{!<span class="tooltip-text" title="National Liberal Party" style="color: var(--nlp-color);">!}**NLP**{!</span>!}: **[+ nlp_seats +]** **([+ nlp_r +]%)**
+{!<span class="tooltip-text" title="National Liberal Party" style="color: var(--nlp-color);">!}**NLP**{!</span>!}: **[+ nlp_seats +] seats ([+ nlp_r +]%)**
 
-{!<span class="tooltip-text" title="Communist Party of Germany" style="color: #8B0000;">!}**KPD**{!</span>!}: [+ kpd_seats +] ([+ kpd_r +]%)
+{!<span class="tooltip-text" title="Communist Party of Germany" style="color: #8B0000;">!}**KPD**{!</span>!}: [+ kpd_seats +] seats ([+ kpd_r +]%)
 
-[? if uspd_exist: {!<span class="tooltip-text" title="Independent Social Democratic Party of Germany" style="color: #D47B9B;">!}**USPD**{!</span>!}: [+ uspd_seats +] ([+ uspd_r +]%) ?]
+[? if uspd_exist: {!<span class="tooltip-text" title="Independent Social Democratic Party of Germany" style="color: #D47B9B;">!}**USPD**{!</span>!}: [+ uspd_seats +] seats ([+ uspd_r +]%) ?]
 
-{!<span class="tooltip-text" title="Social Democratic Party of Germany" style="color: #E3000F;">!}**SPD**{!</span>!}: [+ spd_seats +] ([+ spd_r +]%)
+{!<span class="tooltip-text" title="Social Democratic Party of Germany" style="color: #E3000F;">!}**SPD**{!</span>!}: [+ spd_seats +] seats ([+ spd_r +]%)
 
-{!<span class="tooltip-text" title="Progressive People's Party" style="color: #FFD800;">!}**FVP**{!</span>!}: [+ fvp_seats +] ([+ fvp_r +]%)
+{!<span class="tooltip-text" title="Progressive People's Party" style="color: #FFD800;">!}**FVP**{!</span>!}: [+ fvp_seats +] seats ([+ fvp_r +]%)
 
-<span class="tooltip-text" title="Center Party" style="color: #000000;">**Z**</span>: [+ z_minus_bvp_seats +] ([+ z_minus_bvp_r +]%)
+<span class="tooltip-text" title="Center Party" style="color: #000000;">**Z**</span>: [+ z_minus_bvp_seats +] seats ([+ z_minus_bvp_r +]%)
 
-<span class="tooltip-text" title="Bavarian People's Party" style="color: #69A2BE;">**BVP**</span>: [+ bvp_seats +] ([+ bvp_r +]%)
+<span class="tooltip-text" title="Bavarian People's Party" style="color: #69A2BE;">**BVP**</span>: [+ bvp_seats +] seats ([+ bvp_r +]%)
 
-[? if wp_exist: {!<span class="tooltip-text" title="Economic Party" style="color: #B8996F;">!}**WP**{!</span>!}: [+ wp_seats +] ([+ wp_r +]%) ?]
+[? if wp_exist: {!<span class="tooltip-text" title="Economic Party" style="color: #B8996F;">!}**WP**{!</span>!}: [+ wp_seats +] seats ([+ wp_r +]%) ?]
 
-[? if rlb_exist: {!<span class="tooltip-text" title="National Rural League" style="color: #52AE6F;">!}**RLB**{!</span>!}: [+ rlb_seats +] ([+ rlb_r +]%) ?]
+[? if rlb_exist: {!<span class="tooltip-text" title="National Rural League" style="color: #52AE6F;">!}**RLB**{!</span>!}: [+ rlb_seats +] seats ([+ rlb_r +]%) ?]
 
-{!<span class="tooltip-text" title="German National People's Party" style="color: #3F7BC1;">!}**DNVP**{!</span>!}: [+ dnvp_seats +] ([+ dnvp_r +]%)
+{!<span class="tooltip-text" title="German National People's Party" style="color: #3F7BC1;">!}**DNVP**{!</span>!}: [+ dnvp_seats +] seats ([+ dnvp_r +]%)
 
-{!<span class="tooltip-text" title="German Worker's Party" style="color: #096300;">!}**DAP**{!</span>!}: [+ dap_seats +] ([+ dap_r +]%)
+{!<span class="tooltip-text" title="German Worker's Party" style="color: #096300;">!}**DAP**{!</span>!}: [+ dap_seats +] seats ([+ dap_r +]%)
 
-<span style="color: #909090;">**Others**</span>: [+ other_seats +] ([+ other_r +]%)
+<span style="color: #909090;">**Others**</span>: [+ other_seats +] seats ([+ other_r +]%)
 
 [? if nlp_in_government: Budget: [+ budget +] ?]
 
@@ -227,7 +227,7 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 (if the election were to be held now):
 
-<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>: **[+ nlp_votes +]%**
+<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>: [+ nlp_votes +]%
 
 <span style="color: #8B0000;">**KPD**</span>: [+ kpd_votes +]%
 
