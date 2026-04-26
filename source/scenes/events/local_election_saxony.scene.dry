@@ -93,12 +93,6 @@ if (new_party_sum > 0) {
     }
 }
 
-for (var party of Q.parties) {
-        if (Q[party + '_sl'] > 0) {
-            Q[party + '_seats_saxony'] = Math.round(Q[party + '_sl'] * 0.96);
-        }
-}
-
 let allocatedSeats = 0;
 let remainders = [];
 
