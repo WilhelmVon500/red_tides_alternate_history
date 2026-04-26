@@ -63,11 +63,11 @@ Vice-Chancellor: [+ vice_chancellor +] ([?if vice_chancellor_party == "Z": <span
 
 <span style="color: #909090;">**Others**</span>: [+ other_seats +] seats ([+ other_r +]%)
 
-[? if nlp_in_government: Budget: [+ budget +] ?]
-
 Next election: [+ next_election_month : month +] [+ next_election_year +]
 
 = Economics
+
+[? if nlp_in_government: Budget: [+ budget +] ?]
 
 Inflation: [+ inflation_2 +]%
 
