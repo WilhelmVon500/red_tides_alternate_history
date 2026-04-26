@@ -48,12 +48,6 @@ if (new_party_sum > 0) {
     }
 }
 
-for (var party of Q.parties) {
-        if (Q[party + '_r'] > 0) {
-            Q[party + '_seats'] = Math.round(Q[party + '_r'] * Q.reichstag_size);
-        }
-}
-
 let allocatedSeats = 0;
 let remainders = [];
 
