@@ -37,7 +37,7 @@ Chancellor: [+ chancellor +] ([?if chancellor_party == "SPD": <span style="color
 
 Vice-Chancellor: [+ vice_chancellor +] ([?if vice_chancellor_party == "Z": <span style="color: #000000;">**Z**</span>?][?if vice_chancellor_party == "DNVP": <span style="color: #3F7BC1;">**DNVP**</span>?])
 
-Reichstag composition:
+= Reichstag
 
 {!<span class="tooltip-text" title="National Liberal Party" style="color: var(--nlp-color);">!}**NLP**{!</span>!}: **[+ nlp_seats +] seats ([+ nlp_r +]%)**
 
