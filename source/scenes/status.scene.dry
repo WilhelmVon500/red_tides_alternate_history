@@ -88,7 +88,7 @@ Ideology: <span style="color: #98C22C;">National Liberalism</span>
 
 Party dues: [+ dues : funding +]
 
-Industrialist funding: [+ industrialist_funding : funding +]
+Industrialist backing: [+ industrialist_funding : funding +]
 
 Internal dissent: [+ dissent_percent : dissent +]
 
