@@ -219,6 +219,7 @@ Q.in_nlp_majority = 0;
 
 Q.coalition_dissent = 0;
 Q.minority_government = 0;
+Q.caretaker = 0;
 
 Q.vice_chancellor = 'Vacant';
 Q.vice_chancellor_party = 'I';
