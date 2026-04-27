@@ -198,8 +198,6 @@ if (Q.nlp_r >= Q.spd_r && Q.nlp_r >= Q.dap_r && Q.nlp_r >= Q.kpd_r) {
 Q.weimar_coalition = parseFloat((Q.spd_r + Q.fvp_r + Q.z_minus_bvp_r).toFixed(1));
 Q.right_coalition = parseFloat((Q.dnvp_r + Q.nlp_r + Q.z_r + Q.wp_r + Q.rlb_r).toFixed(1));
 
-Q.anti_democratic_coalition = parseFloat((Q.kpd_r + Q.dap_r + Q.dnvp_r).toFixed(1));
-
 Q.leverage = Q.nlp_r + 5;
 
 
@@ -405,8 +403,6 @@ go-to: coalition_menu
 Weimar Coalition (<span style="color: #E3000F;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #FFD800;">**FVP**</span>): [+ weimar_coalition +]%
 
 Right Coalition (<span style="color: #3F7BC1;">**DNVP**</span> + <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #69A2BE;">**BVP**</span>[? if wp_exist:  + <span style="color: #B8996F;">**WP**</span>?][? if rlb_exist:  + <span style="color: #52AE6F;">**RLB**</span>?]): [+ right_coalition +]%
-
-[? if anti_democratic_coalition >= 50 : Together, the anti-democratic KPD, DNVP, and DAP have a majority in the Reichstag. A stable governing majority will be almost impossible. ?]
 
 There are some potential coalition arrangements.
 
