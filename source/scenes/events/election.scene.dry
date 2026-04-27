@@ -196,6 +196,7 @@ if (Q.nlp_r >= Q.spd_r && Q.nlp_r >= Q.dap_r && Q.nlp_r >= Q.kpd_r) {
 
 // coalitions
 Q.weimar_coalition = parseFloat((Q.spd_r + Q.fvp_r + Q.z_minus_bvp_r).toFixed(1));
+Q.center_right_coalition = parseFloat((Q.dnvp_r + Q.nlp_r + Q.ddp_r + Q.z_r + Q.wp_r + Q.rlb_r).toFixed(1));
 Q.right_coalition = parseFloat((Q.dnvp_r + Q.nlp_r + Q.z_r + Q.wp_r + Q.rlb_r).toFixed(1));
 
 Q.leverage = Q.nlp_r + 5;
@@ -214,6 +215,7 @@ Q.kpd_in_government = 0;
 Q.dap_in_government = 0;
 
 Q.in_weimar_coalition = 0;
+Q.in_center_right_coalition = 0;
 Q.in_right_coalition = 0;
 Q.in_nlp_majority = 0;
 
@@ -405,11 +407,14 @@ Weimar Coalition (<span style="color: #E3000F;">**SPD**</span> + <span style="co
 
 Right Coalition (<span style="color: #3F7BC1;">**DNVP**</span> + <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #69A2BE;">**BVP**</span>[? if wp_exist:  + <span style="color: #B8996F;">**WP**</span>?][? if rlb_exist:  + <span style="color: #52AE6F;">**RLB**</span>?]): [+ right_coalition +]%
 
+Center-Right Coalition (<span style="color: #3F7BC1;">**DNVP**</span> + <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #69A2BE;">**BVP**</span> + <span style="color: #FFD800;">**FVP**</span>[? if wp_exist:  + <span style="color: #B8996F;">**WP**</span>?][? if rlb_exist:  + <span style="color: #52AE6F;">**RLB**</span>?]): [+ center_right_coalition +]%
+
 There are some potential coalition arrangements.
 
 @coalition_menu
 
 - @weimar_coalition
+- @right_coalition
 
 
 
@@ -428,7 +433,7 @@ Who will be the chancellor?
 - @muller_weimar_chancellor
 
 @muller_weimar_chancellor
-title: Hermann Müller for Chancellor
+title: Hermann Müller for Chancellor.
 subtitle: Müller is popular within the <span style="color: #E3000F;">**SPD**</span>, and is the preferred candidate of the <span style="color: #000000;">Center</span> and the <span style="color: #FFD800;">**FVP**</span>.
 on-arrival: chancellor = "Müller"; chancellor_party = "SPD"; vice_chancellor = "Erzberger"; vice_chancellor_party = "Z";
 
@@ -438,86 +443,133 @@ Müller's appointment as chancellor is approved by all members of the coalition.
 
 
 
+@center_right_coalition
+title: We can form a Center-Right Coalition.
+subtitle: <span style="color: #3F7BC1;">**DNVP**</span> + <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #69A2BE;">**BVP**</span> + <span style="color: #FFD800;">**FVP**</span>[? if wp_exist:  + <span style="color: #B8996F;">**WP**</span>?][? if rlb_exist:  + <span style="color: #52AE6F;">**RLB**</span>?] ([+ center_right_coalition +]%)
+view-if: center_right_coalition >= 50
+on-arrival: in_center_right_coalition = 1; nlp_in_government = 1; z_in_government = 1; dnvp_in_government = 1; foreign_minister = 'Brockdorff-Rantzau'; foreign_minister_party = 'I'; interior_minister = 'Keudell'; interior_minister_party = 'Z'; justice_minister = 'Hergt'; justice_minister_party = 'DNVP'; finance_minister = 'Köhler'; finance_minister_party = 'Z'; economic_minister = 'Hamm'; economic_minister_party = 'FVP'; labor_minister = 'Brauns'; labor_minister_party = 'Z'; agriculture_minister = 'Schiele'; agriculture_minister_party = 'DNVP'; reichswehr_minister = 'Seeckt'; reichswehr_minister_party = 'I';
+
+WIP.
+
+Who will be the chancellor?
+
+- @cuno_center_right_chancellor
+- @marx_center_right_chancellor
+
+@cuno_center_right_chancellor
+title: Wilhelm Cuno for Chancellor.
+subtitle: Wilhelm Cuno is a member of our Industrialist wing, who has reputation of a technocrat.
+on-arrival: chancellor = "Cuno"; chancellor_party = nlp_name; vice_chancellor = "Marx"; vice_chancellor_party = "Z";
+
+Cuno's appointment as chancellor is approved by all members of the coalition, due to his reputation of a technocrat.
+
+- @ministries: First, we must select our ministries.
+
+@marx_center_right_chancellor
+title: Wilhelm Marx for Chancellor.
+subtitle: Wilhelm Marx is a.
+on-arrival: chancellor = "Marx"; chancellor_party = "Z"; vice_chancellor = "Westarp"; vice_chancellor_party = "DNVP";
+
+Marx's appointment as chancellor is approved by all members of the coalition, due to his reputation of a politician of compromise.
+
+- @ministries: First, we must select our ministries.
+
+
+
+
+
   
 
 @ministries
 
-We can pick from any number of ministries. Controlling a ministry allows us to directly effect policy in that area. [? if in_left_front : Any ministry that we do not take will be given to the KPD. ?] [? if in_left_front and reichswehr_minister_party == "KPD" : If the KPD controls the Reichswehr Ministry, the army will most likely revolt. ?]
+We can pick from any number of ministries. Controlling a ministry allows us to directly effect policy in that area.
 
-- #mins_1928
-- #drop_mins_1928
+- #mins_1922
+- #drop_mins_1922
+
+@vice_chancellor
+title: Vice-Chancellorship
+subtitle: WIP.
+unavailable-subtitle: We do not have enough leverage.
+tags: mins_1922
+choose-if: leverage >= 10
+view-if: vice_chancellor != nlp_name
+on-arrival: leverage -= 10; vice_chancellor_party = nlp_name; vice_chancellor = "TBD"
+go-to: ministries
+
+TBD of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Vice-Chancellor.
 
 @labor
 title: Labor Ministry
 subtitle: Taking the Labor Ministry is expected of us.
 unavailable-subtitle: We do not have enough leverage.
-tags: mins_1928
+tags: mins_1922
 choose-if: leverage >= 5
-view-if: labor_minister_party != "SPD"
-on-arrival: leverage -= 5; labor_minister_party = "SPD"; labor_minister = "Wissell"
+view-if: labor_minister_party != nlp_name
+on-arrival: leverage -= 5; labor_minister_party = nlp_name; labor_minister = "Thiel"
 go-to: ministries
 
-Rudolf Wissell of the SPD has been appointed labor minister.
+Otto Thiel of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Labor Minister.
 
 @interior
 title: Interior Ministry
 subtitle: Taking the Interior Ministry is expected of us. The Interior Ministry controls domestic security.
 unavailable-subtitle: We do not have enough leverage.
-tags: mins_1928
+tags: mins_1922
 choose-if: leverage >= 5
-view-if: interior_minister_party != "SPD"
-on-arrival: leverage -= 5; interior_minister_party = "SPD"; interior_minister = "Severing"
+view-if: interior_minister_party != nlp_name
+on-arrival: leverage -= 5; interior_minister_party = nlp_name; interior_minister = "Jarres"
 go-to: ministries
 
-Carl Severing of the SPD has been appointed Interior Minister.
+Karl Jarres of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Interior Minister.
 
 @finance
 title: Finance Ministry
 subtitle: The Finance Ministry controls the government budget and taxes.
 unavailable-subtitle: We do not have enough leverage.
-tags: mins_1928
+tags: mins_1922
 choose-if: leverage >= 10 
-view-if: finance_minister_party != "SPD"
-on-arrival: leverage -= 10; finance_minister_party = "SPD"; finance_minister = "Hilferding"
+view-if: finance_minister_party != nlp_name
+on-arrival: leverage -= 10; finance_minister_party = nlp_name; finance_minister = "Moldenhauer"
 go-to: ministries
 
-Rudolf Hilferding of the SPD has been appointed Finance Minister.
+Paul Moldenhauer of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Finance Minister.
 
 @economic
 title: Economic Ministry
 subtitle: The Economic Ministry controls broader economic policy.
 unavailable-subtitle: We do not have enough leverage.
-tags: mins_1928
+tags: mins_1922
 choose-if: leverage >= 10 
-view-if: economic_minister_party != "SPD"
-on-arrival: leverage -= 10; economic_minister_party = "SPD"; economic_minister = "Schmidt"
+view-if: economic_minister_party != nlp_name
+on-arrival: leverage -= 10; economic_minister_party = nlp_name; economic_minister = "Raumer"
 go-to: ministries
 
-Robert Schmidt of the SPD has been appointed Economic Minister.
+Hans Raumer of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Economic Minister.
 
 @justice
 title: Justice Ministry
 subtitle: The Justice Ministry controls the courts.
 unavailable-subtitle: We do not have enough leverage.
-tags: mins_1928
+tags: mins_1922
 choose-if: leverage >= 10 
-view-if: justice_minister_party != "SPD"
-on-arrival: leverage -= 10; justice_minister_party = "SPD"; justice_minister = "Radbruch"
+view-if: justice_minister_party != nlp_name
+on-arrival: leverage -= 10; justice_minister_party = nlp_name; justice_minister = "Heinze"
 go-to: ministries
 
-Gustav Radbruch of the SPD has been appointed Justice Minister.
+Rudolf Heinze of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Justice Minister.
 
 @foreign
 title: Foreign Ministry
-subtitle: This is usually the domain of Gustav Stresemann of the DVP.
+subtitle: The Foreign Ministry controls our foreign relations.
 unavailable-subtitle: We do not have enough leverage.
-tags: mins_1928
+tags: mins_1922
 choose-if: leverage >= 10 
-view-if: foreign_minister_party != "SPD"
-on-arrival: leverage -= 10; foreign_minister_party = "SPD"; foreign_minister = "Breitscheid"
+view-if: foreign_minister_party != nlp_name
+on-arrival: leverage -= 10; foreign_minister_party = nlp_name; foreign_minister = "Stresemann"
 go-to: ministries
 
-Rudolf Breitscheid of the SPD has been appointed Foreign Minister.
+Gustav Stresemann of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Foreign Minister.
 
 
 @agriculture
@@ -525,86 +577,93 @@ title: Agricultural Ministry
 subtitle: This is not our usual domain.
 unavailable-subtitle: We do not have enough leverage.
 choose-if: leverage >= 10 
-view-if: agriculture_minister_party != "SPD"
-on-arrival: leverage -= 10; agriculture_minister_party = "SPD"; agriculture_minister = "Baade"
+view-if: agriculture_minister_party != nlp_name
+on-arrival: leverage -= 10; agriculture_minister_party = nlp_name; agriculture_minister = "Dietrich"
 go-to: ministries
-tags: mins_1928
+tags: mins_1922
 
-Fritz Baade of the SPD has been appointed Agriculture Minister.
+Hermann Dietrich of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Agriculture Minister.
 
 @reichswehr
 title: Reichswehr Ministry
-subtitle: The Ministry responsible for the armed forces is not typically our domain; General Groener and the bourgeois-conservatives will be displeased.
+subtitle: The Ministry responsible for the armed forces is not typically our domain; the military technocrats will be displeased.
 unavailable-subtitle: We do not have enough leverage.
-tags: mins_1928
+tags: mins_1922
 choose-if: leverage >= 15 
-view-if: reichswehr_minister_party != "SPD"
-on-arrival: leverage -= 15; reichswehr_minister_party = "SPD"; reichswehr_minister = "Leber"
+view-if: reichswehr_minister_party != nlp_name
+on-arrival: leverage -= 15; reichswehr_minister_party = nlp_name; reichswehr_minister = "Leber"
 go-to: ministries
 
-Julius Leber of the SPD has been appointed Reichswehr Minister.
+Julius Leber of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Reichswehr Minister.
 
 
 
 @no_more
 title: No more ministries.
 subtitle: [? if leverage >= 10 : We still have some more leverage to gain ministries. ?][? if leverage < 10 : We do not have much leverage left. ?]
-tags: mins_1928
+tags: mins_1922
 
 This coalition arrangement is tolerable to all.
 
+@drop_vice_chancellor
+title: Drop the Vice-Chancellorship.
+view-if: vice_chancellor_party = nlp_name
+on-arrival: vice_chancellor_party = "Z"; vice_chancellor = "Marx"; leverage += 10;
+tags: drop_mins_1922
+go-to: ministries
+
 @drop_labor
 title: Drop the Labor Ministry.
-view-if: labor_minister_party = "SPD"
+view-if: labor_minister_party = nlp_name
 on-arrival: labor_minister_party = "Z"; labor_minister = "Stegerwald"; leverage += 5;
-tags: drop_mins_1928
+tags: drop_mins_1922
 go-to: ministries
 
 @drop_interior
 title: Drop the Interior Ministry.
-view-if: interior_minister_party = "SPD"
+view-if: interior_minister_party = nlp_name
 on-arrival: interior_minister_party = "Z"; interior_minister = "Wirth"; leverage += 5;
-tags: drop_mins_1928
+tags: drop_mins_1922
 go-to: ministries
 
 @drop_finance
 title: Drop the Finance Ministry.
-view-if: finance_minister_party = "SPD"
-on-arrival: finance_minister_party = "DVP"; finance_minister = "Moldenhauer"; leverage += 10; finance_minister_party = "Z" if in_weimar_coalition or in_popular_front; finance_minister = "Köhler" if in_weimar_coalition or in_popular_front
-tags: drop_mins_1928
+view-if: finance_minister_party = nlp_name
+on-arrival: finance_minister_party = "DVP"; finance_minister = "Moldenhauer"; leverage += 10;
+tags: drop_mins_1922
 go-to: ministries
 
 @drop_economic
 title: Drop the Economic Ministry.
-view-if: economic_minister_party = "SPD"
-on-arrival: economic_minister_party = "DVP"; economic_minister = "Curtius"; leverage += 10; economic_minister_party = ddp_name if in_weimar_coalition or in_popular_front; economic_minister = "Dietrich" if in_weimar_coalition or in_popular_front;
-tags: drop_mins_1928
+view-if: economic_minister_party = nlp_name
+on-arrival: economic_minister_party = "DVP"; economic_minister = "Curtius"; leverage += 10;
+tags: drop_mins_1922
 go-to: ministries
 
 @drop_justice
 title: Drop the Justice Ministry.
-view-if: justice_minister_party = "SPD"
+view-if: justice_minister_party = nlp_name
 on-arrival: justice_minister_party = ddp_name; justice_minister = "Koch-Weser"; leverage += 10;
-tags: drop_mins_1928
+tags: drop_mins_1922
 go-to: ministries
 
 @drop_foreign
 title: Drop the Foreign Ministry.
-view-if: foreign_minister_party = "SPD"
-on-arrival: foreign_minister_party = "DVP"; foreign_minister = "Stresemann"; foreign_minister = "Curtius" if streseman_dead; leverage += 10; foreign_minister_party = "Z" if in_weimar_coalition or in_popular_front; foreign_minister = "Wirth" if in_weimar_coalition or in_popular_front;
-tags: drop_mins_1928
+view-if: foreign_minister_party = nlp_name
+on-arrival: foreign_minister_party = "DVP"; foreign_minister = "Stresemann"; leverage += 10;
+tags: drop_mins_1922
 go-to: ministries
 
 @drop_agriculture
 title: Drop the Agriculture Ministry.
-view-if: agriculture_minister_party = "SPD"
-on-arrival: agriculture_minister_party = ddp_name; agriculture_minister = "Dietrich"; leverage += 10; agriculture_minister_party = "Z" if in_weimar_coalition; agriculture_minister = "Hermes" if in_weimar_coalition
-tags: drop_mins_1928
+view-if: agriculture_minister_party = nlp_name
+on-arrival: agriculture_minister_party = ddp_name; agriculture_minister = "Dietrich"; leverage += 10;
+tags: drop_mins_1922
 go-to: ministries
 
 @drop_reichswehr
 title: Drop the Reichswehr Ministry.
-view-if: reichswehr_minister_party = "SPD"
+view-if: reichswehr_minister_party = nlp_name
 on-arrival: reichswehr_minister_party = "I"; reichswehr_minister = "Groener"; leverage += 15;
-tags: drop_mins_1928
+tags: drop_mins_1922
 go-to: ministries
