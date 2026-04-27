@@ -69,8 +69,9 @@ for (var party of Q.parties) {
 
 
 var new_party_sum = 0;
-for (var party of Q.parties) {Q[party + '_sl'] = 0;
-    Q[party + '_seats_saxony'] = 0;
+for (var party of Q.parties) {
+    Q[party + '_sl'] = 0;
+    Q[party + '_seats'] = 0;
     if (Q[party + '_banned']) {
         Q[party + '_election_votes_saxony'] = 0;
     } else {
@@ -79,12 +80,16 @@ for (var party of Q.parties) {Q[party + '_sl'] = 0;
     new_party_sum += Q[party + '_election_votes_saxony'];
 }
 
+var other_votes_fix = Q.other_election_votes_saxony
+Q.other_election_votes_saxony = parseFloat((Q.other_election_votes_saxony * 0.2).toFixed(1));
+var new_new_party_sum = new_party_sum + Q.other_election_votes_saxony - other_votes_fix;
+
 // calculate new party sum
 if (new_party_sum > 0) {
     for (var party of Q.parties) {
         if (Q[party + '_election_votes_saxony'] > 0 && !(Q[party + '_election_votes_saxony'] < Q.electoral_threshold) && !(Q.electoral_threshold > 1 && party == 'other')) {
+            Q[party + '_sl'] = parseFloat((Q[party + '_election_votes_saxony']*100/new_new_party_sum).toFixed(1));
             Q[party + '_election_votes_saxony'] = parseFloat((Q[party + '_election_votes_saxony']*100/new_party_sum).toFixed(1));
-            Q[party + '_sl'] = parseFloat((Q[party + '_election_votes_saxony']).toFixed(1));
         } else {
             Q[party + '_election_votes_saxony'] = parseFloat((Q[party + '_election_votes_saxony']*100/new_party_sum).toFixed(1));
             Q[party + '_sl'] = 0;
@@ -276,7 +281,7 @@ go-to: saxony_coalition_menu
 
 {!<tr><td><div class="box" style='background-color:#096300'> </div> !} DAP: {!</td><td>!} [+ dap_election_votes_saxony +]% {!</td><td>!} [+ dap_seats_saxony +] ([+ dap_sl +]%) {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#909090'> </div> !} Other parties: {!</td><td>!} [+ other_election_votes_saxony +]% {!</td><td>!} [+ other_seats_saxony +] ([+ other_sl +]%) {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#909090'> </div> !} Others: {!</td><td>!} [+ other_election_votes_saxony +]% {!</td><td>!} [+ other_seats_saxony +] ([+ other_sl +]%) {!</td></tr>!}
 {!</table>!}
 
 **Potential coalitions:**
