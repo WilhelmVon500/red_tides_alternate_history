@@ -274,8 +274,16 @@ Support for the Republic: [+ pro_republic_disp +]%
 
 = Saxony
 
-Minister-President: [+ saxony_leader +] ([?if president_party == "SPD": <span style="color: #E3000F;">**SPD**</span>?])
+Minister-President: [+ saxony_leader +] ([?if saxony_leader_party == "SPD": <span style="color: #E3000F;">**SPD**</span>?])
 
 Government: WIP
 
 Next election: [+ next_election_month_saxony: month +] [+ next_election_year_saxony +]
+
+= Thuringia
+
+Minister-President: [+ thuringia_leader +] ([?if thuringia_leader_party == "SPD": <span style="color: #E3000F;">**SPD**</span>?])
+
+Government: WIP
+
+Next election: [+ next_election_month_thuringia: month +] [+ next_election_year_thuringia +]
