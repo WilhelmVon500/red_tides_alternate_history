@@ -34,7 +34,7 @@ for (var party of Q.parties) {
 }
 
 var other_votes_fix = Q.other_election_votes
-Q.other_election_votes = parseFloat((Q.other_election_votes * 0.2).toFixed(1));
+Q.other_election_votes = parseFloat((Q.other_election_votes * 0.4).toFixed(1));
 var new_new_party_sum = new_party_sum + Q.other_election_votes - other_votes_fix;
 
 // calculate new party sum
