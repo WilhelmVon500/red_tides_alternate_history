@@ -3,6 +3,12 @@ subtitle: Will the <span style="color: #000000;">Center Party</span> be able to 
 tags: event
 view-if: year = 1923 and month = 4 and week = 1
 max-visits: 1
+on-arrival: {!
+Q.for_seats = Math.round(Q.nlp_seats + Q.z_seats + Q.dnvp_seats + Q.wp_seats + Q.rlb_seats);
+Q.against_seats = Math.round(Q.nlp_seats + Q.z_seats + Q.dnvp_seats + Q.wp_seats + Q.rlb_seats);
+Q.for_r = parseFloat((Q.for_seats / Q.reichstag_seats).toFixed(1));
+Q.against_r = parseFloat((Q.against_seats / Q.reichstag_seats).toFixed(1));
+!}
 
 WIP.
 
@@ -10,6 +16,46 @@ WIP.
 
 @vote
 on-arrival: caretaker = 1; workers_kpd += 5; unemployed_kpd += 7; workers_dap += 3; new_middle_fvp -= 5; old_middle_fvp -= 5; new_middle_dnvp += 5; old_middle_dnvp += 5; rural_dnvp += 5; rural_dap += 3; unemployed_dap += 5;
+on-display: {!
+data = []
+data.push({
+    "id": "for",
+    "legend": "Confidence",
+    "name": "Confidence",
+    "seats": Math.round(Q.for_seats),
+});
+data.push({
+    "id": "against",
+    "legend": "No Confidence",
+    "name": "No Confidence",
+    "seats": Math.round(Q.against_seats),
+});
+
+if (window && d3) {
+    var width = 500; 
+    var height = 500;
+    var screenWidth = document.getElementById('content').offsetWidth;
+    if (screenWidth < width - 50) {
+        width = screenWidth - 50; 
+        height = width;
+        document.getElementById("reichstag").style.height = screenWidth/2 + "px";
+    } 
+
+    var parliament = d3.parliament();
+    parliament.width(width).height(height).innerRadiusCoef(0.4);
+    parliament.enter.fromCenter(true).smallToBig(true);
+    parliament.exit.toCenter(false).bigToSmall(true);
+    d3.select("#reichstag").datum(data).call(parliament);
+}
+!}
+
+{!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
+
+{!<table>!} 
+{!<tr><td>Vote</td><td>Reichstag Deputies</td>!}
+{!<tr><td><div class="box" style='background-color:#158E33'> </div> !}Confidence: {!</td><td>!} [+ for_seats +] ([+ for_r +]%) {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#C51313'> </div> !}No Confidence: {!</td><td>!} [+ against_seats +] ([+ against_r +]%) {!</td></tr>!}
 
 The <span style="color: #FFD800;">**FVP**</span> voted against our cabinet! WIP
 
