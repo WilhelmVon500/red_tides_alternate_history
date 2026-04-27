@@ -37,7 +37,7 @@ Vice-Chancellor: [+ vice_chancellor +] ([?if vice_chancellor_party == "Z": <span
 
 = Reichstag
 
-{!<span class="tooltip-text" title="National Liberal Party" style="color: var(--nlp-color);">!}**NLP**{!</span>!}: **[+ nlp_seats +] seats ([+ nlp_r +]%)**
+{!<span class="tooltip-text" title="National Liberal Party" style="color: var(--nlp-color);">!}**NLP**{!</span>!}: [+ nlp_seats +] seats ([+ nlp_r +]%)
 
 {!<span class="tooltip-text" title="Communist Party of Germany" style="color: #8B0000;">!}**KPD**{!</span>!}: [+ kpd_seats +] seats ([+ kpd_r +]%)
 
