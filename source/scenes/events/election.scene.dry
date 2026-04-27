@@ -29,17 +29,20 @@ for (var party of Q.parties) {
         Q[party + '_election_votes'] = 0;
     } else {
         Q[party + '_election_votes'] = parseFloat((Q[party+'_votes']).toFixed(1));
-        if (party == 'other') Q[party + '_election_votes'] = parseFloat((Q[party + '_votes'] * 0.3).toFixed(1));
     }
     new_party_sum += Q[party + '_election_votes'];
 }
+
+var other_votes_fix = Q.other_election_votes
+Q.other_election_votes = parseFloat((Q.other_election_votes * 0.2).toFixed(1));
+var new_new_party_sum = new_party_sum + Q.other_election_votes - other_votes_fix;
 
 // calculate new party sum
 if (new_party_sum > 0) {
     for (var party of Q.parties) {
         if (Q[party + '_election_votes'] > 0 && !(Q[party + '_election_votes'] < Q.electoral_threshold) && !(Q.electoral_threshold > 1 && party == 'other')) {
+            Q[party + '_r'] = parseFloat((Q[party + '_election_votes']*100/new_new_party_sum).toFixed(1));
             Q[party + '_election_votes'] = parseFloat((Q[party + '_election_votes']*100/new_party_sum).toFixed(1));
-            Q[party + '_r'] = parseFloat((Q[party + '_election_votes']).toFixed(1));
         } else {
             Q[party + '_election_votes'] = parseFloat((Q[party + '_election_votes']*100/new_party_sum).toFixed(1));
             Q[party + '_r'] = 0;
@@ -394,7 +397,7 @@ go-to: coalition_menu
 
 {!<tr><td><div class="box" style='background-color:#096300'> </div> !} DAP: {!</td><td>!} [+ dap_election_votes +]% {!</td><td>!} [+ votes_change_dap +] {!</td><td>!} [+ dap_seats +] ([+ dap_r +]%) {!</td><td>!} [+ str_seats_change_dap +] ([+ str_change_dap +]%) {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#909090'> </div> !} Other parties: {!</td><td>!} [+ other_election_votes +]% {!</td><td>!} [+ votes_change_other +] {!</td><td>!} [+ other_seats +] ([+ other_r +]%) {!</td><td>!} [+ str_seats_change_other +] ([+ str_change_other +]%) {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#909090'> </div> !} Others: {!</td><td>!} [+ other_election_votes +]% {!</td><td>!} [+ votes_change_other +] {!</td><td>!} [+ other_seats +] ([+ other_r +]%) {!</td><td>!} [+ str_seats_change_other +] ([+ str_change_other +]%) {!</td></tr>!}
 {!</table>!}
 
 **Potential coalitions:**
