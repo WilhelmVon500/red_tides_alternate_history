@@ -130,7 +130,7 @@ Reichsbank President: [+ reichsbank_president +] ([?if reichsbank_president_part
 
 Party Chairman: [+ nlp_leader +]
 
-Ideology: National Liberalism
+Ideology: <span style="color: #98C22C;">National Liberalism</span>
 
 Party dues: [+ dues : funding +]
 
