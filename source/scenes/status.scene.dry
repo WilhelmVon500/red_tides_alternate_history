@@ -76,10 +76,7 @@ Economic growth: [+ economic_growth_2 +]%
 Reichsbank President: [+ reichsbank_president +] ([?if reichsbank_president_party == "I": <span style="color: #909090;">**I**</span>?][?if reichsbank_president_party == nlp_name: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?])
 
 
-
-# = Public Opinion
-
-@politics
+@party
 
 = Internal Situation of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>
 
@@ -100,6 +97,12 @@ Internal dissent: [+ dissent_percent : dissent +]
 [? if labor_nlp: {!<span class="tooltip-text" title="WIP.">!}**Labor**{!</span>!} strength: [+ labor_strength : strength +], dissent: [+ labor_dissent : dissent +] ?]
 
 [? if industrialist_nlp: {!<span class="tooltip-text" title="WIP.">!}**Industrialist**{!</span>!} strength: [+ industrialist_strength : strength +], dissent: [+ industrialist_dissent : dissent +] ?]
+
+
+
+# = Public Opinion
+
+@politics
 
 = Inter-party Relations
 
