@@ -27,8 +27,6 @@ Resources available: [+ resources +]
 
 Internal dissent: [+ dissent_percent : dissent +]
 
-Party dues: [+ dues : funding +]
-
 = Government
 
 President: [+ president +] ([?if president_party == "SPD": <span style="color: #E3000F;">**SPD**</span>?])
