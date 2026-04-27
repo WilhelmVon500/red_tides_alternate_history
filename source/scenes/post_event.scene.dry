@@ -259,6 +259,21 @@ if ((Q.month_actions >= 1 && !Q.weeks_enabled) || (Q.month_actions >= 4 && Q.wee
             Q.inflation += 20;
         }
     }
+    if (Q.year == 1923) {
+        Q.workers_spd += 1/12;
+        Q.workers_kpd += 2/12;
+
+        Q.upper_middle_wp += 3/12;
+
+        Q.unemployed_kpd += 3/12;
+
+        if (Q.next_election_year == 1923) {
+            Q.workers_kpd += 3/12;
+            Q.workers_dap += 3/12;
+
+            Q.unemployed_dap += 3/12;
+        }
+    }
 
 
 
