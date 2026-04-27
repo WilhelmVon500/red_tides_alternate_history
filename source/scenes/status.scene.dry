@@ -81,6 +81,26 @@ Reichsbank President: [+ reichsbank_president +] ([?if reichsbank_president_part
 
 @politics
 
+= Internal Situation of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>
+
+<div>[? if nlp_leader = "Stresemann": <img src="img/portraits/StresemannGustav.jpg" alt="Gustav Stresemann" style="width: 60%;display: block;margin: auto;margin-bottom: 5px;"> ?]</div>
+
+Party Chairman: [+ nlp_leader +]
+
+Ideology: <span style="color: #98C22C;">National Liberalism</span>
+
+Party dues: [+ dues : funding +]
+
+Internal dissent: [+ dissent_percent : dissent +]
+
+[? if left_stresemannite_nlp: {!<span class="tooltip-text" title="WIP.">!}**Left-wing Stresemannites**{!</span>!} strength: [+ left_stresemannite_strength : strength +], dissent: [+ left_stresemannite_dissent : dissent +] ?]
+
+[? if right_stresemannite_nlp: {!<span class="tooltip-text" title="WIP.">!}**Right-wing Stresemannites**{!</span>!} strength: [+ right_stresemannite_strength : strength +], dissent: [+ right_stresemannite_dissent : dissent +] ?]
+
+[? if labor_nlp: {!<span class="tooltip-text" title="WIP.">!}**Labor**{!</span>!} strength: [+ labor_strength : strength +], dissent: [+ labor_dissent : dissent +] ?]
+
+[? if industrialist_nlp: {!<span class="tooltip-text" title="WIP.">!}**Industrialist**{!</span>!} strength: [+ industrialist_strength : strength +], dissent: [+ industrialist_dissent : dissent +] ?]
+
 = Inter-party Relations
 
 
@@ -104,8 +124,6 @@ Reichsbank President: [+ reichsbank_president +] ([?if reichsbank_president_part
 
 = Party Leadership
 
-{!<span class="tooltip-text" title="National Liberal Party" style="color: var(--nlp-color);">!}**NLP**{!</span>!}: National Liberalism ([+nlp_leader+])
-
 {!<span class="tooltip-text" title="Communist Party of Germany" style="color: #8B0000;">!}**KPD**{!</span>!}: Marxism-Leninism ([+kpd_leader+])
 
 [? if uspd_exist: {!<span class="tooltip-text" title="Independent Social Democratic Party of Germany" style="color: #D47B9B;">!}**USPD**{!</span>!}: Centrist Marxism (Haase) ?]
@@ -123,26 +141,6 @@ Reichsbank President: [+ reichsbank_president +] ([?if reichsbank_president_part
 {!<span class="tooltip-text" title="German National People's Party" style="color: #3F7BC1;">!}**DNVP**{!</span>!}: National Conservatism (Westarp)
 
 {!<span class="tooltip-text" title="German Worker's Party" style="color: #096300;">!}**DAP**{!</span>!}: Völkisch Nationalism ([+dap_leader+])
-
-= Internal Situation of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>
-
-<div>[? if nlp_leader = "Stresemann": <img src="img/portraits/StresemannGustav.jpg" alt="Gustav Stresemann" style="width: 60%;display: block;margin: auto;margin-bottom: 5px;"> ?]</div>
-
-Party Chairman: [+ nlp_leader +]
-
-Ideology: <span style="color: #98C22C;">National Liberalism</span>
-
-Party dues: [+ dues : funding +]
-
-Internal dissent: [+ dissent_percent : dissent +]
-
-[? if left_stresemannite_nlp: {!<span class="tooltip-text" title="WIP.">!}**Left-wing Stresemannites**{!</span>!} strength: [+ left_stresemannite_strength : strength +], dissent: [+ left_stresemannite_dissent : dissent +] ?]
-
-[? if right_stresemannite_nlp: {!<span class="tooltip-text" title="WIP.">!}**Right-wing Stresemannites**{!</span>!} strength: [+ right_stresemannite_strength : strength +], dissent: [+ right_stresemannite_dissent : dissent +] ?]
-
-[? if labor_nlp: {!<span class="tooltip-text" title="WIP.">!}**Labor**{!</span>!} strength: [+ labor_strength : strength +], dissent: [+ labor_dissent : dissent +] ?]
-
-[? if industrialist_nlp: {!<span class="tooltip-text" title="WIP.">!}**Industrialist**{!</span>!} strength: [+ industrialist_strength : strength +], dissent: [+ industrialist_dissent : dissent +] ?]
 
 
 @government
