@@ -129,6 +129,8 @@ if ((Q.month_actions >= 1 && !Q.weeks_enabled) || (Q.month_actions >= 4 && Q.wee
     if (Q.month >= 13) {
         Q.month = 1;
         Q.year += 1;
+        Q.resources += Q.industrialist_funding;
+        Q.industrialist_strength += Q.industrialist_funding;
         if (Q.historical_mode) {
             Q.resources += 2;
         }
