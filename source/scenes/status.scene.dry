@@ -145,7 +145,7 @@ Internal dissent: [+ dissent_percent : dissent +]
 
 [? if rlb_exist: {!<span class="tooltip-text" title="National Rural League" style="color: #52AE6F;">!}**RLB**{!</span>!}: Agrarian Conservatism (Hepp) ?]
 
-{!<span class="tooltip-text" title="German National People's Party" style="color: #3F7BC1;">!}**DNVP**{!</span>!}: National Conservatism (Westarp)
+{!<span class="tooltip-text" title="German National People's Party" style="color: #3F7BC1;">!}**DNVP**{!</span>!}: National Conservatism ([+dnvp_leader+])
 
 {!<span class="tooltip-text" title="German Worker's Party" style="color: #096300;">!}**DAP**{!</span>!}: Völkisch Nationalism ([+dap_leader+])
 
