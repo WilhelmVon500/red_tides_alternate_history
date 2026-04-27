@@ -5,9 +5,12 @@ view-if: year = 1923 and month = 4 and week = 1
 max-visits: 1
 on-arrival: {!
 Q.for_seats = Math.round(Q.nlp_seats + Q.z_seats + Q.dnvp_seats + Q.wp_seats + Q.rlb_seats);
-Q.against_seats = Math.round(Q.nlp_seats + Q.z_seats + Q.dnvp_seats + Q.wp_seats + Q.rlb_seats);
+Q.against_seats = Math.round(Q.kpd_seats + Q.spd_seats + Q.fvp_seats + Q.dap_seats);
+Q.abstain_seats = Math.round(Q.other_seats);
+
 Q.for_r = parseFloat((Q.for_seats / Q.reichstag_seats).toFixed(1));
 Q.against_r = parseFloat((Q.against_seats / Q.reichstag_seats).toFixed(1));
+Q.abstain_r = parseFloat((Q.abstain_seats / Q.reichstag_seats).toFixed(1));
 !}
 
 WIP.
@@ -29,6 +32,12 @@ data.push({
     "legend": "No Confidence",
     "name": "No Confidence",
     "seats": Math.round(Q.against_seats),
+});
+data.push({
+    "id": "other",
+    "legend": "Abstain",
+    "name": "Abstain",
+    "seats": Math.round(Q.abstain_seats),
 });
 
 if (window && d3) {
@@ -56,6 +65,8 @@ if (window && d3) {
 {!<tr><td><div class="box" style='background-color:#158E33'> </div> !}Confidence: {!</td><td>!} [+ for_seats +] ([+ for_r +]%) {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#C51313'> </div> !}No Confidence: {!</td><td>!} [+ against_seats +] ([+ against_r +]%) {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#909090'> </div> !}Abstain: {!</td><td>!} [+ abstain_seats +] ([+ abstain_r +]%) {!</td></tr>!}
 
 The <span style="color: #FFD800;">**FVP**</span> voted against our cabinet! WIP
 
