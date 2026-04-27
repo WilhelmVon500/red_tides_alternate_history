@@ -8,9 +8,9 @@ Q.for_seats = Math.round(Q.nlp_seats + Q.z_seats + Q.dnvp_seats + Q.wp_seats + Q
 Q.against_seats = Math.round(Q.kpd_seats + Q.spd_seats + Q.fvp_seats + Q.dap_seats);
 Q.abstain_seats = Math.round(Q.other_seats);
 
-Q.for_r = parseFloat((Q.for_seats / Q.reichstag_seats).toFixed(1));
-Q.against_r = parseFloat((Q.against_seats / Q.reichstag_seats).toFixed(1));
-Q.abstain_r = parseFloat((Q.abstain_seats / Q.reichstag_seats).toFixed(1));
+Q.for_r = parseFloat((Q.for_seats / Q.reichstag_size).toFixed(1));
+Q.against_r = parseFloat((Q.against_seats / Q.reichstag_size).toFixed(1));
+Q.abstain_r = parseFloat((Q.abstain_seats / Q.reichstag_size).toFixed(1));
 !}
 
 WIP.
