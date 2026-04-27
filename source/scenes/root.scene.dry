@@ -176,7 +176,7 @@ Q.economic_expansion = 0;
 
 Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics'];
 Q.parties = ['nlp', 'kpd', 'uspd', 'spd', 'fvp', 'z', 'wp', 'rlb', 'dnvp', 'dap', 'other'];
-Q.states = ['saxony']
+Q.states = ['saxony', 'thuringia']
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
@@ -307,6 +307,13 @@ Q.saxony_leader_party = "SPD";
 Q.next_election_week_saxony = 1;
 Q.next_election_month_saxony = 11;
 Q.next_election_year_saxony = 1922;
+
+// thuringia
+Q.thuringia_leader = "Frölich";
+Q.thuringia_leader_party = "SPD";
+Q.next_election_week_thuringia = 1;
+Q.next_election_month_thuringia = 2;
+Q.next_election_year_thuringia = 1924;
 
 
 
