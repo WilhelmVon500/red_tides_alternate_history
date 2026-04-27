@@ -18,7 +18,7 @@ WIP.
 - @vote: The votes are counted...
 
 @vote
-on-arrival: caretaker = 1; workers_kpd += 5; unemployed_kpd += 7; workers_dap += 3; new_middle_fvp -= 5; old_middle_fvp -= 5; new_middle_wp += 5; old_middle_wp += 8; new_middle_dnvp += 5; old_middle_dnvp += 5; rural_dnvp += 5; rural_dap += 3; unemployed_dap += 5;
+on-arrival: caretaker = 1; workers_kpd += 5; unemployed_kpd += 7; workers_dap += 3; new_middle_fvp -= 5; old_middle_fvp -= 5; new_middle_wp += 5; old_middle_wp += 8; rural_dap += 7; unemployed_dap += 10;
 on-display: {!
 data = []
 data.push({
