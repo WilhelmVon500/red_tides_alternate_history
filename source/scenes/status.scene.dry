@@ -169,7 +169,7 @@ Justice: [+ justice_minister +] ([?if justice_minister_party=="I":<span style="c
 
 Finance: [+ finance_minister +] ([?if finance_minister_party=="I":<span style="color: #808080;">**I**</span>?][?if finance_minister_party=="Z":<span style="color: #000000;">**Z**</span>?][?if finance_minister_party==nlp_name:<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?])
 
-Economic: [+ economic_minister +] ([?if economic_minister_party=="I":<span style="color: #808080;">**I**</span>?][?if economic_minister_party=="SPD":<span style="color: #E3000F;">**SPD**</span>?][?if economic_minister_party==nlp_name:<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?])
+Economic: [+ economic_minister +] ([?if economic_minister_party=="I":<span style="color: #808080;">**I**</span>?][?if economic_minister_party=="SPD":<span style="color: #E3000F;">**SPD**</span>?][?if economic_minister_party=="FVP":<span style="color: #FFD800;">**FVP**</span>?][?if economic_minister_party==nlp_name:<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?])
 
 Labor: [+ labor_minister +] ([?if labor_minister_party=="I":<span style="color: #808080;">**I**</span>?][?if labor_minister_party=="SPD":<span style="color: #E3000F;">**SPD**</span>?][?if labor_minister_party=="Z":<span style="color: #000000;">**Z**</span>?][?if labor_minister_party==nlp_name:<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?])
 
