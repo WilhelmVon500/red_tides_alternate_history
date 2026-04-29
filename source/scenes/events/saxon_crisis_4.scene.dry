@@ -75,6 +75,6 @@ The <span style="color: #FFD800;">**FVP**</span> voted against our cabinet! WIP
 - @dissolution: The Reichstag is dissolved.
 
 @dissolution
-on-arrival: next_election_week = week; next_election_time = time + 8; next_election_month = 6; next_election_year = 1923;
+on-arrival: next_election_week = week; next_election_time = time + 8; next_election_month = 6; next_election_year = 1923; workers_kpd += 3; workers_spd += 3; new_middle_dap += 3; old_middle_dap += 3; unemployed_kpd += 3;
 
 WIP
