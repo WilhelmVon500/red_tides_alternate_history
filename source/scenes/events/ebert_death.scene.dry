@@ -1,7 +1,7 @@
 title: Murder in Berlin!
 subtitle: Two shots that may change the future of Germany...
 tags: event
-view-if: year = 1923 and month = 7 and week = 2; next_president_election_week = week; next_president_election_time = time + 8; next_president_election_month = 6; next_president_election_year = 1923;
+view-if: year = 1923 and month = 7 and week = 2; next_president_election_week = week; next_president_election_time = time + 8; next_president_election_month = 9; next_president_election_year = 1923;
 max-visits: 1
 
 WIP
