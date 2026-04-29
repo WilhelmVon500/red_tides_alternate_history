@@ -1,0 +1,24 @@
+title: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>
+subtitle: The <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> holds its 1922 Congress
+view-if: year = 1922 and month = 12
+max-visits: 1
+tags: event
+new-page: true
+
+= <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> Congress
+
+Our party holds its 1922 congress in Berlin WIP WIP WIP
+
+- @nlp_ideology_liberal: The party reaffirms its commitment to liberal ideology and deepening cooperation between liberal parties.
+- @nlp_ideology_nationalist: Under influence of the industrialist wing, the party makes a rightward turn to more radical nationalism.
+
+@nlp_ideology_liberal
+subtitle: The party will stay firm in its defence of liberty.
+on-arrival: left_stresemannite_strength += 3; right_stresemannite_strength += 3; fvp_relation += 5; wp_relation += 3; z_relation += 3; dnvp_relation -= 3;
+
+WIP
+
+@nlp_ideology_nationalist
+unavailable-subtitle: The right wing is not strong enough to change party's direction.
+
+WIP
