@@ -1,0 +1,7 @@
+title: Choosing our candidate for presidential election.
+subtitle: Will we field our own candidate, or support another party?
+tags: event
+view-if: year = 1923 and month = 7 and week = 4
+max-visits: 1
+
+WIP
