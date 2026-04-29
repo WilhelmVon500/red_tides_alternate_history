@@ -35,6 +35,8 @@ Chancellor: [+ chancellor +] ([?if chancellor_party == "SPD": <span style="color
 
 Vice-Chancellor: [+ vice_chancellor +] ([?if vice_chancellor_party == "Z": <span style="color: #000000;">**Z**</span>?][?if vice_chancellor_party==nlp_name:<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?][?if vice_chancellor_party == "DNVP": <span style="color: #3F7BC1;">**DNVP**</span>?])
 
+Next presidential election: [+ next_president_election_month : month +] [+ next_president_election_year +]
+
 = Reichstag
 
 {!<span class="tooltip-text" title="National Liberal Party" style="color: var(--nlp-color);">!}**NLP**{!</span>!}: [+ nlp_seats +] seats ([+ nlp_r +]%)
