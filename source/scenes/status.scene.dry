@@ -82,7 +82,7 @@ Reichsbank President: [+ reichsbank_president +] ([?if reichsbank_president_part
 
 = Internal Situation of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>
 
-<div>[? if nlp_leader = "Stresemann": <img src="img/portraits/StresemannGustav.jpg" alt="Gustav Stresemann" style="width: 60%;display: block;margin: auto;margin-bottom: 5px;"> ?]</div>
+<div style="display: flex;">[? if nlp_leader = "Stresemann": <img src="img/portraits/StresemannGustav.jpg" alt="Gustav Stresemann" style="width: 50%; height: 200px;"> ?]</div>
 
 Party Chairman: [+ nlp_leader +]
 
@@ -156,8 +156,12 @@ Internal dissent: [+ dissent_percent : dissent +]
 
 = Government
 
+<div style="display: flex;">[? if president = "Ebert": <img src="img/portraits/EbertFriedrich.jpg" alt="Friedrich Ebert" style="width: 50%; height: 200px;"> ?][? if president = "Simons": <img src="img/portraits/SimonsWalter.jpg" alt="Walter Simons" style="width: 50%; height: 200px;"> ?]</div>
+
 <div style="display: flex;gap: 5px;margin-bottom: 5px;margin-left: -3px;">[? if chancellor == "Müller": <img src="img/portraits/MüllerHermann.jpg" style="width: 50%; height: 200px;"> ?][? if chancellor == "Marx": <img src="img/portraits/MarxWilhelm.jpg" style="width: 50%; height: 200px;"> ?][? if chancellor == "Jarres": <img src="img/portraits/JarresKarl.jpg" style="width: 50%; height: 200px;"> ?][? if chancellor == "Cuno": <img src="img/portraits/CunoWilhelm.jpg" style="width: 50%; height: 200px;"> ?]
 [? if vice_chancellor == "Erzberger": <img src="img/portraits/ErzbergerMatthias.jpg" style="width: 50%; height: 200px;"> ?][? if vice_chancellor == "Marx": <img src="img/portraits/MarxWilhelm.jpg" style="width: 50%; height: 200px;"> ?][? if vice_chancellor == "Westarp": <img src="img/portraits/WestarpKuno.jpg" style="width: 50%; height: 200px;"> ?]</div>
+
+President: [+ president +] ([?if president_party=="I":<span style="color: #808080;">**I**</span>?][?if president_party == "SPD": <span style="color: #E3000F;">**SPD**</span>?])
 
 Chancellor: [+ chancellor +] ([?if chancellor_party=="I":<span style="color: #808080;">**I**</span>?][?if chancellor_party=="SPD":<span style="color: #E3000F;">**SPD**</span>?][?if chancellor_party=="Z":<span style="color: #000000;">**Z**</span>?][?if chancellor_party==nlp_name:<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?])
 
