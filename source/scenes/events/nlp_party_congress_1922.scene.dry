@@ -1,4 +1,4 @@
-title: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>
+title: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> Congress
 subtitle: The <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> holds its 1922 Congress
 view-if: year = 1922 and month = 12
 max-visits: 1
