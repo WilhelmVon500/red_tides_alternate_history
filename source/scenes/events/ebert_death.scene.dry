@@ -1,0 +1,15 @@
+title: Murder in Berlin!
+subtitle: Two shots that may change the future of Germany...
+tags: event
+view-if: year = 1923 and month = 7 and week = 2
+max-visits: 1
+
+WIP
+
+- @ebert_dead
+
+@ebert_dead
+title: Friedrich Ebert dies...
+on-arrival: president = "Simons"; president_party = "I"; workers_dap += 3; new_middle_dap += 5; old_middle_dnvp += 5; unemployed_dap += 3;
+
+WIP
