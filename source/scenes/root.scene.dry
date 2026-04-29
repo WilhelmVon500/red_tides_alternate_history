@@ -452,6 +452,10 @@ Q.n_elections = 0;
 // number of elections without a clear majority.
 Q.no_majority_elections = 0;
 
+Q.next_president_election_year = 1925;
+Q.next_president_election_month = 3;
+Q.next_president_election_week = 1;
+
 
 
 // initial advisors
