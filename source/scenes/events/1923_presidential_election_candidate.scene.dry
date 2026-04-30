@@ -75,7 +75,7 @@ WIP
 - @fehrenbach
 
 @fehrenbach
-title: The <span style="color: #000000;">**Center Party**</span> will run Constantin Fehrenbach.
+title: The <span style="color: #000000;">Center Party</span> will run Constantin Fehrenbach.
 face-image: img/portraits/FehrenbachConstantin.jpg
 
 WIP
@@ -93,7 +93,7 @@ WIP
 @nlp
 
 - @run_cuno: Run Wilhelm Cuno of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>.
-- @support_marx: Convince the <span style="color: #000000;">**Center Party**</span> to run Wilhelm Marx.
+- @support_marx: Convince the <span style="color: #000000;">Center Party</span> to run Wilhelm Marx.
 - @support_westarp: Support Kuno Westarp of the <span style="color: #3F7BC1;">**DNVP**</span>.
 
 @run_cuno
@@ -105,7 +105,7 @@ on-arrival: nlp_campaign = 1; nlp_candidate = "Cuno"; industrialist_strength += 
 WIP
 
 @support_marx
-subtitle: We can convince the <span style="color: #000000;">**Center Party**</span> to run a compromise candidate.
+subtitle: We can convince the <span style="color: #000000;">Center Party</span> to run a compromise candidate.
 on-arrival: z_candidate = "Marx"; nlp_candidate = "Marx"; left_stresemannite_strength += 5;
 
 WIP
