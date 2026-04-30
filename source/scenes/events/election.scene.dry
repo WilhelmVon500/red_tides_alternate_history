@@ -46,15 +46,28 @@ if (new_party_sum > 0) {
         } else {
             Q[party + '_election_votes'] = parseFloat((Q[party + '_election_votes']*100/new_party_sum).toFixed(1));
             Q[party + '_r'] = 0;
+            Q[party + '_seats'] = 0;
         }
         Q[party + '_r'] = parseFloat((Q[party+'_r']).toFixed(1));
     }
 }
 
+
+
+represented_parties = [];
+
+for (var party of Q.parties) {
+    if (party + '_election_votes' >= Q.electoral_threshold) {
+        represented_parties.push(party);
+    }
+}
+
+
+
 let allocatedSeats = 0;
 let remainders = [];
 
-for (var party of Q.parties) {
+for (var party of represented_parties) {
     let rawSeats = Q[party + '_r'] * Q.reichstag_size;
     let seats = Math.floor(rawSeats);
     Q[party + '_seats'] = seats;
