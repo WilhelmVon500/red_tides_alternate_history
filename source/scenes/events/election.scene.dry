@@ -54,11 +54,11 @@ if (new_party_sum > 0) {
 
 
 
-represented_parties = [];
+Q.represented_parties = [];
 
 for (var party of Q.parties) {
     if (Q[party + '_election_votes'] >= Q.electoral_threshold) {
-        represented_parties.push(party);
+        Q.represented_parties.push(party);
     }
 }
 
@@ -67,7 +67,7 @@ for (var party of Q.parties) {
 let allocatedSeats = 0;
 let remainders = [];
 
-for (var party of represented_parties) {
+for (var party of Q.represented_parties) {
     let rawSeats = Q[party + '_r'] * Q.reichstag_size;
     let seats = Math.floor(rawSeats);
     Q[party + '_seats'] = seats;
