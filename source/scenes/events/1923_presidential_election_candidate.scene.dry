@@ -133,6 +133,22 @@ go-to: endorsements_cuno if nlp_candidate = "Cuno"; endorsements_marx if nlp_can
 
 [? if dnvp_candidate = "Marx": - <span style="color: #3F7BC1;">**DNVP**</span> ?]
 
+[? if nlp_campaign: <span style="color: var(--nlp-color);">**Wilhelm Cuno**</span> - supported by: ?]
+
+[? if fvp_candidate = "Cuno": - <span style="color: #FFD800;">**FVP**</span> ?]
+
+[? if z_candidate = "Cuno": - <span style="color: #000000;">Center Party</span> ?]
+
+[? if bvp_candidate = "Cuno": - <span style="color: #69A2BE;">**BVP**</span> ?]
+
+[? if nlp_candidate = "Cuno": - <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> ?]
+
+[? if wp_candidate = "Cuno": - <span style="color: #B8996F;">**WP**</span> ?]
+
+[? if rlb_candidate = "Cuno": - <span style="color: #52AE6F;">**RLB**</span> ?]
+
+[? if dnvp_candidate = "Cuno": - <span style="color: #3F7BC1;">**DNVP**</span> ?]
+
 [? if dnvp_campaign: <span style="color: #3F7BC1;">**Kuno Westarp**</span> - supported by: ?]
 
 [? if z_candidate = "Westarp": - <span style="color: #000000;">Center Party</span> ?]
