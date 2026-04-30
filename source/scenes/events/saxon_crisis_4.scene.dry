@@ -14,6 +14,8 @@ Q.against_r = parseFloat((Q.against_seats / Q.reichstag_size).toFixed(1));
 Q.abstain_r = parseFloat((Q.abstain_seats / Q.reichstag_size).toFixed(1));
 !}
 
+= The Reichstag Convenes
+
 WIP.
 
 - @vote: The votes are counted...
