@@ -168,7 +168,7 @@ Results:
 
 [? if fvp_campaign: <span style="color: #FFD800;">**Willy Hellpach**</span> - [+ fvp_candidate_votes_disp +]% ?]
 
-[? if z_campaign and z_candidate = "Fehrenbach": <span style="color: #000000;">**Constantin Fehrenbach**</span> - supported by: ?][? if z_campaign and z_candidate = "Marx": <span style="color: #000000;">**Wilhelm Marx**</span> - [+ z_candidate_votes_disp +]% ?]
+[? if z_campaign and z_candidate = "Fehrenbach": <span style="color: #000000;">**Constantin Fehrenbach**</span> - [+ z_candidate_votes_disp +]% ?][? if z_campaign and z_candidate = "Marx": <span style="color: #000000;">**Wilhelm Marx**</span> - [+ z_candidate_votes_disp +]% ?]
 
 [? if nlp_campaign: <span style="color: var(--nlp-color);">**Wilhelm Cuno**</span> - [+ nlp_candidate_votes_disp +]% ?]
 
