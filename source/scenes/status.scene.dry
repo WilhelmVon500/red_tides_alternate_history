@@ -169,7 +169,7 @@ Vice-Chancellor: [+ vice_chancellor +] ([?if vice_chancellor_party=="I":<span st
 
 Foreign: [+ foreign_minister +] ([?if foreign_minister_party=="I":<span style="color: #808080;">**I**</span>?][?if foreign_minister_party=="FVP":<span style="color: #FFD800;">**FVP**</span>?][?if foreign_minister_party==nlp_name:<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?])
 
-Interior: [+ interior_minister +] ([?if interior_minister_party=="I":<span style="color: #808080;">**I**</span>?][?if interior_minister_party=="Z":<span style="color: #000000;">**Z**</span>?][?if interior_minister_party==nlp_name:<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?])
+Interior: [+ interior_minister +] ([?if interior_minister_party=="I":<span style="color: #808080;">**I**</span>?][?if interior_minister_party=="Z":<span style="color: #000000;">**Z**</span>?][?if interior_minister_party==nlp_name:<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?][?if interior_minister_party=="DNVP":<span style="color: #3F7BC1;">**DNVP**</span>?])
 
 Justice: [+ justice_minister +] ([?if justice_minister_party=="I":<span style="color: #808080;">**I**</span>?][?if justice_minister_party=="FVP":<span style="color: #FFD800;">**FVP**</span>?][?if justice_minister_party=="Z":<span style="color: #000000;">**Z**</span>?][?if justice_minister_party==nlp_name:<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?][?if justice_minister_party=="DNVP":<span style="color: #3F7BC1;">**DNVP**</span>?])
 
