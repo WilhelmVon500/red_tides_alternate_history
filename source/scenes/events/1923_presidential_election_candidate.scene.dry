@@ -87,3 +87,31 @@ title: The <span style="color: #FFD800;">**FVP**</span> nominates Willy Hellpach
 face-image: img/portraits/HellpachWilly.jpg
 
 WIP
+
+- @nlp: So, what is our decision? Should we run our own candidate?
+
+@nlp
+
+- @run_cuno: Run Wilhelm Cuno of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>.
+- @support_marx: Convince the <span style="color: #000000;">**Center Party**</span> to run Wilhelm Marx.
+- @support_westarp: Support Kuno Westarp of the <span style="color: #3F7BC1;">**DNVP**</span>.
+
+@run_cuno
+subtitle: This will cost us 1 resource.
+choose-if: resources >= 1 and chancellor = "Cuno"
+unavailable-subtitle: [? if resources < 1: Not enough resources. ?][? if chancellor != "Cuno": Wilhelm Cuno doesn't have needed support. ?]
+on-arrival: nlp_campaign = 1; nlp_candidate = "Cuno"; industrialist_strength += 5;
+
+WIP
+
+@support_marx
+subtitle: We can convince the <span style="color: #000000;">**Center Party**</span> to run a compromise candidate.
+on-arrival: z_candidate = "Marx"; nlp_candidate = "Marx"; left_stresemannite_strength += 5;
+
+WIP
+
+@support_westarp
+subtitle: We can support the <span style="color: #3F7BC1;">**DNVP**</span>'s candidate.
+on-arrival: nlp_candidate = "Westarp"; dnvp_relation += 5; spd_relation -= 5; fvp_relation -= 5;
+
+WIP
