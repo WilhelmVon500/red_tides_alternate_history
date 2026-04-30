@@ -60,7 +60,7 @@ if (Q.fvp_candidate == "Hellpach") {
 if (Q.fvp_candidate == "Marx") {
     Q.z_candidate_votes += Q.fvp_normalized;
 }
-if (Q.z_candidate == "Marx" || Q.z_candidate = "Fehrenbach") {
+if (Q.z_candidate == "Marx" || Q.z_candidate == "Fehrenbach") {
     Q.z_candidate_votes += Q.z_normalized;
 }
 if (Q.bvp_candidate == "Marx") {
