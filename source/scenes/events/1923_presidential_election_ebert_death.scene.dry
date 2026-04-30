@@ -4,6 +4,7 @@ tags: event
 view-if: year = 1923 and month = 7 and week = 2
 face-image: img/portraits/EbertFriedrich.png
 max-visits: 1
+new-page: true
 
 WIP
 
