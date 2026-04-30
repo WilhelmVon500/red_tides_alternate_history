@@ -6,6 +6,8 @@ view-if: year = 1923 and month = 3 and week = 1
 on-arrival: in_weimar_coalition = 0; spd_in_government = 0; z_in_government = 0; fvp_in_government = 0; z_relation += 5; dnvp_relation += 5;
 max-visits: 1
 
+= Collapse of Müller's Cabinet
+
 Following the formation of a United Left coalition in Saxony, the <span style="color: #000000;">Center Party</span> has decided to end their coalition with the <span style="color: #E3000F;">**SPD**</span>.
 
 - @our_chance: Does this mean we have a chance to be included in the next government?
