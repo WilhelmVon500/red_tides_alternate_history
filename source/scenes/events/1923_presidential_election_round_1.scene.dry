@@ -28,7 +28,7 @@ Q.bvp_votes = parseFloat((Q.z_votes*0.2).toFixed(1));
 if (Q.bvp_votes > 3.6) {
     Q.bvp_votes = 3.6;
 }
-Q.bvp_votes = Q.bvp_votes / 100;
+Q.bvp_normalized = Q.bvp_votes / 100;
 
 Q.kpd_candidate_votes = 0;
 Q.spd_candidate_votes = 0;
