@@ -187,6 +187,8 @@ WIP
 
 - @endorsements_cuno: Scout out potential endorsements.
 
+@endorsements_cuno
+
 
 
 
@@ -199,6 +201,8 @@ WIP
 
 - @endorsements_marx: Scout out potential endorsements.
 
+@endorsements_marx
+
 
 
 
@@ -210,6 +214,8 @@ on-arrival: nlp_candidate = "Westarp"; dnvp_relation += 5; spd_relation -= 5; fv
 WIP
 
 - @endorsements_westarp: Scout out potential endorsements.
+
+@endorsements_westarp
 
 
 
