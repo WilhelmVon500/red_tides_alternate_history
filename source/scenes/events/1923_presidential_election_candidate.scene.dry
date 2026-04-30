@@ -106,7 +106,7 @@ WIP
 
 @support_marx
 subtitle: We can convince the <span style="color: #000000;">Center Party</span> to run a compromise candidate.
-on-arrival: z_candidate = "Marx"; nlp_candidate = "Marx"; left_stresemannite_strength += 5;
+on-arrival: z_candidate = "Marx"; nlp_candidate = "Marx"; z_relation += 5;
 
 WIP
 
