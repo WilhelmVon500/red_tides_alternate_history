@@ -1,6 +1,7 @@
 title: The Reichstag convenes.
 subtitle: Will the <span style="color: #000000;">Center Party</span> be able to convince the <span style="color: #FFD800;">**FVP**</span> to tolerate our cabinet?
 tags: event
+new-page: true
 view-if: year = 1923 and month = 4 and week = 1
 max-visits: 1
 on-arrival: {!
