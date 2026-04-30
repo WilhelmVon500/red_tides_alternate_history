@@ -39,6 +39,7 @@ choose-if: false
 
 @marx
 subtitle: Wilhelm Marx is acceptable to all parties.
+face-image: img/portraits/MarxWilhelm.jpg
 on-arrival: in_right_coalition = 1; nlp_in_government = 1; z_in_government = 1; dnvp_in_government = 1; chancellor = "Marx"; chancellor_party = 'Z'; vice_chancellor = 'Westarp'; vice_chancellor_party = 'DNVP';
 
 All parties of the coalition can support Marx for Chancellorship. Kuno Westarp of the <span style="color: #3F7BC1;">**DNVP**</span> has been given the Vice-Chancellor position.
