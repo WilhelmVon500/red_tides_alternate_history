@@ -57,7 +57,7 @@ if (new_party_sum > 0) {
 represented_parties = [];
 
 for (var party of Q.parties) {
-    if (party + '_election_votes' >= Q.electoral_threshold) {
+    if (Q[party + '_election_votes'] >= Q.electoral_threshold) {
         represented_parties.push(party);
     }
 }
