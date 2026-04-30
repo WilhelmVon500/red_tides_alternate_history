@@ -96,6 +96,65 @@ WIP
 - @support_marx: Convince the <span style="color: #000000;">Center Party</span> to run Wilhelm Marx.
 - @support_westarp: Support Kuno Westarp of the <span style="color: #3F7BC1;">**DNVP**</span>.
 
+
+
+
+
+@view_candidates
+go-to: endorsements_cuno if nlp_candidate = "Cuno"; endorsements_marx if nlp_candidate = "Marx"; endorsements_westarp if nlp_candidate = "Westarp"
+
+[? if kpd_campaign: <span style="color: #8B0000;">**Heinrich Brandler**</span> - supported by: ?]
+
+[? if kpd_candidate = "Brandler": - <span style="color: #8B0000;">**KPD**</span> ?]
+
+[? if spd_campaign: <span style="color: #E3000F;">**Paul Löbe**</span> - supported by: ?]
+
+[? if kpd_candidate = "Löbe": - <span style="color: #8B0000;">**KPD**</span> ?]
+
+[? if spd_candidate = "Löbe": - <span style="color: #E3000F;">**SPD**</span> ?]
+
+[? if fvp_campaign: <span style="color: #FFD800;">**Willy Hellpach**</span> - supported by: ?]
+
+[? if fvp_candidate = "Hellpach": - <span style="color: #FFD800;">**FVP**</span> ?]
+
+[? if z_campaign and z_candidate = "Fehrenbach": <span style="color: #000000;">**Constantin Fehrenbach**</span> - supported by: ?][? if z_campaign and z_candidate = "Marx": <span style="color: #000000;">**Wilhelm Marx**</span> - supported by: ?]
+
+[? if fvp_candidate = "Marx": - <span style="color: #FFD800;">**FVP**</span> ?]
+
+[? if z_candidate = "Fehrenbach" or z_candidate = "Marx": - <span style="color: #000000;">Center Party</span> ?]
+
+[? if bvp_candidate = "Marx": - <span style="color: #69A2BE;">**BVP**</span> ?]
+
+[? if nlp_candidate = "Marx": - <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> ?]
+
+[? if wp_candidate = "Marx": - <span style="color: #B8996F;">**WP**</span> ?]
+
+[? if rlb_candidate = "Marx": - <span style="color: #52AE6F;">**RLB**</span> ?]
+
+[? if dnvp_candidate = "Marx": - <span style="color: #3F7BC1;">**DNVP**</span> ?]
+
+[? if dnvp_campaign: <span style="color: #3F7BC1;">**Kuno Westarp**</span> - supported by: ?]
+
+[? if z_candidate = "Westarp": - <span style="color: #000000;">Center Party</span> ?]
+
+[? if bvp_candidate = "Westarp": - <span style="color: #69A2BE;">**BVP**</span> ?]
+
+[? if nlp_candidate = "Westarp": - <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> ?]
+
+[? if wp_candidate = "Westarp": - <span style="color: #B8996F;">**WP**</span> ?]
+
+[? if rlb_candidate = "Westarp": - <span style="color: #52AE6F;">**RLB**</span> ?]
+
+[? if dnvp_candidate = "Westarp": - <span style="color: #3F7BC1;">**DNVP**</span> ?]
+
+[? if dap_campaign: <span style="color: #096300;">**Erich Ludendorff**</span> - supported by: ?]
+
+[? if dap_candidate = "Ludendorff": - <span style="color: #096300;">**DAP**</span> ?]
+
+
+
+
+
 @run_cuno
 subtitle: This will cost us 1 resource.
 choose-if: resources >= 1 and chancellor = "Cuno"
