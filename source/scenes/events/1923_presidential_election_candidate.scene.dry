@@ -2,6 +2,7 @@ title: Presidential Election Candidates
 subtitle: Should we field our own candidate?
 tags: event
 view-if: year = 1923 and month = 7 and week = 4
+priority: 1
 max-visits: 1
 new-page: true
 on-arrival: {!
@@ -28,5 +29,61 @@ Q.dap_campaign = 1;
 !}
 
 = Presidential Election Candidates
+
+With the Presidential election coming up soon, we need to decide whether to run a candidate of our own or support one from another party. Many are calling for us to make a deal with the <span style="color: #000000;">Center Party</span> to run [? if chancellor = "Marx": the current chancellor, ?][? if chancellor != "Marx": their leader, ?] Wilhelm Marx, as the unity candidate.
+
+[? if chancellor = "Cuno": On the other hand, many in our party are calling for chancellor Wilhelm Cuno to run for presidency. ?]
+
+Anyhow, let's see who will be the candidates on the campaign trail.
+
+- @view_candidates_1: View the running candidates.
+
+@view_candidates_1
+
+- @westarp
+
+@westarp
+title: The <span style="color: #3F7BC1;">**DNVP**</span> runs its leader, Kuno von Westarp.
+face-image: img/portraits/WestarpKuno.jpg
+
+WIP
+
+- @ludendorff
+
+@ludendorff
+title: We await the decision of the <span style="color: #096300;">**DAP**</span>.
+face-image: img/portraits/LudendorffErich.jpg
+
+WIP
+
+- @brandler
+
+@brandler
+title: The <span style="color: #8B0000;">**KPD**</span> runs Heinrich Brandler.
+face-image: img/portraits/BrandlerHeinrich.jpg
+
+WIP
+
+- @lobe
+
+@lobe
+title: The <span style="color: #E3000F;">**SPD**</span> has nominated Paul Löbe.
+face-image: img/portraits/LöbePaul.jpg
+
+WIP
+
+- @fehrenbach
+
+@fehrenbach
+title: The <span style="color: #000000;">**Center Party**</span> will run Constantin Fehrenbach.
+face-image: img/portraits/FehrenbachConstantin.jpg
+
+WIP
+
+- @hellpach
+
+@hellpach
+title: The <span style="color: #FFD800;">**FVP**</span> nominates Willy Hellpach.
+face-image: img/portraits/HellpachWilly.jpg
 
 WIP
