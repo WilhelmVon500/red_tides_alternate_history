@@ -587,17 +587,17 @@ tags: mins_1922
 
 Hermann Dietrich of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Agriculture Minister.
 
-@reichswehr
-title: Reichswehr Ministry
-subtitle: The Ministry responsible for the armed forces is not typically our domain; the military technocrats will be displeased.
-unavailable-subtitle: We do not have enough leverage.
-tags: mins_1922
-choose-if: leverage >= 15 
-view-if: reichswehr_minister_party != nlp_name
-on-arrival: leverage -= 15; reichswehr_minister_party = nlp_name; reichswehr_minister = "Leber"
-go-to: ministries
+#@reichswehr
+#title: Reichswehr Ministry
+#subtitle: The Ministry responsible for the armed forces is not typically our domain; the military technocrats will be displeased.
+#unavailable-subtitle: We do not have enough leverage.
+#tags: mins_1922
+#choose-if: leverage >= 15 
+#view-if: reichswehr_minister_party != nlp_name
+#on-arrival: leverage -= 15; reichswehr_minister_party = nlp_name; reichswehr_minister = "Leber"
+#go-to: ministries
 
-Julius Leber of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Reichswehr Minister.
+#Julius Leber of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Reichswehr Minister.
 
 
 
