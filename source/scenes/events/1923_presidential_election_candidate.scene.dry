@@ -185,14 +185,33 @@ on-arrival: nlp_campaign = 1; nlp_candidate = "Cuno"; industrialist_strength += 
 
 WIP
 
+- @endorsements_cuno: Scout out potential endorsements.
+
+
+
+
+
 @support_marx
 subtitle: We can convince the <span style="color: #000000;">Center Party</span> to run a compromise candidate.
 on-arrival: z_candidate = "Marx"; nlp_candidate = "Marx"; z_relation += 5;
 
 WIP
 
+- @endorsements_marx: Scout out potential endorsements.
+
+
+
+
+
 @support_westarp
 subtitle: We can support the <span style="color: #3F7BC1;">**DNVP**</span>'s candidate.
 on-arrival: nlp_candidate = "Westarp"; dnvp_relation += 5; spd_relation -= 5; fvp_relation -= 5;
 
 WIP
+
+- @endorsements_westarp: Scout out potential endorsements.
+
+
+
+
+
