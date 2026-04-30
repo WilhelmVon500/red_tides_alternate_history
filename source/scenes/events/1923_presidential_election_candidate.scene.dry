@@ -1,0 +1,30 @@
+title: Presidential Election Candidates
+subtitle: Should we field our own candidate?
+tags: event
+view-if: year = 1923 and month = 7 and week = 4
+max-visits: 1
+new-page: true
+on-arrival: {!
+Q.nlp_candidate = "";
+
+Q.kpd_candidate = "Brandler";
+Q.spd_candidate = "Löbe";
+Q.fvp_candidate = "Hellpach";
+Q.z_candidate = "Fehrenbach";
+Q.bvp_candidate = "Westarp";
+Q.wp_candidate = "Westarp";
+Q.rlb_candidate = "Westarp";
+Q.dnvp_candidate = "Westarp";
+Q.dap_candidate = "Ludendorff";
+Q.other_candidate = "Westarp";
+
+Q.nlp_campaign = 0;
+Q.kpd_campaign = 1;
+Q.spd_campaign = 1;
+Q.fvp_campaign = 1;
+Q.z_campaign = 1;
+Q.dnvp_campaign = 1;
+Q.dap_campaign = 1;
+!}
+
+WIP
