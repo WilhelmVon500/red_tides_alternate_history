@@ -133,6 +133,8 @@ go-to: endorsements_cuno if nlp_candidate = "Cuno"; endorsements_marx if nlp_can
 
 [? if dnvp_candidate = "Marx": - <span style="color: #3F7BC1;">**DNVP**</span> ?]
 
+[? if other_candidate = "Marx": - <span style="color: #909090;">**Others**</span> ?]
+
 [? if nlp_campaign: <span style="color: var(--nlp-color);">**Wilhelm Cuno**</span> - supported by: ?]
 
 [? if fvp_candidate = "Cuno": - <span style="color: #FFD800;">**FVP**</span> ?]
@@ -149,6 +151,8 @@ go-to: endorsements_cuno if nlp_candidate = "Cuno"; endorsements_marx if nlp_can
 
 [? if dnvp_candidate = "Cuno": - <span style="color: #3F7BC1;">**DNVP**</span> ?]
 
+[? if other_candidate = "Cuno": - <span style="color: #909090;">**Others**</span> ?]
+
 [? if dnvp_campaign: <span style="color: #3F7BC1;">**Kuno Westarp**</span> - supported by: ?]
 
 [? if z_candidate = "Westarp": - <span style="color: #000000;">Center Party</span> ?]
@@ -162,6 +166,8 @@ go-to: endorsements_cuno if nlp_candidate = "Cuno"; endorsements_marx if nlp_can
 [? if rlb_candidate = "Westarp": - <span style="color: #52AE6F;">**RLB**</span> ?]
 
 [? if dnvp_candidate = "Westarp": - <span style="color: #3F7BC1;">**DNVP**</span> ?]
+
+[? if other_candidate = "Westarp": - <span style="color: #909090;">**Others**</span> ?]
 
 [? if dap_campaign: <span style="color: #096300;">**Erich Ludendorff**</span> - supported by: ?]
 
