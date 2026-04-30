@@ -1,0 +1,187 @@
+title: Presidential Election
+subtitle: The first round results have come in...
+view-if: year = 1923 and month = 9 and week = 2
+frequency: 1000
+max-visits: 1
+new-page: true
+on-arrival: next_presidential_election_year = year + 5; next_presidential_election_month = month;
+tags: event
+go-to: election_algorithm
+set-jump: pres_election
+
+@pres_election
+
+The presidential election's first round is set to take place this month. If no candidate secures a majority, a second round will be held, with the candidate receiving the most votes winning the presidency.
+
+- @final_election: The first round results...
+
+@final_election
+on-arrival: election_round = 0
+go-to: election_algorithm
+set-jump: post_election
+
+
+
+@post_election
+on-arrival: {!
+Q.bvp_votes = parseFloat((Q.z_votes*0.2).toFixed(1));
+if (Q.bvp_votes > 3.6) {
+    Q.bvp_votes = 3.6;
+}
+Q.bvp_votes = Q.bvp_votes / 100;
+
+Q.kpd_candidate_votes = 0;
+Q.spd_candidate_votes = 0;
+Q.fvp_candidate_votes = 0;
+Q.z_candidate_votes = 0;
+Q.nlp_candidate_votes = 0;
+Q.dnvp_candidate_votes = 0;
+Q.dap_candidate_votes = 0;
+
+if (Q.dap_candidate == "Ludendorff") {
+    Q.dap_candidate_votes += Q.dap_normalized;
+}
+
+if (Q.kpd_candidate == "Brandler") {
+    Q.kpd_candidate_votes += Q.kpd_normalized;
+}
+
+if (Q.kpd_candidate == "Löbe") {
+    Q.spd_candidate_votes += Q.kpd_normalized;
+}
+if (Q.spd_candidate == "Löbe") {
+    Q.spd_candidate_votes += Q.spd_normalized;
+}
+
+if (Q.fvp_candidate == "Hellpach") {
+    Q.fvp_candidate_votes += Q.fvp_normalized;
+}
+
+if (Q.fvp_candidate == "Marx") {
+    Q.z_candidate_votes += Q.fvp_normalized;
+}
+if (Q.z_candidate == "Marx" || Q.z_candidate = "Fehrenbach") {
+    Q.z_candidate_votes += Q.z_normalized;
+}
+if (Q.bvp_candidate == "Marx") {
+    Q.z_candidate_votes += Q.bvp_normalized;
+}
+if (Q.nlp_candidate == "Marx") {
+    Q.z_candidate_votes += Q.nlp_normalized;
+}
+if (Q.wp_candidate == "Marx") {
+    Q.z_candidate_votes += Q.wp_normalized;
+}
+if (Q.rlb_candidate == "Marx") {
+    Q.z_candidate_votes += Q.rlb_normalized;
+}
+if (Q.dnvp_candidate == "Marx") {
+    Q.z_candidate_votes += Q.dnvp_normalized;
+}
+if (Q.other_candidate == "Marx") {
+    Q.z_candidate_votes += Q.other_normalized;
+}
+
+if (Q.fvp_candidate == "Cuno") {
+    Q.nlp_candidate_votes += Q.fvp_normalized;
+}
+if (Q.z_candidate == "Cuno") {
+    Q.nlp_candidate_votes += Q.z_normalized;
+}
+if (Q.bvp_candidate == "Cuno") {
+    Q.nlp_candidate_votes += Q.bvp_normalized;
+}
+if (Q.nlp_candidate == "Cuno") {
+    Q.nlp_candidate_votes += Q.nlp_normalized;
+}
+if (Q.wp_candidate == "Cuno") {
+    Q.nlp_candidate_votes += Q.wp_normalized;
+}
+if (Q.rlb_candidate == "Cuno") {
+    Q.nlp_candidate_votes += Q.rlb_normalized;
+}
+if (Q.dnvp_candidate == "Cuno") {
+    Q.nlp_candidate_votes += Q.dnvp_normalized;
+}
+if (Q.other_candidate == "Cuno") {
+    Q.nlp_candidate_votes += Q.other_normalized;
+}
+
+if (Q.z_candidate == "Westarp") {
+    Q.dnvp_candidate_votes += Q.z_normalized;
+}
+if (Q.bvp_candidate == "Westarp") {
+    Q.dnvp_candidate_votes += Q.bvp_normalized;
+}
+if (Q.nlp_candidate == "Westarp") {
+    Q.dnvp_candidate_votes += Q.nlp_normalized;
+}
+if (Q.wp_candidate == "Westarp") {
+    Q.dnvp_candidate_votes += Q.wp_normalized;
+}
+if (Q.rlb_candidate == "Westarp") {
+    Q.dnvp_candidate_votes += Q.rlb_normalized;
+}
+if (Q.dnvp_candidate == "Westarp") {
+    Q.dnvp_candidate_votes += Q.dnvp_normalized;
+    Q.dnvp_candidate_votes += Q.dap_normalized * 0.5;
+    Q.dap_candidate_votes -= Q.dap_normalized * 0.5;
+}
+if (Q.other_candidate == "Westarp") {
+    Q.dnvp_candidate_votes += Q.other_normalized;
+}
+             
+Q.kpd_candidate_votes = Math.round(Q.kpd_candidate_votes*1000)/10;
+Q.spd_candidate_votes = Math.round(Q.spd_candidate_votes*1000)/10;
+Q.fvp_candidate_votes = Math.round(Q.fvp_candidate_votes*1000)/10;
+Q.z_candidate_votes = Math.round(Q.z_candidate_votes*1000)/10;
+Q.nlp_candidate_votes = Math.round(Q.nlp_candidate_votes*1000)/10;
+Q.dnvp_candidate_votes = Math.round(Q.dnvp_candidate_votes*1000)/10;
+Q.dap_candidate_votes = Math.round(Q.dap_candidate_votes*1000)/10;
+
+Q.kpd_majority = (Q.kpd_candidate_votes >= 50);
+Q.spd_majority = (Q.spd_candidate_votes >= 50);
+Q.fvp_majority = (Q.fvp_candidate_votes >= 50);
+Q.z_majority = (Q.z_candidate_votes >= 50);
+Q.nlp_majority = (Q.nlp_candidate_votes >= 50);
+Q.dnvp_majority = (Q.dnvp_candidate_votes >= 50);
+Q.dap_majority = (Q.dap_candidate_votes >= 50);
+Q.any_majority = Q.kpd_majority | Q.spd_majority | Q.fvp_majority | Q.z_majority | Q.nlp_majority | Q.dnvp_majority | Q.dap_majority;
+
+Q.election_round += 1;
+             
+Q.kpd_candidate_votes_disp = Q.kpd_candidate_votes.toFixed(1);
+Q.spd_candidate_votes_disp = Q.spd_candidate_votes.toFixed(1);
+Q.fvp_candidate_votes_disp = Q.fvp_candidate_votes.toFixed(1);
+Q.z_candidate_votes_disp = Q.z_candidate_votes.toFixed(1);
+Q.nlp_candidate_votes_disp = Q.nlp_candidate_votes.toFixed(1);
+Q.dnvp_candidate_votes_disp = Q.dnvp_candidate_votes.toFixed(1);
+Q.dap_candidate_votes_disp = Q.dap_candidate_votes.toFixed(1);
+!}
+go-to: no_majority_round1 if any_majority = 0 and election_round = 1
+
+Results:
+
+[? if kpd_campaign: <span style="color: #8B0000;">**Heinrich Brandler**</span> - [+ kpd_candidate_votes_disp +]% ?]
+
+[? if spd_campaign: <span style="color: #E3000F;">**Paul Löbe**</span> - [+ spd_candidate_votes_disp +]% ?]
+
+[? if fvp_campaign: <span style="color: #FFD800;">**Willy Hellpach**</span> - [+ fvp_candidate_votes_disp +]% ?]
+
+[? if z_campaign and z_candidate = "Fehrenbach": <span style="color: #000000;">**Constantin Fehrenbach**</span> - supported by: ?][? if z_campaign and z_candidate = "Marx": <span style="color: #000000;">**Wilhelm Marx**</span> - [+ z_candidate_votes_disp +]% ?]
+
+[? if nlp_campaign: <span style="color: var(--nlp-color);">**Wilhelm Cuno**</span> - [+ nlp_candidate_votes_disp +]% ?]
+
+[? if dnvp_campaign: <span style="color: #3F7BC1;">**Kuno Westarp**</span> - [+ dnvp_candidate_votes_disp +]% ?]
+
+[? if dap_campaign: <span style="color: #096300;">**Erich Ludendorff**</span> - [+ dap_candidate_votes_disp +]% ?]
+
+
+
+
+
+@no_majority_round1
+on-arrival: presidential_election_r2_trigger = 1;
+#go-to: round2_menu
+
+There is no majority in this round. In the second round, any candidate who wins a plurality will win overall. What should we do?
