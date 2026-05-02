@@ -133,7 +133,7 @@ Internal dissent: [+ dissent_percent : dissent +]
 
 = Party Leadership
 
-{!<span class="tooltip-text" title="Communist Party of Germany" style="color: #8B0000;">!}**KPD**{!</span>!}: Marxism-Leninism ([+kpd_leader+])
+{!<span class="tooltip-text" title="Communist Party of Germany" style="color: #8B0000;">!}**KPD**{!</span>!}: Communism ([+kpd_leader+])
 
 [? if uspd_exist: {!<span class="tooltip-text" title="Independent Social Democratic Party of Germany" style="color: #D47B9B;">!}**USPD**{!</span>!}: Centrist Marxism (Haase) ?]
 
