@@ -242,6 +242,15 @@ go-to: rm_main
 
 Mahraun has been removed as an advisor.
 
+@remove_kempkes
+title: Remove Kempkes
+view-if: kempkes_advisor
+on-arrival: kempkes_advisor = 0; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Kempkes has been removed as an advisor.
+
 
 
 
@@ -568,4 +577,16 @@ on-arrival: mahraun_advisor = 1; n_advisors += 1;
 go-to: advisor_menu
 
 Artur Mahraun is now an advisor.
+
+@add_kempkes
+title: Adolf Kempkes
+subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
+is-card: true
+card-image: img/portraits/KempkesAdolf.jpg
+tags: nonfactional_advisor
+view-if: not kempkes_advisor and n_advisors < 3
+on-arrival: kempkes_advisor = 1; n_advisors += 1;
+go-to: advisor_menu
+
+Adolf Kempkes is now an advisor.
 
