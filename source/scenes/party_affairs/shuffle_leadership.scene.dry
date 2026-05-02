@@ -580,7 +580,7 @@ Artur Mahraun is now an advisor.
 
 @add_kempkes
 title: Adolf Kempkes
-subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
+subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions -  Clear the Agenda, Party Discipline, Emergency Fundraising ?]
 is-card: true
 card-image: img/portraits/KempkesAdolf.jpg
 tags: nonfactional_advisor
