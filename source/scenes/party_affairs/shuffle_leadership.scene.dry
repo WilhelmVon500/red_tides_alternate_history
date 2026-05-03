@@ -162,6 +162,15 @@ go-to: rm_main
 
 Bechly has been removed as an advisor. The Labor faction disapproves.
 
+@remove_streiter
+title: Remove Streiter
+view-if: streiter_advisor
+on-arrival: streiter_advisor = 0; labor_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Streiter has been removed as an advisor. The Labor faction disapproves.
+
 @remove_wildermuth
 title: Remove Wildermuth
 view-if: wildermuth_advisor
@@ -471,6 +480,18 @@ on-arrival: bechly_advisor = 1; n_advisors += 1; labor_strength += 5;
 go-to: advisor_menu
 
 Hans Bechly is now an advisor.
+
+@add_streiter
+title: Georg Streiter
+subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
+is-card: true
+card-image: img/portraits/StreiterGeorg.jpg
+tags: labor_advisor
+view-if: not streiter_advisor and n_advisors < 3 and labor_nlp
+on-arrival: streiter_advisor = 1; n_advisors += 1; labor_strength += 5;
+go-to: advisor_menu
+
+Georg Streiter is now an advisor.
 
 @add_wildermuth
 title: Hermann-Eberhard Wildermuth
