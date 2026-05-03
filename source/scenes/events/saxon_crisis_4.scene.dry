@@ -1,5 +1,5 @@
 title: The Reichstag convenes.
-subtitle: Will the <span style="color: #000000;">Center Party</span> be able to convince the <span style="color: #FFD800;">**FVP**</span> to tolerate our cabinet?
+subtitle: Will the <span style="color: #000000;">Center Party</span> be able to convince the <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> to tolerate our cabinet?
 tags: event
 new-page: true
 view-if: year = 1923 and month = 4 and week = 1
@@ -73,7 +73,7 @@ if (window && d3) {
 
 {!<tr><td><div class="box" style='background-color:#909090'> </div> !}Abstain: {!</td><td>!} [+ abstain_seats +] ([+ abstain_r +]%) {!</td></tr>!}
 
-The <span style="color: #FFD800;">**FVP**</span> voted against our cabinet! WIP
+The <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> voted against our cabinet! WIP
 
 - @dissolution: The Reichstag is dissolved.
 
