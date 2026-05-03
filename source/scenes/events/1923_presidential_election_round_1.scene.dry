@@ -69,10 +69,10 @@ if (Q.bvp_candidate == "Marx") {
 if (Q.nlp_candidate == "Marx") {
     Q.z_candidate_votes += Q.nlp_normalized;
 }
-if (Q.wp_candidate == "Marx") {
+if (Q.wp_candidate == "Marx" && Q.wp_exist) {
     Q.z_candidate_votes += Q.wp_normalized;
 }
-if (Q.rlb_candidate == "Marx") {
+if (Q.rlb_candidate == "Marx" && Q.rlb_exist) {
     Q.z_candidate_votes += Q.rlb_normalized;
 }
 if (Q.dnvp_candidate == "Marx") {
@@ -95,10 +95,10 @@ if (Q.bvp_candidate == "Cuno") {
 if (Q.nlp_candidate == "Cuno") {
     Q.nlp_candidate_votes += Q.nlp_normalized;
 }
-if (Q.wp_candidate == "Cuno") {
+if (Q.wp_candidate == "Cuno" && Q.wp_exist) {
     Q.nlp_candidate_votes += Q.wp_normalized;
 }
-if (Q.rlb_candidate == "Cuno") {
+if (Q.rlb_candidate == "Cuno" && Q.rlb_exist) {
     Q.nlp_candidate_votes += Q.rlb_normalized;
 }
 if (Q.dnvp_candidate == "Cuno") {
@@ -117,10 +117,10 @@ if (Q.bvp_candidate == "Westarp") {
 if (Q.nlp_candidate == "Westarp") {
     Q.dnvp_candidate_votes += Q.nlp_normalized;
 }
-if (Q.wp_candidate == "Westarp") {
+if (Q.wp_candidate == "Westarp" && Q.wp_exist) {
     Q.dnvp_candidate_votes += Q.wp_normalized;
 }
-if (Q.rlb_candidate == "Westarp") {
+if (Q.rlb_candidate == "Westarp" && Q.rlb_exist) {
     Q.dnvp_candidate_votes += Q.rlb_normalized;
 }
 if (Q.dnvp_candidate == "Westarp") {
