@@ -281,8 +281,8 @@ if (Q.spd_seats) {
 if (Q.fvp_seats) {
     data.push({
         "id": "fvp",
-        "legend": "FVP",
-        "name": "FVP",
+        "legend": fvp_name,
+        "name": fvp_name,
         "seats": Math.round(Q.fvp_seats),
     });
 }
@@ -384,7 +384,7 @@ go-to: coalition_menu
 
 {!<tr><td><div class="box" style='background-color:#E3000F'> </div> !} SPD: {!</td><td>!} [+ spd_election_votes +]% {!</td><td>!} [+ votes_change_spd +] {!</td><td>!} [+ spd_seats +] ([+ spd_r +]%) {!</td><td>!} [+ str_seats_change_spd +] ([+ str_change_spd +]%) {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#FFD800'> </div> !} FVP: {!</td><td>!} [+ fvp_election_votes +]% {!</td><td>!} [+ votes_change_fvp +] {!</td><td>!} [+ fvp_seats +] ([+ fvp_r +]%) {!</td><td>!} [+ str_seats_change_fvp +] ([+ str_change_fvp +]%) {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#FFD800'> </div> !} [+fvp_name+]: {!</td><td>!} [+ fvp_election_votes +]% {!</td><td>!} [+ votes_change_fvp +] {!</td><td>!} [+ fvp_seats +] ([+ fvp_r +]%) {!</td><td>!} [+ str_seats_change_fvp +] ([+ str_change_fvp +]%) {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#000000'> </div> !} Z: {!</td><td>!} [+ z_minus_bvp_election_votes +]% {!</td><td>!} [+ votes_change_z +] {!</td><td>!} [+ z_minus_bvp_seats +] ([+ z_minus_bvp_r +]%) {!</td><td>!} [+ str_seats_change_z +] ([+ str_change_z +]%) {!</td></tr>!}
 
@@ -403,11 +403,11 @@ go-to: coalition_menu
 
 **Potential coalitions:**
 
-Weimar Coalition (<span style="color: #E3000F;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #FFD800;">**FVP**</span>): [+ weimar_coalition +]%
+Weimar Coalition (<span style="color: #E3000F;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>): [+ weimar_coalition +]%
 
 Right Coalition (<span style="color: #3F7BC1;">**DNVP**</span> + <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #69A2BE;">**BVP**</span>[? if wp_exist:  + <span style="color: #B8996F;">**WP**</span>?][? if rlb_exist:  + <span style="color: #52AE6F;">**RLB**</span>?]): [+ right_coalition +]%
 
-Center-Right Coalition (<span style="color: #3F7BC1;">**DNVP**</span> + <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #69A2BE;">**BVP**</span> + <span style="color: #FFD800;">**FVP**</span>[? if wp_exist:  + <span style="color: #B8996F;">**WP**</span>?][? if rlb_exist:  + <span style="color: #52AE6F;">**RLB**</span>?]): [+ center_right_coalition +]%
+Center-Right Coalition (<span style="color: #3F7BC1;">**DNVP**</span> + <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #69A2BE;">**BVP**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>[? if wp_exist:  + <span style="color: #B8996F;">**WP**</span>?][? if rlb_exist:  + <span style="color: #52AE6F;">**RLB**</span>?]): [+ center_right_coalition +]%
 
 There are some potential coalition arrangements.
 
@@ -422,11 +422,11 @@ There are some potential coalition arrangements.
 
 @weimar_coalition
 title: We can form a Weimar Coalition.
-subtitle: <span style="color: #E3000F;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #FFD800;">**FVP**</span> ([+ weimar_coalition +]%)
+subtitle: <span style="color: #E3000F;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> ([+ weimar_coalition +]%)
 view-if: weimar_coalition >= 50
-on-arrival: in_weimar_coalition = 1; spd_in_government = 1; z_in_government = 1; fvp_in_government = 1; foreign_minister = 'Rathenau'; foreign_minister_party = 'FVP'; interior_minister = 'Wirth'; interior_minister_party = 'Z'; justice_minister = 'Radbruch'; justice_minister_party = 'SPD'; finance_minister = 'Erzberger'; finance_minister_party = 'Z'; economic_minister = 'Schmidt'; economic_minister_party = 'SPD'; labor_minister = 'Wissel'; labor_minister_party = 'SPD'; agriculture_minister = 'Hermes'; agriculture_minister_party = 'Z'; reichswehr_minister = 'Gessler'; reichswehr_minister_party = 'FVP';
+on-arrival: in_weimar_coalition = 1; spd_in_government = 1; z_in_government = 1; fvp_in_government = 1; foreign_minister = 'Rathenau'; foreign_minister_party = fvp_name; interior_minister = 'Wirth'; interior_minister_party = 'Z'; justice_minister = 'Radbruch'; justice_minister_party = 'SPD'; finance_minister = 'Erzberger'; finance_minister_party = 'Z'; economic_minister = 'Schmidt'; economic_minister_party = 'SPD'; labor_minister = 'Wissel'; labor_minister_party = 'SPD'; agriculture_minister = 'Hermes'; agriculture_minister_party = 'Z'; reichswehr_minister = 'Gessler'; reichswehr_minister_party = fvp_name;
 
-The <span style="color: #E3000F;">**SPD**</span> enough votes to form a "Weimar Coalition" government consisting of the <span style="color: #E3000F;">**SPD**</span>, <span style="color: #000000;">Center Party</span> and <span style="color: #FFD800;">**FVP**</span>.
+The <span style="color: #E3000F;">**SPD**</span> enough votes to form a "Weimar Coalition" government consisting of the <span style="color: #E3000F;">**SPD**</span>, <span style="color: #000000;">Center Party</span> and <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>.
 
 Who will be the chancellor?
 
@@ -434,7 +434,7 @@ Who will be the chancellor?
 
 @muller_weimar_chancellor
 title: Hermann Müller for Chancellor.
-subtitle: Müller is popular within the <span style="color: #E3000F;">**SPD**</span>, and is the preferred candidate of the <span style="color: #000000;">Center</span> and the <span style="color: #FFD800;">**FVP**</span>.
+subtitle: Müller is popular within the <span style="color: #E3000F;">**SPD**</span>, and is the preferred candidate of the <span style="color: #000000;">Center</span> and the <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>.
 face-image: img/portraits/MüllerHermann.jpg
 on-arrival: chancellor = "Müller"; chancellor_party = "SPD"; vice_chancellor = "Erzberger"; vice_chancellor_party = "Z";
 
@@ -446,9 +446,9 @@ Müller's appointment as chancellor is approved by all members of the coalition.
 
 @center_right_coalition
 title: We can form a Center-Right Coalition.
-subtitle: <span style="color: #3F7BC1;">**DNVP**</span> + <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #69A2BE;">**BVP**</span> + <span style="color: #FFD800;">**FVP**</span>[? if wp_exist:  + <span style="color: #B8996F;">**WP**</span>?][? if rlb_exist:  + <span style="color: #52AE6F;">**RLB**</span>?] ([+ center_right_coalition +]%)
+subtitle: <span style="color: #3F7BC1;">**DNVP**</span> + <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #69A2BE;">**BVP**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>[? if wp_exist:  + <span style="color: #B8996F;">**WP**</span>?][? if rlb_exist:  + <span style="color: #52AE6F;">**RLB**</span>?] ([+ center_right_coalition +]%)
 view-if: center_right_coalition >= 50
-on-arrival: in_center_right_coalition = 1; nlp_in_government = 1; z_in_government = 1; dnvp_in_government = 1; foreign_minister = 'Brockdorff-Rantzau'; foreign_minister_party = 'I'; interior_minister = 'Keudell'; interior_minister_party = 'DNVP'; justice_minister = 'Hergt'; justice_minister_party = 'DNVP'; finance_minister = 'Köhler'; finance_minister_party = 'Z'; economic_minister = 'Hamm'; economic_minister_party = 'FVP'; labor_minister = 'Brauns'; labor_minister_party = 'Z'; agriculture_minister = 'Schiele'; agriculture_minister_party = 'DNVP'; reichswehr_minister = 'Seeckt'; reichswehr_minister_party = 'I';
+on-arrival: in_center_right_coalition = 1; nlp_in_government = 1; z_in_government = 1; dnvp_in_government = 1; foreign_minister = 'Brockdorff-Rantzau'; foreign_minister_party = 'I'; interior_minister = 'Keudell'; interior_minister_party = 'DNVP'; justice_minister = 'Hergt'; justice_minister_party = 'DNVP'; finance_minister = 'Köhler'; finance_minister_party = 'Z'; economic_minister = 'Hamm'; economic_minister_party = fvp_name; labor_minister = 'Brauns'; labor_minister_party = 'Z'; agriculture_minister = 'Schiele'; agriculture_minister_party = 'DNVP'; reichswehr_minister = 'Seeckt'; reichswehr_minister_party = 'I';
 
 WIP.
 
