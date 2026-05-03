@@ -23,7 +23,7 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; fvp_relation += 5*(1 - dissent); wp_relation += 5*(1 - dissent)
 
-The <span style="color: #FFD800;">**FVP**</span> [? if wp_exist: and the <span style="color: #B8996F;">**WP**</span> ?] has been one of our closest allies through the course of the Republic.
+The <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> [? if wp_exist: and the <span style="color: #B8996F;">**WP**</span> ?] have been one of our closest allies through the course of the Republic.
 
 
 @center
