@@ -8,7 +8,7 @@ new-page: true
 on-arrival: {!
 Q.nlp_candidate = "";
 
-Q.kpd_candidate = "Brandler";
+Q.kpd_candidate = "Löbe";
 Q.spd_candidate = "Löbe";
 Q.fvp_candidate = "Hellpach";
 Q.z_candidate = "Fehrenbach";
@@ -20,7 +20,7 @@ Q.dap_candidate = "Ludendorff";
 Q.other_candidate = "Westarp";
 
 Q.nlp_campaign = 0;
-Q.kpd_campaign = 1;
+Q.kpd_campaign = 0;
 Q.spd_campaign = 1;
 Q.fvp_campaign = 1;
 Q.z_campaign = 1;
@@ -53,14 +53,6 @@ WIP
 @ludendorff
 title: We await the decision of the <span style="color: #096300;">**DAP**</span>.
 face-image: img/portraits/LudendorffErich.jpg
-
-WIP
-
-- @brandler
-
-@brandler
-title: The <span style="color: #8B0000;">**KPD**</span> runs Heinrich Brandler.
-face-image: img/portraits/BrandlerHeinrich.jpg
 
 WIP
 
@@ -102,10 +94,6 @@ WIP
 
 @view_candidates
 go-to: endorsements_cuno if nlp_candidate = "Cuno"; endorsements_marx if nlp_candidate = "Marx"; endorsements_westarp if nlp_candidate = "Westarp"
-
-[? if kpd_campaign: <span style="color: #8B0000;">**Heinrich Brandler**</span> - supported by: ?]
-
-[? if kpd_candidate = "Brandler": - <span style="color: #8B0000;">**KPD**</span> ?]
 
 [? if spd_campaign: <span style="color: #E3000F;">**Paul Löbe**</span> - supported by: ?]
 
