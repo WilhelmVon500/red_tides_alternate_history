@@ -480,6 +480,7 @@ Q.dohna_schlodien_advisor = 0; // Alexander zu Dohna-Schlodien
 // labor advisors
 Q.thiel_advisor = 0; // Otto Thiel
 Q.bechly_advisor = 0; // Hans Bechly
+Q.streiter_advisor = 0; // Georg Streiter
 Q.wildermuth_advisor = 0; // Hermann-Eberhard Wildermuth
 
 // industrialist advisors
@@ -490,6 +491,7 @@ Q.dingeldey_advisor = 0; // Eduard Dingeldey
 
 // nonfactional advisors
 Q.mahraun_advisor = 0; // Artur Mahraun
+Q.kempkes_advisor = 0; // Adolf Kempkes
 !}
 set-bg: img/map_2.jpg
 new-page: true
