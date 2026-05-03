@@ -2,6 +2,7 @@ title: Post Event
 new-page: true
 on-arrival: {!
 document.body.style.setProperty('--nlp-color', Q.nlp_color);
+document.body.style.setProperty('--fvp-color', Q.fvp_color);
 
 Q.last_advisor_action = 0;
 Q.last_cabinet_action = 0;
