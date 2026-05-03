@@ -10,9 +10,9 @@ card-image: img/weimar_coalition.jpg
 
 The <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> cannot govern by itself. Because we do not have an electoral majority, we need the support of other parties. We can reach out and build connections with these parties, or perhaps we can stand alone.
 
-- @liberals: Strengthen our bonds with the left-liberal <span style="color: #FFD800;">Progressive People's Party</span> [?if wp_exist: and conservative-liberal <span style="color: #B8996F;">Economic Party</span>?].
+- @liberals: Strengthen our bonds with the left-liberal <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> [?if wp_exist: and conservative-liberal <span style="color: #B8996F;">**WP**</span>?].
 - @center: Strengthen our bonds with the Catholic <span style="color: #000000;">Center Party</span>.
-- @spd: Work towards repairing relationships with the <span style="color: #E3000F;">Social Democratic Party</span>.
+- @spd: Work towards repairing relationships with the <span style="color: #E3000F;">**SPD**</span>.
 - @nlp_alone: The <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> can stand alone for now.
 - @easy_discard
 
