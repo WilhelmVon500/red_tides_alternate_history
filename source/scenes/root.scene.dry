@@ -92,6 +92,7 @@ Q.z_leader = "Marx";
 Q.fvp_leader = "Petersen";
 Q.fvp_name = "FVP";
 Q.fvp_color = "#FFD800";
+Q.fvp_ideology = "Moderate";
 
 Q.nlp_leader = "Stresemann";
 Q.nlp_name = "NLP";
