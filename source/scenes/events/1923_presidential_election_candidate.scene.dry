@@ -127,9 +127,9 @@ go-to: endorsements_cuno if nlp_candidate = "Cuno"; endorsements_marx if nlp_can
 
 [? if nlp_candidate = "Marx": - <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> ?]
 
-[? if wp_candidate = "Marx": - <span style="color: #B8996F;">**WP**</span> ?]
+[? if wp_candidate = "Marx" and wp_exist: - <span style="color: #B8996F;">**WP**</span> ?]
 
-[? if rlb_candidate = "Marx": - <span style="color: #52AE6F;">**RLB**</span> ?]
+[? if rlb_candidate = "Marx" and rlb_exist: - <span style="color: #52AE6F;">**RLB**</span> ?]
 
 [? if dnvp_candidate = "Marx": - <span style="color: #3F7BC1;">**DNVP**</span> ?]
 
@@ -145,9 +145,9 @@ go-to: endorsements_cuno if nlp_candidate = "Cuno"; endorsements_marx if nlp_can
 
 [? if nlp_candidate = "Cuno": - <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> ?]
 
-[? if wp_candidate = "Cuno": - <span style="color: #B8996F;">**WP**</span> ?]
+[? if wp_candidate = "Cuno" and wp_exist: - <span style="color: #B8996F;">**WP**</span> ?]
 
-[? if rlb_candidate = "Cuno": - <span style="color: #52AE6F;">**RLB**</span> ?]
+[? if rlb_candidate = "Cuno" and rlb_exist: - <span style="color: #52AE6F;">**RLB**</span> ?]
 
 [? if dnvp_candidate = "Cuno": - <span style="color: #3F7BC1;">**DNVP**</span> ?]
 
@@ -161,9 +161,9 @@ go-to: endorsements_cuno if nlp_candidate = "Cuno"; endorsements_marx if nlp_can
 
 [? if nlp_candidate = "Westarp": - <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> ?]
 
-[? if wp_candidate = "Westarp": - <span style="color: #B8996F;">**WP**</span> ?]
+[? if wp_candidate = "Westarp" and wp_exist: - <span style="color: #B8996F;">**WP**</span> ?]
 
-[? if rlb_candidate = "Westarp": - <span style="color: #52AE6F;">**RLB**</span> ?]
+[? if rlb_candidate = "Westarp" and rlb_exist: - <span style="color: #52AE6F;">**RLB**</span> ?]
 
 [? if dnvp_candidate = "Westarp": - <span style="color: #3F7BC1;">**DNVP**</span> ?]
 
