@@ -174,8 +174,8 @@ if (Q.spd_seats_saxony) {
 if (Q.fvp_seats_saxony) {
     data.push({
         "id": "fvp",
-        "legend": fvp_name,
-        "name": fvp_name,
+        "legend": Q.fvp_name,
+        "name": Q.fvp_name,
         "seats": Math.round(Q.fvp_seats_saxony),
     });
 }
