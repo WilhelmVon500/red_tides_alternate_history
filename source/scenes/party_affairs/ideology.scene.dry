@@ -27,7 +27,7 @@ if (Q.ideology && Q.ideology != "Left-wing Stresemannite") {
 go-to: changed if changed = 1
 on-departure: ideology = "Left-wing Stresemannite"; left_stresemannite_strength += 10; left_stresemannite_dissent -= 5; spd_relation += 3; dnvp_relation -= 5;
 
-Our party has largely survived thanks to the efforts of our party leader, Gustav Stresemann. A key element in his leadership has been a spirit of pragmatism towards the traditionally republican parties of the <span style="color: #E3000F;">**SPD**</span>, <span style="color: #000000;">**Z**</span>, and the <span style="color: #FFD800;">**FVP**</span>; we should continue to work with the Weimar Parties if it furthers our interests.
+Our party has largely survived thanks to the efforts of our party leader, Gustav Stresemann. A key element in his leadership has been a spirit of pragmatism towards the traditionally republican parties of the <span style="color: #E3000F;">**SPD**</span>, <span style="color: #000000;">**Z**</span>, and the <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>; we should continue to work with the Weimar Parties if it furthers our interests.
 
 @right_stresemannite
 on-arrival: {!
