@@ -167,7 +167,7 @@ Results:
 
 [? if spd_campaign: <span style="color: #E3000F;">**Paul Löbe**</span> - [+ spd_candidate_votes_disp +]% ?]
 
-[? if fvp_campaign: <span style="color: #FFD800;">**Willy Hellpach**</span> - [+ fvp_candidate_votes_disp +]% ?]
+[? if fvp_campaign: <span style="color: var(--fvp-color);">**Willy Hellpach**</span> - [+ fvp_candidate_votes_disp +]% ?]
 
 [? if z_campaign and z_candidate = "Fehrenbach": <span style="color: #000000;">**Constantin Fehrenbach**</span> - [+ z_candidate_votes_disp +]% ?][? if z_campaign and z_candidate = "Marx": <span style="color: #000000;">**Wilhelm Marx**</span> - [+ z_candidate_votes_disp +]% ?]
 
@@ -182,7 +182,11 @@ Results:
 
 
 @no_majority_round1
-on-arrival: presidential_election_r2_trigger = 1;
+on-departure: presidential_election_r2_trigger = 1; spd_campaign = 0 if spd_campaign and fvp_campaign and spd_candidate_votes < 35; spd_candidate = "Rathenau" if spd_campaign and fvp_campaign and spd_candidate_votes < 35; fvp_candidate = "Rathenau" if spd_campaign and fvp_campaign and spd_candidate_votes < 35; kpd_campaign = 1 if spd_campaign and fvp_campaign and spd_candidate_votes < 35; kpd_candidate = "Brandler" if spd_campaign and fvp_campaign and spd_candidate_votes < 35; z_candidate = "Marx" if z_candidate = "Fehrenbach";
 #go-to: round2_menu
 
 There is no majority in this round. In the second round, any candidate who wins a plurality will win overall. What should we do?
+
+[? if spd_campaign and fvp_campaign and spd_candidate_votes < 35: Following the <span style="color: #E3000F;">**SPD**</span>'s poor performance in the first round, the <span style="color: #E3000F;">**SPD**</span> reached out to <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> to run Rathenau as a unity candidate of the republican left. Following that agreement, the <span style="color: #8B0000;">**KPD**</span> fielded Brandler as a new candidate. ?]
+
+[? if z_candidate = "Fehrenbach": The <span style="color: #000000;">Center Party</span> has decided to replace Fehrenbach with Marx in the second round, attempting to get other bourgeois parties to support their candidate. ?]
