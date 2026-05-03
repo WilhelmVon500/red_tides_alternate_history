@@ -71,7 +71,7 @@ for (var party of Q.parties) {
 var new_party_sum = 0;
 for (var party of Q.parties) {
     Q[party + '_sl'] = 0;
-    Q[party + '_seats'] = 0;
+    Q[party + '_seats_saxony'] = 0;
     if (Q[party + '_banned']) {
         Q[party + '_election_votes_saxony'] = 0;
     } else {
