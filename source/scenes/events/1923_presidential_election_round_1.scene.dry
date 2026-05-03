@@ -108,9 +108,6 @@ if (Q.other_candidate == "Cuno") {
     Q.nlp_candidate_votes += Q.other_normalized;
 }
 
-if (Q.z_candidate == "Westarp") {
-    Q.dnvp_candidate_votes += (Q.z_normalized - Q.bvp_normalized);
-}
 if (Q.bvp_candidate == "Westarp") {
     Q.dnvp_candidate_votes += Q.bvp_normalized;
 }
