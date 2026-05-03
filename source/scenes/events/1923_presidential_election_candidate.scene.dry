@@ -227,8 +227,8 @@ WIP
 
 Westarp can't win this election alone, he needs support from other parties.
 
-- @convince_fvp_westarp
-- @convince_z_westarp
+- @convince_fvp_westarp: Convince the <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> to back Westarp.
+- @convince_z_westarp: Convince the <span style="color: #000000;">Center Party</span> to back Westarp.
 - @view_candidates: View party endorsements.
 - @hope: We have concluded negotiations with other parties.
 
