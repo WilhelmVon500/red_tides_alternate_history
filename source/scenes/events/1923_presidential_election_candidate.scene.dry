@@ -187,6 +187,11 @@ WIP
 
 @endorsements_cuno
 
+We can't win this election alone, we need support from other parties.
+
+- @view_candidates: View party endorsements.
+- @hope: We have concluded negotiations with other parties.
+
 
 
 
@@ -200,6 +205,11 @@ WIP
 - @endorsements_marx: Scout out potential endorsements.
 
 @endorsements_marx
+
+Marx can't win this election alone, he needs support from other parties.
+
+- @view_candidates: View party endorsements.
+- @hope: We have concluded negotiations with other parties.
 
 
 
@@ -215,7 +225,26 @@ WIP
 
 @endorsements_westarp
 
+Westarp can't win this election alone, he needs support from other parties.
+
+- @convince_fvp_westarp
+- @convince_z_westarp
+- @view_candidates: View party endorsements.
+- @hope: We have concluded negotiations with other parties.
+
+@convince_fvp_westarp
+unavailable-subtitle: The <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> would never support him.
+choose-if: false
+
+@convince_z_westarp
+unavailable-subtitle: The <span style="color: #000000;">Center Party</span> doesn't want to support him.
+choose-if: false
 
 
 
+
+
+@hope
+
+Hopefully, our coalition is strong enough to win.
 
