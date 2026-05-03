@@ -83,7 +83,7 @@ WIP
 - @hellpach
 
 @hellpach
-title: The <span style="color: #FFD800;">**FVP**</span> nominates Willy Hellpach.
+title: The <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> nominates Willy Hellpach.
 face-image: img/portraits/HellpachWilly.jpg
 
 WIP
@@ -113,13 +113,13 @@ go-to: endorsements_cuno if nlp_candidate = "Cuno"; endorsements_marx if nlp_can
 
 [? if spd_candidate = "Löbe": - <span style="color: #E3000F;">**SPD**</span> ?]
 
-[? if fvp_campaign: <span style="color: #FFD800;">**Willy Hellpach**</span> - supported by: ?]
+[? if fvp_campaign: <span style="color: var(--fvp-color);">**Willy Hellpach**</span> - supported by: ?]
 
-[? if fvp_candidate = "Hellpach": - <span style="color: #FFD800;">**FVP**</span> ?]
+[? if fvp_candidate = "Hellpach": - <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> ?]
 
 [? if z_campaign and z_candidate = "Fehrenbach": <span style="color: #000000;">**Constantin Fehrenbach**</span> - supported by: ?][? if z_campaign and z_candidate = "Marx": <span style="color: #000000;">**Wilhelm Marx**</span> - supported by: ?]
 
-[? if fvp_candidate = "Marx": - <span style="color: #FFD800;">**FVP**</span> ?]
+[? if fvp_candidate = "Marx": - <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> ?]
 
 [? if z_candidate = "Fehrenbach" or z_candidate = "Marx": - <span style="color: #000000;">Center Party</span> ?]
 
@@ -137,7 +137,7 @@ go-to: endorsements_cuno if nlp_candidate = "Cuno"; endorsements_marx if nlp_can
 
 [? if nlp_campaign: <span style="color: var(--nlp-color);">**Wilhelm Cuno**</span> - supported by: ?]
 
-[? if fvp_candidate = "Cuno": - <span style="color: #FFD800;">**FVP**</span> ?]
+[? if fvp_candidate = "Cuno": - <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> ?]
 
 [? if z_candidate = "Cuno": - <span style="color: #000000;">Center Party</span> ?]
 
