@@ -89,15 +89,18 @@ Q.kpd_leader = "Brandler";
 
 Q.z_leader = "Marx";
 
-Q.dnvp_leader = "Westarp";
-Q.dnvp_ideology = "Moderate";
-
-Q.dap_leader = "Drexler";
-
+Q.fvp_leader = "Petersen";
+Q.fvp_name = "FVP";
+Q.fvp_color = "#FFD800";
 
 Q.nlp_leader = "Stresemann";
 Q.nlp_name = "NLP";
 Q.nlp_color = "#98C22C";
+
+Q.dnvp_leader = "Westarp";
+Q.dnvp_ideology = "Moderate";
+
+Q.dap_leader = "Drexler";
 
 Q.uspd_exist = 1;
 Q.wp_exist = 1;
