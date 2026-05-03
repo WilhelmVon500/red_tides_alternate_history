@@ -384,7 +384,7 @@ go-to: coalition_menu
 
 {!<tr><td><div class="box" style='background-color:#E3000F'> </div> !} SPD: {!</td><td>!} [+ spd_election_votes +]% {!</td><td>!} [+ votes_change_spd +] {!</td><td>!} [+ spd_seats +] ([+ spd_r +]%) {!</td><td>!} [+ str_seats_change_spd +] ([+ str_change_spd +]%) {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color: var(--fvp-color);'> </div> !} [+fvp_name+]: {!</td><td>!} [+ fvp_election_votes +]% {!</td><td>!} [+ votes_change_fvp +] {!</td><td>!} [+ fvp_seats +] ([+ fvp_r +]%) {!</td><td>!} [+ str_seats_change_fvp +] ([+ str_change_fvp +]%) {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color: var(--fvp-color)'> </div> !} [+fvp_name+]: {!</td><td>!} [+ fvp_election_votes +]% {!</td><td>!} [+ votes_change_fvp +] {!</td><td>!} [+ fvp_seats +] ([+ fvp_r +]%) {!</td><td>!} [+ str_seats_change_fvp +] ([+ str_change_fvp +]%) {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#000000'> </div> !} Z: {!</td><td>!} [+ z_minus_bvp_election_votes +]% {!</td><td>!} [+ votes_change_z +] {!</td><td>!} [+ z_minus_bvp_seats +] ([+ z_minus_bvp_r +]%) {!</td><td>!} [+ str_seats_change_z +] ([+ str_change_z +]%) {!</td></tr>!}
 
