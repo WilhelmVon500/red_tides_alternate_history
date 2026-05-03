@@ -155,8 +155,6 @@ go-to: endorsements_cuno if nlp_candidate = "Cuno"; endorsements_marx if nlp_can
 
 [? if dnvp_campaign: <span style="color: #3F7BC1;">**Kuno Westarp**</span> - supported by: ?]
 
-[? if z_candidate = "Westarp": - <span style="color: #000000;">Center Party</span> ?]
-
 [? if bvp_candidate = "Westarp": - <span style="color: #69A2BE;">**BVP**</span> ?]
 
 [? if nlp_candidate = "Westarp": - <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> ?]
