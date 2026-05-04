@@ -234,11 +234,12 @@ if (Q.spd_campaign && Q.fvp_campaign && Q.spd_candidate_votes < 35) {
   Q.spd_campaign = 0;
   Q.kpd_campaign = 1;
   Q.kpd_candidate = "Brandler";
-  if (Q.spd_campaign && Q.fvp_campaign && Q.spd_candidate_votes < 35 && Q.nlp_candidate != "Westarp") {
+
+  if (Q.nlp_candidate != "Westarp") {
     Q.spd_candidate = "Rathenau";
     Q.fvp_candidate = "Rathenau";
   }
-  if (Q.spd_campaign && Q.fvp_campaign && Q.spd_candidate_votes < 35 && Q.nlp_candidate == "Westarp") {
+  if (Q.nlp_candidate == "Westarp") {
     Q.spd_candidate = "Marx";
     Q.fvp_candidate = "Marx";
   }
@@ -250,6 +251,10 @@ if !(Q.spd_campaign && Q.fvp_campaign && Q.spd_candidate_votes < 35 && Q.nlp_can
 
 
 if (Q.nlp_campaign && Q.z_campaign && Q.dnvp_campaign) {
+  Q.nlp_candidate = "";
+  Q.cuno_drop_out = 1;
+  Q.nlp_campaign = 0;
+
   if (Q.fvp_candidate == "Cuno") {
     Q.fvp_candidate = "Marx";
   }
@@ -262,9 +267,6 @@ if (Q.nlp_campaign && Q.z_campaign && Q.dnvp_campaign) {
   if (Q.rlb_candidate == "Cuno") {
     Q.rlb_candidate = "Westarp";
   }
-  Q.nlp_candidate = "";
-  Q.cuno_drop_out = 1;
-  Q.nlp_campaign = 0;
 }
 !}
 go-to: round2_menu
