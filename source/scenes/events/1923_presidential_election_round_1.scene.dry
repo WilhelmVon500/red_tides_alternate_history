@@ -1,6 +1,6 @@
 title: Presidential Election
 subtitle: The first round results have come in...
-view-if: year = 1923 and month = 8 and week = 2
+view-if: year = 1923 and month = 8 and week = 1
 frequency: 1000
 max-visits: 1
 new-page: true
