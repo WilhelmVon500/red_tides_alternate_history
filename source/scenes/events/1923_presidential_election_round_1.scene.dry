@@ -173,10 +173,12 @@ Results:
 
 
 @no_majority_round1
-on-departure: presidential_election_r2_trigger = 1; kpd_campaign = 1 if spd_campaign and fvp_campaign and spd_candidate_votes < 35; kpd_candidate = "Brandler" if spd_campaign and fvp_campaign and spd_candidate_votes < 35; z_candidate = "Marx" if z_candidate = "Fehrenbach"; fvp_campaign = 0 if not (spd_campaign and fvp_campaign and spd_candidate_votes < 35 and not nlp_candidate = "Westarp"); fvp_candidate = "Marx" if z_candidate = "Fehrenbach" or z_candidate = "Marx"; fvp_candidate = "Cuno" if z_candidate = "Cuno"; spd_campaign = 0 if spd_campaign and fvp_campaign and spd_candidate_votes < 35; spd_candidate = "Rathenau" if spd_campaign and fvp_campaign and spd_candidate_votes < 35 and not nlp_candidate = "Westarp"; fvp_candidate = "Rathenau" if spd_campaign and fvp_campaign and spd_candidate_votes < 35 and not nlp_candidate = "Westarp"; spd_candidate = "Marx" if spd_campaign and fvp_campaign and spd_candidate_votes < 35 and nlp_candidate = "Westarp"; fvp_candidate = "Marx" if spd_campaign and fvp_campaign and spd_candidate_votes < 35 and nlp_candidate = "Westarp";
+on-departure: presidential_election_r2_trigger = 1; kpd_campaign = 1 if spd_campaign and fvp_campaign and spd_candidate_votes < 35; kpd_candidate = "Brandler" if spd_campaign and fvp_campaign and spd_candidate_votes < 35; z_candidate = "Marx" if z_candidate = "Fehrenbach"; fvp_campaign = 0 if not (spd_campaign and fvp_campaign and spd_candidate_votes < 35 and not nlp_candidate = "Westarp"); fvp_candidate = "Marx" if z_candidate = "Fehrenbach" or z_candidate = "Marx"; fvp_candidate = "Cuno" if z_candidate = "Cuno"; spd_campaign = 0 if spd_campaign and fvp_campaign and spd_candidate_votes < 35; spd_candidate = "Rathenau" if spd_campaign and fvp_campaign and spd_candidate_votes < 35 and not nlp_candidate = "Westarp"; fvp_candidate = "Rathenau" if spd_campaign and fvp_campaign and spd_candidate_votes < 35 and not nlp_candidate = "Westarp"; spd_candidate = "Marx" if spd_campaign and fvp_campaign and spd_candidate_votes < 35 and nlp_candidate = "Westarp"; fvp_candidate = "Marx" if spd_campaign and fvp_campaign and spd_candidate_votes < 35 and nlp_candidate = "Westarp"; nlp_campaign = 0 if nlp_campaign and z_campaign and dnvp_campaign; nlp_candidate = "" if nlp_campaign and z_campaign and dnvp_campaign; fvp_candidate = "Marx" if fvp_candidate = "Cuno" and nlp_campaign and z_campaign and dnvp_campaign; bvp_candidate = "Westarp" if bvp_candidate = "Cuno" and nlp_campaign and z_campaign and dnvp_campaign; wp_candidate = "Westarp" if wp_candidate = "Cuno" and nlp_campaign and z_campaign and dnvp_campaign; rlb_candidate = "Westarp" if rlb_candidate = "Cuno" and nlp_campaign and z_campaign and dnvp_campaign; cuno_drop_out = 1 if nlp_campaign and z_campaign and dnvp_campaign;
 go-to: round2_menu
 
 There is no majority in this round. In the second round, any candidate who wins a plurality will win overall. What should we do?
+
+[? if nlp_campaign and z_campaign and dnvp_campaign: Wilhelm Cuno has decided to drop out as he failed to secure backing of major bourgeois parties. ?]
 
 [? if z_candidate = "Fehrenbach": The <span style="color: #000000;">Center Party</span> has decided to replace Fehrenbach with Marx in the second round, attempting to get other bourgeois parties to support their candidate. ?]
 
@@ -209,7 +211,7 @@ WIP
 subtitle: This will cost us 1 resource.
 choose-if: resources >= 1 and chancellor = "Cuno"
 unavailable-subtitle: [? if resources < 1: Not enough resources. ?][? if chancellor != "Cuno": Wilhelm Cuno doesn't have needed support. ?]
-view-if: nlp_candidate != "Cuno"
+view-if: nlp_candidate != "Cuno" and not cuno_drop_out
 on-arrival: resources -= 1; nlp_campaign = 1; nlp_candidate = "Cuno"; z_campaign = 0; z_candidate = "Cuno"; fvp_candidate = "Cuno" if fvp_candidate = "Marx"; spd_campaign = 1 if spd_candidate = "Marx"; spd_candidate = "Löbe" if spd_candidate = "Marx";
 
 WIP
@@ -230,3 +232,4 @@ WIP
 - @round2_vote: Second round voting begins next month.
 
 @round2_vote
+view-if: nlp_candidate != ""
