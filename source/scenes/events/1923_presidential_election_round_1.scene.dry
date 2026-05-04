@@ -244,7 +244,7 @@ if (Q.spd_campaign && Q.fvp_campaign && Q.spd_candidate_votes < 35) {
   }
 }
 
-if !(Q.spd_campaign && fvp_campaign && Q.spd_candidate_votes < 35 && Q.nlp_candidate != "Westarp") {
+if !(Q.spd_campaign && Q.fvp_campaign && Q.spd_candidate_votes < 35 && Q.nlp_candidate != "Westarp") {
   Q.fvp_campaign = 0;
 }
 
