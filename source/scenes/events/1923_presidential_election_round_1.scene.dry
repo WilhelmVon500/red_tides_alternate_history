@@ -212,7 +212,7 @@ on-arrival: resources -= 1; nlp_campaign = 1; nlp_candidate = "Cuno"; z_campaign
 
 WIP
 
-[? if: spd_campaign and fvp_campaign and spd_candidate_votes < 35 and nlp_candidate = "Westarp": With Wilhelm Marx dropping out, the <span style="color: #E3000F;">**SPD**</span> will try to run Paul Löbe again. ?]
+[? if spd_campaign and fvp_campaign and spd_candidate_votes < 35 and nlp_candidate = "Westarp": With Wilhelm Marx dropping out, the <span style="color: #E3000F;">**SPD**</span> will try to run Paul Löbe again. ?]
 
 - @round2_vote: Second round voting begins next month.
 
