@@ -1,0 +1,214 @@
+title: Presidential Election
+subtitle: The first round results have come in...
+view-if: year = 1923 and month = 9 and week = 2 and presidential_election_r2_trigger
+frequency: 1000
+max-visits: 1
+new-page: true
+tags: event
+go-to: election_algorithm
+set-jump: pres_election
+
+@pres_election
+
+The first round has ended, with no candidate receiving an absolute majority of votes.
+
+@final_election
+go-to: election_algorithm
+set-jump: post_election
+
+
+@post_election
+on-arrival: {!
+Q.bvp_votes = parseFloat((Q.z_votes*0.2).toFixed(1));
+if (Q.bvp_votes > 3.6) {
+    Q.bvp_votes = 3.6;
+}
+Q.bvp_normalized = Q.bvp_votes / 100;
+
+Q.kpd_candidate_votes = 0;
+Q.spd_candidate_votes = 0;
+Q.fvp_candidate_votes = 0;
+Q.z_candidate_votes = 0;
+Q.nlp_candidate_votes = 0;
+Q.dnvp_candidate_votes = 0;
+Q.dap_candidate_votes = 0;
+
+if (Q.dap_candidate == "Ludendorff") {
+    Q.dap_candidate_votes += Q.dap_normalized;
+}
+
+if (Q.kpd_candidate == "Brandler") {
+    Q.kpd_candidate_votes += Q.kpd_normalized;
+}
+
+if (Q.kpd_candidate == "Löbe") {
+    Q.spd_candidate_votes += Q.kpd_normalized;
+}
+if (Q.spd_candidate == "Löbe") {
+    Q.spd_candidate_votes += Q.spd_normalized;
+}
+
+if (Q.spd_candidate == "Rathenau") {
+    Q.fvp_candidate_votes += Q.spd_normalized * 0.7;
+    Q.kpd_candidate_votes += Q.spd_normalized * 0.3;
+}
+if (Q.fvp_candidate == "Rathenau") {
+    Q.fvp_candidate_votes += Q.fvp_normalized;
+}
+
+if (Q.spd_candidate == "Marx") {
+    Q.z_candidate_votes += Q.spd_normalized * 0.7;
+    Q.kpd_candidate_votes += Q.spd_normalized * 0.3;
+}
+if (Q.spd_candidate == "Marx") {
+    Q.z_candidate_votes += Q.fvp_normalized;
+}
+if (Q.z_candidate == "Marx" || Q.z_candidate == "Fehrenbach") {
+    Q.z_candidate_votes += (Q.z_normalized - Q.bvp_normalized);
+}
+if (Q.bvp_candidate == "Marx") {
+    Q.z_candidate_votes += Q.bvp_normalized;
+}
+if (Q.nlp_candidate == "Marx") {
+    Q.z_candidate_votes += Q.nlp_normalized;
+}
+if (Q.wp_candidate == "Marx" && Q.wp_exist) {
+    Q.z_candidate_votes += Q.wp_normalized;
+}
+if (Q.rlb_candidate == "Marx" && Q.rlb_exist) {
+    Q.z_candidate_votes += Q.rlb_normalized;
+}
+if (Q.dnvp_candidate == "Marx") {
+    Q.z_candidate_votes += Q.dnvp_normalized;
+}
+if (Q.other_candidate == "Marx") {
+    Q.z_candidate_votes += Q.other_normalized;
+}
+
+if (Q.fvp_candidate == "Cuno") {
+    Q.nlp_candidate_votes += Q.fvp_normalized * 0.7;
+    Q.spd_candidate_votes += Q.fvp_normalized * 0.3;
+}
+if (Q.z_candidate == "Cuno") {
+    Q.nlp_candidate_votes += (Q.z_normalized - Q.bvp_normalized);
+}
+if (Q.bvp_candidate == "Cuno") {
+    Q.nlp_candidate_votes += Q.bvp_normalized;
+}
+if (Q.nlp_candidate == "Cuno") {
+    Q.nlp_candidate_votes += Q.nlp_normalized;
+}
+if (Q.wp_candidate == "Cuno" && Q.wp_exist) {
+    Q.nlp_candidate_votes += Q.wp_normalized;
+}
+if (Q.rlb_candidate == "Cuno" && Q.rlb_exist) {
+    Q.nlp_candidate_votes += Q.rlb_normalized;
+}
+if (Q.dnvp_candidate == "Cuno") {
+    Q.nlp_candidate_votes += Q.dnvp_normalized;
+}
+if (Q.other_candidate == "Cuno") {
+    Q.nlp_candidate_votes += Q.other_normalized;
+}
+
+if (Q.bvp_candidate == "Westarp") {
+    Q.dnvp_candidate_votes += Q.bvp_normalized;
+}
+if (Q.nlp_candidate == "Westarp") {
+    Q.dnvp_candidate_votes += Q.nlp_normalized;
+}
+if (Q.wp_candidate == "Westarp" && Q.wp_exist) {
+    Q.dnvp_candidate_votes += Q.wp_normalized;
+}
+if (Q.rlb_candidate == "Westarp" && Q.rlb_exist) {
+    Q.dnvp_candidate_votes += Q.rlb_normalized;
+}
+if (Q.dnvp_candidate == "Westarp") {
+    Q.dnvp_candidate_votes += Q.dnvp_normalized;
+    Q.dnvp_candidate_votes += Q.dap_normalized * 0.5;
+    Q.dap_candidate_votes -= Q.dap_normalized * 0.5;
+}
+if (Q.other_candidate == "Westarp") {
+    Q.dnvp_candidate_votes += Q.other_normalized;
+}
+             
+Q.kpd_candidate_votes = Math.round(Q.kpd_candidate_votes*1000)/10;
+Q.spd_candidate_votes = Math.round(Q.spd_candidate_votes*1000)/10;
+Q.fvp_candidate_votes = Math.round(Q.fvp_candidate_votes*1000)/10;
+Q.z_candidate_votes = Math.round(Q.z_candidate_votes*1000)/10;
+Q.nlp_candidate_votes = Math.round(Q.nlp_candidate_votes*1000)/10;
+Q.dnvp_candidate_votes = Math.round(Q.dnvp_candidate_votes*1000)/10;
+Q.dap_candidate_votes = Math.round(Q.dap_candidate_votes*1000)/10;
+
+const candidate_votes = [
+  "spd_candidate_votes",
+  "z_candidate_votes",
+  "nlp_candidate_votes",
+  "dnvp_candidate_votes"
+];
+
+let maxVotes = 0;
+for (const key of candidate_votes) {
+  if (Q[key] > maxVotes) {
+    maxVotes = Q[key];
+  }
+}
+
+Q.spd_plurality = Q.spd_candidate_votes == maxVotes;
+Q.z_plurality = Q.z_candidate_votes == maxVotes;
+Q.nlp_plurality = Q.nlp_candidate_votes == maxVotes;
+Q.dnvp_plurality = Q.dnvp_candidate_votes == maxVotes;
+
+Q.election_round += 1;
+
+Q.kpd_candidate_votes_disp = Q.kpd_candidate_votes.toFixed(1);
+Q.spd_candidate_votes_disp = Q.spd_candidate_votes.toFixed(1);
+Q.fvp_candidate_votes_disp = Q.fvp_candidate_votes.toFixed(1);
+Q.z_candidate_votes_disp = Q.z_candidate_votes.toFixed(1);
+Q.nlp_candidate_votes_disp = Q.nlp_candidate_votes.toFixed(1);
+Q.dnvp_candidate_votes_disp = Q.dnvp_candidate_votes.toFixed(1);
+Q.dap_candidate_votes_disp = Q.dap_candidate_votes.toFixed(1);
+!}
+go-to: lobe_wins if spd_plurality; marx_wins if z_plurality; cuno_wins if nlp_plurality; westarp_wins if dnvp_plurality
+
+[? if kpd_campaign: <span style="color: #8B0000;">**Heinrich Brandler**</span> - [+ kpd_candidate_votes_disp +]% ?]
+
+[? if spd_campaign: <span style="color: #E3000F;">**Paul Löbe**</span> - [+ spd_candidate_votes_disp +]% ?]
+
+[? if fvp_campaign: <span style="color: var(--fvp-color);">**Walther Rathenau**</span> - [+ fvp_candidate_votes_disp +]% ?]
+
+[? if z_campaign: <span style="color: #000000;">**Wilhelm Marx**</span> - [+ z_candidate_votes_disp +]% ?]
+
+[? if nlp_campaign: <span style="color: var(--nlp-color);">**Wilhelm Cuno**</span> - [+ nlp_candidate_votes_disp +]% ?]
+
+[? if dnvp_campaign: <span style="color: #3F7BC1;">**Kuno Westarp**</span> - [+ dnvp_candidate_votes_disp +]% ?]
+
+[? if dap_campaign: <span style="color: #096300;">**Erich Ludendorff**</span> - [+ dap_candidate_votes_disp +]% ?]
+
+
+
+
+
+@lobe_wins
+face-image: img/portraits/LöbePaul.jpg
+on-arrival: president = "Löbe"; president_party = "SPD"; workers_spd += 6; old_middle_spd += 4; new_middle_spd += 4; rural_spd += 4; unemployed_spd += 4;
+
+Paul Löbe of the <span style="color: #E3000F;">**SPD**</span> has won the presidency!
+
+@marx_wins
+face-image: img/portraits/MarxWilhelm.jpg
+on-arrival: president = "Marx"; president_party = "Z"; new_middle_z += 6; old_middle_z += 6; rural_z += 4; catholics_z += 4;
+
+Wilhelm Marx of the <span style="color: #000000;">Center Party</span> has won the presidency!
+
+@cuno_wins
+face-image: img/portraits/CunoWilhelm.jpg
+on-arrival: president = "Cuno"; president_party = nlp_name; new_middle_nlp += 6; old_middle_nlp += 6; rural_nlp += 4;
+
+Wilhelm Cuno of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has won the presidency!
+
+@westarp_wins
+face-image: img/portraits/WestarpKuno.jpg
+on-arrival: president = "Westarp"; president_party = "DNVP"; workers_dnvp += 2; new_middle_dnvp += 4; old_middle_dnvp += 6; rural_dnvp += 6; catholics_dnvp += 2;
+
+Kuno Westarp of the <span style="color: #3F7BC1;">**DNVP**</span> has won the presidency!
