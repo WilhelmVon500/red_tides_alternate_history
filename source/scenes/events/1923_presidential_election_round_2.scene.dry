@@ -12,6 +12,8 @@ set-jump: pres_election
 
 The first round has ended, with no candidate receiving an absolute majority of votes.
 
+- @final_election: The second round results...
+
 @final_election
 go-to: election_algorithm
 set-jump: post_election
