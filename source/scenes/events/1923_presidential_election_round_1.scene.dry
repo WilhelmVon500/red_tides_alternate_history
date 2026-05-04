@@ -182,4 +182,4 @@ There is no majority in this round. In the second round, any candidate who wins 
 
 [? if z_candidate = "Fehrenbach": The <span style="color: #000000;">Center Party</span> has decided to replace Fehrenbach with Marx in the second round, attempting to get other bourgeois parties to support their candidate. ?]
 
-[? if not (spd_campaign and fvp_campaign and spd_candidate_votes < 35): The <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> will support the bourgeois republican unity candidate in the next round. ?]
+[? if not (spd_campaign and fvp_campaign and spd_candidate_votes < 35): The <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> will support the bourgeois republican unity candidate in the next round, aligning itself with the <span style="color: #000000;">Center Party</span>. ?]
