@@ -30,7 +30,6 @@ if (Q.bvp_votes > 3.6) {
 }
 Q.bvp_normalized = Q.bvp_votes / 100;
 
-Q.kpd_candidate_votes = 0;
 Q.spd_candidate_votes = 0;
 Q.fvp_candidate_votes = 0;
 Q.z_candidate_votes = 0;
@@ -125,7 +124,6 @@ if (Q.other_candidate == "Westarp") {
     Q.dnvp_candidate_votes += Q.other_normalized;
 }
              
-Q.kpd_candidate_votes = Math.round(Q.kpd_candidate_votes*1000)/10;
 Q.spd_candidate_votes = Math.round(Q.spd_candidate_votes*1000)/10;
 Q.fvp_candidate_votes = Math.round(Q.fvp_candidate_votes*1000)/10;
 Q.z_candidate_votes = Math.round(Q.z_candidate_votes*1000)/10;
@@ -133,18 +131,16 @@ Q.nlp_candidate_votes = Math.round(Q.nlp_candidate_votes*1000)/10;
 Q.dnvp_candidate_votes = Math.round(Q.dnvp_candidate_votes*1000)/10;
 Q.dap_candidate_votes = Math.round(Q.dap_candidate_votes*1000)/10;
 
-Q.kpd_majority = (Q.kpd_candidate_votes >= 50);
 Q.spd_majority = (Q.spd_candidate_votes >= 50);
 Q.fvp_majority = (Q.fvp_candidate_votes >= 50);
 Q.z_majority = (Q.z_candidate_votes >= 50);
 Q.nlp_majority = (Q.nlp_candidate_votes >= 50);
 Q.dnvp_majority = (Q.dnvp_candidate_votes >= 50);
 Q.dap_majority = (Q.dap_candidate_votes >= 50);
-Q.any_majority = Q.kpd_majority | Q.spd_majority | Q.fvp_majority | Q.z_majority | Q.nlp_majority | Q.dnvp_majority | Q.dap_majority;
+Q.any_majority = Q.spd_majority | Q.fvp_majority | Q.z_majority | Q.nlp_majority | Q.dnvp_majority | Q.dap_majority;
 
 Q.election_round += 1;
              
-Q.kpd_candidate_votes_disp = Q.kpd_candidate_votes.toFixed(1);
 Q.spd_candidate_votes_disp = Q.spd_candidate_votes.toFixed(1);
 Q.fvp_candidate_votes_disp = Q.fvp_candidate_votes.toFixed(1);
 Q.z_candidate_votes_disp = Q.z_candidate_votes.toFixed(1);
