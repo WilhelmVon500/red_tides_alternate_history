@@ -303,6 +303,8 @@ Next election: [+ next_election_month_saxony: month +] [+ next_election_year_sax
 
 = Thuringia
 
+<div style="display: flex; justify-content: center;">[? if thuringia_leader = "Frölich": <img src="img/portraits/FrölichAugust.jpg" style="width: 50%; height: 200px; border: 6px solid white; box-shadow: red 0px 0px 0px 6px;"> ?]</div>
+
 Minister-President: [+ thuringia_leader +] ([?if thuringia_leader_party == "SPD": <span style="color: #E3000F;">**SPD**</span>?])
 
 Government: WIP
