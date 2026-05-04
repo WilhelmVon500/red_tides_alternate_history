@@ -216,7 +216,57 @@ Kuno Westarp of the <span style="color: #3F7BC1;">**DNVP**</span> has won the pr
 
 
 @no_majority_round1
-on-departure: presidential_election_r2_trigger = 1; kpd_campaign = 1 if spd_campaign and fvp_campaign and spd_candidate_votes < 35; kpd_candidate = "Brandler" if spd_campaign and fvp_campaign and spd_candidate_votes < 35; z_candidate = "Marx" if z_candidate = "Fehrenbach"; fvp_campaign = 0 if not (spd_campaign and fvp_campaign and spd_candidate_votes < 35 and not nlp_candidate = "Westarp"); fvp_candidate = "Marx" if z_candidate = "Fehrenbach" or z_candidate = "Marx"; fvp_candidate = "Cuno" if z_candidate = "Cuno"; spd_campaign = 0 if spd_campaign and fvp_campaign and spd_candidate_votes < 35; spd_candidate = "Rathenau" if spd_campaign and fvp_campaign and spd_candidate_votes < 35 and not nlp_candidate = "Westarp"; fvp_candidate = "Rathenau" if spd_campaign and fvp_campaign and spd_candidate_votes < 35 and not nlp_candidate = "Westarp"; spd_candidate = "Marx" if spd_campaign and fvp_campaign and spd_candidate_votes < 35 and nlp_candidate = "Westarp"; fvp_candidate = "Marx" if spd_campaign and fvp_campaign and spd_candidate_votes < 35 and nlp_candidate = "Westarp"; nlp_candidate = "" if nlp_campaign and z_campaign and dnvp_campaign; fvp_candidate = "Marx" if fvp_candidate = "Cuno" and nlp_campaign and z_campaign and dnvp_campaign; bvp_candidate = "Westarp" if bvp_candidate = "Cuno" and nlp_campaign and z_campaign and dnvp_campaign; wp_candidate = "Westarp" if wp_candidate = "Cuno" and nlp_campaign and z_campaign and dnvp_campaign; rlb_candidate = "Westarp" if rlb_candidate = "Cuno" and nlp_campaign and z_campaign and dnvp_campaign; cuno_drop_out = 1 if nlp_campaign and z_campaign and dnvp_campaign; nlp_campaign = 0 if nlp_campaign and z_campaign and dnvp_campaign;
+on-departure: {!
+Q.presidential_election_r2_trigger = 1;
+
+if (Q.z_candidate = "Fehrenbach") {
+  Q.z_candidate = "Marx"
+}
+if (Q.z_candidate = "Marx") {
+  Q.fvp_candidate = "Marx";
+}
+if Q.z_candidate = "Cuno") {
+  Q.fvp_candidate = "Cuno";
+}
+
+
+if (Q.spd_campaign && Q.fvp_campaign && Q.spd_candidate_votes < 35) {
+  Q.spd_campaign = 0;
+  Q.kpd_campaign = 1;
+  Q.kpd_candidate = "Brandler";
+  if (Q.spd_campaign && Q.fvp_campaign && Q.spd_candidate_votes < 35 && !Q.nlp_candidate = "Westarp") {
+    Q.spd_candidate = "Rathenau";
+    Q.fvp_candidate = "Rathenau";
+  }
+  if (Q.spd_campaign && Q.fvp_campaign && Q.spd_candidate_votes < 35 && Q.nlp_candidate = "Westarp") {
+    Q.spd_candidate = "Marx";
+    Q.fvp_candidate = "Marx";
+  }
+}
+
+if !(Q.spd_campaign && fvp_campaign && Q.spd_candidate_votes < 35 && !Q.nlp_candidate = "Westarp") {
+  Q.fvp_campaign = 0;
+}
+
+
+if (Q.nlp_campaign && Q.z_campaign && Q.dnvp_campaign) {
+  if (Q.fvp_candidate = "Cuno") {
+    Q.fvp_candidate = "Marx";
+  }
+  if (Q.bvp_candidate = "Cuno") {
+    Q.bvp_candidate = "Westarp";
+  }
+  if (Q.wp_candidate = "Cuno") {
+    Q.wp_candidate = "Westarp";
+  }
+  if (Q.rlb_candidate = "Cuno") {
+    Q.rlb_candidate = "Westarp";
+  }
+  Q.nlp_candidate = "";
+  Q.cuno_drop_out = 1;
+  Q.nlp_campaign = 0;
+}
+!}
 go-to: round2_menu
 
 There is no majority in this round. In the second round, any candidate who wins a plurality will win overall. What should we do?
