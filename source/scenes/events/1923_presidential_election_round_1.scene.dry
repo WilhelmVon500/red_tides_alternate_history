@@ -223,6 +223,7 @@ WIP
 @round2_westarp
 view-if: nlp_candidate != "Westarp" and dnvp_campaign
 on-arrival: nlp_campaign = 0; nlp_candidate = "Westarp"; z_campaign = 1 if z_candidate = "Cuno"; z_candidate = "Marx" if z_candidate = "Cuno"; bvp_candidate = "Westarp" if bvp_candidate = "Cuno"; wp_candidate = "Westarp" if wp_candidate = "Cuno"; rlb_candidate = "Westarp" if rlb_candidate = "Cuno";
+
 WIP
 
 - @round2_vote: Second round voting begins next month.
