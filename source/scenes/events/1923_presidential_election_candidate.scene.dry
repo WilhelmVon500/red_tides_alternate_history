@@ -1,7 +1,7 @@
 title: Presidential Election Candidates
 subtitle: Should we field our own candidate?
 tags: event
-view-if: year = 1923 and month = 7 and week = 4
+view-if: year = 1923 and month = 7 and week = 2
 priority: 1
 max-visits: 1
 new-page: true
