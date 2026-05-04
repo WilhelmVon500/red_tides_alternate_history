@@ -131,6 +131,25 @@ Q.nlp_candidate_votes = Math.round(Q.nlp_candidate_votes*1000)/10;
 Q.dnvp_candidate_votes = Math.round(Q.dnvp_candidate_votes*1000)/10;
 Q.dap_candidate_votes = Math.round(Q.dap_candidate_votes*1000)/10;
 
+const candidate_votes = [
+  "spd_candidate_votes",
+  "z_candidate_votes",
+  "nlp_candidate_votes",
+  "dnvp_candidate_votes"
+];
+
+let maxVotes = 0;
+for (const key of candidate_votes) {
+  if (Q[key] > maxVotes) {
+    maxVotes = Q[key];
+  }
+}
+
+Q.spd_plurality = Q.spd_candidate_votes == maxVotes;
+Q.z_plurality = Q.z_candidate_votes == maxVotes;
+Q.nlp_plurality = Q.nlp_candidate_votes == maxVotes;
+Q.dnvp_plurality = Q.dnvp_candidate_votes == maxVotes;
+
 Q.spd_majority = (Q.spd_candidate_votes >= 50);
 Q.fvp_majority = (Q.fvp_candidate_votes >= 50);
 Q.z_majority = (Q.z_candidate_votes >= 50);
@@ -148,7 +167,7 @@ Q.nlp_candidate_votes_disp = Q.nlp_candidate_votes.toFixed(1);
 Q.dnvp_candidate_votes_disp = Q.dnvp_candidate_votes.toFixed(1);
 Q.dap_candidate_votes_disp = Q.dap_candidate_votes.toFixed(1);
 !}
-go-to: no_majority_round1 if any_majority = 0 and election_round = 1
+go-to: no_majority_round1 if any_majority = 0 and election_round = 1; lobe_wins if spd_plurality; marx_wins if z_plurality; cuno_wins if nlp_plurality; westarp_wins if dnvp_plurality
 
 Results:
 
@@ -163,6 +182,34 @@ Results:
 [? if dnvp_campaign: <span style="color: #3F7BC1;">**Kuno Westarp**</span> - [+ dnvp_candidate_votes_disp +]% ?]
 
 [? if dap_campaign: <span style="color: #096300;">**Erich Ludendorff**</span> - [+ dap_candidate_votes_disp +]% ?]
+
+
+
+
+
+@lobe_wins
+face-image: img/portraits/LöbePaul.jpg
+on-arrival: president = "Löbe"; president_party = "SPD"; workers_spd += 6; old_middle_spd += 4; new_middle_spd += 4; rural_spd += 4; unemployed_spd += 4;
+
+Paul Löbe of the <span style="color: #E3000F;">**SPD**</span> has won the presidency!
+
+@marx_wins
+face-image: img/portraits/MarxWilhelm.jpg
+on-arrival: president = "Marx"; president_party = "Z"; new_middle_z += 6; old_middle_z += 6; rural_z += 4; catholics_z += 4;
+
+Wilhelm Marx of the <span style="color: #000000;">Center Party</span> has won the presidency!
+
+@cuno_wins
+face-image: img/portraits/CunoWilhelm.jpg
+on-arrival: president = "Cuno"; president_party = nlp_name; new_middle_nlp += 6; old_middle_nlp += 6; rural_nlp += 4;
+
+Wilhelm Cuno of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has won the presidency!
+
+@westarp_wins
+face-image: img/portraits/WestarpKuno.jpg
+on-arrival: president = "Westarp"; president_party = "DNVP"; workers_dnvp += 2; new_middle_dnvp += 4; old_middle_dnvp += 6; rural_dnvp += 6; catholics_dnvp += 2;
+
+Kuno Westarp of the <span style="color: #3F7BC1;">**DNVP**</span> has won the presidency!
 
 
 
