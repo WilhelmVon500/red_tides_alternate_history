@@ -1,6 +1,6 @@
 title: Presidential Election
 subtitle: The first round results have come in...
-view-if: year = 1923 and month = 9 and week = 2
+view-if: year = 1923 and month = 8 and week = 2
 frequency: 1000
 max-visits: 1
 new-page: true
@@ -174,9 +174,7 @@ Results:
 
 @no_majority_round1
 on-departure: presidential_election_r2_trigger = 1; kpd_campaign = 1 if spd_campaign and fvp_campaign and spd_candidate_votes < 35; kpd_candidate = "Brandler" if spd_campaign and fvp_campaign and spd_candidate_votes < 35; z_candidate = "Marx" if z_candidate = "Fehrenbach"; fvp_campaign = 0 if not (spd_campaign and fvp_campaign and spd_candidate_votes < 35 and not nlp_candidate = "Westarp"); fvp_candidate = "Marx" if z_candidate = "Fehrenbach" or z_candidate = "Marx"; fvp_candidate = "Cuno" if z_candidate = "Cuno"; spd_campaign = 0 if spd_campaign and fvp_campaign and spd_candidate_votes < 35; spd_candidate = "Rathenau" if spd_campaign and fvp_campaign and spd_candidate_votes < 35 and not nlp_candidate = "Westarp"; fvp_candidate = "Rathenau" if spd_campaign and fvp_campaign and spd_candidate_votes < 35 and not nlp_candidate = "Westarp"; spd_candidate = "Marx" if spd_campaign and fvp_campaign and spd_candidate_votes < 35 and nlp_candidate = "Westarp"; fvp_candidate = "Marx" if spd_campaign and fvp_campaign and spd_candidate_votes < 35 and nlp_candidate = "Westarp";
-
-
-#go-to: round2_menu
+go-to: round2_menu
 
 There is no majority in this round. In the second round, any candidate who wins a plurality will win overall. What should we do?
 
@@ -187,3 +185,48 @@ There is no majority in this round. In the second round, any candidate who wins 
 [? if spd_campaign and fvp_campaign and spd_candidate_votes < 35 and nlp_candidate = "Westarp": Following the <span style="color: #E3000F;">**SPD**</span>'s poor performance in the first round, the <span style="color: #E3000F;">**SPD**</span> decided to support <span style="color: #000000;">Center Party</span>'s new candidate. Following that agreement, the <span style="color: #8B0000;">**KPD**</span> fielded Brandler as a new candidate. ?]
 
 [? if not (spd_campaign and fvp_campaign and spd_candidate_votes < 35): The <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> will support the republican unity candidate in the next round, aligning itself with the <span style="color: #000000;">Center Party</span>. ?]
+
+@round2_menu
+
+- @round2_marx: Switch our support to Wilhelm Marx.
+- @round2_cuno: Run Wilhelm Cuno with support of the <span style="color: #000000;">Center Party</span>.
+- @round2_westarp: Switch our support to Kuno Westarp.
+- @round2_vote: We've done enough, second round voting begins next month.
+
+@round2_marx
+view-if: nlp_candidate != "Marx" and z_campaign
+on-arrival: nlp_campaign = 0; nlp_candidate = "Marx"; bvp_candidate = "Marx" if bvp_candidate = "Cuno"; wp_candidate = "Westarp" if wp_candidate = "Cuno"; rlb_candidate = "Westarp" if rlb_candidate = "Cuno"; dnvp_campaign = 1 if dnvp_candidate = "Cuno"; dnvp_candidate = "Westarp" if dnvp_candidate = "Cuno";
+
+WIP
+
+- @round2_vote: Second round voting begins next month.
+
+
+
+
+
+@round2_cuno
+subtitle: This will cost us 1 resource.
+choose-if: resources >= 1 and chancellor = "Cuno"
+unavailable-subtitle: [? if resources < 1: Not enough resources. ?][? if chancellor != "Cuno": Wilhelm Cuno doesn't have needed support. ?]
+view-if: nlp_candidate != "Cuno"
+on-arrival: resources -= 1; nlp_campaign = 1; nlp_candidate = "Cuno"; z_campaign = 0; z_candidate = "Cuno"; fvp_candidate = "Cuno" if fvp_candidate = "Marx"; spd_campaign = 1 if spd_candidate = "Marx"; spd_candidate = "Löbe" if spd_candidate = "Marx";
+
+WIP
+
+[? if: spd_campaign and fvp_campaign and spd_candidate_votes < 35 and nlp_candidate = "Westarp": With Wilhelm Marx dropping out, the <span style="color: #E3000F;">**SPD**</span> will try to run Paul Löbe again. ?]
+
+- @round2_vote: Second round voting begins next month.
+
+
+
+
+
+@round2_westarp
+view-if: nlp_candidate != "Westarp" and dnvp_campaign
+on-arrival: nlp_campaign = 0; nlp_candidate = "Westarp"; z_campaign = 1 if z_candidate = "Cuno"; z_candidate = "Marx" if z_candidate = "Cuno"; bvp_candidate = "Westarp" if bvp_candidate = "Cuno"; wp_candidate = "Westarp" if wp_candidate = "Cuno"; rlb_candidate = "Westarp" if rlb_candidate = "Cuno";
+WIP
+
+- @round2_vote: Second round voting begins next month.
+
+@round2_vote
