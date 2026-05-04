@@ -1,7 +1,7 @@
 title: Murder in Berlin!
 subtitle: Two shots that may change the future of Germany...
 tags: event
-view-if: year = 1923 and month = 7 and week = 2
+view-if: year = 1923 and month = 7 and week = 1
 face-image: img/portraits/EbertFriedrich.jpg
 max-visits: 1
 new-page: true
