@@ -151,12 +151,10 @@ Q.nlp_plurality = Q.nlp_candidate_votes == maxVotes;
 Q.dnvp_plurality = Q.dnvp_candidate_votes == maxVotes;
 
 Q.spd_majority = (Q.spd_candidate_votes >= 50);
-Q.fvp_majority = (Q.fvp_candidate_votes >= 50);
 Q.z_majority = (Q.z_candidate_votes >= 50);
 Q.nlp_majority = (Q.nlp_candidate_votes >= 50);
 Q.dnvp_majority = (Q.dnvp_candidate_votes >= 50);
-Q.dap_majority = (Q.dap_candidate_votes >= 50);
-Q.any_majority = Q.spd_majority | Q.fvp_majority | Q.z_majority | Q.nlp_majority | Q.dnvp_majority | Q.dap_majority;
+Q.any_majority = Q.spd_majority | Q.z_majority | Q.nlp_majority | Q.dnvp_majority;
 
 Q.election_round += 1;
              
@@ -167,7 +165,7 @@ Q.nlp_candidate_votes_disp = Q.nlp_candidate_votes.toFixed(1);
 Q.dnvp_candidate_votes_disp = Q.dnvp_candidate_votes.toFixed(1);
 Q.dap_candidate_votes_disp = Q.dap_candidate_votes.toFixed(1);
 !}
-go-to: no_majority_round1 if any_majority = 0 and election_round = 1; lobe_wins if spd_plurality; marx_wins if z_plurality; cuno_wins if nlp_plurality; westarp_wins if dnvp_plurality
+go-to: no_majority_round1 if any_majority = 0 and election_round = 1; lobe_wins if spd_majority; marx_wins if z_majority; cuno_wins if nlp_majority; westarp_wins if dnvp_majority
 
 Results:
 
