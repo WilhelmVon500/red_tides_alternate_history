@@ -156,10 +156,10 @@ Internal dissent: [+ dissent_percent : dissent +]
 
 = Government
 
-<div style="display: flex; justify-content: center;">[? if president = "Ebert": <img src="img/portraits/EbertFriedrich.jpg" style="width: 50%; height: 200px; border: 5px solid black; box-shadow: red 0px 0px 0px 5px, #FFCC00 0px 0px 0px 10px; object-fit: cover;"> ?][? if president = "Simons": <img src="img/portraits/SimonsWalter.jpg" style="width: 50%; height: 200px; border: 5px solid black; box-shadow: red 0px 0px 0px 5px, #FFCC00 0px 0px 0px 10px; object-fit: cover;"> ?][? if president = "Löbe": <img src="img/portraits/LöbePaul.jpg" style="width: 50%; height: 200px; border: 5px solid black; box-shadow: red 0px 0px 0px 5px, #FFCC00 0px 0px 0px 10px; object-fit: cover;"> ?][? if president = "Marx": <img src="img/portraits/MarxWilhelm.jpg" style="width: 50%; height: 200px; border: 5px solid black; box-shadow: red 0px 0px 0px 5px, #FFCC00 0px 0px 0px 10px; object-fit: cover;"> ?][? if president = "Cuno": <img src="img/portraits/CunoWilhelm.jpg" style="width: 50%; height: 200px; border: 5px solid black; box-shadow: red 0px 0px 0px 5px, #FFCC00 0px 0px 0px 10px; object-fit: cover;"> ?][? if president = "Westarp": <img src="img/portraits/WestarpKuno.jpg" style="width: 50%; height: 200px; border: 5px solid black; box-shadow: white 0px 0px 0px 5px, red 0px 0px 0px 10px; object-fit: cover;"> ?]</div>
+<div style="display: flex; justify-content: center;">[? if president = "Ebert": <img src="img/portraits/EbertFriedrich.jpg" class="president-republican"> ?][? if president = "Simons": <img src="img/portraits/SimonsWalter.jpg" class="president-republican"> ?][? if president = "Löbe": <img src="img/portraits/LöbePaul.jpg" class="president-republican"> ?][? if president = "Marx": <img src="img/portraits/MarxWilhelm.jpg" class="president-republican"> ?][? if president = "Cuno": <img src="img/portraits/CunoWilhelm.jpg" class="president-republican"> ?][? if president = "Westarp": <img src="img/portraits/WestarpKuno.jpg" class="president-right"> ?]</div>
 
-<div style="display: flex;gap: 5px;margin-bottom: 5px;margin-left: -3px;">[? if chancellor == "Müller": <img src="img/portraits/MüllerHermann.jpg" style="width: 50%; height: 200px;"> ?][? if chancellor == "Marx": <img src="img/portraits/MarxWilhelm.jpg" style="width: 50%; height: 200px; object-fit: cover;"> ?][? if chancellor == "Jarres": <img src="img/portraits/JarresKarl.jpg" style="width: 50%; height: 200px; object-fit: cover;"> ?][? if chancellor == "Cuno": <img src="img/portraits/CunoWilhelm.jpg" style="width: 50%; height: 200px; object-fit: cover;"> ?]
-[? if vice_chancellor == "Erzberger": <img src="img/portraits/ErzbergerMatthias.jpg" style="width: 50%; height: 200px;"> ?][? if vice_chancellor == "Marx": <img src="img/portraits/MarxWilhelm.jpg" style="width: 50%; height: 200px; object-fit: cover;"> ?][? if vice_chancellor == "Westarp": <img src="img/portraits/WestarpKuno.jpg" style="width: 50%; height: 200px; object-fit: cover;"> ?]</div>
+<div style="display: flex;gap: 5px;margin-bottom: 5px;margin-left: -3px;">[? if chancellor == "Müller": <img src="img/portraits/MüllerHermann.jpg" style="width: 50%; height: 200px; object-fit: cover;"> ?][? if chancellor == "Marx": <img src="img/portraits/MarxWilhelm.jpg" style="width: 50%; height: 200px; object-fit: cover;"> ?][? if chancellor == "Cuno": <img src="img/portraits/CunoWilhelm.jpg" style="width: 50%; height: 200px; object-fit: cover;"> ?]
+[? if vice_chancellor == "Erzberger": <img src="img/portraits/ErzbergerMatthias.jpg" style="width: 50%; height: 200px; object-fit: cover;"> ?][? if vice_chancellor == "Marx": <img src="img/portraits/MarxWilhelm.jpg" style="width: 50%; height: 200px; object-fit: cover;"> ?][? if vice_chancellor == "Westarp": <img src="img/portraits/WestarpKuno.jpg" style="width: 50%; height: 200px; object-fit: cover;"> ?]</div>
 
 President: [+ president +] ([?if president_party=="I":<span style="color: #808080;">**I**</span>?][?if president_party == "SPD": <span style="color: #E3000F;">**SPD**</span>?][?if president_party=="Z":<span style="color: #000000;">**Z**</span>?][?if president_party==nlp_name:<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?][?if president_party=="DNVP":<span style="color: #3F7BC1;">**DNVP**</span>?])
 
@@ -293,7 +293,7 @@ Support for the Republic: [+ pro_republic_disp +]%
 
 = Saxony
 
-<div style="display: flex; justify-content: center;">[? if saxony_leader = "Buck": <img src="img/portraits/BuckWilhelm.jpg" style="width: 40%; height: 150px; border: 6px solid white; box-shadow: #00854A 0px 0px 0px 6px; object-fit: cover;"> ?][? if saxony_leader = "Zeigner": <img src="img/portraits/ZeignerErich.jpg" style="width: 40%; height: 150px; border: 6px solid white; box-shadow: #00854A 0px 0px 0px 6px; object-fit: cover;"> ?]</div>
+<div style="display: flex; justify-content: center;">[? if saxony_leader = "Buck": <img src="img/portraits/BuckWilhelm.jpg" class="saxony-leader"> ?][? if saxony_leader = "Zeigner": <img src="img/portraits/ZeignerErich.jpg" class="saxony-leader"> ?]</div>
 
 Minister-President: [+ saxony_leader +] ([?if saxony_leader_party == "SPD": <span style="color: #E3000F;">**SPD**</span>?])
 
@@ -303,7 +303,7 @@ Next election: [+ next_election_month_saxony: month +] [+ next_election_year_sax
 
 = Thuringia
 
-<div style="display: flex; justify-content: center;">[? if thuringia_leader = "Frölich": <img src="img/portraits/FrölichAugust.jpg" style="width: 40%; height: 150px; border: 6px solid white; box-shadow: red 0px 0px 0px 6px; object-fit: cover;"> ?]</div>
+<div style="display: flex; justify-content: center;">[? if thuringia_leader = "Frölich": <img src="img/portraits/FrölichAugust.jpg" class="thuringia-leader"> ?]</div>
 
 Minister-President: [+ thuringia_leader +] ([?if thuringia_leader_party == "SPD": <span style="color: #E3000F;">**SPD**</span>?])
 
