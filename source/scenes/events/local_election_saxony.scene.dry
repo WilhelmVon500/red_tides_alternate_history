@@ -3,7 +3,6 @@ view-if: (year = next_election_year_saxony and month >= next_election_month_saxo
 new-page: true
 tags: event
 priority: 3
-max-visits: 1
 on-arrival: next_election_year_saxony = next_election_year_saxony + 4;
 
 = Saxony Landtag Elections, [+ month : month +] [+ year +]
