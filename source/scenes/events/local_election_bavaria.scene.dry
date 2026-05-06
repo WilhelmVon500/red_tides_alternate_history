@@ -3,7 +3,6 @@ view-if: (year = next_election_year_bavaria and month >= next_election_month_bav
 new-page: true
 tags: event
 priority: 3
-max-visits: 1
 on-arrival: next_election_year_bavaria = next_election_year_bavaria + 4;
 
 = Bavaria Landtag Elections, [+ month : month +] [+ year +]
