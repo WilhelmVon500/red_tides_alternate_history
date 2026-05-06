@@ -331,8 +331,8 @@ Q.next_election_year_saxony = 1922;
 Q.thuringia_leader = "Frölich";
 Q.thuringia_leader_party = "SPD";
 Q.next_election_week_thuringia = 1;
-Q.next_election_month_thuringia = 2;
-Q.next_election_year_thuringia = 1924;
+Q.next_election_month_thuringia = 9;
+Q.next_election_year_thuringia = 1925;
 
 
 
