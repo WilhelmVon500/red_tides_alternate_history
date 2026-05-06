@@ -280,9 +280,9 @@ go-to: bavaria_coalition_menu
 
 **Potential coalitions:**
 
-Bourgeois Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #69A2BE;">**BVP**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> + <span style="color: #38C538;">**BB**</span>[? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?]): [+ bourgeois_coalition_bavaria +]%
+Bourgeois Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #69A2BE;">**BVP**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> + <span style="color: #38C538;">**BB**</span>[? if wp_exist:  + <span style="color: #B8996F;">**WP**</span>?]): [+ bourgeois_coalition_bavaria +]%
 
-Right Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #69A2BE;">**BVP**</span> + <span style="color: #3F7BC1;">**DNVP**</span> + <span style="color: #38C538;">**BB**</span>[? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?]): [+ right_coalition_bavaria +]%
+Right Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #69A2BE;">**BVP**</span> + <span style="color: #3F7BC1;">**DNVP**</span> + <span style="color: #38C538;">**BB**</span>[? if wp_exist:  + <span style="color: #B8996F;">**WP**</span>?]): [+ right_coalition_bavaria +]%
   
 There are some potential coalition arrangements.
 
@@ -297,7 +297,7 @@ There are some potential coalition arrangements.
 
 @bourgeois_coalition_bavaria
 title: We can form a Bourgeois Coalition.
-subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #69A2BE;">**BVP**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> + <span style="color: #38C538;">**BB**</span>[? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?] ([+ bourgeois_coalition_bavaria +]%)
+subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #69A2BE;">**BVP**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> + <span style="color: #38C538;">**BB**</span>[? if wp_exist:  + <span style="color: #B8996F;">**WP**</span>?] ([+ bourgeois_coalition_bavaria +]%)
 view-if: bourgeois_coalition_bavaria > 50
 on-arrival: in_bourgeois_coalition_bavaria = 1; nlp_bavaria = 1;
 
@@ -308,7 +308,7 @@ WIP
 
 @right_coalition_bavaria
 title: We can form a Right Coalition.
-subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #69A2BE;">**BVP**</span> + <span style="color: #3F7BC1;">**DNVP**</span> + <span style="color: #38C538;">**BB**</span>[? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?] ([+ right_coalition_bavaria +]%)
+subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #69A2BE;">**BVP**</span> + <span style="color: #3F7BC1;">**DNVP**</span> + <span style="color: #38C538;">**BB**</span>[? if wp_exist:  + <span style="color: #B8996F;">**WP**</span>?] ([+ right_coalition_bavaria +]%)
 view-if: right_coalition_bavaria > 50
 on-arrival: in_right_coalition_bavaria = 1; nlp_bavaria = 1;
 
