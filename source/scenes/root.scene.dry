@@ -314,6 +314,7 @@ Q.other_election_votes = 3.0;
 
 
 // bavaria
+Q.nlp_bavaria = 1;
 Q.bavaria_leader = "Kahr";
 Q.bavaria_leader_party = "BVP";
 Q.next_election_week_bavaria = 1;
@@ -321,6 +322,7 @@ Q.next_election_month_bavaria = 5;
 Q.next_election_year_bavaria = 1924;
 
 // saxony
+Q.nlp_saxony = 0;
 Q.saxony_leader = "Buck";
 Q.saxony_leader_party = "SPD";
 Q.next_election_week_saxony = 1;
@@ -328,6 +330,7 @@ Q.next_election_month_saxony = 11;
 Q.next_election_year_saxony = 1922;
 
 // thuringia
+Q.nlp_thuringia = 0;
 Q.thuringia_leader = "Frölich";
 Q.thuringia_leader_party = "SPD";
 Q.next_election_week_thuringia = 1;
