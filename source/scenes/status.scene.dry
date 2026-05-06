@@ -291,6 +291,16 @@ Support for the Republic: [+ pro_republic_disp +]%
 
 @states
 
+= Free State of Bavaria
+
+<div style="display: flex; justify-content: center;">[? if bavaria_leader = "Kahr": <img src="img/portraits/KahrGustav.jpg" class="bavaria-leader"> ?]</div>
+
+Minister-President: [+ bavaria_leader +] ([?if bavaria_leader_party == "BVP": <span style="color: #69A2BE;">**BVP**</span>?])
+
+Government: WIP
+
+Next election: [+ next_election_month_bavaria: month +] [+ next_election_year_bavaria +]
+
 = Free State of Saxony
 
 <div style="display: flex; justify-content: center;">[? if saxony_leader = "Buck": <img src="img/portraits/BuckWilhelm.jpg" class="saxony-leader"> ?][? if saxony_leader = "Zeigner": <img src="img/portraits/ZeignerErich.jpg" class="saxony-leader"> ?]</div>
