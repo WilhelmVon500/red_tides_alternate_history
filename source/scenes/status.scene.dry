@@ -75,7 +75,7 @@ Unemployment: [+ unemployed_2 +]%
 
 Economic growth: [+ economic_growth_2 +]%
 
-Reichsbank President: [+ reichsbank_president +] ([?if reichsbank_president_party == "I": <span style="color: #909090;">**I**</span>?][?if reichsbank_president_party == nlp_name: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?])
+Reichsbank President: [+ reichsbank_president +] ([?if reichsbank_president_party == "I": <span style="color: #909090;">**I**</span>?])
 
 
 @party
@@ -293,9 +293,9 @@ Support for the Republic: [+ pro_republic_disp +]%
 
 = Free State of Bavaria
 
-<div style="display: flex; justify-content: center;">[? if bavaria_leader = "Kahr": <img src="img/portraits/KahrGustav.jpg" class="bavaria-leader"> ?]</div>
+<div style="display: flex; justify-content: center;">[? if bavaria_leader = "Kahr": <img src="img/portraits/KahrGustav.jpg" class="bavaria-leader"> ?][? if bavaria_leader = "Held": <img src="img/portraits/HeldHeinrich.jpg" class="bavaria-leader"> ?][? if bavaria_leader = "Beyer": <img src="img/portraits/BeyerOtto.jpg" class="bavaria-leader"> ?]</div>
 
-Minister-President: [+ bavaria_leader +] ([?if bavaria_leader_party == "BVP": <span style="color: #69A2BE;">**BVP**</span>?])
+Minister-President: [+ bavaria_leader +] ([?if bavaria_leader_party == "BVP": <span style="color: #69A2BE;">**BVP**</span>?][?if bavaria_leader_party == nlp_name: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?])
 
 Government: WIP
 
