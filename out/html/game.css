@@ -606,6 +606,13 @@ table {
     object-fit: cover;
 }
 
+.bavaria-leader {
+     width: 40%;
+    height: 150px;
+    border: 6px solid white;
+    box-shadow: #0077B6 0px 0px 0px 6px;
+    object-fit: cover;
+}
 .saxony-leader {
      width: 40%;
     height: 150px;
