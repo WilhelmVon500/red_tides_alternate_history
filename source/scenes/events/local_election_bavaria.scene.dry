@@ -134,6 +134,17 @@ Q.right_coalition_bavaria = parseFloat((Q.dnvp_bl + Q.nlp_bl + Q.z_bl + Q.wp_bl 
 
 
 // Reset government and ministers...
+Q.was_nlp_bavaria = 0;
+Q.was_in_nlp_majority_bavaria = 0;
+Q.was_in_bourgeois_coalition_bavaria = 0;
+Q.was_in_right_coalition_bavaria = 0;
+
+if (Q.nlp_bavaria) Q.was_nlp_bavaria = 1;
+if (Q.in_nlp_majority_bavaria) Q.was_in_nlp_majority_bavaria = 1;
+if (Q.in_bourgeois_coalition_bavaria) Q.was_in_bourgeois_coalition_bavaria = 1;
+if (Q.in_right_coalition_bavaria) Q.was_in_right_coalition_bavaria = 1;
+
+Q.nlp_bavaria = 0;
 Q.in_nlp_majority_bavaria = 0;
 Q.in_bourgeois_coalition_bavaria = 0;
 Q.in_right_coalition_bavaria = 0;
@@ -288,23 +299,56 @@ There are some potential coalition arrangements.
 title: We can form a Bourgeois Coalition.
 subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #69A2BE;">**BVP**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> + <span style="color: #38C538;">**BB**</span>[? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?] ([+ bourgeois_coalition_bavaria +]%)
 view-if: bourgeois_coalition_bavaria > 50
-on-arrival: in_bourgeois_coalition_bavaria = 1;
+on-arrival: in_bourgeois_coalition_bavaria = 1; nlp_bavaria = 1;
 
 WIP
+
+- @mp: Choosing the Minister-President.
 
 
 @right_coalition_bavaria
 title: We can form a Right Coalition.
 subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #69A2BE;">**BVP**</span> + <span style="color: #3F7BC1;">**DNVP**</span> + <span style="color: #38C538;">**BB**</span>[? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?] ([+ right_coalition_bavaria +]%)
 view-if: right_coalition_bavaria > 50
-on-arrival: in_right_coalition_bavaria = 1;
+on-arrival: in_right_coalition_bavaria = 1; nlp_bavaria = 1;
 
 WIP
+
+- @mp: Choosing the Minister-President.
 
 
 @no_majority_bavaria
 title: There is no clear governing majority.
 view-if: bourgeois_coalition_bavaria <= 50 and right_coalition_bavaria <= 50 and nlp_bl <= 50
-#on-arrival: 
+on-arrival: nlp_bavaria = 1 if was_nlp_bavaria; in_nlp_majority_bavaria = 1 if was_in_nlp_majority_bavaria; in_bourgeois_coalition_bavaria = 1 if was_in_bourgeois_coalition_bavaria; in_right_coalition_bavaria = 1 if was_in_right_coalition_bavaria;
 
 There is no path to a majority government for now. The current government will stay in power as a minority coalition.
+
+
+
+
+
+@mp
+
+WIP
+
+- @beyer
+- @held
+
+@beyer
+title: Otto Beyer (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>)
+view-if: nlp_bavaria
+choose-if: in_nlp_majority_bavaria or (in_bourgeois_coalition_bavaria and (nlp_bl + fvp_bl) > z_bl) or (in_right_coalition_bavaria and (nlp_bl > z_bl)
+unavailable-subtitle: Beyer doesn't have needed support to become the Minister-President.
+on-arrival: bavaria_leader = "Beyer"; bavaria_leader_party = nlp_name;
+face-image: img/portraits/BeyerOtto.jpg
+
+WIP.
+
+@held
+title: Heinrich Held (<span style="color: #69A2BE;">**BVP**</span>)
+view-if: in_bourgeois_coalition_bavaria or in_right_coalition_bavaria
+on-arrival: bavaria_leader = "Held"; bavaria_leader_party = "BVP"
+face-image: img/portraits/HeldHeinrich.jpg
+
+WIP.
