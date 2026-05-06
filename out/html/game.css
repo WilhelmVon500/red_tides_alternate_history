@@ -578,6 +578,9 @@ table {
 .seat.dap {
     fill: #096300;
 }
+.seat.bb {
+    fill: #38C538;
+}
 
 .seat.for {
     fill: #158E33;
