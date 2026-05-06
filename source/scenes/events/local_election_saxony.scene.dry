@@ -253,8 +253,6 @@ go-to: saxony_coalition_menu
 
 {!<tr><td><div class="box" style='background-color:#8B0000'> </div> !} KPD: {!</td><td>!} [+ kpd_election_votes_saxony +]% {!</td><td>!} [+ kpd_seats_saxony +] ([+ kpd_sl +]%) {!</td></tr>!}
 
-[? if uspd_exist: {!<tr><td><div class="box" style='background-color:#D47B9B'> </div> !} USPD: {!</td><td>!} [+ uspd_election_votes_saxony +]% {!</td><td>!} [+ uspd_seats_saxony +] ([+ uspd_sl +]%) {!</td></tr>!} ?]
-
 {!<tr><td><div class="box" style='background-color:#E3000F'> </div> !} SPD: {!</td><td>!} [+ spd_election_votes_saxony +]% {!</td><td>!} [+ spd_seats_saxony +] ([+ spd_sl +]%) {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color: var(--fvp-color)'> </div> !} [+fvp_name+]: {!</td><td>!} [+ fvp_election_votes_saxony +]% {!</td><td>!} [+ fvp_seats_saxony +] ([+ fvp_sl +]%) {!</td></tr>!}
