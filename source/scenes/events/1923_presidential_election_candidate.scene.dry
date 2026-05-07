@@ -11,6 +11,7 @@ Q.nlp_candidate = "";
 Q.kpd_candidate = "Löbe";
 Q.spd_candidate = "Löbe";
 Q.fvp_candidate = "Hellpach";
+Q.bb_candidate = "Fehrenbach";
 Q.z_candidate = "Fehrenbach";
 Q.bvp_candidate = "Westarp";
 Q.wp_candidate = "Westarp";
@@ -109,6 +110,8 @@ go-to: endorsements_cuno if nlp_candidate = "Cuno"; endorsements_marx if nlp_can
 
 [? if fvp_candidate = "Marx": - <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> ?]
 
+[? if bb_candidate = "Fehrenbach" or bb_candidate = "Marx": - <span style="color: #38C538;">**BB**</span> ?]
+
 [? if z_candidate = "Fehrenbach" or z_candidate = "Marx": - <span style="color: #000000;">Center Party</span> ?]
 
 [? if bvp_candidate = "Marx": - <span style="color: #69A2BE;">**BVP**</span> ?]
@@ -126,6 +129,8 @@ go-to: endorsements_cuno if nlp_candidate = "Cuno"; endorsements_marx if nlp_can
 [? if nlp_campaign: <span style="color: var(--nlp-color);">**Wilhelm Cuno**</span> - supported by: ?]
 
 [? if fvp_candidate = "Cuno": - <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> ?]
+
+[? if bb_candidate = "Cuno": - <span style="color: #38C538;">**BB**</span> ?]
 
 [? if z_candidate = "Cuno": - <span style="color: #000000;">Center Party</span> ?]
 
@@ -179,6 +184,7 @@ We can't win this election alone, we need support from other parties.
 
 - @convince_spd: Convince the <span style="color: #E3000F;">**SPD**</span> to back Cuno.
 - @convince_fvp: Convince the <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> to back Cuno.
+- @convince_bbb: Convince the <span style="color: #38C538;">**BB**</span> to back Cuno.
 - @convince_bvp: Convince the <span style="color: #69A2BE;">**BVP**</span> to back Cuno.
 - @convince_wp: Convince the <span style="color: #B8996F;">**WP**</span> to back Cuno.
 - @convince_rlb: Convince the <span style="color: #52AE6F;">**RLB**</span> to back Cuno.
@@ -204,6 +210,7 @@ Marx can't win this election alone, he needs support from other parties.
 
 - @convince_spd: Convince the <span style="color: #E3000F;">**SPD**</span> to back Marx.
 - @convince_fvp: Convince the <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> to back Marx.
+- @convince_bb: Convince the <span style="color: #38C538;">**BB**</span> to back Cuno.
 - @convince_bvp: Convince the <span style="color: #69A2BE;">**BVP**</span> to back Marx.
 - @convince_wp: Convince the <span style="color: #B8996F;">**WP**</span> to back Marx.
 - @convince_rlb: Convince the <span style="color: #52AE6F;">**RLB**</span> to back Marx.
@@ -222,6 +229,12 @@ view-if: not fvp_candidate = nlp_candidate
 on-arrival: fvp_campaign = 0; fvp_candidate = nlp_candidate;
 
 We have convinced the <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> to support our candidate!
+
+@convince_bb
+view-if: not bb_candidate = nlp_candidate
+on-arrival: bb_candidate = nlp_candidate;
+
+We have convinced the <span style="color: #38C538;">**BB**</span> to support our candidate!
 
 @convince_bvp
 view-if: not bvp_candidate = nlp_candidate
