@@ -7,7 +7,7 @@ max-visits: 1
 on-arrival: {!
 Q.for_seats = Math.round(Q.nlp_seats + Q.z_seats + Q.dnvp_seats + Q.wp_seats + Q.rlb_seats);
 Q.against_seats = Math.round(Q.kpd_seats + Q.spd_seats + Q.fvp_seats + Q.dap_seats);
-Q.abstain_seats = Math.round(Q.other_seats);
+Q.abstain_seats = Math.round(Q.other_seats + Q.bb_seats);
 
 Q.for_r = parseFloat((Q.for_seats / Q.reichstag_size).toFixed(1));
 Q.against_r = parseFloat((Q.against_seats / Q.reichstag_size).toFixed(1));
