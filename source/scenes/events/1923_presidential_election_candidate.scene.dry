@@ -198,7 +198,7 @@ We can't win this election alone, we need support from other parties.
 
 @support_marx
 subtitle: We can convince the <span style="color: #000000;">Center Party</span> to run a compromise candidate.
-on-arrival: z_candidate = "Marx"; nlp_candidate = "Marx"; z_relation += 5;
+on-arrival: z_candidate = "Marx"; nlp_candidate = "Marx"; bb_candidate = "Marx"; z_relation += 5;
 
 WIP
 
@@ -210,7 +210,6 @@ Marx can't win this election alone, he needs support from other parties.
 
 - @convince_spd: Convince the <span style="color: #E3000F;">**SPD**</span> to back Marx.
 - @convince_fvp: Convince the <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> to back Marx.
-- @convince_bb: Convince the <span style="color: #38C538;">**BB**</span> to back Cuno.
 - @convince_bvp: Convince the <span style="color: #69A2BE;">**BVP**</span> to back Marx.
 - @convince_wp: Convince the <span style="color: #B8996F;">**WP**</span> to back Marx.
 - @convince_rlb: Convince the <span style="color: #52AE6F;">**RLB**</span> to back Marx.
