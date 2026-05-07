@@ -13,10 +13,6 @@ The Bavarian state elections are to be held now.
 
 @bavaria
 on-arrival: {!
-if (!Q.rlb_exist) {
-    Q.rural_rlb = rural_other * 2;
-}
-
 for (var c of Q.classes) {
     var class_votes = 0;
     for (var party of Q.parties) {
@@ -35,10 +31,11 @@ if (Q.year == 1924) {
     Q.adjustmentFactors_kpd_bavaria = 0.5;
     Q.adjustmentFactors_spd_bavaria = 0.7;
     Q.adjustmentFactors_fvp_bavaria = 0.5;
+    Q.adjustmentFactors_bb_bavaria = 4.5;
     Q.adjustmentFactors_z_bavaria = 1.7;
     Q.adjustmentFactors_nlp_bavaria = 0.4;
     Q.adjustmentFactors_wp_bavaria = 0.3;
-    Q.adjustmentFactors_rlb_bavaria = 3.5;
+    Q.adjustmentFactors_rlb_bavaria = 0.0;
     Q.adjustmentFactors_dnvp_bavaria = 0.7;
     Q.adjustmentFactors_dap_bavaria = 1.7;
     Q.adjustmentFactors_other_bavaria = 0.3;
@@ -134,8 +131,8 @@ for (var party of Q.parties) {
 
 
 // coalitions
-Q.bourgeois_coalition_bavaria = parseFloat((Q.nlp_bl + Q.fvp_bl + Q.z_bl + Q.wp_bl + Q.rlb_bl).toFixed(1));
-Q.right_coalition_bavaria = parseFloat((Q.dnvp_bl + Q.nlp_bl + Q.z_bl + Q.wp_bl + Q.rlb_bl).toFixed(1));
+Q.bourgeois_coalition_bavaria = parseFloat((Q.nlp_bl + Q.fvp_bl + Q.z_bl + Q.wp_bl + Q.bb_bl).toFixed(1));
+Q.right_coalition_bavaria = parseFloat((Q.dnvp_bl + Q.nlp_bl + Q.z_bl + Q.wp_bl + Q.bb_bl).toFixed(1));
 
 
 // Reset government and ministers...
@@ -153,12 +150,6 @@ Q.nlp_bavaria = 0;
 Q.in_nlp_majority_bavaria = 0;
 Q.in_bourgeois_coalition_bavaria = 0;
 Q.in_right_coalition_bavaria = 0;
-
-
-
-if (!Q.rlb_exist) {
-    Q.rural_rlb = 0;
-}
 !}
 on-display: {!
 data = []
@@ -186,12 +177,12 @@ if (Q.fvp_seats_bavaria) {
         "seats": Math.round(Q.fvp_seats_bavaria),
     });
 }
-if (Q.rlb_seats_bavaria) {
+if (Q.bb_seats_bavaria) {
     data.push({
         "id": "bb",
         "legend": "BB",
         "name": "BB",
-        "seats": Math.round(Q.rlb_seats_bavaria),
+        "seats": Math.round(Q.bb_seats_bavaria),
     });
 }
 if (Q.z_seats_bavaria) {
@@ -276,7 +267,7 @@ go-to: bavaria_coalition_menu
 
 {!<tr><td><div class="box" style='background-color: var(--fvp-color)'> </div> !} [+fvp_name+]: {!</td><td>!} [+ fvp_election_votes_bavaria +]% {!</td><td>!} [+ fvp_seats_bavaria +] ([+ fvp_bl +]%) {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#38C538'> </div> !} BB: {!</td><td>!} [+ rlb_election_votes_bavaria +]% {!</td><td>!} [+ rlb_seats_bavaria +] ([+ rlb_bl +]%) {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#38C538'> </div> !} BB: {!</td><td>!} [+ bb_election_votes_bavaria +]% {!</td><td>!} [+ bb_seats_bavaria +] ([+ bb_bl +]%) {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#69A2BE'> </div> !} BVP: {!</td><td>!} [+ z_election_votes_bavaria +]% {!</td><td>!} [+ z_seats_bavaria +] ([+ z_bl +]%) {!</td></tr>!}
 
