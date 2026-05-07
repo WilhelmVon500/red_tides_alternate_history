@@ -291,6 +291,16 @@ Support for the Republic: [+ pro_republic_disp +]%
 
 @states
 
+= Free State of Prussia
+
+<div style="display: flex; justify-content: center;">[? if prussia_leader = "Braun": <img src="img/portraits/BraunOtto.jpg" class="prussia-leader"> ?]</div>
+
+Minister-President: [+ prussia_leader +] ([?if prussia_leader_party == "SPD": <span style="color: #E3000F;">**SPD**</span>?])
+
+Government: WIP
+
+Next election: [+ next_election_month_prussia: month +] [+ next_election_year_prussia +]
+
 = Free State of Bavaria
 
 <div style="display: flex; justify-content: center;">[? if bavaria_leader = "Kahr": <img src="img/portraits/KahrGustav.jpg" class="bavaria-leader"> ?][? if bavaria_leader = "Held": <img src="img/portraits/HeldHeinrich.jpg" class="bavaria-leader"> ?][? if bavaria_leader = "Beyer": <img src="img/portraits/BeyerOtto.jpg" class="bavaria-leader"> ?]</div>
