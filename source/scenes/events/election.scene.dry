@@ -280,20 +280,20 @@ if (Q.spd_seats) {
         "seats": Math.round(Q.spd_seats),
     });
 }
-if (Q.bb_seats) {
-    data.push({
-        "id": "bb",
-        "legend": "BB",
-        "name": "BB",
-        "seats": Math.round(Q.bb_seats),
-    });
-}
 if (Q.fvp_seats) {
     data.push({
         "id": "fvp",
         "legend": Q.fvp_name,
         "name": Q.fvp_name,
         "seats": Math.round(Q.fvp_seats),
+    });
+}
+if (Q.bb_seats) {
+    data.push({
+        "id": "bb",
+        "legend": "BB",
+        "name": "BB",
+        "seats": Math.round(Q.bb_seats),
     });
 }
 if (Q.z_minus_bvp_seats) {
