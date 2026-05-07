@@ -58,6 +58,9 @@ if (Q.fvp_candidate == "Marx") {
 if (Q.z_candidate == "Marx" || Q.z_candidate == "Fehrenbach") {
     Q.z_candidate_votes += (Q.z_normalized - Q.bvp_normalized);
 }
+if (Q.bb_candidate == "Marx" || Q.bb_candidate == "Fehrenbach") {
+    Q.z_candidate_votes += Q.bb_normalized;
+}
 if (Q.bvp_candidate == "Marx") {
     Q.z_candidate_votes += Q.bvp_normalized;
 }
@@ -80,6 +83,9 @@ if (Q.other_candidate == "Marx") {
 if (Q.fvp_candidate == "Cuno") {
     Q.nlp_candidate_votes += Q.fvp_normalized * 0.7;
     Q.spd_candidate_votes += Q.fvp_normalized * 0.3;
+}
+if (Q.bb_candidate == "Cuno") {
+    Q.nlp_candidate_votes += Q.bb_normalized;
 }
 if (Q.z_candidate == "Cuno") {
     Q.nlp_candidate_votes += (Q.z_normalized - Q.bvp_normalized);
@@ -218,7 +224,7 @@ on-departure: {!
 Q.presidential_election_r2_trigger = 1;
 
 if (Q.z_candidate == "Fehrenbach") {
-  Q.z_candidate = "Marx"
+  Q.z_candidate = "Marx";
 }
 if (Q.z_candidate == "Marx") {
   Q.fvp_candidate = "Marx";
@@ -226,6 +232,7 @@ if (Q.z_candidate == "Marx") {
 if (Q.z_candidate == "Cuno") {
   Q.fvp_candidate = "Cuno";
 }
+Q.bb_candidate = Q.z_candidate;
 
 
 if (Q.spd_campaign && Q.fvp_campaign && Q.spd_candidate_votes < 35) {
@@ -305,7 +312,7 @@ subtitle: This will cost us 1 resource.
 choose-if: resources >= 1 and chancellor = "Cuno"
 unavailable-subtitle: [? if resources < 1: Not enough resources. ?][? if chancellor != "Cuno": Wilhelm Cuno doesn't have needed support. ?]
 view-if: nlp_candidate != "Cuno" and not cuno_drop_out
-on-arrival: resources -= 1; nlp_campaign = 1; nlp_candidate = "Cuno"; z_campaign = 0; z_candidate = "Cuno"; fvp_candidate = "Cuno" if fvp_candidate = "Marx"; spd_campaign = 1 if spd_candidate = "Marx"; spd_candidate = "Löbe" if spd_candidate = "Marx";
+on-arrival: resources -= 1; nlp_campaign = 1; nlp_candidate = "Cuno"; z_campaign = 0; z_candidate = "Cuno"; bb_candidate = "Cuno"; fvp_candidate = "Cuno" if fvp_candidate = "Marx"; spd_campaign = 1 if spd_candidate = "Marx"; spd_candidate = "Löbe" if spd_candidate = "Marx";
 
 WIP
 
@@ -319,7 +326,7 @@ WIP
 
 @round2_westarp
 view-if: nlp_candidate != "Westarp" and dnvp_campaign
-on-arrival: nlp_campaign = 0; nlp_candidate = "Westarp"; z_campaign = 1 if z_candidate = "Cuno"; z_candidate = "Marx" if z_candidate = "Cuno"; bvp_candidate = "Westarp" if bvp_candidate = "Cuno"; wp_candidate = "Westarp" if wp_candidate = "Cuno"; rlb_candidate = "Westarp" if rlb_candidate = "Cuno";
+on-arrival: nlp_campaign = 0; nlp_candidate = "Westarp"; z_campaign = 1 if z_candidate = "Cuno"; z_candidate = "Marx" if z_candidate = "Cuno"; bb_candidate = "Marx" if bb_candidate = "Cuno"; bvp_candidate = "Westarp" if bvp_candidate = "Cuno"; wp_candidate = "Westarp" if wp_candidate = "Cuno"; rlb_candidate = "Westarp" if rlb_candidate = "Cuno";
 
 WIP
 
