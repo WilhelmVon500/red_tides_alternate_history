@@ -182,7 +182,7 @@ Q.economic_expansion = 0;
 
 Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics'];
 Q.parties = ['nlp', 'kpd', 'uspd', 'spd', 'fvp', 'z', 'wp', 'rlb', 'dnvp', 'dap', 'other'];
-Q.states = ['prussia', bavaria', 'saxony', 'thuringia']
+Q.states = ['prussia', 'bavaria', 'saxony', 'thuringia']
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
