@@ -199,7 +199,7 @@ Paul Löbe of the <span style="color: #E3000F;">**SPD**</span> has won the presi
 
 @marx_wins
 face-image: img/portraits/MarxWilhelm.jpg
-on-arrival: president = "Marx"; president_party = "Z"; new_middle_z += 6; old_middle_z += 6; rural_z += 4; catholics_z += 4; chancellor_party = nlp_name if chancellor = "Marx"; chancellor = "Cuno" if chancellor = "Marx";
+on-arrival: president = "Marx"; president_party = "Z"; new_middle_z += 6; old_middle_z += 6; rural_z += 4; catholics_z += 4; chancellor_party = nlp_name if chancellor = "Marx"; chancellor = "Cuno" if chancellor = "Marx"; vice_chancellor_party = "DNVP" if vice_chancellor = "Marx"; vice_chancellor = "Westarp" if vice_chancellor = "Marx";
 
 Wilhelm Marx of the <span style="color: #000000;">Center Party</span> has won the presidency!
 
@@ -211,7 +211,7 @@ Wilhelm Cuno of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</s
 
 @westarp_wins
 face-image: img/portraits/WestarpKuno.jpg
-on-arrival: president = "Westarp"; president_party = "DNVP"; workers_dnvp += 2; new_middle_dnvp += 4; old_middle_dnvp += 6; rural_dnvp += 6; catholics_dnvp += 2;
+on-arrival: president = "Westarp"; president_party = "DNVP"; workers_dnvp += 2; new_middle_dnvp += 4; old_middle_dnvp += 6; rural_dnvp += 6; catholics_dnvp += 2; vice_chancellor_party = "Z" if vice_chancellor = "Westarp"; vice_chancellor = "Marx" if vice_chancellor = "Westarp";
 
 Kuno Westarp of the <span style="color: #3F7BC1;">**DNVP**</span> has won the presidency!
 
