@@ -31,6 +31,7 @@ if (Q.year == 1922) {
     Q.adjustmentFactors_kpd_saxony = 1.15;
     Q.adjustmentFactors_spd_saxony = 1.65;
     Q.adjustmentFactors_fvp_saxony = 0.95;
+    Q.adjustmentFactors_bb_saxony = 0.0;
     Q.adjustmentFactors_z_saxony = 0.05;
     Q.adjustmentFactors_nlp_saxony = 1.5;
     Q.adjustmentFactors_wp_saxony = 0.15;
