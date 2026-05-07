@@ -62,8 +62,11 @@ if (Q.spd_candidate == "Marx") {
     Q.z_candidate_votes += Q.spd_normalized * 0.7;
     Q.kpd_candidate_votes += Q.spd_normalized * 0.3;
 }
-if (Q.spd_candidate == "Marx") {
+if (Q.fvp_candidate == "Marx") {
     Q.z_candidate_votes += Q.fvp_normalized;
+}
+if (Q.bb_candidate == "Marx") {
+    Q.z_candidate_votes += Q.bb_normalized;
 }
 if (Q.z_candidate == "Marx" || Q.z_candidate == "Fehrenbach") {
     Q.z_candidate_votes += (Q.z_normalized - Q.bvp_normalized);
@@ -90,6 +93,9 @@ if (Q.other_candidate == "Marx") {
 if (Q.fvp_candidate == "Cuno") {
     Q.nlp_candidate_votes += Q.fvp_normalized * 0.7;
     Q.spd_candidate_votes += Q.fvp_normalized * 0.3;
+}
+if (Q.bb_candidate == "Cuno") {
+    Q.nlp_candidate_votes += Q.bb_normalized;
 }
 if (Q.z_candidate == "Cuno") {
     Q.nlp_candidate_votes += (Q.z_normalized - Q.bvp_normalized);
