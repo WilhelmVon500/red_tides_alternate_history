@@ -129,7 +129,10 @@ for (var party of Q.parties) {
 
 // coalitions
 Q.united_left_coalition_saxony = parseFloat((Q.spd_sl + Q.kpd_sl).toFixed(1));
+
 Q.bourgeois_coalition_saxony = parseFloat((Q.nlp_sl + Q.fvp_sl + Q.z_sl + Q.wp_sl + Q.rlb_sl).toFixed(1));
+if (Q.fvp_ideology == "Left") Q.bourgeois_coalition_saxony = parseFloat((Q.bourgeois_coalition_saxony - Q.fvp_sl).toFixed(1));
+
 Q.right_coalition_saxony = parseFloat((Q.dnvp_sl + Q.nlp_sl + Q.z_sl + Q.wp_sl + Q.rlb_sl).toFixed(1));
 
 
@@ -286,7 +289,7 @@ go-to: saxony_coalition_menu
 
 United Left Coalition (<span style="color: #E3000F;">**SPD**</span> + <span style="color: #8B0000;">**KPD**</span>): [+ united_left_coalition_saxony +]%
 
-Bourgeois Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> [? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span> ?]+ <span style="color: #000000;">**Z**</span>): [+ bourgeois_coalition_saxony +]%
+Bourgeois Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> [? if not fvp_ideology = "Left": + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> ?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span> ?]+ <span style="color: #000000;">**Z**</span>): [+ bourgeois_coalition_saxony +]%
 
 Right Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #3F7BC1;">**DNVP**</span> [? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span> ?]+ <span style="color: #000000;">**Z**</span>): [+ right_coalition_saxony +]%
   
@@ -323,7 +326,7 @@ WIP
 
 @bourgeois_coalition_saxony
 title: We can form a Bourgeois Coalition.
-subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> [? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span> ?]+ <span style="color: #000000;">**Z**</span> ([+ bourgeois_coalition_saxony +]%)
+subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> [? if not fvp_ideology = "Left": + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> ?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span> ?]+ <span style="color: #000000;">**Z**</span> ([+ bourgeois_coalition_saxony +]%)
 view-if: bourgeois_coalition_saxony > 50
 on-arrival: in_bourgeois_coalition_saxony = 1; nlp_saxony = 1;
 
