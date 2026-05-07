@@ -97,6 +97,8 @@ if (new_party_sum > 0) {
     }
 }
 
+Q.other_election_votes_bavaria = other_votes_fix;
+
 let allocatedSeats = 0;
 let remainders = [];
 
