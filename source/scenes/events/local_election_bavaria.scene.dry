@@ -151,6 +151,12 @@ Q.nlp_bavaria = 0;
 Q.in_nlp_majority_bavaria = 0;
 Q.in_bourgeois_coalition_bavaria = 0;
 Q.in_right_coalition_bavaria = 0;
+
+
+
+if (!Q.rlb_exist) {
+    Q.rural_rlb = 0;
+}
 !}
 on-display: {!
 data = []
