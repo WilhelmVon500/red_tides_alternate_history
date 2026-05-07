@@ -609,15 +609,22 @@ table {
     object-fit: cover;
 }
 
+.prussia-leader {
+    width: 40%;
+    height: 150px;
+    border: 6px solid black;
+    box-shadow: white 0px 0px 0px 6px;
+    object-fit: cover;
+}
 .bavaria-leader {
-     width: 40%;
+    width: 40%;
     height: 150px;
     border: 6px solid white;
     box-shadow: #0077B6 0px 0px 0px 6px;
     object-fit: cover;
 }
 .saxony-leader {
-     width: 40%;
+    width: 40%;
     height: 150px;
     border: 6px solid white;
     box-shadow: #00854A 0px 0px 0px 6px;
