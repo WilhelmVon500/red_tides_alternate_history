@@ -188,7 +188,7 @@ Q.economic_expansion = 0;
 
 Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics'];
 Q.parties = ['nlp', 'kpd', 'uspd', 'spd', 'fvp', 'z', 'wp', 'rlb', 'dnvp', 'dap', 'other'];
-Q.states = ['bavaria', 'saxony', 'thuringia']
+Q.states = ['prussia', bavaria', 'saxony', 'thuringia']
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
@@ -312,6 +312,14 @@ Q.dap_election_votes = 0;
 Q.other_election_votes = 3.0;
 
 
+
+// prussia
+Q.nlp_prussia = 0;
+Q.prussia_leader = "Braun";
+Q.prussia_leader_party = "SPD";
+Q.next_election_week_prussia = 1;
+Q.next_election_month_prussia = 2;
+Q.next_election_year_prussia = 1925;
 
 // bavaria
 Q.nlp_bavaria = 1;
