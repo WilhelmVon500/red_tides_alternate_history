@@ -182,15 +182,15 @@ Q.str_seats_change_z = sign2 + Math.abs(Math.round(Q.str_seats_change_z));
 
 
 Q.largest_party = 'SPD';
-if (Q.dap_r >= Q.spd_r && Q.dap_r >= Q.kpd_r && Q.dap_r >= Q.nlp_r) {
-    Q.largest_party = 'DAP';
+if (Q.dnvp_r >= Q.spd_r && Q.dnvp_r >= Q.kpd_r && Q.dnvp_r >= Q.nlp_r) {
+    Q.largest_party = 'DNVP';
 }
 
-if (Q.kpd_r >= Q.spd_r && Q.kpd_r >= Q.dap_r && Q.kpd_r >= Q.nlp_r) {
+if (Q.kpd_r >= Q.spd_r && Q.kpd_r >= Q.dnvp_r && Q.kpd_r >= Q.nlp_r) {
     Q.largest_party = 'KPD';
 }
 
-if (Q.nlp_r >= Q.spd_r && Q.nlp_r >= Q.dap_r && Q.nlp_r >= Q.kpd_r) {
+if (Q.nlp_r >= Q.spd_r && Q.nlp_r >= Q.dnvp_r && Q.nlp_r >= Q.kpd_r) {
     Q.largest_party = Q.nlp_name;
 }
 
@@ -198,8 +198,9 @@ if (Q.nlp_r >= Q.spd_r && Q.nlp_r >= Q.dap_r && Q.nlp_r >= Q.kpd_r) {
 
 // coalitions
 Q.weimar_coalition = parseFloat((Q.spd_r + Q.fvp_r + Q.z_minus_bvp_r).toFixed(1));
-Q.center_right_coalition = parseFloat((Q.dnvp_r + Q.nlp_r + Q.fvp_r + Q.bb_r + Q.z_r + Q.wp_r + Q.rlb_r).toFixed(1));
-Q.right_coalition = parseFloat((Q.dnvp_r + Q.nlp_r + Q.z_r + Q.wp_r + Q.rlb_r).toFixed(1));
+Q.center_right_coalition = parseFloat((Q.nlp_r + Q.fvp_r + Q.bb_r + Q.z_r + Q.wp_r + Q.rlb_r + Q.csvd_r + Q.kvp_r).toFixed(1));
+if (!Q.dnvp_ideology == "Radical") Q.center_right_coalition = parseFloat((Q.center_right_coalition + Q.dnvp_r).toFixed(1));
+Q.right_coalition = parseFloat((Q.dnvp_r + Q.nlp_r + Q.z_r + Q.wp_r + Q.rlb_r + Q.csvd_r + Q.kvp_r + Q.kswr_r).toFixed(1));
 
 Q.leverage = Q.nlp_r + 10;
 
@@ -212,6 +213,7 @@ Q.nlp_in_government = 0;
 Q.spd_in_government = 0;
 Q.z_in_government = 0;
 Q.fvp_in_government = 0;
+Q.kvp_in_government = 0;
 Q.dnvp_in_government = 0;
 Q.kpd_in_government = 0;
 Q.dap_in_government = 0;
@@ -320,6 +322,14 @@ if (Q.nlp_seats) {
         "seats": Math.round(Q.nlp_seats),
     });
 }
+if (Q.csvd_exist && Q.csvd_seats) {
+    data.push({
+        "id": "csvd",
+        "legend": "CSVD",
+        "name": "CSVD",
+        "seats": Math.round(Q.csvd_seats),
+    });
+}
 if (Q.wp_exist && Q.wp_seats) {
     data.push({
         "id": "wp",
@@ -344,12 +354,28 @@ if (Q.other_seats) {
         "seats": Math.round(Q.other_seats),
     });
 }
+if (Q.kvp_exist && Q.kvp_seats) {
+    data.push({
+        "id": "kvp",
+        "legend": "KVP",
+        "name": "KVP",
+        "seats": Math.round(Q.kvp_seats),
+    });
+}
 if (Q.dnvp_seats) {
     data.push({
         "id": "dnvp",
         "legend": "DNVP",
         "name": "DNVP",
         "seats": Math.round(Q.dnvp_seats),
+    });
+}
+if (Q.kswr_exist && Q.kswr_seats) {
+    data.push({
+        "id": "kswr",
+        "legend": "KSWR",
+        "name": "KSWR",
+        "seats": Math.round(Q.kswr_seats),
     });
 }
 if (Q.dap_seats) {
@@ -402,11 +428,17 @@ go-to: coalition_menu
 
 {!<tr><td><div class="box" style='background-color:#69A2BE'> </div> !} BVP: {!</td><td>!} [+ bvp_election_votes +]% {!</td><td>!} [+ votes_change_bvp +] {!</td><td>!} [+ bvp_seats +] ([+ bvp_r +]%) {!</td><td>!} [+ str_seats_change_bvp +] ([+ str_change_bvp +]%) {!</td></tr>!}
 
+[? if csvd_exist: {!<tr><td><div class="box" style='background-color:#1DB4E1'> </div> !} CSVD: {!</td><td>!} [+ csvd_election_votes +]% {!</td><td>!} [+ votes_change_csvd +] {!</td><td>!} [+ csvd_seats +] ([+ csvd_r +]%) {!</td><td>!} [+ str_seats_change_csvd +] ([+ str_change_csvd +]%) {!</td></tr>!} ?]
+
 [? if wp_exist: {!<tr><td><div class="box" style='background-color:#B8996F'> </div> !} WP: {!</td><td>!} [+ wp_election_votes +]% {!</td><td>!} [+ votes_change_wp +] {!</td><td>!} [+ wp_seats +] ([+ wp_r +]%) {!</td><td>!} [+ str_seats_change_wp +] ([+ str_change_wp +]%) {!</td></tr>!} ?]
 
 [? if rlb_exist: {!<tr><td><div class="box" style='background-color:#52AE6F'> </div> !} RLB: {!</td><td>!} [+ rlb_election_votes +]% {!</td><td>!} [+ votes_change_rlb +] {!</td><td>!} [+ rlb_seats +] ([+ rlb_r +]%) {!</td><td>!} [+ str_seats_change_rlb +] ([+ str_change_rlb +]%) {!</td></tr>!} ?]
 
+[? if kvp_exist: {!<tr><td><div class="box" style='background-color:#455B95'> </div> !} KVP: {!</td><td>!} [+ kvp_election_votes +]% {!</td><td>!} [+ votes_change_kvp +] {!</td><td>!} [+ kvp_seats +] ([+ kvp_r +]%) {!</td><td>!} [+ str_seats_change_kvp +] ([+ str_change_kvp +]%) {!</td></tr>!} ?]
+
 {!<tr><td><div class="box" style='background-color:#3F7BC1'> </div> !} DNVP: {!</td><td>!} [+ dnvp_election_votes +]% {!</td><td>!} [+ votes_change_dnvp +] {!</td><td>!} [+ dnvp_seats +] ([+ dnvp_r +]%) {!</td><td>!} [+ str_seats_change_dnvp +] ([+ str_change_dnvp +]%) {!</td></tr>!}
+
+[? if kswr_exist: {!<tr><td><div class="box" style='background-color:#003755'> </div> !} KSWR: {!</td><td>!} [+ kswr_election_votes +]% {!</td><td>!} [+ votes_change_kswr +] {!</td><td>!} [+ kswr_seats +] ([+ kswr_r +]%) {!</td><td>!} [+ str_seats_change_kswr +] ([+ str_change_kswr +]%) {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#096300'> </div> !} DAP: {!</td><td>!} [+ dap_election_votes +]% {!</td><td>!} [+ votes_change_dap +] {!</td><td>!} [+ dap_seats +] ([+ dap_r +]%) {!</td><td>!} [+ str_seats_change_dap +] ([+ str_change_dap +]%) {!</td></tr>!}
 
@@ -417,9 +449,9 @@ go-to: coalition_menu
 
 Weimar Coalition (<span style="color: #E3000F;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>): [+ weimar_coalition +]%
 
-Right Coalition (<span style="color: #3F7BC1;">**DNVP**</span> + <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #69A2BE;">**BVP**</span>[? if wp_exist:  + <span style="color: #B8996F;">**WP**</span>?][? if rlb_exist:  + <span style="color: #52AE6F;">**RLB**</span>?]): [+ right_coalition +]%
+Right Coalition (<span style="color: #3F7BC1;">**DNVP**</span> + <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #69A2BE;">**BVP**</span>[? if kvp_exist: + <span style="color: #455B95;">**KVP**</span>?][? if kswr_exist: + <span style="color: #003755;">**KSWR**</span>?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span>?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span>?]): [+ right_coalition +]%
 
-[? if not fvp_ideology = "Left" and not dnvp_ideology = "Radical": Center-Right Coalition (<span style="color: #3F7BC1;">**DNVP**</span> + <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #69A2BE;">**BVP**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> + <span style="color: #38C538;">**BB**</span>[? if wp_exist:  + <span style="color: #B8996F;">**WP**</span>?][? if rlb_exist:  + <span style="color: #52AE6F;">**RLB**</span>?]): [+ center_right_coalition +]% ?]
+[? if not fvp_ideology = "Left": Center-Right Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #69A2BE;">**BVP**</span>[? if not dnvp_idelogy = "Radical": + <span style="color: #3F7BC1;">**DNVP**</span>?][? if kvp_exist: + <span style="color: #455B95;">**KVP**</span>?] + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> + <span style="color: #38C538;">**BB**</span>[? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span>?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span>?]): [+ center_right_coalition +]% ?]
 
 There are some potential coalition arrangements.
 
@@ -458,9 +490,9 @@ Müller's appointment as chancellor is approved by all members of the coalition.
 
 @center_right_coalition
 title: We can form a Center-Right Coalition.
-subtitle: <span style="color: #3F7BC1;">**DNVP**</span> + <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #69A2BE;">**BVP**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> + <span style="color: #38C538;">**BB**</span>[? if wp_exist:  + <span style="color: #B8996F;">**WP**</span>?][? if rlb_exist:  + <span style="color: #52AE6F;">**RLB**</span>?] ([+ center_right_coalition +]%)
-view-if: center_right_coalition >= 50 and not fvp_ideology = "Left" and not dnvp_ideology = "Radical"
-on-arrival: in_center_right_coalition = 1; nlp_in_government = 1; z_in_government = 1; dnvp_in_government = 1; foreign_minister = 'Brockdorff-Rantzau'; foreign_minister_party = 'I'; interior_minister = 'Keudell'; interior_minister_party = 'DNVP'; justice_minister = 'Hergt'; justice_minister_party = 'DNVP'; finance_minister = 'Köhler'; finance_minister_party = 'Z'; economic_minister = 'Hamm'; economic_minister_party = fvp_name; labor_minister = 'Brauns'; labor_minister_party = 'Z'; agriculture_minister = 'Schiele'; agriculture_minister_party = 'DNVP'; reichswehr_minister = 'Seeckt'; reichswehr_minister_party = 'I';
+subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #69A2BE;">**BVP**</span>[? if not dnvp_idelogy = "Radical": + <span style="color: #3F7BC1;">**DNVP**</span>?][? if kvp_exist: + <span style="color: #455B95;">**KVP**</span>?] + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> + <span style="color: #38C538;">**BB**</span>[? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span>?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span>?] ([+ center_right_coalition +]%)
+view-if: center_right_coalition >= 50 and not fvp_ideology = "Left"
+on-arrival: in_center_right_coalition = 1; nlp_in_government = 1; z_in_government = 1; dnvp_in_government = 1 if not dnvp_ideology = "Radical"; kvp_in_government = 1 if kvp_exist; foreign_minister = 'Brockdorff-Rantzau'; foreign_minister_party = 'I'; interior_minister = 'Keudell'; interior_minister_party = 'DNVP' if not dnvp_ideology = "Radical"; interior_minister_party = 'KVP' if kvp_exist; justice_minister = 'Hergt'; justice_minister_party = 'DNVP' if not dnvp_ideology = "Radical"; justice_minister_party = 'KVP' if kvp_exist; finance_minister = 'Köhler'; finance_minister_party = 'Z'; economic_minister = 'Hamm'; economic_minister_party = fvp_name; labor_minister = 'Brauns'; labor_minister_party = 'Z'; agriculture_minister = 'Schiele'; agriculture_minister_party = 'DNVP' if not dnvp_ideology = "Radical"; agriculture_minister_party = 'KVP' if kvp_exist; reichswehr_minister = 'Seeckt'; reichswehr_minister_party = 'I';
 
 WIP.
 
@@ -483,7 +515,7 @@ Cuno's appointment as chancellor is approved by all members of the coalition, du
 title: Wilhelm Marx for Chancellor.
 subtitle: Wilhelm Marx is a respected member of the <span style="color: #000000;">Center Party</span>.
 face-image: img/portraits/MarxWilhelm.jpg
-on-arrival: chancellor = "Marx"; chancellor_party = "Z"; vice_chancellor = "Westarp"; vice_chancellor_party = "DNVP";
+on-arrival: chancellor = "Marx"; chancellor_party = "Z"; vice_chancellor = "Westarp"; vice_chancellor_party = "DNVP" if not dnvp_ideology = "Radical"; vice_chancellor_party = "KVP" if kvp_exist;
 
 Marx's appointment as chancellor is approved by all members of the coalition, due to his reputation of a politician of compromise.
 
