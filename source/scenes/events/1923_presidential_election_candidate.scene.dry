@@ -226,24 +226,28 @@ choose-if: false
 @convince_fvp
 view-if: not fvp_candidate = nlp_candidate
 on-arrival: fvp_campaign = 0; fvp_candidate = nlp_candidate;
+go-to: endorsements_marx if nlp_candidate = "Marx"; endorsements_cuno if nlp_candidate = "Cuno";
 
 We have convinced the <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> to support our candidate!
 
 @convince_bb
 view-if: not bb_candidate = nlp_candidate
 on-arrival: bb_candidate = nlp_candidate;
+go-to: endorsements_marx if nlp_candidate = "Marx"; endorsements_cuno if nlp_candidate = "Cuno";
 
 We have convinced the <span style="color: #38C538;">**BB**</span> to support our candidate!
 
 @convince_bvp
 view-if: not bvp_candidate = nlp_candidate
 on-arrival: bvp_candidate = nlp_candidate;
+go-to: endorsements_marx if nlp_candidate = "Marx"; endorsements_cuno if nlp_candidate = "Cuno";
 
 We have convinced the <span style="color: #69A2BE;">**BVP**</span> to support our candidate!
 
 @convince_wp
 view-if: not wp_candidate = nlp_candidate
 on-arrival: wp_candidate = nlp_candidate;
+go-to: endorsements_marx if nlp_candidate = "Marx"; endorsements_cuno if nlp_candidate = "Cuno";
 
 We have convinced the <span style="color: #B8996F;">**WP**</span> to support our candidate!
 
@@ -252,12 +256,14 @@ view-if: not rlb_candidate = nlp_candidate
 unavailable-subtitle: The <span style="color: #52AE6F;">**RLB**</span> is not interested in supporting our candidate as long as Westarp is running.
 choose-if: not rlb_candidate = "Westarp"
 on-arrival: rlb_candidate = nlp_candidate;
+go-to: endorsements_marx if nlp_candidate = "Marx"; endorsements_cuno if nlp_candidate = "Cuno";
 
 We have convinced the <span style="color: #52AE6F;">**RLB**</span> to support our candidate!
 
 @convince_dnvp
 view-if: not dnvp_candidate = nlp_candidate
 on-arrival: dnvp_campaign = 0; dnvp_candidate = nlp_candidate; rlb_candidate = nlp_candidate if rlb_candidate = "Westarp"; wp_candidate = nlp_candidate if wp_candidate = "Westarp"; bvp_candidate = nlp_candidate if bvp_candidate = "Westarp";
+go-to: endorsements_marx if nlp_candidate = "Marx"; endorsements_cuno if nlp_candidate = "Cuno";
 
 We have convinced the <span style="color: #3F7BC1;">**DNVP**</span> to support our candidate!
 
