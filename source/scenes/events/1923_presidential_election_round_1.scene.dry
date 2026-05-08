@@ -282,7 +282,7 @@ go-to: round2_menu
 
 There is no majority in this round. In the second round, any candidate who wins a plurality will win overall. What should we do?
 
-[? if nlp_campaign and z_campaign and dnvp_campaign and Q.z_candidate_votes < Q.nlp_candidate_votes: Wilhelm Cuno has decided to drop out as he failed to secure backing of major bourgeois parties. ?]
+[? if nlp_campaign and z_campaign and dnvp_campaign and z_candidate_votes < nlp_candidate_votes: Wilhelm Cuno has decided to drop out as he failed to secure backing of major bourgeois parties. ?]
 
 [? if z_candidate = "Fehrenbach": The <span style="color: #000000;">Center Party</span> has decided to replace Fehrenbach with Marx in the second round, attempting to get other bourgeois parties to support their candidate. ?]
 
