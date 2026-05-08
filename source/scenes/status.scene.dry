@@ -90,7 +90,7 @@ Reichsbank President: [+ reichsbank_president +] ([?if reichsbank_president_part
 
 = Internal Situation of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>
 
-<div style="display: flex; justify-content: center;">[? if nlp_leader = "Stresemann": <img src="img/portraits/StresemannGustav.jpg" alt="Gustav Stresemann" style="width: 50%; height: 200px;"> ?]</div>
+<div style="display: flex; justify-content: center;">[? if nlp_leader = "Stresemann": <img src="img/portraits/StresemannGustav.jpg" alt="Gustav Stresemann" style="width: 50%; height: 200px; object-fit: cover;"> ?]</div>
 
 Party Chairman: [+ nlp_leader +]
 
