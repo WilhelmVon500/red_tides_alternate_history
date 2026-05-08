@@ -369,7 +369,7 @@ WIP
 - @held
 
 @beyer
-title: Otto Beyer (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>, Left-Wing Stresemannite)
+title: Otto Beyer (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>, Left-Wing Stresemannite).
 view-if: nlp_bavaria
 choose-if: in_nlp_majority_bavaria or (in_bourgeois_coalition_bavaria and (nlp_bl + fvp_bl) > z_bl) or (in_right_coalition_bavaria and (nlp_bl > z_bl))
 unavailable-subtitle: Beyer doesn't have needed support to become the Minister-President.
@@ -379,7 +379,7 @@ face-image: img/portraits/BeyerOtto.jpg
 WIP.
 
 @held
-title: Heinrich Held (<span style="color: #69A2BE;">**BVP**</span>)
+title: Heinrich Held (<span style="color: #69A2BE;">**BVP**</span>).
 view-if: in_bourgeois_coalition_bavaria or in_right_coalition_bavaria
 on-arrival: bavaria_leader = "Held"; bavaria_leader_party = "BVP"
 face-image: img/portraits/HeldHeinrich.jpg
