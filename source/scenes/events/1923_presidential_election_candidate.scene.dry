@@ -262,7 +262,7 @@ We have convinced the <span style="color: #52AE6F;">**RLB**</span> to support ou
 
 @convince_dnvp
 view-if: not dnvp_candidate = nlp_candidate
-on-arrival: dnvp_campaign = 0; dnvp_candidate = nlp_candidate; rlb_candidate = nlp_candidate if rlb_candidate = "Westarp"; wp_candidate = nlp_candidate if wp_candidate = "Westarp"; bvp_candidate = nlp_candidate if bvp_candidate = "Westarp";
+on-arrival: dnvp_campaign = 0; dnvp_candidate = nlp_candidate; bvp_candidate = nlp_candidate if bvp_candidate = "Westarp"; rlb_candidate = nlp_candidate if rlb_candidate = "Westarp"; wp_candidate = nlp_candidate if wp_candidate = "Westarp"; other_candidate = nlp_candidate if other_candidate = "Westarp";
 go-to: endorsements_marx if nlp_candidate = "Marx"; endorsements_cuno if nlp_candidate = "Cuno"
 
 We have convinced the <span style="color: #3F7BC1;">**DNVP**</span> to support our candidate!
