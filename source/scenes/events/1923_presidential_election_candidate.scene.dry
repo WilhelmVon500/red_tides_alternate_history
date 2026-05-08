@@ -184,7 +184,7 @@ We can't win this election alone, we need support from other parties.
 
 - @convince_spd: Convince the <span style="color: #E3000F;">**SPD**</span> to back Cuno.
 - @convince_fvp: Convince the <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> to back Cuno.
-- @convince_bbb: Convince the <span style="color: #38C538;">**BB**</span> to back Cuno.
+- @convince_bb: Convince the <span style="color: #38C538;">**BB**</span> to back Cuno.
 - @convince_bvp: Convince the <span style="color: #69A2BE;">**BVP**</span> to back Cuno.
 - @convince_wp: Convince the <span style="color: #B8996F;">**WP**</span> to back Cuno.
 - @convince_rlb: Convince the <span style="color: #52AE6F;">**RLB**</span> to back Cuno.
