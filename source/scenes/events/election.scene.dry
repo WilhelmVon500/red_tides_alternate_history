@@ -433,7 +433,7 @@ There are some potential coalition arrangements.
 
 
 @weimar_coalition
-title: We can form a Weimar Coalition.
+title: A Weimar Coalition can be formed.
 subtitle: <span style="color: #E3000F;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> ([+ weimar_coalition +]%)
 view-if: weimar_coalition >= 50
 on-arrival: in_weimar_coalition = 1; spd_in_government = 1; z_in_government = 1; fvp_in_government = 1; foreign_minister = 'Rathenau'; foreign_minister_party = fvp_name; interior_minister = 'Wirth'; interior_minister_party = 'Z'; justice_minister = 'Radbruch'; justice_minister_party = 'SPD'; finance_minister = 'Erzberger'; finance_minister_party = 'Z'; economic_minister = 'Schmidt'; economic_minister_party = 'SPD'; labor_minister = 'Wissel'; labor_minister_party = 'SPD'; agriculture_minister = 'Hermes'; agriculture_minister_party = 'Z'; reichswehr_minister = 'Gessler'; reichswehr_minister_party = fvp_name;
