@@ -226,11 +226,12 @@ Q.presidential_election_r2_trigger = 1;
 if (Q.z_candidate == "Fehrenbach") {
   Q.z_candidate = "Marx";
 }
-if (Q.z_candidate == "Marx") {
-  Q.fvp_candidate = "Marx";
+if (Q.z_campaign && Q.z_candidate_votes < Q.nlp_candidate_votes) {
+  Q.z_campaign = 0;
+  Q.z_candidate = "Cuno";
 }
-if (Q.z_candidate == "Cuno") {
-  Q.fvp_candidate = "Cuno";
+if (Q.z_candidate == "Marx" || Q.z_candidate == "Cuno") {
+  Q.fvp_candidate = z_candidate;
 }
 Q.bb_candidate = Q.z_candidate;
 
@@ -255,13 +256,16 @@ if (!(Q.spd_campaign && Q.fvp_campaign && Q.spd_candidate_votes < 35 && Q.nlp_ca
 }
 
 
-if (Q.nlp_campaign && Q.z_campaign && Q.dnvp_campaign) {
+if (Q.nlp_campaign && Q.z_campaign && Q.dnvp_campaign && Q.z_candidate_votes < Q.nlp_candidate_votes) {
   Q.nlp_candidate = "";
   Q.cuno_drop_out = 1;
   Q.nlp_campaign = 0;
 
   if (Q.fvp_candidate == "Cuno") {
     Q.fvp_candidate = "Marx";
+  }
+  if (Q.bb_candidate == "Cuno") {
+    Q.bb_candidate = "Marx";
   }
   if (Q.bvp_candidate == "Cuno") {
     Q.bvp_candidate = "Westarp";
@@ -278,9 +282,11 @@ go-to: round2_menu
 
 There is no majority in this round. In the second round, any candidate who wins a plurality will win overall. What should we do?
 
-[? if nlp_campaign and z_campaign and dnvp_campaign: Wilhelm Cuno has decided to drop out as he failed to secure backing of major bourgeois parties. ?]
+[? if nlp_campaign and z_campaign and dnvp_campaign and Q.z_candidate_votes < Q.nlp_candidate_votes: Wilhelm Cuno has decided to drop out as he failed to secure backing of major bourgeois parties. ?]
 
 [? if z_candidate = "Fehrenbach": The <span style="color: #000000;">Center Party</span> has decided to replace Fehrenbach with Marx in the second round, attempting to get other bourgeois parties to support their candidate. ?]
+
+[? if z_candidate = "Cuno": The <span style="color: #000000;">Center Party</span>'s Wilhelm Marx has decided to drop out to support our candidate in the second round. ?]
 
 [? if spd_campaign and fvp_campaign and spd_candidate_votes < 35 and not nlp_candidate = "Westarp": Following the <span style="color: #E3000F;">**SPD**</span>'s poor performance in the first round, the <span style="color: #E3000F;">**SPD**</span> reached out to <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> to run Rathenau as a unity candidate of the republican left. Following that agreement, the <span style="color: #8B0000;">**KPD**</span> fielded Brandler as a new candidate. ?]
 
@@ -297,7 +303,7 @@ There is no majority in this round. In the second round, any candidate who wins 
 
 @round2_marx
 view-if: nlp_candidate != "Marx" and z_campaign
-on-arrival: nlp_campaign = 0; nlp_candidate = "Marx"; bvp_candidate = "Marx" if bvp_candidate = "Cuno"; wp_candidate = "Westarp" if wp_candidate = "Cuno"; rlb_candidate = "Westarp" if rlb_candidate = "Cuno"; dnvp_campaign = 1 if dnvp_candidate = "Cuno"; dnvp_candidate = "Westarp" if dnvp_candidate = "Cuno";
+on-arrival: nlp_campaign = 0; nlp_candidate = "Marx"; wp_candidate = "Westarp" if wp_candidate = "Cuno"; rlb_candidate = "Westarp" if rlb_candidate = "Cuno"; dnvp_campaign = 1 if dnvp_candidate = "Cuno"; dnvp_candidate = "Westarp" if dnvp_candidate = "Cuno";
 
 WIP
 
@@ -334,3 +340,5 @@ WIP
 
 @round2_vote
 view-if: nlp_candidate != ""
+
+Hopefully Germany makes the right choice.
