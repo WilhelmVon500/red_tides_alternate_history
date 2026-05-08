@@ -153,7 +153,7 @@ Internal dissent: [+ dissent_percent : dissent +]
 
 [? if uspd_exist: {!<span class="tooltip-text" title="Independent Social Democratic Party of Germany" style="color: #D47B9B;">!}**USPD**{!</span>!}: Centrist Marxism (Haase) ?]
 
-{!<span class="tooltip-text" title="Social Democratic Party of Germany" style="color: #E3000F;">!}**SPD**{!</span>!}: Democratic Socialism (Müller)
+{!<span class="tooltip-text" title="Social Democratic Party of Germany" style="color: #E3000F;">!}**SPD**{!</span>!}: Democratic Socialism (Wels)
 
 {!<span class="tooltip-text" title="Progressive People's Party" style="color: var(--fvp-color);">!}**[+ fvp_name +]**{!</span>!}: Left Liberalism (Petersen)
 
