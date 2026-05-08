@@ -507,6 +507,7 @@ Who will be the chancellor?
 title: Wilhelm Cuno (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>, Industrialist).
 subtitle: Wilhelm Cuno is a member of our Industrialist wing, who has reputation of a technocrat.
 face-image: img/portraits/CunoWilhelm.jpg
+view-if: not president = "Cuno"
 on-arrival: chancellor = "Cuno"; chancellor_party = nlp_name; vice_chancellor = "Marx"; vice_chancellor_party = "Z";
 
 Cuno's appointment as chancellor is approved by all members of the coalition, due to his reputation of a technocrat.
@@ -517,6 +518,7 @@ Cuno's appointment as chancellor is approved by all members of the coalition, du
 title: Wilhelm Marx (<span style="color: #000000;">**Z**</span>).
 subtitle: Wilhelm Marx is a respected member of the <span style="color: #000000;">Center Party</span>.
 face-image: img/portraits/MarxWilhelm.jpg
+view-if: not president = "Marx"
 on-arrival: chancellor = "Marx"; chancellor_party = "Z"; vice_chancellor = "Westarp"; vice_chancellor_party = "DNVP" if not dnvp_ideology = "Radical"; vice_chancellor_party = "KVP" if kvp_exist;
 
 Marx's appointment as chancellor is approved by all members of the coalition, due to his reputation of a politician of compromise.
