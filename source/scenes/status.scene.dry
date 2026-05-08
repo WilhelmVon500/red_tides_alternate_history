@@ -205,6 +205,8 @@ Labor: [+ labor_minister +] ([?if labor_minister_party = "I":<span style="color:
 
 Agriculture: [+ agriculture_minister +] ([?if agriculture_minister_party = "I":<span style="color: #808080;">**I**</span>?][?if agriculture_minister_party = "Z":<span style="color: #000000;">**Z**</span>?][?if agriculture_minister_party = nlp_name:<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?][?if agriculture_minister_party = "KVP": <span style="color: #455B95;">**KVP**</span>?][?if agriculture_minister_party = "DNVP":<span style="color: #3F7BC1;">**DNVP**</span>?])
 
+Postal: [+ postal_minister +] ([?if postal_minister_party = "I":<span style="color: #808080;">**I**</span>?][?if postal_minister_party = "Z":<span style="color: #000000;">**Z**</span>?][?if postal_minister_party = "BVP":<span style="color: #69A2BE;">**BVP**</span>?][?if postal_minister_party = nlp_name:<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?])
+
 Reichswehr: [+ reichswehr_minister +] ([?if reichswehr_minister_party = "I":<span style="color: #808080;">**I**</span>?][?if reichswehr_minister_party = fvp_name:<span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>?][?if reichswehr_minister_party = nlp_name:<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?])
 
 
