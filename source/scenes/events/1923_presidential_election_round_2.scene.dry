@@ -211,7 +211,7 @@ Wilhelm Marx of the <span style="color: #000000;">Center Party</span> has won th
 
 @cuno_wins
 face-image: img/portraits/CunoWilhelm.jpg
-on-arrival: president = "Cuno"; president_party = nlp_name; new_middle_nlp += 6; old_middle_nlp += 6; rural_nlp += 4; chancellor_party = "Z" if chancellor = "Cuno"; chancellor = "Marx" if chancellor = "Cuno";
+on-arrival: president = "Cuno"; president_party = nlp_name; new_middle_nlp += 6; old_middle_nlp += 6; rural_nlp += 4; chancellor_party = "Z" if chancellor = "Cuno"; chancellor = "Marx" if chancellor = "Cuno"; vice_chancellor_party = "DNVP" if vice_chancellor = "Marx"; vice_chancellor = "Westarp" if vice_chancellor = "Marx";
 
 Wilhelm Cuno of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has won the presidency!
 
