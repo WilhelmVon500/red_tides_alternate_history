@@ -443,6 +443,8 @@ Q.labor_minister = 'Wissel';
 Q.labor_minister_party = 'SPD';
 Q.agriculture_minister = 'Hermes';
 Q.agriculture_minister_party = 'Z';
+Q.postal_minister = 'Giesberts';
+Q.postal_minister_party = 'Z';
 Q.reichswehr_minister = 'Gessler';
 Q.reichswehr_minister_party = 'FVP';
 
