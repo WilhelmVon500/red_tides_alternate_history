@@ -86,6 +86,7 @@ Q.dnvp_relation = 35;
 Q.dap_relation = 0;
 
 
+
 Q.kpd_leader = "Brandler";
 
 Q.z_leader = "Marx";
@@ -359,6 +360,21 @@ Q.next_election_year_thuringia = 1925;
 
 
 // isn't formed yet, but may be formed
+Q.csvd_exist = 0;
+Q.kvp_exist = 0;
+Q.kswr_exist = 0;
+
+Q.csvd_election_votes = 0;
+Q.kvp_election_votes = 0;
+Q.kswr_election_votes = 0;
+
+Q.csvd_seats = 0;
+Q.kvp_seats = 0;
+Q.kswr_seats = 0;
+
+Q.csvd_r = 0;
+Q.kvp_r = 0;
+Q.kswr_r = 0;
 
 
 
