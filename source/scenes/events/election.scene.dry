@@ -243,6 +243,8 @@ Q.labor_minister = 'Vacant';
 Q.labor_minister_party = 'I';
 Q.agriculture_minister = 'Vacant';
 Q.agriculture_minister_party = 'I';
+Q.postal_minister = 'Vacant';
+Q.postal_minister_party = 'I';
 Q.reichswehr_minister = 'Vacant';
 Q.reichswehr_minister_party = 'I';
 
@@ -468,7 +470,7 @@ There are some potential coalition arrangements.
 title: A Weimar Coalition can be formed.
 subtitle: <span style="color: #E3000F;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> ([+ weimar_coalition +]%)
 view-if: weimar_coalition >= 50
-on-arrival: in_weimar_coalition = 1; spd_in_government = 1; z_in_government = 1; fvp_in_government = 1; foreign_minister = 'Rathenau'; foreign_minister_party = fvp_name; interior_minister = 'Wirth'; interior_minister_party = 'Z'; justice_minister = 'Radbruch'; justice_minister_party = 'SPD'; finance_minister = 'Erzberger'; finance_minister_party = 'Z'; economic_minister = 'Schmidt'; economic_minister_party = 'SPD'; labor_minister = 'Wissel'; labor_minister_party = 'SPD'; agriculture_minister = 'Hermes'; agriculture_minister_party = 'Z'; reichswehr_minister = 'Gessler'; reichswehr_minister_party = fvp_name;
+on-arrival: in_weimar_coalition = 1; spd_in_government = 1; z_in_government = 1; fvp_in_government = 1; foreign_minister = 'Rathenau'; foreign_minister_party = fvp_name; interior_minister = 'Wirth'; interior_minister_party = 'Z'; justice_minister = 'Radbruch'; justice_minister_party = 'SPD'; finance_minister = 'Erzberger'; finance_minister_party = 'Z'; economic_minister = 'Schmidt'; economic_minister_party = 'SPD'; labor_minister = 'Wissel'; labor_minister_party = 'SPD'; agriculture_minister = 'Hermes'; agriculture_minister_party = 'Z'; postal_minister = 'Höfle'; postal_minister_party = 'Z'; reichswehr_minister = 'Gessler'; reichswehr_minister_party = fvp_name;
 
 The <span style="color: #E3000F;">**SPD**</span> enough votes to form a "Weimar Coalition" government consisting of the <span style="color: #E3000F;">**SPD**</span>, <span style="color: #000000;">Center Party</span> and <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>.
 
@@ -492,7 +494,7 @@ Müller's appointment as chancellor is approved by all members of the coalition.
 title: We can form a Center-Right Coalition.
 subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #69A2BE;">**BVP**</span>[? if not dnvp_idelogy = "Radical": + <span style="color: #3F7BC1;">**DNVP**</span>?][? if kvp_exist: + <span style="color: #455B95;">**KVP**</span>?] + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> + <span style="color: #38C538;">**BB**</span>[? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span>?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span>?] ([+ center_right_coalition +]%)
 view-if: center_right_coalition >= 50 and not fvp_ideology = "Left"
-on-arrival: in_center_right_coalition = 1; nlp_in_government = 1; z_in_government = 1; dnvp_in_government = 1 if not dnvp_ideology = "Radical"; kvp_in_government = 1 if kvp_exist; foreign_minister = 'Brockdorff-Rantzau'; foreign_minister_party = 'I'; interior_minister = 'Keudell'; interior_minister_party = 'DNVP' if not dnvp_ideology = "Radical"; interior_minister_party = 'KVP' if kvp_exist; justice_minister = 'Hergt'; justice_minister_party = 'DNVP' if not dnvp_ideology = "Radical"; justice_minister_party = 'KVP' if kvp_exist; finance_minister = 'Köhler'; finance_minister_party = 'Z'; economic_minister = 'Hamm'; economic_minister_party = fvp_name; labor_minister = 'Brauns'; labor_minister_party = 'Z'; agriculture_minister = 'Schiele'; agriculture_minister_party = 'DNVP' if not dnvp_ideology = "Radical"; agriculture_minister_party = 'KVP' if kvp_exist; reichswehr_minister = 'Seeckt'; reichswehr_minister_party = 'I';
+on-arrival: in_center_right_coalition = 1; nlp_in_government = 1; z_in_government = 1; dnvp_in_government = 1 if not dnvp_ideology = "Radical"; kvp_in_government = 1 if kvp_exist; foreign_minister = 'Brockdorff-Rantzau'; foreign_minister_party = 'I'; interior_minister = 'Keudell'; interior_minister_party = 'DNVP' if not dnvp_ideology = "Radical"; interior_minister_party = 'KVP' if kvp_exist; justice_minister = 'Hergt'; justice_minister_party = 'DNVP' if not dnvp_ideology = "Radical"; justice_minister_party = 'KVP' if kvp_exist; finance_minister = 'Köhler'; finance_minister_party = 'Z'; economic_minister = 'Hamm'; economic_minister_party = fvp_name; labor_minister = 'Brauns'; labor_minister_party = 'Z'; agriculture_minister = 'Schiele'; agriculture_minister_party = 'DNVP' if not dnvp_ideology = "Radical"; agriculture_minister_party = 'KVP' if kvp_exist; postal_minister = 'Höfle'; postal_minister_party = 'Z'; reichswehr_minister = 'Seeckt'; reichswehr_minister_party = 'I';
 
 WIP.
 
@@ -618,7 +620,6 @@ go-to: ministries
 
 Gustav Stresemann of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Foreign Minister.
 
-
 @agriculture
 title: Agricultural Ministry
 subtitle: This is not our usual domain.
@@ -630,6 +631,18 @@ go-to: ministries
 tags: mins_1922
 
 Hermann Dietrich of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Agriculture Minister.
+
+@postal
+title: Postal Ministry
+subtitle: This is not our usual domain.
+unavailable-subtitle: We do not have enough leverage.
+choose-if: leverage >= 10 
+view-if: postal_minister_party != nlp_name
+on-arrival: leverage -= 10; postal_minister_party = nlp_name; postal_minister = "Morath"
+go-to: ministries
+tags: mins_1922
+
+Albrecht Morath of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Postal Minister.
 
 #@reichswehr
 #title: Reichswehr Ministry
@@ -705,6 +718,13 @@ go-to: ministries
 title: Drop the Agriculture Ministry.
 view-if: agriculture_minister_party = nlp_name
 on-arrival: agriculture_minister_party = ddp_name; agriculture_minister = "Dietrich"; leverage += 10;
+tags: drop_mins_1922
+go-to: ministries
+
+@drop_postal
+title: Drop the Postal Ministry.
+view-if: postal_minister_party = nlp_name
+on-arrival: postal_minister_party = "Z"; postal_minister = "Höfle"; leverage += 10;
 tags: drop_mins_1922
 go-to: ministries
 
