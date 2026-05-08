@@ -276,6 +276,9 @@ if (Q.nlp_campaign && Q.z_campaign && Q.dnvp_campaign && !(Q.z_candidate_votes <
   if (Q.rlb_candidate == "Cuno") {
     Q.rlb_candidate = "Westarp";
   }
+  if (Q.other_candidate == "Cuno") {
+    Q.other_candidate = "Westarp";
+  }
 }
 !}
 go-to: round2_menu
@@ -303,7 +306,7 @@ There is no majority in this round. In the second round, any candidate who wins 
 
 @round2_marx
 view-if: nlp_candidate != "Marx" and z_campaign
-on-arrival: nlp_campaign = 0; nlp_candidate = "Marx"; wp_candidate = "Westarp" if wp_candidate = "Cuno"; rlb_candidate = "Westarp" if rlb_candidate = "Cuno"; dnvp_campaign = 1 if dnvp_candidate = "Cuno"; dnvp_candidate = "Westarp" if dnvp_candidate = "Cuno";
+on-arrival: nlp_campaign = 0; nlp_candidate = "Marx"; bvp_candidate = "Westarp" if bvp_candidate = "Cuno"; wp_candidate = "Westarp" if wp_candidate = "Cuno"; rlb_candidate = "Westarp" if rlb_candidate = "Cuno"; dnvp_campaign = 1 if dnvp_candidate = "Cuno"; dnvp_candidate = "Westarp" if dnvp_candidate = "Cuno"; other_candidate = "Westarp" if other_candidate = "Cuno";
 
 WIP
 
@@ -332,7 +335,7 @@ WIP
 
 @round2_westarp
 view-if: nlp_candidate != "Westarp" and dnvp_campaign
-on-arrival: nlp_campaign = 0; nlp_candidate = "Westarp"; z_campaign = 1 if z_candidate = "Cuno"; z_candidate = "Marx" if z_candidate = "Cuno"; bb_candidate = "Marx" if bb_candidate = "Cuno"; bvp_candidate = "Westarp" if bvp_candidate = "Cuno"; wp_candidate = "Westarp" if wp_candidate = "Cuno"; rlb_candidate = "Westarp" if rlb_candidate = "Cuno";
+on-arrival: nlp_campaign = 0; nlp_candidate = "Westarp"; z_campaign = 1 if z_candidate = "Cuno"; z_candidate = "Marx" if z_candidate = "Cuno"; bb_candidate = "Marx" if bb_candidate = "Cuno"; bvp_candidate = "Westarp" if bvp_candidate = "Cuno"; wp_candidate = "Westarp" if wp_candidate = "Cuno"; rlb_candidate = "Westarp" if rlb_candidate = "Cuno"; other_candidate = "Westarp" if other_candidate = "Cuno";
 
 WIP
 
