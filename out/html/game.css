@@ -552,6 +552,9 @@ table {
 .seat.fvp {
     fill: #FFD800;
 }
+.seat.bb {
+    fill: #38C538;
+}
 .seat.z {
     fill: #000;
 }
@@ -563,6 +566,9 @@ table {
     stroke: var(--border-color);
     stroke-width: 1.5px;
 }
+.seat.csvd {
+    fill: #1DB4E1;
+}
 .seat.wp {
     fill: #B8996F;
 }
@@ -572,14 +578,17 @@ table {
 .seat.other {
     fill: #909090;
 }
+.seat.kvp {
+    fill: #455B95;
+}
 .seat.dnvp {
     fill: #3F7BC1;
 }
+.seat.kswr {
+    fill: #8B7E66;
+}
 .seat.dap {
     fill: #096300;
-}
-.seat.bb {
-    fill: #38C538;
 }
 
 .seat.for {
