@@ -376,6 +376,22 @@ Q.csvd_r = 0;
 Q.kvp_r = 0;
 Q.kswr_r = 0;
 
+Q.csvd_pl = 0;
+Q.kvp_pl = 0;
+Q.kswr_pl = 0;
+
+Q.csvd_bl = 0;
+Q.kvp_bl = 0;
+Q.kswr_bl = 0;
+
+Q.csvd_sl = 0;
+Q.kvp_sl = 0;
+Q.kswr_sl = 0;
+
+Q.csvd_tl = 0;
+Q.kvp_tl = 0;
+Q.kswr_tl = 0;
+
 
 
 
