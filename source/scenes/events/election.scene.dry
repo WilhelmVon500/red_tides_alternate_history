@@ -477,7 +477,7 @@ Who will be the chancellor?
 - @muller_weimar_chancellor
 
 @muller_weimar_chancellor
-title: Hermann Müller for Chancellor.
+title: Hermann Müller (<span style="color: #E3000F;">**SPD**</span>).
 subtitle: Müller is popular within the <span style="color: #E3000F;">**SPD**</span>, and is the preferred candidate of the <span style="color: #000000;">Center</span> and the <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>.
 face-image: img/portraits/MüllerHermann.jpg
 on-arrival: chancellor = "Müller"; chancellor_party = "SPD"; vice_chancellor = "Erzberger"; vice_chancellor_party = "Z";
@@ -502,7 +502,7 @@ Who will be the chancellor?
 - @marx_center_right_chancellor
 
 @cuno_center_right_chancellor
-title: Wilhelm Cuno for Chancellor.
+title: Wilhelm Cuno (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>, Industrialist).
 subtitle: Wilhelm Cuno is a member of our Industrialist wing, who has reputation of a technocrat.
 face-image: img/portraits/CunoWilhelm.jpg
 on-arrival: chancellor = "Cuno"; chancellor_party = nlp_name; vice_chancellor = "Marx"; vice_chancellor_party = "Z";
@@ -512,7 +512,7 @@ Cuno's appointment as chancellor is approved by all members of the coalition, du
 - @ministries: First, we must select our ministries.
 
 @marx_center_right_chancellor
-title: Wilhelm Marx for Chancellor.
+title: Wilhelm Marx (<span style="color: #000000;">**Z**</span>).
 subtitle: Wilhelm Marx is a respected member of the <span style="color: #000000;">Center Party</span>.
 face-image: img/portraits/MarxWilhelm.jpg
 on-arrival: chancellor = "Marx"; chancellor_party = "Z"; vice_chancellor = "Westarp"; vice_chancellor_party = "DNVP" if not dnvp_ideology = "Radical"; vice_chancellor_party = "KVP" if kvp_exist;
