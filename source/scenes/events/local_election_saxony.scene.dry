@@ -34,9 +34,12 @@ if (Q.year == 1922) {
     Q.adjustmentFactors_bb_saxony = 0.0;
     Q.adjustmentFactors_z_saxony = 0.05;
     Q.adjustmentFactors_nlp_saxony = 1.5;
+    Q.adjustmentFactors_csvd_saxony = 0.9;
     Q.adjustmentFactors_wp_saxony = 0.15;
     Q.adjustmentFactors_rlb_saxony = 0.1;
+    Q.adjustmentFactors_kvp_saxony = 1.2;
     Q.adjustmentFactors_dnvp_saxony = 1.25;
+    Q.adjustmentFactors_kswr_saxony = 1.2;
     Q.adjustmentFactors_dap_saxony = 0.05;
     Q.adjustmentFactors_other_saxony = 0.1;
 }
@@ -132,8 +135,8 @@ for (var party of Q.parties) {
 
 // coalitions
 Q.united_left_coalition_saxony = parseFloat((Q.spd_sl + Q.kpd_sl).toFixed(1));
-Q.bourgeois_coalition_saxony = parseFloat((Q.nlp_sl + Q.fvp_sl + Q.z_sl + Q.wp_sl + Q.rlb_sl).toFixed(1));
-Q.right_coalition_saxony = parseFloat((Q.dnvp_sl + Q.nlp_sl + Q.z_sl + Q.wp_sl + Q.rlb_sl).toFixed(1));
+Q.bourgeois_coalition_saxony = parseFloat((Q.nlp_sl + Q.fvp_sl + Q.z_sl + Q.wp_sl + Q.rlb_sl + Q.csvd_sl).toFixed(1));
+Q.right_coalition_saxony = parseFloat((Q.dnvp_sl + Q.nlp_sl + Q.z_sl + Q.wp_sl + Q.rlb_sl + Q.csvd_sl + Q.kvp_sl + Q.kswr_sl).toFixed(1));
 
 
 // Reset government and ministers...
@@ -198,6 +201,14 @@ if (Q.nlp_seats_saxony) {
         "seats": Math.round(Q.nlp_seats_saxony),
     });
 }
+if (Q.csvd_exist && Q.csvd_seats_saxony) {
+    data.push({
+        "id": "csvd",
+        "legend": "CSVD",
+        "name": "CSVD",
+        "seats": Math.round(Q.csvd_seats_saxony),
+    });
+}
 if (Q.wp_exist && Q.wp_seats_saxony) {
     data.push({
         "id": "wp",
@@ -222,12 +233,28 @@ if (Q.other_seats_saxony) {
         "seats": Math.round(Q.other_seats_saxony),
     });
 }
+if (Q.kvp_exist && Q.kvp_seats_saxony) {
+    data.push({
+        "id": "kvp",
+        "legend": "KVP",
+        "name": "KVP",
+        "seats": Math.round(Q.kvp_seats_saxony),
+    });
+}
 if (Q.dnvp_seats_saxony) {
     data.push({
         "id": "dnvp",
         "legend": "DNVP",
         "name": "DNVP",
         "seats": Math.round(Q.dnvp_seats_saxony),
+    });
+}
+if (Q.kswr_exist && Q.kswr_seats_saxony) {
+    data.push({
+        "id": "kswr",
+        "legend": "KSWR",
+        "name": "KSWR",
+        "seats": Math.round(Q.kswr_seats_saxony),
     });
 }
 if (Q.dap_seats_saxony) {
@@ -274,11 +301,17 @@ go-to: saxony_coalition_menu
 
 {!<tr><td><div class="box" style='background-color:#000000'> </div> !} Z: {!</td><td>!} [+ z_election_votes_saxony +]% {!</td><td>!} [+ z_seats_saxony +] ([+ z_sl +]%) {!</td></tr>!}
 
+[? if csvd_exist: {!<tr><td><div class="box" style='background-color:#1DB4E1'> </div> !} CSVD: {!</td><td>!} [+ csvd_election_votes_saxony +]% {!</td><td>!} [+ csvd_seats_saxony +] ([+ csvd_sl +]%) {!</td></tr>!} ?]
+
 [? if wp_exist: {!<tr><td><div class="box" style='background-color:#B8996F'> </div> !} WP: {!</td><td>!} [+ wp_election_votes_saxony +]% {!</td><td>!} [+ wp_seats_saxony +] ([+ wp_sl +]%) {!</td></tr>!} ?]
 
 [? if rlb_exist: {!<tr><td><div class="box" style='background-color:#52AE6F'> </div> !} RLB: {!</td><td>!} [+ rlb_election_votes_saxony +]% {!</td><td>!} [+ rlb_seats_saxony +] ([+ rlb_sl +]%) {!</td></tr>!} ?]
 
+[? if kvp_exist: {!<tr><td><div class="box" style='background-color:#455B95'> </div> !} KVP: {!</td><td>!} [+ kvp_election_votes_saxony +]% {!</td><td>!} [+ kvp_seats_saxony +] ([+ kvp_sl +]%) {!</td></tr>!} ?]
+
 {!<tr><td><div class="box" style='background-color:#3F7BC1'> </div> !} DNVP: {!</td><td>!} [+ dnvp_election_votes_saxony +]% {!</td><td>!} [+ dnvp_seats_saxony +] ([+ dnvp_sl +]%) {!</td></tr>!}
+
+[? if kswr_exist: {!<tr><td><div class="box" style='background-color:#003755'> </div> !} KSWR: {!</td><td>!} [+ kswr_election_votes_saxony +]% {!</td><td>!} [+ kswr_seats_saxony +] ([+ kswr_sl +]%) {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#096300'> </div> !} DAP: {!</td><td>!} [+ dap_election_votes_saxony +]% {!</td><td>!} [+ dap_seats_saxony +] ([+ dap_sl +]%) {!</td></tr>!}
 
@@ -289,9 +322,9 @@ go-to: saxony_coalition_menu
 
 United Left Coalition (<span style="color: #E3000F;">**SPD**</span> + <span style="color: #8B0000;">**KPD**</span>): [+ united_left_coalition_saxony +]%
 
-Bourgeois Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> [? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span> ?]+ <span style="color: #000000;">**Z**</span>): [+ bourgeois_coalition_saxony +]%
+Bourgeois Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> [? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span> ?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span> ?]+ <span style="color: #000000;">**Z**</span>): [+ bourgeois_coalition_saxony +]%
 
-Right Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #3F7BC1;">**DNVP**</span> [? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span> ?]+ <span style="color: #000000;">**Z**</span>): [+ right_coalition_saxony +]%
+Right Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #3F7BC1;">**DNVP**</span> [? if kvp_exist: + <span style="color: #455B95;">**KVP**</span> ?][? if kswr_exist: + <span style="color: #003755;">**KSWR**</span> ?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span> ?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span> ?]+ <span style="color: #000000;">**Z**</span>): [+ right_coalition_saxony +]%
   
 There are some potential coalition arrangements.
 
@@ -326,7 +359,7 @@ WIP
 
 @bourgeois_coalition_saxony
 title: We can form a Bourgeois Coalition.
-subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> [? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span> ?]+ <span style="color: #000000;">**Z**</span> ([+ bourgeois_coalition_saxony +]%)
+subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> [? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span> ?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span> ?]+ <span style="color: #000000;">**Z**</span> ([+ bourgeois_coalition_saxony +]%)
 view-if: bourgeois_coalition_saxony > 50
 on-arrival: in_bourgeois_coalition_saxony = 1; nlp_saxony = 1;
 
@@ -335,7 +368,7 @@ WIP
 
 @right_coalition_saxony
 title: We can form a Right Coalition.
-subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #3F7BC1;">**DNVP**</span> [? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span> ?]+ <span style="color: #000000;">**Z**</span> ([+ right_coalition_saxony +]%)
+subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #3F7BC1;">**DNVP**</span> [? if kvp_exist: + <span style="color: #455B95;">**KVP**</span> ?][? if kswr_exist: + <span style="color: #003755;">**KSWR**</span> ?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span> ?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span> ?]+ <span style="color: #000000;">**Z**</span> ([+ right_coalition_saxony +]%)
 view-if: right_coalition_saxony > 50
 on-arrival: in_right_coalition_saxony = 1; nlp_saxony = 1;
 
