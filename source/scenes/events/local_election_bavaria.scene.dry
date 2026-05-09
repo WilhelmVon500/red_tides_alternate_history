@@ -134,6 +134,7 @@ for (var party of Q.parties) {
 
 
 // coalitions
+Q.grand_coalition_bavaria = parseFloat((Q.nlp_bl + Q.fvp_bl + Q.z_bl + Q.spd_bl + Q.bb_bl).toFixed(1));
 Q.bourgeois_coalition_bavaria = parseFloat((Q.nlp_bl + Q.fvp_bl + Q.z_bl + Q.wp_bl + Q.bb_bl + Q.csvd_bl).toFixed(1));
 Q.right_coalition_bavaria = parseFloat((Q.dnvp_bl + Q.nlp_bl + Q.z_bl + Q.wp_bl + Q.bb_bl + Q.csvd_bl + Q.kvp_bl + Q.kswr_bl).toFixed(1));
 
@@ -141,16 +142,19 @@ Q.right_coalition_bavaria = parseFloat((Q.dnvp_bl + Q.nlp_bl + Q.z_bl + Q.wp_bl 
 // Reset government and ministers...
 Q.was_nlp_bavaria = 0;
 Q.was_in_nlp_majority_bavaria = 0;
+Q.was_in_grand_coalition_bavaria = 0;
 Q.was_in_bourgeois_coalition_bavaria = 0;
 Q.was_in_right_coalition_bavaria = 0;
 
 if (Q.nlp_bavaria) Q.was_nlp_bavaria = 1;
 if (Q.in_nlp_majority_bavaria) Q.was_in_nlp_majority_bavaria = 1;
+if (Q.in_grand_coalition_bavaria) Q.was_in_grand_coalition_bavaria = 1;
 if (Q.in_bourgeois_coalition_bavaria) Q.was_in_bourgeois_coalition_bavaria = 1;
 if (Q.in_right_coalition_bavaria) Q.was_in_right_coalition_bavaria = 1;
 
 Q.nlp_bavaria = 0;
 Q.in_nlp_majority_bavaria = 0;
+Q.in_grand_coalition_bavaria = 0;
 Q.in_bourgeois_coalition_bavaria = 0;
 Q.in_right_coalition_bavaria = 0;
 !}
@@ -315,6 +319,8 @@ go-to: bavaria_coalition_menu
 
 **Potential coalitions:**
 
+Grand Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #69A2BE;">**BVP**</span> + <span style="color: #E3000F;">**SPD**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> + <span style="color: #38C538;">**BB**</span>): [+ grand_coalition_bavaria +]%
+
 Bourgeois Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #69A2BE;">**BVP**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> + <span style="color: #38C538;">**BB**</span>[? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span>?]): [+ bourgeois_coalition_bavaria +]%
 
 Right Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #69A2BE;">**BVP**</span> + <span style="color: #3F7BC1;">**DNVP**</span>[? if kvp_exist: + <span style="color: #455B95;">**KVP**</span>?][? if kswr_exist: + <span style="color: #003755;">**KSWR**</span>?] + <span style="color: #38C538;">**BB**</span>[? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span>?]): [+ right_coalition_bavaria +]%
@@ -323,11 +329,22 @@ There are some potential coalition arrangements.
 
 @bavaria_coalition_menu
 
+- @grand_coalition_bavaria
 - @bourgeois_coalition_bavaria
 - @right_coalition_bavaria
 - @no_majority_bavaria
 
 
+
+
+@grand_coalition_bavaria
+title: We can form a Grand Coalition.
+subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #69A2BE;">**BVP**</span> + <span style="color: #E3000F;">**SPD**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> + <span style="color: #38C538;">**BB**</span> ([+ grand_coalition_bavaria +]%)
+view-if: grand_coalition_bavaria > 50
+on-arrival: in_grand_coalition_bavaria = 1; nlp_bavaria = 1;
+go-to: mp
+
+WIP
 
 
 @bourgeois_coalition_bavaria
@@ -352,8 +369,8 @@ WIP
 
 @no_majority_bavaria
 title: There is no clear governing majority.
-view-if: bourgeois_coalition_bavaria <= 50 and right_coalition_bavaria <= 50 and nlp_bl <= 50
-on-arrival: nlp_bavaria = 1 if was_nlp_bavaria; in_nlp_majority_bavaria = 1 if was_in_nlp_majority_bavaria; in_bourgeois_coalition_bavaria = 1 if was_in_bourgeois_coalition_bavaria; in_right_coalition_bavaria = 1 if was_in_right_coalition_bavaria;
+view-if: grand_coalition_bavaria <= 50 and bourgeois_coalition_bavaria <= 50 and right_coalition_bavaria <= 50 and nlp_bl <= 50
+on-arrival: nlp_bavaria = 1 if was_nlp_bavaria; in_nlp_majority_bavaria = 1 if was_in_nlp_majority_bavaria; in_grand_coalition_bavaria = 1 if was_in_grand_coalition_bavaria; in_bourgeois_coalition_bavaria = 1 if was_in_bourgeois_coalition_bavaria; in_right_coalition_bavaria = 1 if was_in_right_coalition_bavaria;
 
 There is no path to a majority government for now. The current government will stay in power as a minority coalition.
 
@@ -367,11 +384,12 @@ WIP
 
 - @beyer
 - @held
+- @vogel
 
 @beyer
 title: Otto Beyer (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>, Left-Wing Stresemannite).
 view-if: nlp_bavaria
-choose-if: in_nlp_majority_bavaria or (in_bourgeois_coalition_bavaria and (nlp_bl + fvp_bl) > z_bl) or (in_right_coalition_bavaria and (nlp_bl > z_bl))
+choose-if: in_nlp_majority_bavaria or (in_grand_coalition_bavaria and (spd_bl + nlp_bl + fvp_bl) > z_bl) or (in_bourgeois_coalition_bavaria and (nlp_bl + fvp_bl) > z_bl) or (in_right_coalition_bavaria and (nlp_bl > z_bl))
 unavailable-subtitle: Beyer doesn't have needed support to become the Minister-President.
 on-arrival: bavaria_leader = "Beyer"; bavaria_leader_party = nlp_name;
 face-image: img/portraits/BeyerOtto.jpg
@@ -380,8 +398,18 @@ WIP.
 
 @held
 title: Heinrich Held (<span style="color: #69A2BE;">**BVP**</span>).
-view-if: in_bourgeois_coalition_bavaria or in_right_coalition_bavaria
+view-if: in_grand_coalition_bavaria or in_bourgeois_coalition_bavaria or in_right_coalition_bavaria
 on-arrival: bavaria_leader = "Held"; bavaria_leader_party = "BVP"
 face-image: img/portraits/HeldHeinrich.jpg
+
+WIP.
+
+@vogel
+title: Hans Vogel (<span style="color: #E3000F;">**SPD**</span>).
+view-if: in_grand_coalition_bavaria
+choose-if: in_grand_coalition_bavaria and (spd_bl + nlp_bl + fvp_bl) > z_bl
+unavailable-subtitle: Vogel doesn't have needed support to become the Minister-President.
+on-arrival: bavaria_leader = "Vogel"; bavaria_leader_party = "SPD"
+face-image: img/portraits/VogelHans.jpg
 
 WIP.
