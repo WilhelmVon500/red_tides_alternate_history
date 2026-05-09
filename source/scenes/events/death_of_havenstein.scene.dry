@@ -1,0 +1,23 @@
+title: The Death of Rudolf Havenstein
+view-if: year = 1923 and month = 11 and week = 3
+frequency: 1000
+max-visits: 1
+on-arrival: reichsbank_president = "Vacant"; reichsbank_president_party = "I";
+tags: event
+new-page: true
+face-image: img/portraits/HavensteinRudolf.jpg
+
+= The Death of Rudolf Havenstein
+
+Paul Levi, the Reichsbank President, has died. He was one of the people to blame for hyperinflation.
+
+Who will replace him?
+  
+- @schacht: Hjalmar Schacht.
+
+@schacht
+subtitle: He is expected to pursue a different policy.
+on-arrival: reichsbank_president = "Schacht"; reichsbank_president_party = "I";
+face-image: img/portraits/SchachtHjalmar.jpg
+
+WIP
