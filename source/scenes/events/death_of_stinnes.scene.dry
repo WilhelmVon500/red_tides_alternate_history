@@ -1,0 +1,12 @@
+title: The Death of Hugo Stinnes
+view-if: year = 1924 and month = 4
+frequency: 1000
+max-visits: 1
+on-arrival: stinnes_dead = 1; n_advisors -= 1 if stinnes_advisor == 1; stinnes_advisor = 0;
+tags: event
+new-page: true
+face-image: img/portraits/StinnesHugo.jpg
+
+= The Death of Hugo Stinnes
+
+WIP
