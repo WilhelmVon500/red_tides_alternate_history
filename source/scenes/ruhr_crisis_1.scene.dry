@@ -1,0 +1,14 @@
+title: Government declares "Passive Resistance".
+subtitle: As demanded by the <span style="color: #3F7BC1;">**DNVP**</span>, the cabinet declared non-cooperation policy against the occupiers.
+tags: event
+new-page: true
+view-if: year = 1923 and month = 2 and week = 4
+on-arrival: passive_resistance = 1; budget -= 1; inflation += 100;
+priority: 1
+max-visits: 1
+
+= Passive Resistance
+
+Chancellor Wilhelm Marx's government has officially declared the policy of "passive resistance". Industrial production in the region has reached a total standstill as miners and steelworkers refuse to cooperate with the occupying forces.
+
+To sustain the strike, the government is printing massive quantities of paper Marks to pay the wages of millions of idle workers. Consequently, the currency's value is going to collapse even further...
