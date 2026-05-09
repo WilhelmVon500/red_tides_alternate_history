@@ -351,7 +351,7 @@ Next election: [+ next_election_month_bavaria: month +] [+ next_election_year_ba
 
 Minister-President: [+ saxony_leader +] ([?if saxony_leader_party = "SPD": <span style="color: #E3000F;">**SPD**</span>?])
 
-Government: [? if in_spd_kpd_toleration_saxony: <span style="color: #E3000F;">**SPD**</span> with <span style="color: #8B0000;">**KPD**</span> toleration ?][? if in_united_left_coalition_saxony: United Left Coalition ?][? if in_bourgeois_coalition_saxony: Bourgeois Coalition ?][? if in_right_coalition_saxony: Right Coalition ?][? if in_nlp_majority_saxony: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> majority ?]
+Government: [? if in_spd_kpd_toleration_saxony: <span style="color: #E3000F;">**SPD**</span> with <span style="color: #8B0000;">**KPD**</span> toleration ?][? if in_left_front_coalition_saxony: United Left Coalition ?][? if in_bourgeois_coalition_saxony: Bourgeois Coalition ?][? if in_right_coalition_saxony: Right Coalition ?][? if in_nlp_majority_saxony: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> majority ?]
 
 Next election: [+ next_election_month_saxony: month +] [+ next_election_year_saxony +]
 
@@ -361,6 +361,6 @@ Next election: [+ next_election_month_saxony: month +] [+ next_election_year_sax
 
 Chief State Minister: [+ thuringia_leader +] ([?if thuringia_leader_party = "SPD": <span style="color: #E3000F;">**SPD**</span>?])
 
-Government: [? if in_spd_kpd_toleration_thuringia: <span style="color: #E3000F;">**SPD**</span> with <span style="color: #8B0000;">**KPD**</span> toleration ?][? if in_united_left_coalition_thuringia: United Left Coalition ?][? if in_nlp_majority_thuringia: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> majority ?]
+Government: [? if in_spd_kpd_toleration_thuringia: <span style="color: #E3000F;">**SPD**</span> with <span style="color: #8B0000;">**KPD**</span> toleration ?][? if in_left_front_coalition_thuringia: United Left Coalition ?][? if in_nlp_majority_thuringia: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> majority ?]
 
 Next election: [+ next_election_month_thuringia: month +] [+ next_election_year_thuringia +]
