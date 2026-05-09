@@ -2,7 +2,7 @@ title: The <span style="color: #8B0000;">**KPD**</span> joins the Saxon governme
 subtitle: Is this the point of no return?
 tags: event
 new-page: true
-view-if: year = 1923 and month = 2 and week = 4
+view-if: year = 1923 and month = 2 and week = 2
 on-arrival: in_spd_kpd_toleration_saxony = 0; in_united_left_coalition_saxony = 1; spd_relation -= 3; workers_spd += 2; workers_kpd += 2;
 max-visits: 1
 
