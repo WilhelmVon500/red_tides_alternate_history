@@ -407,7 +407,7 @@ WIP.
 @vogel
 title: Hans Vogel (<span style="color: #E3000F;">**SPD**</span>).
 view-if: in_grand_coalition_bavaria
-choose-if: in_grand_coalition_bavaria and (spd_bl + nlp_bl + fvp_bl) > z_bl
+choose-if: in_grand_coalition_bavaria and spd_bl > z_bl
 unavailable-subtitle: Vogel doesn't have needed support to become the Minister-President.
 on-arrival: bavaria_leader = "Vogel"; bavaria_leader_party = "SPD"
 face-image: img/portraits/VogelHans.jpg
