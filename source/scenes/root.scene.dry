@@ -557,6 +557,10 @@ Q.dingeldey_advisor = 0; // Eduard Dingeldey
 // nonfactional advisors
 Q.mahraun_advisor = 0; // Artur Mahraun
 Q.kempkes_advisor = 0; // Adolf Kempkes
+
+
+
+Q.stinnes_dead = 0;
 !}
 set-bg: img/map_2.jpg
 new-page: true
