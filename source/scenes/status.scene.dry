@@ -337,9 +337,9 @@ Next election: [+ next_election_month_prussia: month +] [+ next_election_year_pr
 
 = Free State of Bavaria
 
-<div style="display: flex; justify-content: center;">[? if bavaria_leader = "Kahr": <img src="img/portraits/KahrGustav.jpg" class="bavaria-leader"> ?][? if bavaria_leader = "Held": <img src="img/portraits/HeldHeinrich.jpg" class="bavaria-leader"> ?][? if bavaria_leader = "Beyer": <img src="img/portraits/BeyerOtto.jpg" class="bavaria-leader"> ?]</div>
+<div style="display: flex; justify-content: center;">[? if bavaria_leader = "Kahr": <img src="img/portraits/KahrGustav.jpg" class="bavaria-leader"> ?][? if bavaria_leader = "Vogel": <img src="img/portraits/VogelHans.jpg" class="bavaria-leader"> ?][? if bavaria_leader = "Held": <img src="img/portraits/HeldHeinrich.jpg" class="bavaria-leader"> ?][? if bavaria_leader = "Beyer": <img src="img/portraits/BeyerOtto.jpg" class="bavaria-leader"> ?]</div>
 
-Minister-President: [+ bavaria_leader +] ([?if bavaria_leader_party = "BVP": <span style="color: #69A2BE;">**BVP**</span>?][?if bavaria_leader_party = nlp_name: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?])
+Minister-President: [+ bavaria_leader +] ([?if bavaria_leader_party = "SPD": <span style="color: #E3000F;">**SPD**</span>?][?if bavaria_leader_party = "BVP": <span style="color: #69A2BE;">**BVP**</span>?][?if bavaria_leader_party = nlp_name: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?])
 
 Government: [? if in_grand_coalition_bavaria: Grand Coalition ?][? if in_bourgeois_coalition_bavaria: Bourgeois Coalition ?][? if in_right_coalition_bavaria: Right Coalition ?][? if in_nlp_majority_bavaria: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> majority ?]
 
