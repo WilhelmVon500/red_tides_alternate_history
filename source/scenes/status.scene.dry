@@ -341,7 +341,7 @@ Next election: [+ next_election_month_prussia: month +] [+ next_election_year_pr
 
 Minister-President: [+ bavaria_leader +] ([?if bavaria_leader_party = "BVP": <span style="color: #69A2BE;">**BVP**</span>?][?if bavaria_leader_party = nlp_name: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?])
 
-Government: [? if in_bourgeois_coalition_bavaria: Bourgeois Coalition ?][? if in_right_coalition_bavaria: Right Coalition ?][? if in_nlp_majority_bavaria: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> majority ?]
+Government: [? if in_grand_coalition_bavaria: Grand Coalition ?][? if in_bourgeois_coalition_bavaria: Bourgeois Coalition ?][? if in_right_coalition_bavaria: Right Coalition ?][? if in_nlp_majority_bavaria: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> majority ?]
 
 Next election: [+ next_election_month_bavaria: month +] [+ next_election_year_bavaria +]
 
