@@ -347,9 +347,9 @@ Next election: [+ next_election_month_bavaria: month +] [+ next_election_year_ba
 
 = Free State of Saxony
 
-<div style="display: flex; justify-content: center;">[? if saxony_leader = "Buck": <img src="img/portraits/BuckWilhelm.jpg" class="saxony-leader"> ?][? if saxony_leader = "Zeigner": <img src="img/portraits/ZeignerErich.jpg" class="saxony-leader"> ?]</div>
+<div style="display: flex; justify-content: center;">[? if saxony_leader = "Buck": <img src="img/portraits/BuckWilhelm.jpg" class="saxony-leader"> ?][? if saxony_leader = "Zeigner": <img src="img/portraits/ZeignerErich.jpg" class="saxony-leader"> ?][? if saxony_leader = "Blüher": <img src="img/portraits/BlüherBernhard.jpg" class="saxony-leader"> ?][? if saxony_leader = "Hickmann": <img src="img/portraits/HickmannHugo.jpg" class="saxony-leader"> ?][? if saxony_leader = "Krug von Nidda": <img src="img/portraits/KrugvonNiddaFriedrich.jpg" class="saxony-leader"> ?]</div>
 
-Minister-President: [+ saxony_leader +] ([?if saxony_leader_party = "SPD": <span style="color: #E3000F;">**SPD**</span>?])
+Minister-President: [+ saxony_leader +] ([?if saxony_leader_party = "SPD": <span style="color: #E3000F;">**SPD**</span>?][?if saxony_leader_party = nlp_name: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?][?if saxony_leader_party = "KVP": <span style="color: #455B95;">**KVP**</span>?][?if saxony_leader_party = "DNVP": <span style="color: #3F7BC1;">**DNVP**</span>?])
 
 Government: [? if in_spd_kpd_toleration_saxony: <span style="color: #E3000F;">**SPD**</span> with <span style="color: #8B0000;">**KPD**</span> toleration ?][? if in_left_front_coalition_saxony: Left Front ?][? if in_bourgeois_coalition_saxony: Bourgeois Coalition ?][? if in_right_coalition_saxony: Right Coalition ?][? if in_nlp_majority_saxony: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> majority ?]
 
