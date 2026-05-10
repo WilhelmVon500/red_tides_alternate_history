@@ -347,7 +347,7 @@ Next election: [+ next_election_month_bavaria: month +] [+ next_election_year_ba
 
 = Free State of Saxony
 
-<div style="display: flex; justify-content: center;">[? if saxony_leader = "Buck": <img src="img/portraits/BuckWilhelm.jpg" class="saxony-leader"> ?][? if saxony_leader = "Zeigner": <img src="img/portraits/ZeignerErich.jpg" class="saxony-leader"> ?][? if saxony_leader = "Blüher": <img src="img/portraits/BlüherBernhard.jpg" class="saxony-leader"> ?][? if saxony_leader = "Hickmann": <img src="img/portraits/HickmannHugo.jpg" class="saxony-leader"> ?][? if saxony_leader = "Krug von Nidda": <img src="img/portraits/KrugvonNiddaFriedrich.jpg" class="saxony-leader"> ?]</div>
+<div style="display: flex; justify-content: center;">[? if saxony_leader = "Buck": <img src="img/portraits/BuckWilhelm.jpg" class="saxony-leader"> ?][? if saxony_leader = "Zeigner": <img src="img/portraits/ZeignerErich.jpg" class="saxony-leader"> ?][? if saxony_leader = "Blüher": <img src="img/portraits/BlüherBernhard.jpg" class="saxony-leader"> ?][? if saxony_leader = "Hickmann": <img src="img/portraits/HickmannHugo.jpg" class="saxony-leader"> ?][? if saxony_leader = "Kaiser": <img src="img/portraits/KaiserFritz.jpg" class="saxony-leader"> ?][? if saxony_leader = "Krug von Nidda": <img src="img/portraits/KrugvonNiddaFriedrich.jpg" class="saxony-leader"> ?]</div>
 
 Minister-President: [+ saxony_leader +] ([?if saxony_leader_party = "SPD": <span style="color: #E3000F;">**SPD**</span>?][?if saxony_leader_party = nlp_name: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?][?if saxony_leader_party = "KVP": <span style="color: #455B95;">**KVP**</span>?][?if saxony_leader_party = "DNVP": <span style="color: #3F7BC1;">**DNVP**</span>?])
 
