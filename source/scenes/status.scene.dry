@@ -29,11 +29,11 @@ Internal dissent: [+ dissent_percent : dissent +]
 
 = Government
 
-President: [+ president +] ([?if president_party = "I":<span style="color: #808080;">**I**</span>?][?if president_party = "SPD": <span style="color: #E3000F;">**SPD**</span>?][?if president_party = "Z":<span style="color: #000000;">**Z**</span>?][?if president_party = nlp_name:<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?][?if president_party = "DNVP":<span style="color: #3F7BC1;">**DNVP**</span>?])
+President: [+ president +] ([?if president_party = "I":<span style="color: #808080;">**I**</span>?][?if president_party = "SPD":<span style="color: #E3000F;">**SPD**</span>?][?if president_party = "Z":<span style="color: #000000;">**Z**</span>?][?if president_party = nlp_name:<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?][?if president_party = "DNVP":<span style="color: #3F7BC1;">**DNVP**</span>?])
 
-Chancellor: [+ chancellor +] ([?if chancellor_party = "SPD": <span style="color: #E3000F;">**SPD**</span>?][?if chancellor_party = "Z": <span style="color: #000000;">**Z**</span>?][?if chancellor_party = nlp_name:<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?])
+Chancellor: [+ chancellor +] ([?if chancellor_party = "SPD":<span style="color: #E3000F;">**SPD**</span>?][?if chancellor_party = "Z":<span style="color: #000000;">**Z**</span>?][?if chancellor_party = nlp_name:<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?])
 
-Vice-Chancellor: [+ vice_chancellor +] ([?if vice_chancellor_party = "Z": <span style="color: #000000;">**Z**</span>?][?if vice_chancellor_party = nlp_name:<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?][?if vice_chancellor_party = "KVP": <span style="color: #455B95;">**KVP**</span>?][?if vice_chancellor_party = "DNVP": <span style="color: #3F7BC1;">**DNVP**</span>?])
+Vice-Chancellor: [+ vice_chancellor +] ([?if vice_chancellor_party = "Z":<span style="color: #000000;">**Z**</span>?][?if vice_chancellor_party = nlp_name:<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?][?if vice_chancellor_party = "KVP":<span style="color: #455B95;">**KVP**</span>?][?if vice_chancellor_party = "DNVP":<span style="color: #3F7BC1;">**DNVP**</span>?])
 
 Next presidential election: [+ next_president_election_month : month +] [+ next_president_election_year +]
 
@@ -83,7 +83,7 @@ Unemployment: [+ unemployed_2 +]%
 
 Economic growth: [+ economic_growth_2 +]%
 
-Reichsbank President: [+ reichsbank_president +] ([?if reichsbank_president_party = "I": <span style="color: #909090;">**I**</span>?])
+Reichsbank President: [+ reichsbank_president +] ([?if reichsbank_president_party = "I":<span style="color: #909090;">**I**</span>?])
 
 
 @party
@@ -185,17 +185,17 @@ Internal dissent: [+ dissent_percent : dissent +]
 <div style="display: flex; gap: 5px; margin-bottom: 5px; margin-left: -3px; margin-right: -3px;">[? if chancellor = "Müller": <img src="img/portraits/MüllerHermann.jpg" style="width: 50%; height: 200px; object-fit: cover;"> ?][? if chancellor = "Marx": <img src="img/portraits/MarxWilhelm.jpg" style="width: 50%; height: 200px; object-fit: cover;"> ?][? if chancellor = "Cuno": <img src="img/portraits/CunoWilhelm.jpg" style="width: 50%; height: 200px; object-fit: cover;"> ?]
 [? if vice_chancellor = "Erzberger": <img src="img/portraits/ErzbergerMatthias.jpg" style="width: 50%; height: 200px; object-fit: cover;"> ?][? if vice_chancellor = "Marx": <img src="img/portraits/MarxWilhelm.jpg" style="width: 50%; height: 200px; object-fit: cover;"> ?][? if vice_chancellor = "Westarp": <img src="img/portraits/WestarpKuno.jpg" style="width: 50%; height: 200px; object-fit: cover;"> ?]</div>
 
-President: [+ president +] ([?if president_party = "I":<span style="color: #808080;">**I**</span>?][?if president_party = "SPD": <span style="color: #E3000F;">**SPD**</span>?][?if president_party = "Z":<span style="color: #000000;">**Z**</span>?][?if president_party = nlp_name:<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?][?if president_party = "DNVP":<span style="color: #3F7BC1;">**DNVP**</span>?])
+President: [+ president +] ([?if president_party = "I":<span style="color: #808080;">**I**</span>?][?if president_party = "SPD":<span style="color: #E3000F;">**SPD**</span>?][?if president_party = "Z":<span style="color: #000000;">**Z**</span>?][?if president_party = nlp_name:<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?][?if president_party = "DNVP":<span style="color: #3F7BC1;">**DNVP**</span>?])
 
 Chancellor: [+ chancellor +] ([?if chancellor_party = "I":<span style="color: #808080;">**I**</span>?][?if chancellor_party = "SPD":<span style="color: #E3000F;">**SPD**</span>?][?if chancellor_party = "Z":<span style="color: #000000;">**Z**</span>?][?if chancellor_party = nlp_name:<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?])
 
-Vice-Chancellor: [+ vice_chancellor +] ([?if vice_chancellor_party = "I":<span style="color: #808080;">**I**</span>?][?if vice_chancellor_party = "Z":<span style="color: #000000;">**Z**</span>?][?if vice_chancellor_party = nlp_name:<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?][?if vice_chancellor_party = "KVP": <span style="color: #455B95;">**KVP**</span>?][?if vice_chancellor_party = "DNVP":<span style="color: #3F7BC1;">**DNVP**</span>?])
+Vice-Chancellor: [+ vice_chancellor +] ([?if vice_chancellor_party = "I":<span style="color: #808080;">**I**</span>?][?if vice_chancellor_party = "Z":<span style="color: #000000;">**Z**</span>?][?if vice_chancellor_party = nlp_name:<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?][?if vice_chancellor_party = "KVP":<span style="color: #455B95;">**KVP**</span>?][?if vice_chancellor_party = "DNVP":<span style="color: #3F7BC1;">**DNVP**</span>?])
 
 Foreign: [+ foreign_minister +] ([?if foreign_minister_party = "I":<span style="color: #808080;">**I**</span>?][?if foreign_minister_party = fvp_name:<span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>?][?if foreign_minister_party = nlp_name:<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?])
 
-Interior: [+ interior_minister +] ([?if interior_minister_party = "I":<span style="color: #808080;">**I**</span>?][?if interior_minister_party = "Z":<span style="color: #000000;">**Z**</span>?][?if interior_minister_party = nlp_name:<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?][?if interior_minister_party = "KVP": <span style="color: #455B95;">**KVP**</span>?][?if interior_minister_party = "DNVP":<span style="color: #3F7BC1;">**DNVP**</span>?])
+Interior: [+ interior_minister +] ([?if interior_minister_party = "I":<span style="color: #808080;">**I**</span>?][?if interior_minister_party = "Z":<span style="color: #000000;">**Z**</span>?][?if interior_minister_party = nlp_name:<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?][?if interior_minister_party = "KVP":<span style="color: #455B95;">**KVP**</span>?][?if interior_minister_party = "DNVP":<span style="color: #3F7BC1;">**DNVP**</span>?])
 
-Justice: [+ justice_minister +] ([?if justice_minister_party = "I":<span style="color: #808080;">**I**</span>?][?if justice_minister_party = fvp_name:<span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>?][?if justice_minister_party = "Z":<span style="color: #000000;">**Z**</span>?][?if justice_minister_party = nlp_name:<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?][?if justice_minister_party = "KVP": <span style="color: #455B95;">**KVP**</span>?][?if justice_minister_party = "DNVP":<span style="color: #3F7BC1;">**DNVP**</span>?])
+Justice: [+ justice_minister +] ([?if justice_minister_party = "I":<span style="color: #808080;">**I**</span>?][?if justice_minister_party = fvp_name:<span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>?][?if justice_minister_party = "Z":<span style="color: #000000;">**Z**</span>?][?if justice_minister_party = nlp_name:<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?][?if justice_minister_party = "KVP":<span style="color: #455B95;">**KVP**</span>?][?if justice_minister_party = "DNVP":<span style="color: #3F7BC1;">**DNVP**</span>?])
 
 Finance: [+ finance_minister +] ([?if finance_minister_party = "I":<span style="color: #808080;">**I**</span>?][?if finance_minister_party = "Z":<span style="color: #000000;">**Z**</span>?][?if finance_minister_party = nlp_name:<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?])
 
@@ -203,7 +203,7 @@ Economic: [+ economic_minister +] ([?if economic_minister_party = "I":<span styl
 
 Labor: [+ labor_minister +] ([?if labor_minister_party = "I":<span style="color: #808080;">**I**</span>?][?if labor_minister_party = "SPD":<span style="color: #E3000F;">**SPD**</span>?][?if labor_minister_party = "Z":<span style="color: #000000;">**Z**</span>?][?if labor_minister_party = nlp_name:<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?])
 
-Agriculture: [+ agriculture_minister +] ([?if agriculture_minister_party = "I":<span style="color: #808080;">**I**</span>?][?if agriculture_minister_party = "Z":<span style="color: #000000;">**Z**</span>?][?if agriculture_minister_party = nlp_name:<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?][?if agriculture_minister_party = "KVP": <span style="color: #455B95;">**KVP**</span>?][?if agriculture_minister_party = "DNVP":<span style="color: #3F7BC1;">**DNVP**</span>?])
+Agriculture: [+ agriculture_minister +] ([?if agriculture_minister_party = "I":<span style="color: #808080;">**I**</span>?][?if agriculture_minister_party = "Z":<span style="color: #000000;">**Z**</span>?][?if agriculture_minister_party = nlp_name:<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?][?if agriculture_minister_party = "KVP":<span style="color: #455B95;">**KVP**</span>?][?if agriculture_minister_party = "DNVP":<span style="color: #3F7BC1;">**DNVP**</span>?])
 
 Postal: [+ postal_minister +] ([?if postal_minister_party = "I":<span style="color: #808080;">**I**</span>?][?if postal_minister_party = "Z":<span style="color: #000000;">**Z**</span>?][?if postal_minister_party = "BVP":<span style="color: #69A2BE;">**BVP**</span>?][?if postal_minister_party = nlp_name:<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?])
 
