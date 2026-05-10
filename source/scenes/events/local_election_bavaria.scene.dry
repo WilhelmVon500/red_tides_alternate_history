@@ -34,7 +34,7 @@ if (Q.year == 1924) {
     Q.adjustmentFactors_bb_bavaria = 6.0;
     Q.adjustmentFactors_z_bavaria = 1.7;
     Q.adjustmentFactors_nlp_bavaria = 0.4;
-    Q.adjustmentFactors_csvd_bavaria = 1.1;
+    Q.adjustmentFactors_csvd_bavaria = 1.3;
     Q.adjustmentFactors_wp_bavaria = 0.3;
     Q.adjustmentFactors_rlb_bavaria = 0.0;
     Q.adjustmentFactors_kvp_bavaria = 1.1;
