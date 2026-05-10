@@ -344,6 +344,7 @@ title: The <span style="color: #8B0000;">**KPD**</span> will tolerate Wilhelm Bu
 subtitle: At least not a United Left government...
 view-if: left_front_coalition_saxony > 50 and year = 1922
 on-arrival: in_spd_kpd_toleration_saxony = 1;
+go-to: mp
 
 WIP
 
@@ -353,6 +354,7 @@ title: The Social Democrats form a coalition with the <span style="color: #8B000
 subtitle: <span style="color: #E3000F;">**SPD**</span> + <span style="color: #8B0000;">**KPD**</span> ([+ left_front_coalition_saxony +]%)
 view-if: left_front_coalition_saxony > 50 and year != 1922
 on-arrival: in_left_front_coalition_saxony = 1;
+go-to: mp
 
 WIP
 
@@ -362,6 +364,7 @@ title: We can form a Bourgeois Coalition.
 subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> [? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span> ?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span> ?]+ <span style="color: #000000;">**Z**</span> ([+ bourgeois_coalition_saxony +]%)
 view-if: bourgeois_coalition_saxony > 50
 on-arrival: in_bourgeois_coalition_saxony = 1; nlp_saxony = 1;
+go-to: mp
 
 WIP
 
@@ -371,6 +374,7 @@ title: We can form a Right Coalition.
 subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #3F7BC1;">**DNVP**</span> [? if kvp_exist: + <span style="color: #455B95;">**KVP**</span> ?][? if kswr_exist: + <span style="color: #003755;">**KSWR**</span> ?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span> ?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span> ?]+ <span style="color: #000000;">**Z**</span> ([+ right_coalition_saxony +]%)
 view-if: right_coalition_saxony > 50
 on-arrival: in_right_coalition_saxony = 1; nlp_saxony = 1;
+go-to: mp
 
 WIP
 
@@ -381,3 +385,43 @@ view-if: bourgeois_coalition_saxony <= 50 and right_coalition_saxony <= 50 and l
 on-arrival: nlp_saxony = 1 if was_nlp_saxony; in_nlp_majority_saxony = 1 if was_in_nlp_majority_saxony; in_left_front_coalition_saxony = 1 if was_in_left_front_coalition_saxony; in_bourgeois_coalition_saxony = 1 if was_in_bourgeois_coalition_saxony; in_right_coalition_saxony = 1 if was_in_right_coalition_saxony;
 
 There is no path to a majority government for now. The current government will stay in power as a minority coalition.
+
+
+
+
+
+@mp
+
+WIP
+
+- @bluher
+- @hickmann
+- @krug_von_nidda
+
+@bluher
+title: Bernhard Blüher (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>, Left-Wing Stresemannite).
+view-if: nlp_saxony
+choose-if: in_nlp_majority_saxony or in_bourgeois_coalition_saxony or in_right_coalition_saxony
+unavailable-subtitle: Blüher doesn't have needed support to become the Minister-President.
+on-arrival: saxony_leader = "Blüher"; saxony_leader_party = nlp_name;
+face-image: img/portraits/BlüherBernhard.jpg
+
+WIP.
+
+@hickmann
+title: Hugo Hickmann (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>, Right-Wing Stresemannite).
+view-if: nlp_saxony
+choose-if: in_nlp_majority_saxony or in_bourgeois_coalition_saxony or in_right_coalition_saxony
+unavailable-subtitle: Hickmann doesn't have needed support to become the Minister-President.
+on-arrival: saxony_leader = "Hickmann"; saxony_leader_party = nlp_name;
+face-image: img/portraits/HickmannHugo.jpg
+
+WIP.
+
+@krug_von_nidda
+title: Friedrich Krug von Nidda ([?if not dnvp_ideology = "Radical":<span style="color: #3F7BC1;">**DNVP**</span>?][?if kvp_exist:<span style="color: #455B95;">**KVP**</span>?]).
+view-if: in_right_coalition_saxony
+on-arrival: saxony_leader = "Krug von Nidda"; saxony_leader_party = "DNVP" if not dnvp_ideology = "Radical"; saxony_leader_party = "KVP" if kvp_exist;
+face-image: img/portraits/KrugvonNiddaFriedrich.jpg
+
+WIP.
