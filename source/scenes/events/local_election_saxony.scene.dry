@@ -373,6 +373,8 @@ WIP
 title: We can form a Grand Coalition.
 subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #E3000F;">**SPD**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> + <span style="color: #000000;">**Z**</span> ([+ grand_coalition_saxony +]%)
 view-if: grand_coalition_saxony > 50
+choose-if: year != 1922
+unavailable-subtitle: The <span style="color: #E3000F;">**SPD**</span> doesn't want to form a coalition with us.
 on-arrival: in_grand_coalition_saxony = 1; nlp_saxony = 1;
 go-to: mp
 
