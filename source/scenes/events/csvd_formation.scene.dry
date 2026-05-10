@@ -12,8 +12,8 @@ Q.parties.push('csvd');
 Q.csvd_relation = 50;
 
 
-Q.workers_csvd = 4;
-Q.workers_dnvp -= 4;
+Q.workers_csvd = 5;
+Q.workers_dnvp -= 5;
 Q.new_middle_csvd = 7;
 Q.new_middle_dnvp -= 7;
    
