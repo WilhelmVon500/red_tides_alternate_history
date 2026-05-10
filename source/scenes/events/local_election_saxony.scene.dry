@@ -404,6 +404,7 @@ WIP
 
 - @bluher
 - @hickmann
+- @kaiser
 - @zeigner
 - @krug_von_nidda
 
@@ -424,6 +425,16 @@ choose-if: in_nlp_majority_saxony or in_bourgeois_coalition_saxony or in_right_c
 unavailable-subtitle: Hickmann doesn't have needed support to become the Minister-President.
 on-arrival: saxony_leader = "Hickmann"; saxony_leader_party = nlp_name;
 face-image: img/portraits/HickmannHugo.jpg
+
+WIP.
+
+@kaiser
+title: Fritz Kaiser (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>, Right-Wing Stresemannite).
+view-if: nlp_saxony
+choose-if: in_nlp_majority_saxony or in_bourgeois_coalition_saxony or in_right_coalition_saxony
+unavailable-subtitle: Kaiser doesn't have needed support to become the Minister-President.
+on-arrival: saxony_leader = "Kaiser"; saxony_leader_party = nlp_name;
+face-image: img/portraits/KaiserFritz.jpg
 
 WIP.
 
