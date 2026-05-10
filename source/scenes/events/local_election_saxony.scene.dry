@@ -424,6 +424,7 @@ WIP
 - @hickmann
 - @kaiser
 - @zeigner
+- @heldt
 - @krug_von_nidda
 
 @bluher
@@ -461,6 +462,14 @@ title: Erich Zeigner (<span style="color: #E3000F;">**SPD**</span>).
 view-if: in_left_front_coalition_saxony
 on-arrival: saxony_leader = "Zeigner"; saxony_leader_party = "SPD";
 face-image: img/portraits/ZeignerErich.jpg
+
+WIP.
+
+@heldt
+title: Max Heldt (<span style="color: #E3000F;">**SPD**</span>).
+view-if: in_grand_coalition_saxony
+on-arrival: saxony_leader = "Heldt"; saxony_leader_party = "SPD";
+face-image: img/portraits/HeldtMax.jpg
 
 WIP.
 
