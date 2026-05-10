@@ -180,6 +180,15 @@ go-to: rm_main
 
 Wildermuth has been removed as an advisor. The Labor faction disapproves.
 
+@remove_dieckmann
+title: Remove Dieckmann
+view-if: dieckmann_advisor
+on-arrival: dieckmann_advisor = 0; labor_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Dieckmann has been removed as an advisor. The Labor faction disapproves.
+
 
 # industrialist
 
@@ -504,6 +513,18 @@ on-arrival: wildermuth_advisor = 1; n_advisors += 1; labor_strength += 5;
 go-to: advisor_menu
 
 Hermann-Eberhard Wildermuth is now an advisor.
+
+@add_dieckmann
+title: Johannes Dieckmann
+subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
+is-card: true
+card-image: img/portraits/DieckmannJohannes.jpg
+tags: labor_advisor
+view-if: not dieckmann_advisor and n_advisors < 3 and labor_nlp
+on-arrival: dieckmann_advisor = 1; n_advisors += 1; labor_strength += 5;
+go-to: advisor_menu
+
+Johannes Dieckmann is now an advisor.
 
 
 
