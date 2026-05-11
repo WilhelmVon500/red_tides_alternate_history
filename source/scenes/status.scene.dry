@@ -39,7 +39,8 @@ Next presidential election: [+ next_president_election_month : month +] [+ next_
 
 = Reichstag
 
-{!<span class="tooltip-text" title="National Liberal Party" style="color: var(--nlp-color);">!}**[+ nlp_name +]**{!</span>!}: [+ nlp_seats +] seats ([+ nlp_r +]%)
+[? if not vldp_formed: {!<span class="tooltip-text" title="National Liberal Party" style="color: var(--nlp-color);">!}**[+ nlp_name +]**{!</span>!}: [+ nlp_seats +] seats ([+ nlp_r +]%) ?]
+[? if vldp_formed: {!<span class="tooltip-text" title="United Liberal Democratic Party" style="color: var(--nlp-color);">!}**[+ nlp_name +]**{!</span>!}: [+ nlp_seats +] seats ([+ nlp_r +]%) ?]
 
 {!<span class="tooltip-text" title="Communist Party of Germany" style="color: #8B0000;">!}**KPD**{!</span>!}: [+ kpd_seats +] seats ([+ kpd_r +]%)
 
