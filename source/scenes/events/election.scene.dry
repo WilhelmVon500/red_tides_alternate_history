@@ -284,12 +284,28 @@ if (Q.spd_seats) {
         "seats": Math.round(Q.spd_seats),
     });
 }
-if (Q.fvp_seats) {
+if (Q.fvp_seats && Q.fvp_name == "RDP") {
+    data.push({
+        "id": "rdp",
+        "legend": Q.fvp_name,
+        "name": Q.fvp_name,
+        "seats": Math.round(Q.fvp_seats),
+    });
+}
+if (Q.fvp_seats && Q.fvp_name == "FVP") {
     data.push({
         "id": "fvp",
         "legend": Q.fvp_name,
         "name": Q.fvp_name,
         "seats": Math.round(Q.fvp_seats),
+    });
+}
+if (Q.nlp_seats && Q.vldp_formed) {
+    data.push({
+        "id": "vldp",
+        "legend": Q.nlp_name,
+        "name": Q.nlp_name,
+        "seats": Math.round(Q.nlp_seats),
     });
 }
 if (Q.bb_seats) {
@@ -316,7 +332,7 @@ if (Q.bvp_seats) {
         "seats": Math.round(Q.bvp_seats),
     });
 }
-if (Q.nlp_seats) {
+if (Q.nlp_seats && !Q.vldp_formed) {
     data.push({
         "id": "nlp",
         "legend": Q.nlp_name,
