@@ -549,8 +549,16 @@ table {
 .seat.spd {
     fill: #E3000F;
 }
+.seat.rdp {
+    fill: #E0B0FF;
+}
 .seat.fvp {
     fill: #FFD800;
+}
+.seat.vldp {
+    fill: #EEDC82;
+    stroke: var(--border-color);
+    stroke-width: 1.5px;
 }
 .seat.bb {
     fill: #38C538;
