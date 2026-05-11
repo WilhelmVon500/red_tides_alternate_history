@@ -181,7 +181,7 @@ if (Q.spd_seats_saxony) {
         "seats": Math.round(Q.spd_seats_saxony),
     });
 }
-if (Q.fvp_seats_saxony && Q.fvp_name == "RDP") {
+if (Q.fvp_seats_saxony && Q.rdp_formed) {
     data.push({
         "id": "rdp",
         "legend": Q.fvp_name,
@@ -189,7 +189,7 @@ if (Q.fvp_seats_saxony && Q.fvp_name == "RDP") {
         "seats": Math.round(Q.fvp_seats_saxony),
     });
 }
-if (Q.fvp_seats_saxony && Q.fvp_name == "FVP") {
+if (Q.fvp_seats_saxony && !Q.rdp_formed) {
     data.push({
         "id": "fvp",
         "legend": Q.fvp_name,
