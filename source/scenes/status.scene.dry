@@ -47,7 +47,8 @@ Next presidential election: [+ next_president_election_month : month +] [+ next_
 
 {!<span class="tooltip-text" title="Social Democratic Party of Germany" style="color: #E3000F;">!}**SPD**{!</span>!}: [+ spd_seats +] seats ([+ spd_r +]%)
 
-{!<span class="tooltip-text" title="Progressive People's Party" style="color: var(--fvp-color);">!}**[+ fvp_name +]**{!</span>!}: [+ fvp_seats +] seats ([+ fvp_r +]%)
+[? if not rdp_formed: {!<span class="tooltip-text" title="Progressive People's Party" style="color: var(--fvp-color);">!}**[+ fvp_name +]**{!</span>!}: [+ fvp_seats +] seats ([+ fvp_r +]%) ?]
+[? if rdp_formed: {!<span class="tooltip-text" title="Radical Democratic Party" style="color: var(--fvp-color);">!}**[+ fvp_name +]**{!</span>!}: [+ fvp_seats +] seats ([+ fvp_r +]%) ?]
 
 {!<span class="tooltip-text" title="Bavarian Peasants' League" style="color: #38C538;">!}**BB**{!</span>!}: [+ bb_seats +] seats ([+ bb_r +]%)
 
@@ -127,7 +128,8 @@ Internal dissent: [+ dissent_percent : dissent +]
 
 {!<span class="tooltip-text" title="Social Democratic Party of Germany" style="color: #E3000F;">!}**SPD**{!</span>!}: [+ spd_relation : relationships +]
 
-{!<span class="tooltip-text" title="Progressive People's Party" style="color: var(--fvp-color);">!}**[+ fvp_name +]**{!</span>!}: [+ fvp_relation : relationships +]
+[? if not rdp_formed: {!<span class="tooltip-text" title="Progressive People's Party" style="color: var(--fvp-color);">!}**[+ fvp_name +]**{!</span>!}: [+ fvp_relation : relationships +] ?]
+[? if rdp_formed: {!<span class="tooltip-text" title="Radical Democratic Party" style="color: var(--fvp-color);">!}**[+ fvp_name +]**{!</span>!}: [+ fvp_relation : relationships +] ?]
 
 {!<span class="tooltip-text" title="Bavarian Peasants' League" style="color: #38C538;">!}**BB**{!</span>!}: [+ bb_relation : relationships +]
 
@@ -155,7 +157,8 @@ Internal dissent: [+ dissent_percent : dissent +]
 
 {!<span class="tooltip-text" title="Social Democratic Party of Germany" style="color: #E3000F;">!}**SPD**{!</span>!}: Democratic Socialism (Wels)
 
-{!<span class="tooltip-text" title="Progressive People's Party" style="color: var(--fvp-color);">!}**[+ fvp_name +]**{!</span>!}: Left Liberalism (Petersen)
+[? if not rdp_formed: {!<span class="tooltip-text" title="Progressive People's Party" style="color: var(--fvp-color);">!}**[+ fvp_name +]**{!</span>!}: Left Liberalism (Petersen) ?]
+[? if rdp_formed: {!<span class="tooltip-text" title="Radical Democratic Party" style="color: var(--fvp-color);">!}**[+ fvp_name +]**{!</span>!}: Progressive Liberalism ([+fvp_leader+]) ?]
 
 {!<span class="tooltip-text" title="Bavarian Peasants' League" style="color: #38C538;">!}**BB**{!</span>!}: Liberal Agrarianism (Eisenberger)
 
