@@ -69,6 +69,8 @@ Q.right_stresemannite_nlp = 1;
 Q.labor_nlp = 1;
 Q.industrialist_nlp = 1;
 
+Q.vldp_formed = 0;
+
 
 
 // organizations
