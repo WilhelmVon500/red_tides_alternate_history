@@ -181,12 +181,28 @@ if (Q.spd_seats_saxony) {
         "seats": Math.round(Q.spd_seats_saxony),
     });
 }
-if (Q.fvp_seats_saxony) {
+if (Q.fvp_seats_saxony && Q.fvp_name == "RDP") {
+    data.push({
+        "id": "rdp",
+        "legend": Q.fvp_name,
+        "name": Q.fvp_name,
+        "seats": Math.round(Q.fvp_seats_saxony),
+    });
+}
+if (Q.fvp_seats_saxony && Q.fvp_name == "FVP") {
     data.push({
         "id": "fvp",
         "legend": Q.fvp_name,
         "name": Q.fvp_name,
         "seats": Math.round(Q.fvp_seats_saxony),
+    });
+}
+if (Q.nlp_seats_saxony && Q.vldp_formed) {
+    data.push({
+        "id": "vldp",
+        "legend": Q.nlp_name,
+        "name": Q.nlp_name,
+        "seats": Math.round(Q.nlp_seats_saxony),
     });
 }
 if (Q.z_seats_saxony) {
@@ -197,7 +213,7 @@ if (Q.z_seats_saxony) {
         "seats": Math.round(Q.z_seats_saxony),
     });
 }
-if (Q.nlp_seats_saxony) {
+if (Q.nlp_seats_saxony && !Q.vldp_formed) {
     data.push({
         "id": "nlp",
         "legend": Q.nlp_name,
