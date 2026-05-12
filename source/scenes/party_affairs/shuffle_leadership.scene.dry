@@ -34,6 +34,19 @@ tags: remove_advisor
 
 
 
+# constitutional liberal
+
+
+@remove_petersen
+title: Remove Petersen
+view-if: petersen_advisor
+on-arrival: petersen_advisor = 0; constitutional_liberal_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Petersen has been removed as an advisor. The Constitutional Liberal faction disapproves.
+
+
 # left stresemannite
 
 
@@ -208,6 +221,19 @@ go-to: rm_main
 Lemmer has been removed as an advisor. The Labor faction disapproves.
 
 
+# mittelstand
+
+
+@remove_drewitz
+title: Remove Drewitz
+view-if: drewitz_advisor
+on-arrival: drewitz_advisor = 0; mittelstand_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Drewitz has been removed as an advisor. The Mittelstand faction disapproves.
+
+
 # industrialist
 
 
@@ -306,13 +332,20 @@ tags: constitutional_liberal_advisor, left_stresemannite_advisor, right_stresema
 frequency: 1
 
 
+- @constitutional_liberal: Add Constitutional Liberals
 - @left_stresemannite: Add Left-wing Stresemannites
 - @right_stresemannite: Add Right-wing Stresemannites
 - @labor: Add Labor
+- @mittelstand: Add Mittelstand
 - @industrialist: Add Industrialists
 - @nonfactional: Add non-factional advisors
 - @rm_main: Remove advisors instead.
 - @remove_none: Stop changing advisors.
+
+@constitutional_liberals
+view-if: n_advisors < 3 and constitutional_liberal_nlp
+
+- #constitutional_liberal_advisor
 
 @left_stresemannite
 view-if: n_advisors < 3
@@ -329,6 +362,11 @@ view-if: n_advisors < 3
 
 - #labor_advisor
 
+@mittelstand
+view-if: n_advisors < 3 and mittelstand_nlp
+
+- #mittelstand_advisor
+
 @industrialist
 view-if: n_advisors < 3
 
@@ -339,6 +377,22 @@ view-if: n_advisors < 3
 
 - #nonfactional_advisor
 
+
+
+# constitutional liberal
+
+
+@add_petersen
+title: Carl Wilhelm Petersen
+subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
+is-card: true
+face-image: img/portraits/PetersenCarlWilhelm.jpg
+tags: constitutional_liberal_advisor
+view-if: not petersen_advisor and n_advisors < 3 and constitutional_liberal_nlp
+on-arrival: petersen_advisor = 1; n_advisors += 1; constitutional_liberal_strength += 5;
+go-to: advisor_menu
+
+Carl Wilhelm Petersen is now an advisor.
 
 
 # left stresemannite
@@ -567,6 +621,22 @@ on-arrival: lemmer_advisor = 1; n_advisors += 1; labor_strength += 5;
 go-to: advisor_menu
 
 Ernst Lemmer is now an advisor.
+
+
+# mittelstand
+
+
+@add_drewitz
+title: Hermann Drewitz
+subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
+is-card: true
+face-image: img/portraits/DrewitzHermann.jpg
+tags: mittelstand_advisor
+view-if: not drewitz_advisor and n_advisors < 3 and mittelstand_nlp
+on-arrival: drewitz_advisor = 1; n_advisors += 1; mittelstand_strength += 5;
+go-to: advisor_menu
+
+Hermann Drewitz is now an advisor.
 
 
 
