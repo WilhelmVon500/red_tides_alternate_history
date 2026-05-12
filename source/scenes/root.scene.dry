@@ -52,14 +52,18 @@ Q.dissent = 0.05;
 Q.dissent_percent = 5;
 
 // factions
-Q.factions = ['left_stresemannite', 'right_stresemannite', 'labor', 'industrialist'];
+Q.factions = ['constitutional_liberal', 'left_stresemannite', 'right_stresemannite', 'labor', 'mittelstand', 'industrialist'];
 // should this be normalized to 100%?
+Q.constitutional_liberal_strength = 0;
+Q.constitutional_liberal_dissent = 0;
 Q.left_stresemannite_strength = 25;
 Q.left_stresemannite_dissent = 5;
 Q.right_stresemannite_strength = 30;
 Q.right_stresemannite_dissent = 0;
 Q.labor_strength = 10;
 Q.labor_dissent = 15;
+Q.mittelstand_strength = 0;
+Q.mittelstand_dissent = 0;
 Q.industrialist_strength = 15;
 Q.industrialist_dissent = 5;
 
