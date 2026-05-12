@@ -140,6 +140,15 @@ go-to: rm_main
 
 Dohna-Schlodien has been removed as an advisor. The Right-wing Stresemannite faction disapproves.
 
+@remove_gessler
+title: Remove Gessler
+view-if: gessler_advisor and vldp_formed
+on-arrival: gessler_advisor = 0; right_stresemannite_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Gessler has been removed as an advisor. The Right-wing Stresemannite faction disapproves.
+
 
 # labor
 
@@ -461,6 +470,18 @@ on-arrival: dohna_schlodien_advisor = 1; n_advisors += 1; right_stresemannite_st
 go-to: advisor_menu
 
 Alexander zu Dohna-Schlodien is now an advisor.
+
+@add_gessler
+title: Otto Gessler
+subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
+is-card: true
+card-image: img/portraits/GesslerOtto.jpg
+tags: right_stresemannite_advisor
+view-if: not gessler_advisor and n_advisors < 3 and right_stresemannite_nlp and vldp_formed
+on-arrival: gessler_advisor = 1; n_advisors += 1; right_stresemannite_strength += 5;
+go-to: advisor_menu
+
+Otto Gessler is now an advisor.
 
 
 # labor
