@@ -585,6 +585,12 @@ Q.baumer_advisor = 0; // Gertrud Bäumer
 Q.nuschke_advisor = 0; // Otto Nuschke
 Q.hellpach_advisor = 0; // Willy Hellpach
 
+// mittelstand advisors
+Q.drewitz_advisor = 0; // Hermann Drewitz
+Q.colosser_advisor = 0; // Otto Colosser
+Q.bredt_advisor = 0; // Johann Viktor Bredt
+Q.mollath_advisor = 0; // Jacob Ludwig Mollath
+
 
 
 Q.stinnes_dead = 0;
