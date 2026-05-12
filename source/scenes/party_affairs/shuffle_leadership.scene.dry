@@ -142,7 +142,7 @@ Dohna-Schlodien has been removed as an advisor. The Right-wing Stresemannite fac
 
 @remove_gessler
 title: Remove Gessler
-view-if: gessler_advisor and vldp_formed
+view-if: gessler_advisor
 on-arrival: gessler_advisor = 0; right_stresemannite_dissent += 5; n_advisors -= 1
 tags: remove_advisor
 go-to: rm_main
