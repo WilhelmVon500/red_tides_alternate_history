@@ -404,9 +404,21 @@ There is no path to a majority government for now. The current government will s
 
 WIP
 
+- @muller_meiningen_nlp
 - @beyer
 - @vogel
+- @muller_meiningen_fvp
 - @held
+
+@muller_meiningen_nlp
+title: Ernst Müller-Meiningen (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>, Constitutional Liberal).
+view-if: nlp_bavaria and vldp_formed
+choose-if: in_nlp_majority_bavaria or (in_grand_coalition_bavaria and (spd_bl + nlp_bl + fvp_bl) > z_bl) or (in_bourgeois_coalition_bavaria and (nlp_bl + fvp_bl) > z_bl) or (in_right_coalition_bavaria and (nlp_bl > z_bl))
+unavailable-subtitle: Müller-Meiningen doesn't have needed support to become the Minister-President.
+on-arrival: bavaria_leader = "Müller-Meiningen"; bavaria_leader_party = nlp_name;
+face-image: img/portraits/MüllerMeiningenErnst.jpg
+
+WIP.
 
 @beyer
 title: Otto Beyer (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>, Left-Wing Stresemannite).
@@ -423,15 +435,25 @@ title: Hans Vogel (<span style="color: #E3000F;">**SPD**</span>).
 view-if: in_grand_coalition_bavaria
 choose-if: in_grand_coalition_bavaria and spd_bl > z_bl
 unavailable-subtitle: Vogel doesn't have needed support to become the Minister-President.
-on-arrival: bavaria_leader = "Vogel"; bavaria_leader_party = "SPD"
+on-arrival: bavaria_leader = "Vogel"; bavaria_leader_party = "SPD";
 face-image: img/portraits/VogelHans.jpg
+
+WIP.
+
+@muller_meiningen_fvp
+title: Ernst Müller-Meiningen (<span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>).
+view-if: not vldp_formed
+choose-if: (in_grand_coalition_bavaria and (spd_bl + nlp_bl + fvp_bl) > z_bl) or (in_bourgeois_coalition_bavaria and (nlp_bl + fvp_bl) > z_bl)
+unavailable-subtitle: Müller-Meiningen doesn't have needed support to become the Minister-President.
+on-arrival: bavaria_leader = "Müller-Meiningen"; bavaria_leader_party = fvp_name;
+face-image: img/portraits/MüllerMeiningenErnst.jpg
 
 WIP.
 
 @held
 title: Heinrich Held (<span style="color: #69A2BE;">**BVP**</span>).
 view-if: in_grand_coalition_bavaria or in_bourgeois_coalition_bavaria or in_right_coalition_bavaria
-on-arrival: bavaria_leader = "Held"; bavaria_leader_party = "BVP"
+on-arrival: bavaria_leader = "Held"; bavaria_leader_party = "BVP";
 face-image: img/portraits/HeldHeinrich.jpg
 
 WIP.
