@@ -21,7 +21,7 @@ Removing advisors will increase dissent from their faction of the party, while s
 
 @rm_main
 title: Remove advisors.
-tags: left_stresemannite_advisor, right_stresemannite_advisor, labor_advisor, industrialist_advisor, nonfactional_advisor 
+tags: constitutional_liberal_advisor, left_stresemannite_advisor, right_stresemannite_advisor, labor_advisor, mittelstand_advisor, industrialist_advisor, nonfactional_advisor 
 frequency: 1
 
 - #remove_advisor
@@ -284,7 +284,7 @@ go-to: advisor_menu
 
 @advisor_menu
 title: Add other advisors.
-tags: left_stresemannite_advisor, right_stresemannite_advisor, labor_advisor, industrialist_advisor, nonfactional_advisor
+tags: constitutional_liberal_advisor, left_stresemannite_advisor, right_stresemannite_advisor, labor_advisor, mittelstand_advisor, industrialist_advisor, nonfactional_advisor
 frequency: 1
 
 
