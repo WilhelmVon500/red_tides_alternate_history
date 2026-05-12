@@ -442,7 +442,7 @@ WIP.
 
 @muller_meiningen_fvp
 title: Ernst Müller-Meiningen (<span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>).
-view-if: not vldp_formed
+view-if: not vldp_formed and (in_grand_coalition_bavaria or in_bourgeois_coalition_bavaria)
 choose-if: (in_grand_coalition_bavaria and (spd_bl + nlp_bl + fvp_bl) > z_bl) or (in_bourgeois_coalition_bavaria and (nlp_bl + fvp_bl) > z_bl)
 unavailable-subtitle: Müller-Meiningen doesn't have needed support to become the Minister-President.
 on-arrival: bavaria_leader = "Müller-Meiningen"; bavaria_leader_party = fvp_name;
