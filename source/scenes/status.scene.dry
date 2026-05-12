@@ -106,11 +106,15 @@ Internal dissent: [+ dissent_percent : dissent +]
 
 = Factions
 
+[? if constitutional_liberal_nlp: {!<span class="tooltip-text" title="WIP.">!}**Constitutional Liberals**{!</span>!} strength: [+ constitutional_liberal_strength : strength +], dissent: [+ constitutional_liberal_dissent : dissent +] ?]
+
 [? if left_stresemannite_nlp: {!<span class="tooltip-text" title="WIP.">!}**Left-wing Stresemannites**{!</span>!} strength: [+ left_stresemannite_strength : strength +], dissent: [+ left_stresemannite_dissent : dissent +] ?]
 
 [? if right_stresemannite_nlp: {!<span class="tooltip-text" title="WIP.">!}**Right-wing Stresemannites**{!</span>!} strength: [+ right_stresemannite_strength : strength +], dissent: [+ right_stresemannite_dissent : dissent +] ?]
 
 [? if labor_nlp: {!<span class="tooltip-text" title="WIP.">!}**Labor**{!</span>!} strength: [+ labor_strength : strength +], dissent: [+ labor_dissent : dissent +] ?]
+
+[? if mittelstand_nlp: {!<span class="tooltip-text" title="WIP.">!}**Mittelstand**{!</span>!} strength: [+ mittelstand_strength : strength +], dissent: [+ mittelstand_dissent : dissent +] ?]
 
 [? if industrialist_nlp: {!<span class="tooltip-text" title="WIP.">!}**Industrialist**{!</span>!} strength: [+ industrialist_strength : strength +], dissent: [+ industrialist_dissent : dissent +] ?]
 
