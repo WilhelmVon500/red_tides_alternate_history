@@ -339,7 +339,7 @@ view-if: n_advisors < 3
 title: Hermann Dietrich
 subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
 is-card: true
-card-image: img/portraits/DietrichHermann.jpg
+face-image: img/portraits/DietrichHermann.jpg
 tags: left_stresemannite_advisor
 view-if: not dietrich_advisor and n_advisors < 3
 on-arrival: dietrich_advisor = 1; n_advisors += 1; left_stresemannite_strength += 5;
@@ -351,7 +351,7 @@ Hermann Dietrich is now an advisor.
 title: Julius Curtius
 subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
 is-card: true
-card-image: img/portraits/CurtiusJulius.jpg
+face-image: img/portraits/CurtiusJulius.jpg
 tags: left_stresemannite_advisor
 view-if: not curtius_advisor and n_advisors < 3
 on-arrival: curtius_advisor = 1; n_advisors += 1; left_stresemannite_strength += 5;
@@ -363,7 +363,7 @@ Julius Curtius is now an advisor.
 title: Siegfried Kardorff
 subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
 is-card: true
-card-image: img/portraits/KardorffSiegfried.jpg
+face-image: img/portraits/KardorffSiegfried.jpg
 tags: left_stresemannite_advisor
 view-if: not kardorff_advisor and n_advisors < 3
 on-arrival: kardorff_advisor = 1; n_advisors += 1; left_stresemannite_strength += 5;
@@ -375,7 +375,7 @@ Siegfried Kardorff is now an advisor.
 title: Eugen Schiffer
 subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
 is-card: true
-card-image: img/portraits/SchifferEugen.jpg
+face-image: img/portraits/SchifferEugen.jpg
 tags: left_stresemannite_advisor
 view-if: not schiffer_advisor and n_advisors < 3
 on-arrival: schiffer_advisor = 1; n_advisors += 1; left_stresemannite_strength += 5;
@@ -387,7 +387,7 @@ Eugen Schiffer is now an advisor.
 title: Erich Koch-Weser
 subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
 is-card: true
-card-image: img/portraits/KochWeserErich.jpg
+face-image: img/portraits/KochWeserErich.jpg
 tags: left_stresemannite_advisor
 view-if: not koch_weser_advisor and n_advisors < 3
 on-arrival: koch_weser_advisor = 1; n_advisors += 1; left_stresemannite_strength += 5;
@@ -399,7 +399,7 @@ Erich Koch-Weser is now an advisor.
 title: Albrecht Morath
 subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
 is-card: true
-card-image: img/portraits/MorathAlbrecht.jpg
+face-image: img/portraits/MorathAlbrecht.jpg
 tags: left_stresemannite_advisor
 view-if: not morath_advisor and n_advisors < 3
 on-arrival: morath_advisor = 1; n_advisors += 1; left_stresemannite_strength += 5;
@@ -415,7 +415,7 @@ Albrecht Morath is now an advisor.
 title: Hans Luther
 subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
 is-card: true
-card-image: img/portraits/LutherHans.jpg
+face-image: img/portraits/LutherHans.jpg
 tags: right_stresemannite_advisor
 view-if: not luther_advisor and n_advisors < 3 and right_stresemannite_nlp
 on-arrival: luther_advisor = 1; n_advisors += 1; right_stresemannite_strength += 5;
@@ -427,7 +427,7 @@ Hans Luther is now an advisor.
 title: Karl Jarres
 subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
 is-card: true
-card-image: img/portraits/JarresKarl.jpg
+face-image: img/portraits/JarresKarl.jpg
 tags: right_stresemannite_advisor
 view-if: not jarres_advisor and n_advisors < 3 and right_stresemannite_nlp
 on-arrival: jarres_advisor = 1; n_advisors += 1; right_stresemannite_strength += 5;
@@ -439,7 +439,7 @@ Karl Jarres is now an advisor.
 title: Rudolf Heinze
 subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
 is-card: true
-card-image: img/portraits/HeinzeRudolf.jpg
+face-image: img/portraits/HeinzeRudolf.jpg
 tags: right_stresemannite_advisor
 view-if: not heinze_advisor and n_advisors < 3 and right_stresemannite_nlp
 on-arrival: heinze_advisor = 1; n_advisors += 1; right_stresemannite_strength += 5;
@@ -451,7 +451,7 @@ Rudolf Heinze is now an advisor.
 title: Paul Moldenhauer
 subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
 is-card: true
-card-image: img/portraits/MoldenhauerPaul.jpg
+face-image: img/portraits/MoldenhauerPaul.jpg
 tags: right_stresemannite_advisor
 view-if: not moldenhauer_advisor and n_advisors < 3 and right_stresemannite_nlp
 on-arrival: moldenhauer_advisor = 1; n_advisors += 1; right_stresemannite_strength += 5;
@@ -463,7 +463,7 @@ Paul Moldenhauer is now an advisor.
 title: Alexander zu Dohna-Schlodien
 subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
 is-card: true
-card-image: img/portraits/DohnaSchlodienAlexander.jpg
+face-image: img/portraits/DohnaSchlodienAlexander.jpg
 tags: right_stresemannite_advisor
 view-if: not dohna_schlodien_advisor and n_advisors < 3 and right_stresemannite_nlp
 on-arrival: dohna_schlodien_advisor = 1; n_advisors += 1; right_stresemannite_strength += 5;
@@ -475,7 +475,7 @@ Alexander zu Dohna-Schlodien is now an advisor.
 title: Otto Gessler
 subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
 is-card: true
-card-image: img/portraits/GesslerOtto.jpg
+face-image: img/portraits/GesslerOtto.jpg
 tags: right_stresemannite_advisor
 view-if: not gessler_advisor and n_advisors < 3 and right_stresemannite_nlp and vldp_formed
 on-arrival: gessler_advisor = 1; n_advisors += 1; right_stresemannite_strength += 5;
@@ -491,7 +491,7 @@ Otto Gessler is now an advisor.
 title: Otto Thiel
 subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
 is-card: true
-card-image: img/portraits/ThielOtto.jpg
+face-image: img/portraits/ThielOtto.jpg
 tags: labor_advisor
 view-if: not thiel_advisor and n_advisors < 3 and labor_nlp
 on-arrival: thiel_advisor = 1; n_advisors += 1; labor_strength += 5;
@@ -503,7 +503,7 @@ Otto Thiel is now an advisor.
 title: Hans Bechly
 subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
 is-card: true
-card-image: img/portraits/BechlyHans.jpg
+face-image: img/portraits/BechlyHans.jpg
 tags: labor_advisor
 view-if: not bechly_advisor and n_advisors < 3 and labor_nlp
 on-arrival: bechly_advisor = 1; n_advisors += 1; labor_strength += 5;
@@ -515,7 +515,7 @@ Hans Bechly is now an advisor.
 title: Georg Streiter
 subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
 is-card: true
-card-image: img/portraits/StreiterGeorg.jpg
+face-image: img/portraits/StreiterGeorg.jpg
 tags: labor_advisor
 view-if: not streiter_advisor and n_advisors < 3 and labor_nlp
 on-arrival: streiter_advisor = 1; n_advisors += 1; labor_strength += 5;
@@ -527,7 +527,7 @@ Georg Streiter is now an advisor.
 title: Hermann-Eberhard Wildermuth
 subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
 is-card: true
-card-image: img/portraits/WildermuthHermannEberhard.jpg
+face-image: img/portraits/WildermuthHermannEberhard.jpg
 tags: labor_advisor
 view-if: not wildermuth_advisor and n_advisors < 3 and labor_nlp
 on-arrival: wildermuth_advisor = 1; n_advisors += 1; labor_strength += 5;
@@ -539,7 +539,7 @@ Hermann-Eberhard Wildermuth is now an advisor.
 title: Johannes Dieckmann
 subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
 is-card: true
-card-image: img/portraits/DieckmannJohannes.jpg
+face-image: img/portraits/DieckmannJohannes.jpg
 tags: labor_advisor
 view-if: not dieckmann_advisor and n_advisors < 3 and labor_nlp
 on-arrival: dieckmann_advisor = 1; n_advisors += 1; labor_strength += 5;
@@ -556,7 +556,7 @@ Johannes Dieckmann is now an advisor.
 title: Ernst Scholz
 subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
 is-card: true
-card-image: img/portraits/ScholzErnst.jpg
+face-image: img/portraits/ScholzErnst.jpg
 tags: industrialist_advisor
 view-if: not scholz_advisor and n_advisors < 3 and industrialist_nlp
 on-arrival: scholz_advisor = 1; n_advisors += 1; industrialist_strength += 5;
@@ -568,7 +568,7 @@ Ernst Scholz is now an advisor.
 title: Hans Raumer
 subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
 is-card: true
-card-image: img/portraits/RaumerHans.jpg
+face-image: img/portraits/RaumerHans.jpg
 tags: industrialist_advisor
 view-if: not raumer_advisor and n_advisors < 3 and industrialist_nlp
 on-arrival: raumer_advisor = 1; n_advisors += 1; industrialist_strength += 5;
@@ -580,7 +580,7 @@ Hans Raumer is now an advisor.
 title: Wilhelm Cuno
 subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
 is-card: true
-card-image: img/portraits/CunoWilhelm.jpg
+face-image: img/portraits/CunoWilhelm.jpg
 tags: industrialist_advisor
 view-if: not cuno_advisor and n_advisors < 3 and industrialist_nlp
 on-arrival: cuno_advisor = 1; n_advisors += 1; industrialist_strength += 5;
@@ -592,7 +592,7 @@ Wilhelm Cuno is now an advisor.
 title: Hugo Stinnes
 subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
 is-card: true
-card-image: img/portraits/StinnesHugo.jpg
+face-image: img/portraits/StinnesHugo.jpg
 tags: industrialist_advisor
 view-if: not stinnes_advisor and n_advisors < 3 and industrialist_nlp and not stinnes_dead
 on-arrival: stinnes_advisor = 1; n_advisors += 1; industrialist_strength += 5;
@@ -604,7 +604,7 @@ Hugo Stinnes is now an advisor.
 title: Eduard Dingeldey
 subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
 is-card: true
-card-image: img/portraits/DingeldeyEduard.jpg
+face-image: img/portraits/DingeldeyEduard.jpg
 tags: industrialist_advisor
 view-if: not dingeldey_advisor and n_advisors < 3 and industrialist_nlp
 on-arrival: dingeldey_advisor = 1; n_advisors += 1; industrialist_strength += 5;
@@ -621,7 +621,7 @@ Eduard Dingeldey is now an advisor.
 title: Gustav Stresemann
 subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
 is-card: true
-card-image: img/portraits/StresemannGustav.jpg
+face-image: img/portraits/StresemannGustav.jpg
 tags: nonfactional_advisor
 view-if: not stresemann_advisor and n_advisors < 3
 on-arrival: stresemann_advisor = 1; n_advisors += 1;
@@ -633,7 +633,7 @@ Gustav Stresemann is now an advisor.
 title: Artur Mahraun
 subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
 is-card: true
-card-image: img/portraits/MahraunArtur.jpg
+face-image: img/portraits/MahraunArtur.jpg
 tags: nonfactional_advisor
 view-if: not mahraun_advisor and n_advisors < 3
 on-arrival: mahraun_advisor = 1; n_advisors += 1;
@@ -645,7 +645,7 @@ Artur Mahraun is now an advisor.
 title: Adolf Kempkes
 subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions -  Clear the Agenda, Party Discipline, Emergency Fundraising ?]
 is-card: true
-card-image: img/portraits/KempkesAdolf.jpg
+face-image: img/portraits/KempkesAdolf.jpg
 tags: nonfactional_advisor
 view-if: not kempkes_advisor and n_advisors < 3
 on-arrival: kempkes_advisor = 1; n_advisors += 1;
