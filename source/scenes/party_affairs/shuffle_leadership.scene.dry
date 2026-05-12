@@ -198,6 +198,15 @@ go-to: rm_main
 
 Dieckmann has been removed as an advisor. The Labor faction disapproves.
 
+@remove_lemmer
+title: Remove Lemmer
+view-if: lemmer_advisor
+on-arrival: lemmer_advisor = 0; labor_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Lemmer has been removed as an advisor. The Labor faction disapproves.
+
 
 # industrialist
 
@@ -546,6 +555,18 @@ on-arrival: dieckmann_advisor = 1; n_advisors += 1; labor_strength += 5;
 go-to: advisor_menu
 
 Johannes Dieckmann is now an advisor.
+
+@add_lemmer
+title: Ernst Lemmer
+subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
+is-card: true
+face-image: img/portraits/LemmerErnst.jpg
+tags: labor_advisor
+view-if: not lemmer_advisor and n_advisors < 3 and labor_nlp and vldp_formed
+on-arrival: lemmer_advisor = 1; n_advisors += 1; labor_strength += 5;
+go-to: advisor_menu
+
+Ernst Lemmer is now an advisor.
 
 
 
