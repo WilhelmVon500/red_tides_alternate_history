@@ -515,7 +515,7 @@ WIP.
 
 @dehne_fvp
 title: Julius Dehne (<span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>).
-view-if: in_bourgeois_coalition_saxony or (in_grand_coalition_saxony and nlp_sl + fvp_sl > spd_sl)
+view-if: not vldp_formed and in_bourgeois_coalition_saxony or (in_grand_coalition_saxony and nlp_sl + fvp_sl > spd_sl)
 on-arrival: saxony_leader = "Dehne"; saxony_leader_party = fvp_name;
 face-image: img/portraits/DehneJulius.jpg
 
