@@ -342,7 +342,7 @@ frequency: 1
 - @rm_main: Remove advisors instead.
 - @remove_none: Stop changing advisors.
 
-@constitutional_liberals
+@constitutional_liberal
 view-if: n_advisors < 3 and constitutional_liberal_nlp
 
 - #constitutional_liberal_advisor
