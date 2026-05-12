@@ -371,7 +371,7 @@ WIP
 @braun
 title: Otto Braun (<span style="color: #E3000F;">**SPD**</span>)
 view-if: in_weimar_coalition_prussia
-on-arrival: prussia_leader = "Braun"; prussia_leader_party = "SPD"
+on-arrival: prussia_leader = "Braun"; prussia_leader_party = "SPD";
 face-image: img/portraits/BraunOtto.jpg
 
 WIP.
