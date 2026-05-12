@@ -551,11 +551,15 @@ Q.moldenhauer_advisor = 0; // Paul Moldenhauer
 Q.heinze_advisor = 0; // Rudolf Heinze
 Q.dohna_schlodien_advisor = 0; // Alexander zu Dohna-Schlodien
 
+Q.gessler_advisor = 0; // Otto Gessler
+
 // labor advisors
 Q.thiel_advisor = 0; // Otto Thiel
 Q.bechly_advisor = 0; // Hans Bechly
 Q.streiter_advisor = 0; // Georg Streiter
 Q.wildermuth_advisor = 0; // Hermann-Eberhard Wildermuth
+
+Q.lemmer_advisor = 0; // Ernst Lemmer
 
 // industrialist advisors
 Q.raumer_advisor = 0; // Hans Raumer
@@ -566,6 +570,16 @@ Q.dingeldey_advisor = 0; // Eduard Dingeldey
 // nonfactional advisors
 Q.mahraun_advisor = 0; // Artur Mahraun
 Q.kempkes_advisor = 0; // Adolf Kempkes
+
+
+// constitutional liberal advisors
+Q.petersen_advisor = 0; // Carl Wilhelm Petersen
+Q.fischbeck_advisor = 0; // Otto Fischbeck
+Q.reinhold_advisor = 0; // Peter Reinhold
+Q.hamm_advisor = 0; // Eduard Hamm
+Q.baumer_advisor = 0; // Gertrud Bäumer
+Q.nuschke_advisor = 0; // Otto Nuschke
+Q.hellpach_advisor = 0; // Willy Hellpach
 
 
 
