@@ -1,0 +1,13 @@
+title: Otto Colosser
+is-pinned-card: true
+tags: advisor, mittelstand
+card-image: img/portraits/ColosserOtto.jpg
+face-image: img/portraits/ColosserOtto.jpg
+view-if: colosser_advisor
+new-page: true 
+
+= Otto Colosser
+
+WIP.
+
+- @root: Return to main
