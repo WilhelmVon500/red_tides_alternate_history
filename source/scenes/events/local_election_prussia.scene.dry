@@ -373,7 +373,7 @@ WIP
 @no_majority_prussia
 title: There is no clear governing majority.
 view-if: weimar_coalition_prussia <= 50 and grand_coalition_prussia <= 50 and nlp_pl <= 50
-on-arrival: nlp_prussia = 1 if was_nlp_prussia; in_weimar_coalition_prussia = 1 if was_in_weimar_coalition_prussia; in_grand_coalition_prussia = 1 if was_in_grand_coalition_prussia;
+on-arrival: nlp_prussia = 1 if was_nlp_prussia; in_nlp_majority_prussia = 1 if was_in_nlp_majority_prussia; in_weimar_coalition_prussia = 1 if was_in_weimar_coalition_prussia; in_grand_coalition_prussia = 1 if was_in_grand_coalition_prussia;
 
 There is no path to a majority government for now. The current government will stay in power as a minority coalition.
 
