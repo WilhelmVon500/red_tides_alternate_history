@@ -39,37 +39,37 @@ Next presidential election: [+ next_president_election_month : month +] [+ next_
 
 = Reichstag
 
-[? if not vldp_formed: {!<span class="tooltip-text" title="National Liberal Party" style="color: var(--nlp-color);">!}**[+ nlp_name +]**{!</span>!}: [+ nlp_seats +] seats ([+ nlp_r +]%) ?]
-[? if vldp_formed: {!<span class="tooltip-text" title="United Liberal Democratic Party" style="color: var(--nlp-color);">!}**[+ nlp_name +]**{!</span>!}: [+ nlp_seats +] seats ([+ nlp_r +]%) ?]
+[? if not vldp_formed: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>: [+ nlp_seats +] seats ([+ nlp_r +]%) ?]
+[? if vldp_formed: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>: [+ nlp_seats +] seats ([+ nlp_r +]%) ?]
 
-{!<span class="tooltip-text" title="Communist Party of Germany" style="color: #8B0000;">!}**KPD**{!</span>!}: [+ kpd_seats +] seats ([+ kpd_r +]%)
+<span style="color: #8B0000;">**KPD**</span>: [+ kpd_seats +] seats ([+ kpd_r +]%)
 
-[? if uspd_exist: {!<span class="tooltip-text" title="Independent Social Democratic Party of Germany" style="color: #D47B9B;">!}**USPD**{!</span>!}: [+ uspd_seats +] seats ([+ uspd_r +]%) ?]
+[? if uspd_exist: <span style="color: #D47B9B;">**USPD**</span>: [+ uspd_seats +] seats ([+ uspd_r +]%) ?]
 
-{!<span class="tooltip-text" title="Social Democratic Party of Germany" style="color: #E3000F;">!}**SPD**{!</span>!}: [+ spd_seats +] seats ([+ spd_r +]%)
+<span style="color: #E3000F;">**SPD**</span>: [+ spd_seats +] seats ([+ spd_r +]%)
 
-[? if not rdp_formed: {!<span class="tooltip-text" title="Progressive People's Party" style="color: var(--fvp-color);">!}**[+ fvp_name +]**{!</span>!}: [+ fvp_seats +] seats ([+ fvp_r +]%) ?]
-[? if rdp_formed: {!<span class="tooltip-text" title="Radical Democratic Party" style="color: var(--fvp-color);">!}**[+ fvp_name +]**{!</span>!}: [+ fvp_seats +] seats ([+ fvp_r +]%) ?]
+[? if not rdp_formed: <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>: [+ fvp_seats +] seats ([+ fvp_r +]%) ?]
+[? if rdp_formed: <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>: [+ fvp_seats +] seats ([+ fvp_r +]%) ?]
 
-{!<span class="tooltip-text" title="Bavarian Peasants' League" style="color: #38C538;">!}**BB**{!</span>!}: [+ bb_seats +] seats ([+ bb_r +]%)
+<span style="color: #38C538;">**BB**</span>: [+ bb_seats +] seats ([+ bb_r +]%)
 
-{!<span class="tooltip-text" title="Center Party" style="color: #000000;">!}**Z**{!</span>!}: [+ z_minus_bvp_seats +] seats ([+ z_minus_bvp_r +]%)
+<span style="color: #000000;">**Z**</span>: [+ z_minus_bvp_seats +] seats ([+ z_minus_bvp_r +]%)
 
-{!<span class="tooltip-text" title="Bavarian People's Party" style="color: #69A2BE;">!}**BVP**{!</span>!}: [+ bvp_seats +] seats ([+ bvp_r +]%)
+<span style="color: #69A2BE;">**BVP**</span>: [+ bvp_seats +] seats ([+ bvp_r +]%)
 
-[? if csvd_exist: {!<span class="tooltip-text" title="Christian Social People's Service" style="color: #1DB4E1;">!}**CSVD**{!</span>!}: [+ csvd_seats +] seats ([+ csvd_r +]%) ?]
+[? if csvd_exist: <span style="color: #1DB4E1;">**CSVD**</span>: [+ csvd_seats +] seats ([+ csvd_r +]%) ?]
 
-[? if wp_exist: {!<span class="tooltip-text" title="Economic Party" style="color: #B8996F;">!}**WP**{!</span>!}: [+ wp_seats +] seats ([+ wp_r +]%) ?]
+[? if wp_exist: <span style="color: #B8996F;">**WP**</span>: [+ wp_seats +] seats ([+ wp_r +]%) ?]
 
-[? if rlb_exist: {!<span class="tooltip-text" title="National Rural League" style="color: #52AE6F;">!}**RLB**{!</span>!}: [+ rlb_seats +] seats ([+ rlb_r +]%) ?]
+[? if rlb_exist: <span style="color: #52AE6F;">**RLB**</span>: [+ rlb_seats +] seats ([+ rlb_r +]%) ?]
 
-[? if kvp_exist: {!<span class="tooltip-text" title="Conservative People's Party" style="color: #455B95;">!}**KVP**{!</span>!}: [+ kvp_seats +] seats ([+ kvp_r +]%) ?]
+[? if kvp_exist: <span style="color: #455B95;">**KVP**</span>: [+ kvp_seats +] seats ([+ kvp_r +]%) ?]
 
-{!<span class="tooltip-text" title="German National People's Party" style="color: #3F7BC1;">!}**DNVP**{!</span>!}: [+ dnvp_seats +] seats ([+ dnvp_r +]%)
+<span style="color: #3F7BC1;">**DNVP**</span>: [+ dnvp_seats +] seats ([+ dnvp_r +]%)
 
-[? if kswr_exist: {!<span class="tooltip-text" title="Black-White-Red Combat Front" style="color: #003755;">!}**KSWR**{!</span>!}: [+ kswr_seats +] seats ([+ kswr_r +]%) ?]
+[? if kswr_exist: <span style="color: #003755;">**KSWR**</span>: [+ kswr_seats +] seats ([+ kswr_r +]%) ?]
 
-{!<span class="tooltip-text" title="German Worker's Party" style="color: #096300;">!}**DAP**{!</span>!}: [+ dap_seats +] seats ([+ dap_r +]%)
+<span style="color: #096300;">**DAP**</span>: [+ dap_seats +] seats ([+ dap_r +]%)
 
 <span style="color: #909090;">**Others**</span>: [+ other_seats +] seats ([+ other_r +]%)
 
@@ -127,61 +127,61 @@ Internal dissent: [+ dissent_percent : dissent +]
 = Inter-party Relations
 
 
-{!<span class="tooltip-text" title="Communist Party of Germany" style="color: #8B0000;">!}**KPD**{!</span>!}: [+ kpd_relation : relationships +]
+<span style="color: #8B0000;">**KPD**</span>: [+ kpd_relation : relationships +]
 
-[? if uspd_exist: {!<span class="tooltip-text" title="Independent Social Democratic Party of Germany" style="color: #D47B9B;">!}**USPD**{!</span>!}: [+ uspd_relation : relationships +] ?]
+[? if uspd_exist: <span style="color: #D47B9B;">**USPD**</span>: [+ uspd_relation : relationships +] ?]
 
-{!<span class="tooltip-text" title="Social Democratic Party of Germany" style="color: #E3000F;">!}**SPD**{!</span>!}: [+ spd_relation : relationships +]
+<span style="color: #E3000F;">**SPD**</span>: [+ spd_relation : relationships +]
 
-[? if not rdp_formed: {!<span class="tooltip-text" title="Progressive People's Party" style="color: var(--fvp-color);">!}**[+ fvp_name +]**{!</span>!}: [+ fvp_relation : relationships +] ?]
-[? if rdp_formed: {!<span class="tooltip-text" title="Radical Democratic Party" style="color: var(--fvp-color);">!}**[+ fvp_name +]**{!</span>!}: [+ fvp_relation : relationships +] ?]
+[? if not rdp_formed: <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>: [+ fvp_relation : relationships +] ?]
+[? if rdp_formed: <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>: [+ fvp_relation : relationships +] ?]
 
-{!<span class="tooltip-text" title="Bavarian Peasants' League" style="color: #38C538;">!}**BB**{!</span>!}: [+ bb_relation : relationships +]
+<span style="color: #38C538;">**BB**</span>: [+ bb_relation : relationships +]
 
-{!<span class="tooltip-text" title="Center Party" style="color: #000000;">!}**Z**{!</span>!}: [+ z_relation : relationships +]
+<span style="color: #000000;">**Z**</span>: [+ z_relation : relationships +]
 
-[? if csvd_exist: {!<span class="tooltip-text" title="Christian Social People's Service" style="color: #1DB4E1;">!}**CSVD**{!</span>!}: [+ csvd_relation : relationships +] ?]
+[? if csvd_exist: <span style="color: #1DB4E1;">**CSVD**</span>: [+ csvd_relation : relationships +] ?]
 
-[? if wp_exist: {!<span class="tooltip-text" title="Economic Party" style="color: #B8996F;">!}**WP**{!</span>!}: [+ wp_relation : relationships +] ?]
+[? if wp_exist: <span style="color: #B8996F;">**WP**</span>: [+ wp_relation : relationships +] ?]
 
-[? if rlb_exist: {!<span class="tooltip-text" title="National Rural League" style="color: #52AE6F;">!}**RLB**{!</span>!}: [+ rlb_relation : relationships +] ?]
+[? if rlb_exist: <span style="color: #52AE6F;">**RLB**</span>: [+ rlb_relation : relationships +] ?]
 
-[? if kvp_exist: {!<span class="tooltip-text" title="Conservative People's Party" style="color: #455B95;">!}**KVP**{!</span>!}: [+ kvp_relation : relationships +] ?]
+[? if kvp_exist: <span style="color: #455B95;">**KVP**</span>: [+ kvp_relation : relationships +] ?]
 
-{!<span class="tooltip-text" title="German National People's Party" style="color: #3F7BC1;">!}**DNVP**{!</span>!}: [+ dnvp_relation : relationships +]
+<span style="color: #3F7BC1;">**DNVP**</span>: [+ dnvp_relation : relationships +]
 
-[? if kswr_exist: {!<span class="tooltip-text" title="Black-White-Red Combat Front" style="color: #003755;">!}**KSWR**{!</span>!}: [+ kswr_relation : relationships +] ?]
+[? if kswr_exist: <span style="color: #003755;">**KSWR**</span>: [+ kswr_relation : relationships +] ?]
 
-{!<span class="tooltip-text" title="German Worker's Party" style="color: #096300;">!}**DAP**{!</span>!}: [+ dap_relation : relationships +]
+<span style="color: #096300;">**DAP**</span>: [+ dap_relation : relationships +]
 
 = Party Leadership
 
-{!<span class="tooltip-text" title="Communist Party of Germany" style="color: #8B0000;">!}**KPD**{!</span>!}: Right Communism ([+kpd_leader+])
+<span style="color: #8B0000;">**KPD**</span>: Right Communism ([+kpd_leader+])
 
-[? if uspd_exist: {!<span class="tooltip-text" title="Independent Social Democratic Party of Germany" style="color: #D47B9B;">!}**USPD**{!</span>!}: Centrist Marxism (Haase) ?]
+[? if uspd_exist: <span style="color: #D47B9B;">**USPD**</span>: Centrist Marxism (Haase) ?]
 
-{!<span class="tooltip-text" title="Social Democratic Party of Germany" style="color: #E3000F;">!}**SPD**{!</span>!}: Democratic Socialism (Wels)
+<span style="color: #E3000F;">**SPD**</span>: Democratic Socialism (Wels)
 
-[? if not rdp_formed: {!<span class="tooltip-text" title="Progressive People's Party" style="color: var(--fvp-color);">!}**[+ fvp_name +]**{!</span>!}: Left Liberalism (Petersen) ?]
-[? if rdp_formed: {!<span class="tooltip-text" title="Radical Democratic Party" style="color: var(--fvp-color);">!}**[+ fvp_name +]**{!</span>!}: Progressive Liberalism ([+fvp_leader+]) ?]
+[? if not rdp_formed: <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>: Left Liberalism (Petersen) ?]
+[? if rdp_formed: <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>: Progressive Liberalism ([+fvp_leader+]) ?]
 
-{!<span class="tooltip-text" title="Bavarian Peasants' League" style="color: #38C538;">!}**BB**{!</span>!}: Liberal Agrarianism (Eisenberger)
+<span style="color: #38C538;">**BB**</span>: Liberal Agrarianism (Eisenberger)
 
-{!<span class="tooltip-text" title="Center Party" style="color: #000000;">!}**Z**{!</span>!}: Centre to Centre-Right ([+z_leader+])
+<span style="color: #000000;">**Z**</span>: Centre to Centre-Right ([+z_leader+])
 
-[? if csvd_exist: {!<span class="tooltip-text" title="Christian Social People's Service" style="color: #1DB4E1;">!}**CSVD**{!</span>!}: Christian Democracy (Simpfendörfer) ?]
+[? if csvd_exist: <span style="color: #1DB4E1;">**CSVD**</span>: Christian Democracy (Simpfendörfer) ?]
 
-[? if wp_exist: {!<span class="tooltip-text" title="Economic Party" style="color: #B8996F;">!}**WP**{!</span>!}: Liberal Conservatism (Drewitz) ?]
+[? if wp_exist: <span style="color: #B8996F;">**WP**</span>: Liberal Conservatism (Drewitz) ?]
 
-[? if rlb_exist: {!<span class="tooltip-text" title="National Rural League" style="color: #52AE6F;">!}**RLB**{!</span>!}: Agrarian Conservatism (Hepp) ?]
+[? if rlb_exist: <span style="color: #52AE6F;">**RLB**</span>: Agrarian Conservatism (Hepp) ?]
 
-[? if kvp_exist: {!<span class="tooltip-text" title="Conservative People's Party" style="color: #455B95;">!}**KVP**{!</span>!}: Progressive Conservatism (Treviranus) ?]
+[? if kvp_exist: <span style="color: #455B95;">**KVP**</span>: Progressive Conservatism (Treviranus) ?]
 
-{!<span class="tooltip-text" title="German National People's Party" style="color: #3F7BC1;">!}**DNVP**{!</span>!}: National Conservatism ([+dnvp_leader+])
+<span style="color: #3F7BC1;">**DNVP**</span>: National Conservatism ([+dnvp_leader+])
 
-[? if kswr_exist: {!<span class="tooltip-text" title="Black-White-Red Combat Front" style="color: #003755;">!}**KSWR**{!</span>!}: Authoritarian Conservatism (Hugenberg) ?]
+[? if kswr_exist: <span style="color: #003755;">**KSWR**</span>: Authoritarian Conservatism (Hugenberg) ?]
 
-{!<span class="tooltip-text" title="German Worker's Party" style="color: #096300;">!}**DAP**{!</span>!}: Völkisch Nationalism ([+dap_leader+])
+<span style="color: #096300;">**DAP**</span>: Völkisch Nationalism ([+dap_leader+])
 
 
 @government
