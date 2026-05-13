@@ -137,7 +137,7 @@ for (var party of Q.parties) {
 Q.weimar_coalition_prussia = parseFloat((Q.spd_pl + Q.fvp_pl + Q.z_pl).toFixed(1));
 Q.grand_coalition_prussia = parseFloat((Q.spd_pl + Q.fvp_pl + Q.z_pl).toFixed(1));
 Q.bourgeois_coalition_prussia = parseFloat((Q.nlp_pl + Q.fvp_pl + Q.z_pl + Q.wp_pl + Q.rlb_pl + Q.csvd_pl).toFixed(1));
-if (Q.fvp_ideology == "Left") Q.bourgeois_coalition_prussia = parseFloat((Q.bourgeois_coalition_prussia - Q.fvp_pl).toFixed(1));
+if (Q.rdp_formed) Q.bourgeois_coalition_prussia = parseFloat((Q.bourgeois_coalition_prussia - Q.fvp_pl).toFixed(1));
 
 
 // Reset government and ministers...
@@ -340,7 +340,7 @@ Weimar Coalition (<span style="color: #E3000F;">**SPD**</span> + <span style="co
 
 Grand Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #E3000F;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>): [+ grand_coalition_prussia +]%
 
-Bourgeois Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span>[? if not fvp_ideology = "Left": + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> ?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span> ?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span> ?]): [+ bourgeois_coalition_prussia +]%
+Bourgeois Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span>[? if not rdp_formed: + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> ?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span> ?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span> ?]): [+ bourgeois_coalition_prussia +]%
 
 There are some potential coalition arrangements.
 
@@ -380,7 +380,7 @@ WIP
 
 @bourgeois_coalition_prussia
 title: A Bourgeois Coalition can be formed.
-subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span>[? if not fvp_ideology = "Left": + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> ?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span> ?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span> ?] ([+ bourgeois_coalition_prussia +]%)
+subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span>[? if not rdp_formed: + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> ?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span> ?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span> ?] ([+ bourgeois_coalition_prussia +]%)
 view-if: bourgeois_coalition_prussia > 50
 on-arrival: in_bourgeois_coalition_prussia = 1;
 go-to: mp
