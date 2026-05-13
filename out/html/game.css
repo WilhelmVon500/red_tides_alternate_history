@@ -614,7 +614,10 @@ table {
   position: relative;
   cursor: pointer;
 }
-.mytooltip:hover { background-color: rgb(100, 140, 220); }
+.mytooltip:hover {
+  background-color: #dedede;
+  border-radius: 3px;
+}
 .mytooltip .mytooltiptext {
   position: fixed;
   z-index: 999999;
