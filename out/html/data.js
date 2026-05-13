@@ -1,7 +1,7 @@
 const tooltipList = [
     {
       searchString: "SPD",
-      explanationText: "<img src=img/spd.jpg> Social Democratic Party <br> (Sozialdemokratische Partei)"
+      explanationText: "Social Democratic Party <br> (Sozialdemokratische Partei)"
     }
 ];
 const colourList = [
