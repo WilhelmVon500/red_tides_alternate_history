@@ -344,9 +344,9 @@ Weimar Coalition (<span style="color: #E3000F;">**SPD**</span> + <span style="co
 
 Grand Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #E3000F;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>): [+ grand_coalition_prussia +]%
 
-Bourgeois Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span>[? if not rdp_formed: + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> ?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span> ?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span> ?]): [+ bourgeois_coalition_prussia +]%
+Bourgeois Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span>[? if not rdp_formed: + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span>?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span>?]): [+ bourgeois_coalition_prussia +]%
 
-Right Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #3F7BC1;">**DNVP**</span>[? if kvp_exist: + <span style="color: #455B95;">**KVP**</span> ?][? if kswr_exist: + <span style="color: #003755;">**KSWR**</span> ?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span> ?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span> ?]): [+ right_coalition_saxony +]%
+Right Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #3F7BC1;">**DNVP**</span>[? if kvp_exist: + <span style="color: #455B95;">**KVP**</span>?][? if kswr_exist: + <span style="color: #003755;">**KSWR**</span>?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span>?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span>?]): [+ right_coalition_saxony +]%
 
 There are some potential coalition arrangements.
 
@@ -387,7 +387,7 @@ WIP
 
 @bourgeois_coalition_prussia
 title: We can form a Bourgeois Coalition.
-subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span>[? if not rdp_formed: + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> ?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span> ?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span> ?] ([+ bourgeois_coalition_prussia +]%)
+subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span>[? if not rdp_formed: + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span>?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span>?] ([+ bourgeois_coalition_prussia +]%)
 view-if: bourgeois_coalition_prussia > 50
 on-arrival: in_bourgeois_coalition_prussia = 1;
 go-to: mp
@@ -399,7 +399,7 @@ WIP
 
 @right_coalition_prussia
 title: We can form a Right Coalition.
-subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #3F7BC1;">**DNVP**</span>[? if kvp_exist: + <span style="color: #455B95;">**KVP**</span> ?][? if kswr_exist: + <span style="color: #003755;">**KSWR**</span> ?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span> ?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span> ?] ([+ right_coalition_prussia +]%)
+subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #3F7BC1;">**DNVP**</span>[? if kvp_exist: + <span style="color: #455B95;">**KVP**</span>?][? if kswr_exist: + <span style="color: #003755;">**KSWR**</span>?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span>?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span>?] ([+ right_coalition_prussia +]%)
 view-if: right_coalition_prussia > 50
 on-arrival: in_right_coalition_prussia = 1;
 go-to: mp
