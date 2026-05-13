@@ -614,6 +614,7 @@ table {
   position: relative;
   cursor: pointer;
   background-color: #dedede;
+  border-radius: 4px;
 }
 .mytooltip:hover {
   background-color: #c8c8c8;
