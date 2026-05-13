@@ -619,14 +619,14 @@ table {
   position: fixed;
   z-index: 999999;
   width: 260px;
-  background: #fff4e6;
-  color: #3b1f0a;
+  background: #f3f3f3;
+  color: #431;
   text-align: left;
   border-radius: 8px;
   padding: 12px 14px;
   opacity: 0;
   transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
-  border: 1px solid #b22222;
+  border: 1px solid #900;
   pointer-events: none;
   font-size: 14px !important;
   line-height: 1.5em !important;
