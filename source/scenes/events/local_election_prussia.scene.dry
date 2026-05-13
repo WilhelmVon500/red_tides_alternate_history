@@ -425,11 +425,22 @@ There is no path to a majority government for now. The current government will s
 WIP
 
 - @braun
+- @stegerwald
 
 @braun
 title: Otto Braun (<span style="color: #E3000F;">**SPD**</span>)
 view-if: in_weimar_coalition_prussia or in_grand_coalition_prussia
 on-arrival: prussia_leader = "Braun"; prussia_leader_party = "SPD";
 face-image: img/portraits/BraunOtto.jpg
+
+WIP.
+
+@stegerwald
+title: Adam Stegerwald (<span style="color: #000000;">**Z**</span>)
+view-if: in_weimar_coalition_prussia or in_grand_coalition_prussia or in_bourgeois_coalition_prussia or in_right_coalition_prussia
+choose-if: (in_weimar_coalition_prussia and z_pl > spd_pl) or (in_grand_coalition_prussia and (nlp_pl + z_pl) > spd_pl) or in_bourgeois_coalition_prussia or in_right_coalition_prussia
+unavailable-subtitle: Stegerwald doesn't have needed support to become the Minister-President.
+on-arrival: prussia_leader = "Stegerwald"; prussia_leader_party = "Z";
+face-image: img/portraits/StegerwaldAdam.jpg
 
 WIP.
