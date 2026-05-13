@@ -138,6 +138,8 @@ Q.weimar_coalition_prussia = parseFloat((Q.spd_pl + Q.fvp_pl + Q.z_pl).toFixed(1
 Q.grand_coalition_prussia = parseFloat((Q.nlp_pl + Q.spd_pl + Q.fvp_pl + Q.z_pl).toFixed(1));
 Q.bourgeois_coalition_prussia = parseFloat((Q.nlp_pl + Q.fvp_pl + Q.z_pl + Q.wp_pl + Q.rlb_pl + Q.csvd_pl).toFixed(1));
 if (Q.rdp_formed) Q.bourgeois_coalition_prussia = parseFloat((Q.bourgeois_coalition_prussia - Q.fvp_pl).toFixed(1));
+Q.center_right_coalition_prussia = parseFloat((Q.nlp_pl + Q.fvp_pl + Q.bb_pl + Q.z_pl + Q.wp_pl + Q.rlb_pl + Q.csvd_pl + Q.kvp_pl).toFixed(1));
+if (Q.dnvp_ideology != "Radical") Q.center_right_coalition_prussia = parseFloat((Q.center_right_coalition_prussia + Q.dnvp_pl).toFixed(1));
 Q.right_coalition_prussia = parseFloat((Q.dnvp_pl + Q.nlp_pl + Q.z_pl + Q.wp_pl + Q.rlb_pl + Q.csvd_pl + Q.kvp_pl + Q.kswr_pl).toFixed(1));
 
 
@@ -147,6 +149,7 @@ Q.was_in_nlp_majority_prussia = 0;
 Q.was_in_weimar_coalition_prussia = 0;
 Q.was_in_grand_coalition_prussia = 0;
 Q.was_in_bourgeois_coalition_prussia = 0;
+Q.was_in_center_right_coalition_prussia = 0;
 Q.was_in_right_coalition_prussia = 0;
 
 if (Q.nlp_prussia) Q.was_nlp_prussia = 1;
@@ -154,6 +157,7 @@ if (Q.in_nlp_majority_prussia) Q.was_in_nlp_majority_prussia = 1;
 if (Q.in_weimar_coalition_prussia) Q.was_in_weimar_coalition_prussia = 1;
 if (Q.in_grand_coalition_prussia) Q.was_in_grand_coalition_prussia = 1;
 if (Q.in_bourgeois_coalition_prussia) Q.was_in_bourgeois_coalition_prussia = 1;
+if (Q.in_center_right_coalition_prussia) Q.was_in_center_right_coalition_prussia = 1;
 if (Q.in_right_coalition_prussia) Q.was_in_right_coalition_prussia = 1;
 
 Q.nlp_prussia = 0;
@@ -161,6 +165,7 @@ Q.in_nlp_majority_prussia = 0;
 Q.in_weimar_coalition_prussia = 0;
 Q.in_grand_coalition_prussia = 0;
 Q.in_bourgeois_coalition_prussia = 0;
+Q.in_center_right_coalition_prussia = 0;
 Q.in_right_coalition_prussia = 0;
 !}
 on-display: {!
@@ -346,6 +351,8 @@ Grand Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span
 
 Bourgeois Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span>[? if not rdp_formed: + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span>?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span>?]): [+ bourgeois_coalition_prussia +]%
 
+[? if not fvp_ideology = "Left": Center-Right Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #69A2BE;">**BVP**</span>[? if not dnvp_idelogy = "Radical": + <span style="color: #3F7BC1;">**DNVP**</span>?][? if kvp_exist: + <span style="color: #455B95;">**KVP**</span>?] + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>[? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span>?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span>?]): [+ center_right_coalition_prussia +]% ?]
+
 Right Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #3F7BC1;">**DNVP**</span>[? if kvp_exist: + <span style="color: #455B95;">**KVP**</span>?][? if kswr_exist: + <span style="color: #003755;">**KSWR**</span>?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span>?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span>?]): [+ right_coalition_prussia +]%
 
 There are some potential coalition arrangements.
@@ -355,6 +362,7 @@ There are some potential coalition arrangements.
 - @weimar_coalition_prussia
 - @grand_coalition_prussia
 - @bourgeois_coalition_prussia
+- @center_right_coalition_prussia
 - @right_coalition_prussia
 - @no_majority_prussia
 
@@ -397,6 +405,18 @@ WIP
 WIP
 
 
+@center_right_coalition_prussia
+title: We can form a Center-Right Coalition.
+subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #69A2BE;">**BVP**</span>[? if not dnvp_idelogy = "Radical": + <span style="color: #3F7BC1;">**DNVP**</span>?][? if kvp_exist: + <span style="color: #455B95;">**KVP**</span>?] + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>[? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span>?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span>?] ([+ center_right_coalition_prussia +]%)
+view-if: center_right_coalition_prussia > 50 and not fvp_ideology = "Left"
+on-arrival: in_center_right_coalition_prussia = 1;
+go-to: mp
+
+WIP
+
+WIP
+
+
 @right_coalition_prussia
 title: We can form a Right Coalition.
 subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #3F7BC1;">**DNVP**</span>[? if kvp_exist: + <span style="color: #455B95;">**KVP**</span>?][? if kswr_exist: + <span style="color: #003755;">**KSWR**</span>?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?][? if rlb_exist: + <span style="color: #52AE6F;">**RLB**</span>?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span>?] ([+ right_coalition_prussia +]%)
@@ -411,8 +431,8 @@ WIP
 
 @no_majority_prussia
 title: There is no clear governing majority.
-view-if: weimar_coalition_prussia <= 50 and grand_coalition_prussia <= 50 and bourgeois_coalition_prussia <= 50 and right_coalition_prussia <= 50 and nlp_pl <= 50
-on-arrival: nlp_prussia = 1 if was_nlp_prussia; in_nlp_majority_prussia = 1 if was_in_nlp_majority_prussia; in_weimar_coalition_prussia = 1 if was_in_weimar_coalition_prussia; in_grand_coalition_prussia = 1 if was_in_grand_coalition_prussia; in_bourgeois_coalition_prussia = 1 if was_in_bourgeois_coalition_prussia; in_right_coalition_prussia = 1 if was_in_right_coalition_prussia;
+view-if: weimar_coalition_prussia <= 50 and grand_coalition_prussia <= 50 and bourgeois_coalition_prussia <= 50 and center_right_coalition_prussia <= 50 and right_coalition_prussia <= 50 and nlp_pl <= 50
+on-arrival: nlp_prussia = 1 if was_nlp_prussia; in_nlp_majority_prussia = 1 if was_in_nlp_majority_prussia; in_weimar_coalition_prussia = 1 if was_in_weimar_coalition_prussia; in_grand_coalition_prussia = 1 if was_in_grand_coalition_prussia; in_bourgeois_coalition_prussia = 1 if was_in_bourgeois_coalition_prussia; in_center_right_coalition_prussia = 1 if was_in_center_right_coalition_prussia; in_right_coalition_prussia = 1 if was_in_right_coalition_prussia;
 
 There is no path to a majority government for now. The current government will stay in power as a minority coalition.
 
@@ -437,8 +457,8 @@ WIP.
 
 @stegerwald
 title: Adam Stegerwald (<span style="color: #000000;">**Z**</span>)
-view-if: in_weimar_coalition_prussia or in_grand_coalition_prussia or in_bourgeois_coalition_prussia or in_right_coalition_prussia
-choose-if: (in_weimar_coalition_prussia and z_pl > spd_pl) or (in_grand_coalition_prussia and (nlp_pl + z_pl) > spd_pl) or in_bourgeois_coalition_prussia or in_right_coalition_prussia
+view-if: in_weimar_coalition_prussia or in_grand_coalition_prussia or in_bourgeois_coalition_prussia or in_center_right_coalition_prussia or in_right_coalition_prussia
+choose-if: (in_weimar_coalition_prussia and z_pl > spd_pl) or (in_grand_coalition_prussia and (nlp_pl + z_pl) > spd_pl) or in_bourgeois_coalition_prussia or in_center_right_coalition_prussia or in_right_coalition_prussia
 unavailable-subtitle: Stegerwald doesn't have needed support to become the Minister-President.
 on-arrival: prussia_leader = "Stegerwald"; prussia_leader_party = "Z";
 face-image: img/portraits/StegerwaldAdam.jpg
