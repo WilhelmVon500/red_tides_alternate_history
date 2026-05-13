@@ -10,6 +10,10 @@ const tooltipList = [
     {
       searchString: "SPD",
       explanationText: "Social Democratic Party <br> <i>Sozialdemokratische Partei Deutschlands</i>"
+    },
+    {
+      searchString: "FVP",
+      explanationText: "Progressive People's Party <br> <i>Fortschrittliche Volkspartei</i>"
     }
 ];
 const colourList = [
