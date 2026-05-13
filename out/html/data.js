@@ -14,6 +14,14 @@ const tooltipList = [
 ];
 const colourList = [
     {
+        word: "KPD",
+        style: "color: #8B0000; font-weight: bold;",
+    },
+    {
+        word: "USPD",
+        style: "color: #D47B9B; font-weight: bold;",
+    },
+    {
         word: "SPD",
         style: "color: #E3000F; font-weight: bold;",
     }
