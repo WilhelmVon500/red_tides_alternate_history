@@ -233,6 +233,33 @@ go-to: rm_main
 
 Drewitz has been removed as an advisor. The Mittelstand faction disapproves.
 
+@remove_colosser
+title: Remove Colosser
+view-if: colosser_advisor
+on-arrival: colosser_advisor = 0; mittelstand_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Colosser has been removed as an advisor. The Mittelstand faction disapproves.
+
+@remove_bredt
+title: Remove Bredt
+view-if: bredt_advisor
+on-arrival: bredt_advisor = 0; mittelstand_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Bredt has been removed as an advisor. The Mittelstand faction disapproves.
+
+@remove_mollath
+title: Remove Mollath
+view-if: mollath_advisor
+on-arrival: mollath_advisor = 0; mittelstand_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Mollath has been removed as an advisor. The Mittelstand faction disapproves.
+
 
 # industrialist
 
@@ -637,6 +664,42 @@ on-arrival: drewitz_advisor = 1; n_advisors += 1; mittelstand_strength += 5;
 go-to: advisor_menu
 
 Hermann Drewitz is now an advisor.
+
+@add_colosser
+title: Otto Colosser
+subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
+is-card: true
+face-image: img/portraits/ColosserOtto.jpg
+tags: mittelstand_advisor
+view-if: not colosser_advisor and n_advisors < 3 and mittelstand_nlp
+on-arrival: colosser_advisor = 1; n_advisors += 1; mittelstand_strength += 5;
+go-to: advisor_menu
+
+Otto Colosser is now an advisor.
+
+@add_bredt
+title: Johann Viktor Bredt
+subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
+is-card: true
+face-image: img/portraits/BredtJohannViktor.jpg
+tags: mittelstand_advisor
+view-if: not bredt_advisor and n_advisors < 3 and mittelstand_nlp
+on-arrival: bredt_advisor = 1; n_advisors += 1; mittelstand_strength += 5;
+go-to: advisor_menu
+
+Johann Viktor Bredt is now an advisor.
+
+@add_mollath
+title: Jacob Ludwig Mollath
+subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
+is-card: true
+face-image: img/portraits/MollathJacobLudwig.jpg
+tags: mittelstand_advisor
+view-if: not mollath_advisor and n_advisors < 3 and mittelstand_nlp
+on-arrival: mollath_advisor = 1; n_advisors += 1; mittelstand_strength += 5;
+go-to: advisor_menu
+
+Jacob Ludwig Mollath is now an advisor.
 
 
 
