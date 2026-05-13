@@ -614,11 +614,11 @@ table {
   position: relative;
   cursor: pointer;
   background-color: #dedede;
-  border-radius: 4px;
+  border-radius: 5px;
 }
 .mytooltip:hover {
   background-color: #c8c8c8;
-  border-radius: 4px;
+  border-radius: 5px;
 }
 .mytooltip .mytooltiptext {
   position: fixed;
