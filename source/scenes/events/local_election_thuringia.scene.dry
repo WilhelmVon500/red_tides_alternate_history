@@ -1,0 +1,428 @@
+title: Thuringia Landtag Election
+view-if: (year = next_election_year_thuringia and month >= next_election_month_thuringia and (week = next_election_week_thuringia or not weeks_enabled)) or (year > next_election_year_thuringia)
+new-page: true
+tags: event
+priority: 3
+on-arrival: next_election_year_thuringia = next_election_year_thuringia + 3;
+
+= Thuringia Landtag Elections, [+ month : month +] [+ year +]
+
+The Thuringian state elections are to be held now.
+
+- @thuringia: May we do our best...
+  
+@thuringia
+on-arrival: {!
+for (var c of Q.classes) {
+    var class_votes = 0;
+    for (var party of Q.parties) {
+        if (Q[c + '_' + party] < 0) {
+            Q[c + '_' + party] = 0;
+        }
+        class_votes += Q[c + '_' + party];
+    }
+    for (var party of Q.parties) {
+        Q[c + '_' + party + '_normalized_thuringia'] = Math.round(100 * Q[c + '_' + party] / class_votes);
+    }
+}
+
+// Define adjustment factors
+if (Q.year == 1924) {
+    Q.adjustmentFactors_kpd_thuringia = 1.1;
+    Q.adjustmentFactors_spd_thuringia = 1.1;
+    Q.adjustmentFactors_fvp_thuringia = 1.1;
+    Q.adjustmentFactors_bb_thuringia = 0.0;
+    Q.adjustmentFactors_z_thuringia = 0.05;
+    Q.adjustmentFactors_nlp_thuringia = 1.4;
+    Q.adjustmentFactors_csvd_thuringia = 0.7;
+    Q.adjustmentFactors_wp_thuringia = 2.5;
+    Q.adjustmentFactors_rlb_thuringia = 6.5;
+    Q.adjustmentFactors_kvp_thuringia = 0.8;
+    Q.adjustmentFactors_dnvp_thuringia = 0.8;
+    Q.adjustmentFactors_kswr_thuringia = 0.8;
+    Q.adjustmentFactors_dap_thuringia = 1.5;
+    Q.adjustmentFactors_other_thuringia = 0.1;
+}
+
+
+
+// Calculate support for each of the parties
+var total_support = 0;
+for (var party of Q.parties) {
+    var party_support = 0;
+    for (var c of Q.classes) {
+        party_support += Q[c] * Q[c + '_' + party + '_normalized_thuringia'];
+    }
+    // Apply adjustment factor
+    Q[party + '_support'] = party_support * Q['adjustmentFactors_' + party + '_thuringia'];
+    total_support += Q[party + '_support'];
+}
+console.log(total_support)
+// Normalize support (fraction)
+for (var party of Q.parties) {
+    Q[party + '_normalized_thuringia'] = Q[party + '_support'] / total_support;
+    console.log(Q[party + '_support'])
+    console.log(total_support)
+    Q[party + '_votes_thuringia'] = Math.round(Q[party + '_normalized_thuringia'] * 1000) / 10;
+}
+
+
+var new_party_sum = 0;
+for (var party of Q.parties) {
+    Q[party + '_tl'] = 0;
+    Q[party + '_seats_thuringia'] = 0;
+    if (Q[party + '_banned']) {
+        Q[party + '_election_votes_thuringia'] = 0;
+    } else {
+        Q[party + '_election_votes_thuringia'] = parseFloat((Q[party+'_votes_thuringia']).toFixed(1));
+    }
+    new_party_sum += Q[party + '_election_votes_thuringia'];
+}
+
+var other_votes_fix = Q.other_election_votes_thuringia
+Q.other_election_votes_thuringia = parseFloat((Q.other_election_votes_thuringia * 0.3).toFixed(1));
+var new_new_party_sum = new_party_sum + Q.other_election_votes_thuringia - other_votes_fix;
+
+// calculate new party sum
+if (new_party_sum > 0) {
+    for (var party of Q.parties) {
+        if (Q[party + '_election_votes_thuringia'] > 0 && !(Q[party + '_election_votes_thuringia'] < Q.electoral_threshold) && !(Q.electoral_threshold > 1 && party == 'other')) {
+            Q[party + '_tl'] = parseFloat((Q[party + '_election_votes_thuringia']*100/new_new_party_sum).toFixed(1));
+            Q[party + '_election_votes_thuringia'] = parseFloat((Q[party + '_election_votes_thuringia']*100/new_party_sum).toFixed(1));
+        } else {
+            Q[party + '_election_votes_thuringia'] = parseFloat((Q[party + '_election_votes_thuringia']*100/new_party_sum).toFixed(1));
+            Q[party + '_tl'] = 0;
+        }
+        Q[party + '_tl'] = parseFloat((Q[party+'_tl']).toFixed(1));
+    }
+}
+
+Q.other_election_votes_thuringia = other_votes_fix;
+
+let allocatedSeats = 0;
+let remainders = [];
+
+for (var party of Q.parties) {
+    let rawSeats = Q[party + '_tl'] * 0.72;
+    let seats = Math.floor(rawSeats);
+    Q[party + '_seats_thuringia'] = seats;
+    allocatedSeats += seats;
+    remainders.push({
+        party: party,
+        remainder: rawSeats - seats
+    });
+}
+
+let remainingSeats = 72 - allocatedSeats;
+remainders.sort((a, b) => b.remainder - a.remainder);
+for (let i = 0; i < remainingSeats && i < remainders.length; i++) {
+    let partyObj = remainders[i];
+    if (!partyObj || !partyObj.party) continue;
+
+    let party = partyObj.party;
+    Q[party + '_seats_thuringia'] += 1;
+}
+
+
+
+for (var party of Q.parties) {
+    Q[party + '_tl'] = parseFloat((Q[party + '_seats_thuringia']/0.72).toFixed(1));
+}
+
+
+
+
+
+// coalitions
+Q.united_left_coalition_thuringia = parseFloat((Q.spd_tl + Q.kpd_tl).toFixed(1));
+Q.grand_coalition_thuringia = parseFloat((Q.nlp_tl + Q.fvp_tl + Q.z_tl + Q.spd_tl).toFixed(1));
+Q.bourgeois_coalition_thuringia = parseFloat((Q.nlp_tl + Q.fvp_tl + Q.z_tl + Q.wp_tl + Q.rlb_tl + Q.csvd_tl).toFixed(1));
+if (Q.rdp_formed) Q.bourgeois_coalition_thuringia = parseFloat((Q.bourgeois_coalition_thuringia - Q.fvp_tl).toFixed(1));
+Q.right_coalition_thuringia = parseFloat((Q.dnvp_tl + Q.nlp_tl + Q.z_tl + Q.wp_tl + Q.rlb_tl + Q.csvd_tl + Q.kvp_tl + Q.kswr_tl).toFixed(1));
+
+
+// Reset government and ministers...
+Q.was_nlp_thuringia = 0;
+Q.was_in_nlp_majority_thuringia = 0;
+Q.was_in_united_left_coalition_thuringia = 0;
+Q.was_in_grand_coalition_thuringia = 0;
+Q.was_in_bourgeois_coalition_thuringia = 0;
+Q.was_in_right_coalition_thuringia = 0;
+
+if (Q.nlp_thuringia) Q.was_nlp_thuringia = 1;
+if (Q.in_nlp_majority_thuringia) Q.was_in_nlp_majority_thuringia = 1;
+if (Q.in_united_left_coalition_thuringia) Q.was_in_united_left_coalition_thuringia = 1;
+if (Q.in_grand_coalition_thuringia) Q.was_in_grand_coalition_thuringia = 1;
+if (Q.in_bourgeois_coalition_thuringia) Q.was_in_bourgeois_coalition_thuringia = 1;
+if (Q.in_right_coalition_thuringia) Q.was_in_right_coalition_thuringia = 1;
+
+Q.nlp_thuringia = 0;
+Q.in_nlp_majority_thuringia = 0;
+Q.in_united_left_coalition_thuringia = 0;
+Q.in_grand_coalition_thuringia = 0;
+Q.in_bourgeois_coalition_thuringia = 0;
+Q.in_right_coalition_thuringia = 0;
+Q.in_spd_kpd_toleration_thuringia = 0;
+!}
+on-display: {!
+data = []
+if (Q.kpd_seats_thuringia) {
+    data.push({
+        "id": "kpd",
+        "legend": "KPD",
+        "name": "KPD",
+        "seats": Math.round(Q.kpd_seats_thuringia),
+    });
+}
+if (Q.spd_seats_thuringia) {
+    data.push({
+        "id": "spd",
+        "legend": "SPD",
+        "name": "SPD",
+        "seats": Math.round(Q.spd_seats_thuringia),
+    });
+}
+if (Q.fvp_seats_thuringia && Q.rdp_formed) {
+    data.push({
+        "id": "rdp",
+        "legend": Q.fvp_name,
+        "name": Q.fvp_name,
+        "seats": Math.round(Q.fvp_seats_thuringia),
+    });
+}
+if (Q.fvp_seats_thuringia && !Q.rdp_formed) {
+    data.push({
+        "id": "fvp",
+        "legend": Q.fvp_name,
+        "name": Q.fvp_name,
+        "seats": Math.round(Q.fvp_seats_thuringia),
+    });
+}
+if (Q.nlp_seats_thuringia && Q.vldp_formed) {
+    data.push({
+        "id": "vldp",
+        "legend": Q.nlp_name,
+        "name": Q.nlp_name,
+        "seats": Math.round(Q.nlp_seats_thuringia),
+    });
+}
+if (Q.z_seats_thuringia) {
+    data.push({
+        "id": "z",
+        "legend": "Center",
+        "name": "Center",
+        "seats": Math.round(Q.z_seats_thuringia),
+    });
+}
+if (Q.nlp_seats_thuringia && !Q.vldp_formed) {
+    data.push({
+        "id": "nlp",
+        "legend": Q.nlp_name,
+        "name": Q.nlp_name,
+        "seats": Math.round(Q.nlp_seats_thuringia),
+    });
+}
+if (Q.csvd_exist && Q.csvd_seats_thuringia) {
+    data.push({
+        "id": "csvd",
+        "legend": "CSVD",
+        "name": "CSVD",
+        "seats": Math.round(Q.csvd_seats_thuringia),
+    });
+}
+if (Q.wp_exist && Q.wp_seats_thuringia) {
+    data.push({
+        "id": "wp",
+        "legend": "WP",
+        "name": "WP",
+        "seats": Math.round(Q.wp_seats_thuringia),
+    });
+}
+if (Q.rlb_exist && Q.rlb_seats_thuringia) {
+    data.push({
+        "id": "thlb",
+        "legend": "ThLB",
+        "name": "ThLB",
+        "seats": Math.round(Q.rlb_seats_thuringia),
+    });
+}
+if (Q.other_seats_thuringia) {
+    data.push({
+        "id": "other",
+        "legend": "Other",
+        "name": "Other",
+        "seats": Math.round(Q.other_seats_thuringia),
+    });
+}
+if (Q.kvp_exist && Q.kvp_seats_thuringia) {
+    data.push({
+        "id": "kvp",
+        "legend": "KVP",
+        "name": "KVP",
+        "seats": Math.round(Q.kvp_seats_thuringia),
+    });
+}
+if (Q.dnvp_seats_thuringia) {
+    data.push({
+        "id": "dnvp",
+        "legend": "DNVP",
+        "name": "DNVP",
+        "seats": Math.round(Q.dnvp_seats_thuringia),
+    });
+}
+if (Q.kswr_exist && Q.kswr_seats_thuringia) {
+    data.push({
+        "id": "kswr",
+        "legend": "KSWR",
+        "name": "KSWR",
+        "seats": Math.round(Q.kswr_seats_thuringia),
+    });
+}
+if (Q.dap_seats_thuringia) {
+    data.push({
+        "id": "dap",
+        "legend": "DAP",
+        "name": "DAP",
+        "seats": Math.round(Q.dap_seats_thuringia),
+    });
+}
+
+if (window && d3) {
+    var width = 500; 
+    var height = 500;
+    var screenWidth = document.getElementById('content').offsetWidth;
+    if (screenWidth < width - 50) {
+        width = screenWidth - 50; 
+        height = width;
+        document.getElementById("reichstag").style.height = screenWidth/2 + "px";
+    } 
+
+    var parliament = d3.parliament();
+    parliament.width(width).height(height).innerRadiusCoef(0.4);
+    parliament.enter.fromCenter(true).smallToBig(true);
+    parliament.exit.toCenter(false).bigToSmall(true);
+    d3.select("#reichstag").datum(data).call(parliament);
+}
+!}
+go-to: thuringia_coalition_menu
+
+= Election results
+
+{!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
+
+{!<table>!} 
+{!<tr><td>Party</td><td>Votes</td><td>Seats</td></tr>!}
+{!<tr><td><div class="box" style='background-color: var(--nlp-color); outline: 2px; outline-style: solid;'> </div> !} **[+nlp_name+]:** {!</td><td>!} **[+ nlp_election_votes_thuringia +]%** {!</td><td>!} **[+ nlp_seats_thuringia +]** **([+ nlp_tl +]%)** {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#8B0000'> </div> !} KPD: {!</td><td>!} [+ kpd_election_votes_thuringia +]% {!</td><td>!} [+ kpd_seats_thuringia +] ([+ kpd_tl +]%) {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#E3000F'> </div> !} SPD: {!</td><td>!} [+ spd_election_votes_thuringia +]% {!</td><td>!} [+ spd_seats_thuringia +] ([+ spd_tl +]%) {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color: var(--fvp-color)'> </div> !} [+fvp_name+]: {!</td><td>!} [+ fvp_election_votes_thuringia +]% {!</td><td>!} [+ fvp_seats_thuringia +] ([+ fvp_tl +]%) {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#000000'> </div> !} Z: {!</td><td>!} [+ z_election_votes_thuringia +]% {!</td><td>!} [+ z_seats_thuringia +] ([+ z_tl +]%) {!</td></tr>!}
+
+[? if csvd_exist: {!<tr><td><div class="box" style='background-color:#1DB4E1'> </div> !} CSVD: {!</td><td>!} [+ csvd_election_votes_thuringia +]% {!</td><td>!} [+ csvd_seats_thuringia +] ([+ csvd_tl +]%) {!</td></tr>!} ?]
+
+[? if wp_exist: {!<tr><td><div class="box" style='background-color:#B8996F'> </div> !} WP: {!</td><td>!} [+ wp_election_votes_thuringia +]% {!</td><td>!} [+ wp_seats_thuringia +] ([+ wp_tl +]%) {!</td></tr>!} ?]
+
+[? if rlb_exist: {!<tr><td><div class="box" style='background-color:#209E00'> </div> !} ThLB: {!</td><td>!} [+ rlb_election_votes_thuringia +]% {!</td><td>!} [+ rlb_seats_thuringia +] ([+ rlb_tl +]%) {!</td></tr>!} ?]
+
+[? if kvp_exist: {!<tr><td><div class="box" style='background-color:#455B95'> </div> !} KVP: {!</td><td>!} [+ kvp_election_votes_thuringia +]% {!</td><td>!} [+ kvp_seats_thuringia +] ([+ kvp_tl +]%) {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#3F7BC1'> </div> !} DNVP: {!</td><td>!} [+ dnvp_election_votes_thuringia +]% {!</td><td>!} [+ dnvp_seats_thuringia +] ([+ dnvp_tl +]%) {!</td></tr>!}
+
+[? if kswr_exist: {!<tr><td><div class="box" style='background-color:#003755'> </div> !} KSWR: {!</td><td>!} [+ kswr_election_votes_thuringia +]% {!</td><td>!} [+ kswr_seats_thuringia +] ([+ kswr_tl +]%) {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#096300'> </div> !} DAP: {!</td><td>!} [+ dap_election_votes_thuringia +]% {!</td><td>!} [+ dap_seats_thuringia +] ([+ dap_tl +]%) {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#909090'> </div> !} Others: {!</td><td>!} [+ other_election_votes_thuringia +]% {!</td><td>!} [+ other_seats_thuringia +] ([+ other_tl +]%) {!</td></tr>!}
+{!</table>!}
+
+**Potential coalitions:**
+
+United Left Coalition (<span style="color: #E3000F;">**SPD**</span> + <span style="color: #8B0000;">**KPD**</span>): [+ united_left_coalition_thuringia +]%
+
+Grand Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #E3000F;">**SPD**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> + <span style="color: #000000;">**Z**</span>): [+ grand_coalition_thuringia +]%
+
+Bourgeois Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>[? if not rdp_formed: + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> ?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if rlb_exist: + <span style="color: #209E00;">**ThLB**</span> ?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span> ?]+ <span style="color: #000000;">**Z**</span>): [+ bourgeois_coalition_thuringia +]%
+
+Right Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #3F7BC1;">**DNVP**</span> [? if kvp_exist: + <span style="color: #455B95;">**KVP**</span> ?][? if kswr_exist: + <span style="color: #003755;">**KSWR**</span> ?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if rlb_exist: + <span style="color: #209E00;">**ThLB**</span> ?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span> ?]+ <span style="color: #000000;">**Z**</span>): [+ right_coalition_thuringia +]%
+
+There are some potential coalition arrangements.
+
+@thuringia_coalition_menu
+
+- @united_left_coalition_thuringia
+- @grand_coalition_thuringia
+- @bourgeois_coalition_thuringia
+- @right_coalition_thuringia
+- @no_majority_thuringia
+
+
+
+
+@united_left_coalition_thuringia
+title: The Social Democrats form a coalition with the <span style="color: #8B0000;">**KPD**</span>!
+subtitle: <span style="color: #E3000F;">**SPD**</span> + <span style="color: #8B0000;">**KPD**</span> ([+ united_left_coalition_thuringia +]%)
+view-if: united_left_coalition_thuringia > 50 and year != 1922
+on-arrival: in_united_left_coalition_thuringia = 1;
+go-to: mp
+
+WIP
+
+WIP
+
+
+@grand_coalition_thuringia
+title: We can form a Grand Coalition.
+subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #E3000F;">**SPD**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> + <span style="color: #000000;">**Z**</span> ([+ grand_coalition_thuringia +]%)
+view-if: grand_coalition_thuringia > 50
+choose-if: year != 1922
+unavailable-subtitle: The <span style="color: #E3000F;">**SPD**</span> doesn't want to form a coalition with us.
+on-arrival: in_grand_coalition_thuringia = 1; nlp_thuringia = 1;
+go-to: mp
+
+WIP
+
+WIP
+
+
+@bourgeois_coalition_thuringia
+title: We can form a Bourgeois Coalition.
+subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>[? if not rdp_formed: + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> ?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if rlb_exist: + <span style="color: #209E00;">**ThLB**</span> ?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span> ?]+ <span style="color: #000000;">**Z**</span> ([+ bourgeois_coalition_thuringia +]%)
+view-if: bourgeois_coalition_thuringia > 50
+on-arrival: in_bourgeois_coalition_thuringia = 1; nlp_thuringia = 1;
+go-to: mp
+
+WIP
+
+WIP
+
+
+@right_coalition_thuringia
+title: We can form a Right Coalition.
+subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #3F7BC1;">**DNVP**</span> [? if kvp_exist: + <span style="color: #455B95;">**KVP**</span> ?][? if kswr_exist: + <span style="color: #003755;">**KSWR**</span> ?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if rlb_exist: + <span style="color: #209E00;">**ThLB**</span> ?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span> ?]+ <span style="color: #000000;">**Z**</span> ([+ right_coalition_thuringia +]%)
+view-if: right_coalition_thuringia > 50
+on-arrival: in_right_coalition_thuringia = 1; nlp_thuringia = 1;
+go-to: mp
+
+WIP
+
+WIP
+
+
+@no_majority_thuringia
+title: There is no clear governing majority.
+view-if: grand_coalition_thuringia <= 50 and bourgeois_coalition_thuringia <= 50 and right_coalition_thuringia <= 50 and united_left_coalition_thuringia <= 50 and nlp_tl <= 50
+on-arrival: nlp_thuringia = 1 if was_nlp_thuringia; in_nlp_majority_thuringia = 1 if was_in_nlp_majority_thuringia; in_united_left_coalition_thuringia = 1 if was_in_united_left_coalition_thuringia; in_grand_coalition_thuringia = 1 if was_in_grand_coalition_thuringia; in_bourgeois_coalition_thuringia = 1 if was_in_bourgeois_coalition_thuringia; in_right_coalition_thuringia = 1 if was_in_right_coalition_thuringia;
+
+There is no path to a majority government for now. The current government will stay in power as a minority coalition.
+
+
+
+
+
+@mp
+
+WIP
