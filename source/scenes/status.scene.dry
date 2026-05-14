@@ -379,6 +379,6 @@ Next election: [+ next_election_month_thuringia: month +] [+ next_election_year_
 
 Minister-President: [+ mecklenburg_leader +] ([?if mecklenburg_leader_party = "SPD": <span style="color: #E3000F;">**SPD**</span>?][?if mecklenburg_leader_party = nlp_name: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?][?if mecklenburg_leader_party = "KVP": <span style="color: #455B95;">**KVP**</span>?][?if mecklenburg_leader_party = "DNVP": <span style="color: #3F7BC1;">**DNVP**</span>?])
 
-Government: [? if in_grand_coalition_mecklenburg: Grand Coalition ?][? if in_nlp_majority_mecklenburg: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> majority ?]
+Government: [? if in_grand_coalition_mecklenburg: Grand Coalition ?][? if in_center_right_coalition_mecklenburg: Center-Right Coalition ?][? if in_right_coalition_mecklenburg: Right Coalition ?][? if in_nlp_majority_mecklenburg: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> majority ?]
 
 Next election: [+ next_election_month_mecklenburg: month +] [+ next_election_year_mecklenburg +]
