@@ -389,8 +389,17 @@ There is no path to a majority government for now. The current government will s
 
 WIP
 
+- @reincke_bloch
 - @stelling
 - @brandenstein
+
+@reincke_bloch
+title: Hermann Reincke-Bloch (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>, Left-Wing Stresemannite).
+view-if: nlp_mecklenburg
+on-arrival: mecklenburg_leader = "Reincke-Bloch"; mecklenburg_leader_party = nlp_name;
+face-image: img/portraits/ReinckeBlochHermann.jpg
+
+WIP.
 
 @stelling
 title: Johannes Stelling (<span style="color: #E3000F;">**SPD**</span>).
