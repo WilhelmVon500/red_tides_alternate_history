@@ -134,7 +134,7 @@ for (var party of Q.parties) {
 
 
 // coalitions
-Q.left_front_coalition_saxony = parseFloat((Q.spd_sl + Q.kpd_sl).toFixed(1));
+Q.united_left_coalition_saxony = parseFloat((Q.spd_sl + Q.kpd_sl).toFixed(1));
 Q.grand_coalition_saxony = parseFloat((Q.nlp_sl + Q.fvp_sl + Q.z_sl + Q.spd_sl).toFixed(1));
 Q.bourgeois_coalition_saxony = parseFloat((Q.nlp_sl + Q.fvp_sl + Q.z_sl + Q.wp_sl + Q.rlb_sl + Q.csvd_sl).toFixed(1));
 if (Q.rdp_formed) Q.bourgeois_coalition_saxony = parseFloat((Q.bourgeois_coalition_saxony - Q.fvp_sl).toFixed(1));
@@ -144,21 +144,21 @@ Q.right_coalition_saxony = parseFloat((Q.dnvp_sl + Q.nlp_sl + Q.z_sl + Q.wp_sl +
 // Reset government and ministers...
 Q.was_nlp_saxony = 0;
 Q.was_in_nlp_majority_saxony = 0;
-Q.was_in_left_front_coalition_saxony = 0;
+Q.was_in_united_left_coalition_saxony = 0;
 Q.was_in_grand_coalition_saxony = 0;
 Q.was_in_bourgeois_coalition_saxony = 0;
 Q.was_in_right_coalition_saxony = 0;
 
 if (Q.nlp_saxony) Q.was_nlp_saxony = 1;
 if (Q.in_nlp_majority_saxony) Q.was_in_nlp_majority_saxony = 1;
-if (Q.in_left_front_coalition_saxony) Q.was_in_left_front_coalition_saxony = 1;
+if (Q.in_united_left_coalition_saxony) Q.was_in_united_left_coalition_saxony = 1;
 if (Q.in_grand_coalition_saxony) Q.was_in_grand_coalition_saxony = 1;
 if (Q.in_bourgeois_coalition_saxony) Q.was_in_bourgeois_coalition_saxony = 1;
 if (Q.in_right_coalition_saxony) Q.was_in_right_coalition_saxony = 1;
 
 Q.nlp_saxony = 0;
 Q.in_nlp_majority_saxony = 0;
-Q.in_left_front_coalition_saxony = 0;
+Q.in_united_left_coalition_saxony = 0;
 Q.in_grand_coalition_saxony = 0;
 Q.in_bourgeois_coalition_saxony = 0;
 Q.in_right_coalition_saxony = 0;
@@ -341,7 +341,7 @@ go-to: saxony_coalition_menu
 
 **Potential coalitions:**
 
-United Left Coalition (<span style="color: #E3000F;">**SPD**</span> + <span style="color: #8B0000;">**KPD**</span>): [+ left_front_coalition_saxony +]%
+United Left Coalition (<span style="color: #E3000F;">**SPD**</span> + <span style="color: #8B0000;">**KPD**</span>): [+ united_left_coalition_saxony +]%
 
 Grand Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #E3000F;">**SPD**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> + <span style="color: #000000;">**Z**</span>): [+ grand_coalition_saxony +]%
 
@@ -354,7 +354,7 @@ There are some potential coalition arrangements.
 @saxony_coalition_menu
 
 - @kpd_tolerates_spd
-- @left_front_coalition_saxony
+- @united_left_coalition_saxony
 - @grand_coalition_saxony
 - @bourgeois_coalition_saxony
 - @right_coalition_saxony
@@ -366,7 +366,7 @@ There are some potential coalition arrangements.
 @kpd_tolerates_spd
 title: The <span style="color: #8B0000;">**KPD**</span> will tolerate Wilhelm Buck's cabinet.
 subtitle: At least not a United Left government...
-view-if: left_front_coalition_saxony > 50 and year = 1922
+view-if: united_left_coalition_saxony > 50 and year = 1922
 on-arrival: in_spd_kpd_toleration_saxony = 1; saxony_leader = "Buck"; saxony_leader_party = "SPD";
 face-image: img/portraits/BuckWilhelm.jpg
 
@@ -375,11 +375,11 @@ WIP
 Wilhelm Buck WIP
 
 
-@left_front_coalition_saxony
+@united_left_coalition_saxony
 title: The Social Democrats form a coalition with the <span style="color: #8B0000;">**KPD**</span>!
-subtitle: <span style="color: #E3000F;">**SPD**</span> + <span style="color: #8B0000;">**KPD**</span> ([+ left_front_coalition_saxony +]%)
-view-if: left_front_coalition_saxony > 50 and year != 1922
-on-arrival: in_left_front_coalition_saxony = 1;
+subtitle: <span style="color: #E3000F;">**SPD**</span> + <span style="color: #8B0000;">**KPD**</span> ([+ united_left_coalition_saxony +]%)
+view-if: united_left_coalition_saxony > 50 and year != 1922
+on-arrival: in_united_left_coalition_saxony = 1;
 go-to: mp
 
 WIP
@@ -427,8 +427,8 @@ WIP
 
 @no_majority_saxony
 title: There is no clear governing majority.
-view-if: grand_coalition_saxony <= 50 and bourgeois_coalition_saxony <= 50 and right_coalition_saxony <= 50 and left_front_coalition_saxony <= 50 and nlp_sl <= 50
-on-arrival: nlp_saxony = 1 if was_nlp_saxony; in_nlp_majority_saxony = 1 if was_in_nlp_majority_saxony; in_left_front_coalition_saxony = 1 if was_in_left_front_coalition_saxony; in_grand_coalition_saxony = 1 if was_in_grand_coalition_saxony; in_bourgeois_coalition_saxony = 1 if was_in_bourgeois_coalition_saxony; in_right_coalition_saxony = 1 if was_in_right_coalition_saxony;
+view-if: grand_coalition_saxony <= 50 and bourgeois_coalition_saxony <= 50 and right_coalition_saxony <= 50 and united_left_coalition_saxony <= 50 and nlp_sl <= 50
+on-arrival: nlp_saxony = 1 if was_nlp_saxony; in_nlp_majority_saxony = 1 if was_in_nlp_majority_saxony; in_united_left_coalition_saxony = 1 if was_in_united_left_coalition_saxony; in_grand_coalition_saxony = 1 if was_in_grand_coalition_saxony; in_bourgeois_coalition_saxony = 1 if was_in_bourgeois_coalition_saxony; in_right_coalition_saxony = 1 if was_in_right_coalition_saxony;
 
 There is no path to a majority government for now. The current government will stay in power as a minority coalition.
 
@@ -492,7 +492,7 @@ WIP.
 
 @zeigner
 title: Erich Zeigner (<span style="color: #E3000F;">**SPD**</span>).
-view-if: in_left_front_coalition_saxony
+view-if: in_united_left_coalition_saxony
 on-arrival: saxony_leader = "Zeigner"; saxony_leader_party = "SPD";
 face-image: img/portraits/ZeignerErich.jpg
 
