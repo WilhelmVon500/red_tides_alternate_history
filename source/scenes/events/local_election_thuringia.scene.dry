@@ -429,7 +429,7 @@ WIP
 title: Arnold Paulssen (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>, Constitutional Liberal).
 view-if: nlp_thuringia and vldp_formed
 choose-if: in_nlp_majority_thuringia or in_bourgeois_coalition_thuringia or in_right_coalition_thuringia or (in_grand_coalition_thuringia and nlp_tl > spd_tl)
-unavailable-subtitle: Paulssen doesn't have needed support to become the Minister-President.
+unavailable-subtitle: Paulssen doesn't have needed support to become the Chief State Minister.
 on-arrival: thuringia_leader = "Paulssen"; thuringia_leader_party = nlp_name;
 face-image: img/portraits/PaulssenArnold.jpg
 
@@ -439,7 +439,7 @@ WIP.
 title: Richard Leutheusser (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>, Right-Wing Stresemannite).
 view-if: nlp_thuringia
 choose-if: in_nlp_majority_thuringia or in_bourgeois_coalition_thuringia or in_right_coalition_thuringia or (in_grand_coalition_thuringia and nlp_tl > spd_tl)
-unavailable-subtitle: Leutheusser doesn't have needed support to become the Minister-President.
+unavailable-subtitle: Leutheusser doesn't have needed support to become the Chief State Minister.
 on-arrival: thuringia_leader = "Leutheusser"; thuringia_leader_party = nlp_name;
 face-image: img/portraits/LeutheusserRichard.jpg
 
@@ -457,7 +457,7 @@ WIP.
 title: Arnold Paulssen (<span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>).
 view-if: not vldp_formed and (in_bourgeois_coalition_thuringia or in_grand_coalition_thuringia)
 choose-if: in_bourgeois_coalition_thuringia or (in_grand_coalition_thuringia and nlp_tl + fvp_tl + z_tl > spd_tl)
-unavailable-subtitle: Paulssen doesn't have needed support to become the Minister-President.
+unavailable-subtitle: Paulssen doesn't have needed support to become the Chief State Minister.
 on-arrival: thuringia_leader = "Paulssen"; thuringia_leader_party = fvp_name;
 face-image: img/portraits/PaulssenArnold.jpg
 
