@@ -376,7 +376,7 @@ WIP
 
 @no_majority_mecklenburg
 title: There is no clear governing majority.
-view-if: grand_coalition_mecklenburg <= 50 and bourgeois_coalition_mecklenburg <= 50 and right_coalition_mecklenburg <= 50 and united_left_coalition_mecklenburg <= 50 and nlp_ml <= 50
+view-if: grand_coalition_mecklenburg <= 50 and (center_right_coalition_mecklenburg <= 50 or fvp_ideology = "Left") and right_coalition_mecklenburg <= 50 and nlp_ml <= 50
 on-arrival: nlp_mecklenburg = 1 if was_nlp_mecklenburg; in_nlp_majority_mecklenburg = 1 if was_in_nlp_majority_mecklenburg; in_grand_coalition_mecklenburg = 1 if was_in_grand_coalition_mecklenburg; in_center_right_coalition_mecklenburg = 1 if was_in_center_right_coalition_mecklenburg; in_right_coalition_mecklenburg = 1 if was_in_right_coalition_mecklenburg;
 
 There is no path to a majority government for now. The current government will stay in power as a minority coalition.
