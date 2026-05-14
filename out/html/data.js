@@ -52,6 +52,10 @@ const tooltipList = [
       explanationText: "National Rural League <br> <i>Reichslandbund</i>"
     },
     {
+      searchString: "ThLB",
+      explanationText: "Thuringian Agricultural League <br> <i>Thüringer Landbund</i>"
+    },
+    {
       searchString: "KVP",
       explanationText: "Conservative People's Party <br> <i>Konservative Volkspartei</i>"
     },
@@ -124,6 +128,10 @@ const colourList = [
     {
         word: "RLB",
         style: "color: #52AE6F; font-weight: bold;",
+    },
+    {
+        word: "ThLB",
+        style: "color: #209E00; font-weight: bold;",
     },
     {
         word: "KVP",
