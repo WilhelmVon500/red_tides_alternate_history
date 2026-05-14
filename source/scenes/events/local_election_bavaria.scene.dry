@@ -362,8 +362,6 @@ go-to: mp
 
 WIP
 
-WIP
-
 
 @bourgeois_coalition_bavaria
 title: We can form a Bourgeois Coalition.
@@ -374,8 +372,6 @@ go-to: mp
 
 WIP
 
-WIP
-
 
 @right_coalition_bavaria
 title: We can form a Right Coalition.
@@ -383,8 +379,6 @@ subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <sp
 view-if: right_coalition_bavaria > 50
 on-arrival: in_right_coalition_bavaria = 1; nlp_bavaria = 1;
 go-to: mp
-
-WIP
 
 WIP
 
