@@ -524,7 +524,7 @@ WIP.
 
 @gayl
 title: Wilhelm Gayl ([?if dnvp_ideology = "Radical":<span style="color: #3F7BC1;">**DNVP**</span>?][?if kswr_exist:<span style="color: #003755;">**KSWR**</span>?])
-view-if: in_right_coalition_prussia
+view-if: in_right_coalition_prussia and (kswr_exist or dnvp_ideology = "Radical")
 choose-if: (in_right_coalition_prussia and ((kswr_pl > z_pl and kswr_exist) or (dnvp_pl > z_pl and dnvp_ideology = "Radical")))
 unavailable-subtitle: Gayl doesn't have needed support to become the Minister-President.
 on-arrival: prussia_leader = "Gayl"; prussia_leader_party = "DNVP" if dnvp_ideology = "Radical"; prussia_leader_party = "KSWR" if kswr_exist;
