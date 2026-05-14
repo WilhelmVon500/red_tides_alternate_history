@@ -139,7 +139,7 @@ Q.bourgeois_coalition_bavaria = parseFloat((Q.nlp_bl + Q.fvp_bl + Q.z_bl + Q.wp_
 Q.right_coalition_bavaria = parseFloat((Q.dnvp_bl + Q.nlp_bl + Q.z_bl + Q.wp_bl + Q.bb_bl + Q.csvd_bl + Q.kvp_bl + Q.kswr_bl).toFixed(1));
 
 
-// Reset government and ministers...
+// Reset government
 Q.was_nlp_bavaria = 0;
 Q.was_in_nlp_majority_bavaria = 0;
 Q.was_in_grand_coalition_bavaria = 0;
