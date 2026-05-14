@@ -136,8 +136,8 @@ for (var party of Q.parties) {
 // coalitions
 Q.united_left_coalition_thuringia = parseFloat((Q.spd_tl + Q.kpd_tl).toFixed(1));
 Q.grand_coalition_thuringia = parseFloat((Q.nlp_tl + Q.fvp_tl + Q.z_tl + Q.spd_tl).toFixed(1));
-Q.bourgeois_coalition_thuringia = parseFloat((Q.nlp_tl + Q.fvp_tl + Q.z_tl + Q.wp_tl + Q.rlb_tl + Q.csvd_tl).toFixed(1));
-if (Q.rdp_formed) Q.bourgeois_coalition_thuringia = parseFloat((Q.bourgeois_coalition_thuringia - Q.fvp_tl).toFixed(1));
+Q.bourgeois_coalition_thuringia = parseFloat((Q.nlp_tl + Q.z_tl + Q.wp_tl + Q.rlb_tl + Q.csvd_tl).toFixed(1));
+if (!Q.rdp_formed) Q.bourgeois_coalition_thuringia = parseFloat((Q.bourgeois_coalition_thuringia + Q.fvp_tl).toFixed(1));
 Q.right_coalition_thuringia = parseFloat((Q.dnvp_tl + Q.nlp_tl + Q.z_tl + Q.wp_tl + Q.rlb_tl + Q.csvd_tl + Q.kvp_tl + Q.kswr_tl).toFixed(1));
 
 
