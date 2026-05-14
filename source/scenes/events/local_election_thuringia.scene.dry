@@ -371,8 +371,6 @@ go-to: mp
 
 WIP
 
-WIP
-
 
 @grand_coalition_thuringia
 title: We can form a Grand Coalition.
@@ -382,8 +380,6 @@ choose-if: year != 1922
 unavailable-subtitle: The <span style="color: #E3000F;">**SPD**</span> doesn't want to form a coalition with us.
 on-arrival: in_grand_coalition_thuringia = 1; nlp_thuringia = 1;
 go-to: mp
-
-WIP
 
 WIP
 
@@ -397,8 +393,6 @@ go-to: mp
 
 WIP
 
-WIP
-
 
 @right_coalition_thuringia
 title: We can form a Right Coalition.
@@ -406,8 +400,6 @@ subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <sp
 view-if: right_coalition_thuringia > 50
 on-arrival: in_right_coalition_thuringia = 1; nlp_thuringia = 1;
 go-to: mp
-
-WIP
 
 WIP
 
