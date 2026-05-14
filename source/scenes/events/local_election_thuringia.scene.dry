@@ -365,7 +365,7 @@ There are some potential coalition arrangements.
 @united_left_coalition_thuringia
 title: The Social Democrats form a coalition with the <span style="color: #8B0000;">**KPD**</span>!
 subtitle: <span style="color: #E3000F;">**SPD**</span> + <span style="color: #8B0000;">**KPD**</span> ([+ united_left_coalition_thuringia +]%)
-view-if: united_left_coalition_thuringia > 50 and year != 1922
+view-if: united_left_coalition_thuringia > 50
 on-arrival: in_united_left_coalition_thuringia = 1;
 go-to: mp
 
@@ -376,8 +376,6 @@ WIP
 title: We can form a Grand Coalition.
 subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #E3000F;">**SPD**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> + <span style="color: #000000;">**Z**</span> ([+ grand_coalition_thuringia +]%)
 view-if: grand_coalition_thuringia > 50
-choose-if: year != 1922
-unavailable-subtitle: The <span style="color: #E3000F;">**SPD**</span> doesn't want to form a coalition with us.
 on-arrival: in_grand_coalition_thuringia = 1; nlp_thuringia = 1;
 go-to: mp
 
