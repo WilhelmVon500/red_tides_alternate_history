@@ -435,6 +435,9 @@ There is no path to a majority government for now. The current government will s
 WIP
 
 - @fischbeck_nlp
+- @kardorff
+- @schwarzhaupt
+- @stendel
 - @braun
 - @fischbeck_fvp
 - @stegerwald
@@ -448,6 +451,36 @@ choose-if: in_nlp_majority_prussia or (in_grand_coalition_prussia and nlp_pl + z
 unavailable-subtitle: Fischbeck doesn't have needed support to become the Minister-President.
 on-arrival: prussia_leader = "Fischbeck"; prussia_leader_party = nlp_name;
 face-image: img/portraits/FischbeckOtto.jpg
+
+WIP.
+
+@kardorff
+title: Siegfried Kardorff (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>, Left-Wing Stresemannite).
+view-if: nlp_prussia
+choose-if: in_nlp_majority_prussia or (in_grand_coalition_prussia and nlp_pl + z_pl > spd_pl) or (in_bourgeois_coalition_prussia and nlp_pl > z_pl) or (in_center_right_coalition_prussia and nlp_pl > z_pl) or (in_right_coalition_prussia and ((nlp_pl > kswr_pl and kswr_exist) or (nlp_pl > dnvp_pl and dnvp_ideology = "Radical")))
+unavailable-subtitle: Kardorff doesn't have needed support to become the Minister-President.
+on-arrival: prussia_leader = "Kardorff"; prussia_leader_party = nlp_name;
+face-image: img/portraits/KardorffSiegfried.jpg
+
+WIP.
+
+@schwarzhaupt
+title: Wilhelm Schwarzhaupt (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>, Left-Wing Stresemannite).
+view-if: nlp_prussia
+choose-if: in_nlp_majority_prussia or (in_grand_coalition_prussia and nlp_pl + z_pl > spd_pl) or (in_bourgeois_coalition_prussia and nlp_pl > z_pl) or (in_center_right_coalition_prussia and nlp_pl > z_pl) or (in_right_coalition_prussia and ((nlp_pl > kswr_pl and kswr_exist) or (nlp_pl > dnvp_pl and dnvp_ideology = "Radical")))
+unavailable-subtitle: Schwarzhaupt doesn't have needed support to become the Minister-President.
+on-arrival: prussia_leader = "Schwarzhaupt"; prussia_leader_party = nlp_name;
+face-image: img/portraits/SchwarzhauptWilhelm.jpg
+
+WIP.
+
+@stendel
+title: Ernst Stendel (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>, Right-Wing Stresemannite).
+view-if: nlp_prussia
+choose-if: in_nlp_majority_prussia or (in_grand_coalition_prussia and nlp_pl + z_pl > spd_pl) or (in_bourgeois_coalition_prussia and nlp_pl > z_pl) or (in_center_right_coalition_prussia and nlp_pl > z_pl) or (in_right_coalition_prussia and ((nlp_pl > kswr_pl and kswr_exist) or (nlp_pl > dnvp_pl and dnvp_ideology = "Radical")))
+unavailable-subtitle: Stendel doesn't have needed support to become the Minister-President.
+on-arrival: prussia_leader = "Stendel"; prussia_leader_party = nlp_name;
+face-image: img/portraits/StendelErnst.jpg
 
 WIP.
 
