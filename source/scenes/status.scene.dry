@@ -375,9 +375,9 @@ Next election: [+ next_election_month_thuringia: month +] [+ next_election_year_
 
 = Free State of Mecklenburg
 
-<div style="display: flex; justify-content: center;">[? if mecklenburg_leader = "Stelling": <img src="img/portraits/StellingJohannes.jpg" class="mecklenburg-leader"> ?]</div>
+<div style="display: flex; justify-content: center;">[? if mecklenburg_leader = "Stelling": <img src="img/portraits/StellingJohannes.jpg" class="mecklenburg-leader"> ?][? if mecklenburg_leader = "Reincke-Bloch": <img src="img/portraits/ReinckeBlochHermann.jpg" class="mecklenburg-leader"> ?][? if mecklenburg_leader = "Brandenstein": <img src="img/portraits/BrandensteinJoachim.jpg" class="mecklenburg-leader"> ?]</div>
 
-Minister-President: [+ mecklenburg_leader +] ([?if mecklenburg_leader_party = "SPD": <span style="color: #E3000F;">**SPD**</span>?])
+Minister-President: [+ mecklenburg_leader +] ([?if mecklenburg_leader_party = "SPD": <span style="color: #E3000F;">**SPD**</span>?][?if mecklenburg_leader_party = nlp_name: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?][?if mecklenburg_leader_party = "KVP": <span style="color: #455B95;">**KVP**</span>?][?if mecklenburg_leader_party = "DNVP": <span style="color: #3F7BC1;">**DNVP**</span>?])
 
 Government: [? if in_grand_coalition_mecklenburg: Grand Coalition ?][? if in_nlp_majority_mecklenburg: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> majority ?]
 
