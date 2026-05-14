@@ -141,7 +141,7 @@ if (Q.rdp_formed) Q.bourgeois_coalition_thuringia = parseFloat((Q.bourgeois_coal
 Q.right_coalition_thuringia = parseFloat((Q.dnvp_tl + Q.nlp_tl + Q.z_tl + Q.wp_tl + Q.rlb_tl + Q.csvd_tl + Q.kvp_tl + Q.kswr_tl).toFixed(1));
 
 
-// Reset government and ministers...
+// Reset government
 Q.was_nlp_thuringia = 0;
 Q.was_in_nlp_majority_thuringia = 0;
 Q.was_in_united_left_coalition_thuringia = 0;
