@@ -143,7 +143,7 @@ if (Q.dnvp_ideology != "Radical") Q.center_right_coalition_prussia = parseFloat(
 Q.right_coalition_prussia = parseFloat((Q.dnvp_pl + Q.nlp_pl + Q.z_pl + Q.wp_pl + Q.rlb_pl + Q.csvd_pl + Q.kvp_pl + Q.kswr_pl).toFixed(1));
 
 
-// Reset government and ministers...
+// Reset government
 Q.was_nlp_prussia = 0;
 Q.was_in_nlp_majority_prussia = 0;
 Q.was_in_weimar_coalition_prussia = 0;
@@ -459,7 +459,7 @@ WIP.
 
 @schiele
 title: Martin Schiele ([?if not dnvp_ideology = "Radical":<span style="color: #3F7BC1;">**DNVP**</span>?][?if kvp_exist:<span style="color: #455B95;">**KVP**</span>?]).
-view-if: in_center_right_coalition_prussia and in_right_coalition_prussia
+view-if: in_center_right_coalition_prussia or in_right_coalition_prussia
 choose-if: (in_center_right_coalition_prussia and (nlp_pl + dnvp_pl + rlb_pl) > (z_pl + fvp_pl)) or in_right_coalition_prussia
 unavailable-subtitle: Schiele doesn't have needed support to become the Minister-President.
 on-arrival: prussia_leader = "Schiele"; prussia_leader_party = "DNVP" if not dnvp_ideology = "Radical"; prussia_leader_party = "KVP" if kvp_exist;
@@ -470,6 +470,8 @@ WIP.
 @gayl
 title: Wilhelm Gayl ([?if dnvp_ideology = "Radical":<span style="color: #3F7BC1;">**DNVP**</span>?][?if kswr_exist:<span style="color: #003755;">**KSWR**</span>?])
 view-if: in_right_coalition_prussia
+choose-if: (in_right_coalition_prussia and ((kswr_pl > z_pl and kswr_exist) or (dnvp_pl > z_pl and dnvp_ideology = "Radical")))
+unavailable-subtitle: Gayl doesn't have needed support to become the Minister-President.
 on-arrival: prussia_leader = "Gayl"; prussia_leader_party = "DNVP" if dnvp_ideology = "Radical"; prussia_leader_party = "KSWR" if kswr_exist;
 face-image: img/portraits/GaylWilhelm.jpg
 
