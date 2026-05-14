@@ -33,7 +33,7 @@ if (Q.year == 1924) {
     Q.adjustmentFactors_fvp_mecklenburg = 0.7;
     Q.adjustmentFactors_bb_mecklenburg = 0.0;
     Q.adjustmentFactors_z_mecklenburg = 0.0;
-    Q.adjustmentFactors_nlp_mecklenburg = 1.1;
+    Q.adjustmentFactors_nlp_mecklenburg = 1.4;
     Q.adjustmentFactors_csvd_mecklenburg = 0.7;
     Q.adjustmentFactors_wp_mecklenburg = 2.0;
     Q.adjustmentFactors_rlb_mecklenburg = 1.8;
