@@ -365,9 +365,9 @@ Next election: [+ next_election_month_saxony: month +] [+ next_election_year_sax
 
 = State of Thuringia
 
-<div style="display: flex; justify-content: center;">[? if thuringia_leader = "Frölich": <img src="img/portraits/FrölichAugust.jpg" class="thuringia-leader"> ?]</div>
+<div style="display: flex; justify-content: center;">[? if thuringia_leader = "Frölich": <img src="img/portraits/FrölichAugust.jpg" class="thuringia-leader"> ?][? if thuringia_leader = "Paulssen": <img src="img/portraits/PaulssenArnold.jpg" class="thuringia-leader"> ?][? if thuringia_leader = "Leutheusser": <img src="img/portraits/LeutheusserRichard.jpg" class="thuringia-leader"> ?][? if thuringia_leader = "Baum": <img src="img/portraits/BaumErwin.jpg" class="thuringia-leader"> ?]</div>
 
-Chief State Minister: [+ thuringia_leader +] ([?if thuringia_leader_party = "SPD": <span style="color: #E3000F;">**SPD**</span>?])
+Chief State Minister: [+ thuringia_leader +] ([?if thuringia_leader_party = "SPD": <span style="color: #E3000F;">**SPD**</span>?][?if thuringia_leader_party = fvp_name:<span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>?][?if thuringia_leader_party = nlp_name: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?][?if thuringia_leader_party = "ThLB": <span style="color: #209E00;">**ThLB**</span>?])
 
 Government: [? if in_spd_kpd_toleration_thuringia: <span style="color: #E3000F;">**SPD**</span> with <span style="color: #8B0000;">**KPD**</span> toleration ?][? if in_united_left_coalition_thuringia: United Left ?][? if in_nlp_majority_thuringia: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> majority ?]
 
