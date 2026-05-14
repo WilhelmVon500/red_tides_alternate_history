@@ -193,8 +193,8 @@ Q.economic_expansion = 0;
 
 Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics'];
 Q.parties = ['nlp', 'kpd', 'uspd', 'spd', 'fvp', 'bb', 'z', 'wp', 'rlb', 'dnvp', 'dap', 'other'];
-Q.states = ['prussia', 'bavaria', 'saxony', 'thuringia'];
-Q.landtags = ['pl', 'bl', 'sl', 'tl'];
+Q.states = ['prussia', 'bavaria', 'saxony', 'thuringia', 'mecklenburg'];
+Q.landtags = ['pl', 'bl', 'sl', 'tl', 'ml'];
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
@@ -363,6 +363,15 @@ Q.in_spd_kpd_toleration_thuringia = 1;
 Q.next_election_week_thuringia = 1;
 Q.next_election_month_thuringia = 9;
 Q.next_election_year_thuringia = 1924;
+
+// mecklenburg
+Q.nlp_mecklenburg = 1;
+Q.mecklenburg_leader = "Stelling";
+Q.mecklenburg_leader_party = "SPD";
+Q.in_grand_coalition_mecklenburg = 1;
+Q.next_election_week_mecklenburg = 1;
+Q.next_election_month_mecklenburg = 2;
+Q.next_election_year_mecklenburg = 1924;
 
 
 
