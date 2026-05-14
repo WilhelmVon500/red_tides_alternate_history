@@ -362,7 +362,7 @@ Q.thuringia_leader_party = "SPD";
 Q.in_spd_kpd_toleration_thuringia = 1;
 Q.next_election_week_thuringia = 1;
 Q.next_election_month_thuringia = 9;
-Q.next_election_year_thuringia = 1925;
+Q.next_election_year_thuringia = 1924;
 
 
 
