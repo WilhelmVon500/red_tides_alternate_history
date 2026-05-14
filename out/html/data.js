@@ -33,7 +33,7 @@ const tooltipList = [
     },
     {
       searchString: "Z",
-      explanationText: "Centre Party <br> <i>Zentrum</i>"
+      explanationText: "Center Party <br> <i>Zentrum</i>"
     },
     {
       searchString: "BVP",
@@ -71,6 +71,10 @@ const tooltipList = [
       searchString: "Others",
       explanationText: "Other Parties <br> <i>Sonstige Parteien</i>"
     },
+    {
+      searchString: "Center Party",
+      explanationText: "Center Party <br> <i>Zentrum</i>"
+    }
 ];
 const colourList = [
     {
@@ -144,5 +148,9 @@ const colourList = [
     {
         word: "Others",
         style: "color: #909090; font-weight: bold;",
+    },
+    {
+        word: "Center Party",
+        style: "color: #000000;",
     }
 ];
