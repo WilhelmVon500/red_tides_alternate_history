@@ -427,46 +427,46 @@ WIP
 
 @paulssen_nlp
 title: Arnold Paulssen (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>, Constitutional Liberal).
-view-if: nlp_saxony and vldp_formed
-choose-if: in_nlp_majority_saxony or in_bourgeois_coalition_saxony or in_right_coalition_saxony or (in_grand_coalition_saxony and nlp_sl > spd_sl)
+view-if: nlp_thuringia and vldp_formed
+choose-if: in_nlp_majority_thuringia or in_bourgeois_coalition_thuringia or in_right_coalition_thuringia or (in_grand_coalition_thuringia and nlp_tl > spd_tl)
 unavailable-subtitle: Paulssen doesn't have needed support to become the Minister-President.
-on-arrival: saxony_leader = "Paulssen"; saxony_leader_party = nlp_name;
+on-arrival: thuringia_leader = "Paulssen"; thuringia_leader_party = nlp_name;
 face-image: img/portraits/PaulssenArnold.jpg
 
 WIP.
 
 @leutheusser
 title: Richard Leutheusser (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>, Right-Wing Stresemannite).
-view-if: nlp_saxony
-choose-if: in_nlp_majority_saxony or in_bourgeois_coalition_saxony or in_right_coalition_saxony or (in_grand_coalition_saxony and nlp_sl > spd_sl)
+view-if: nlp_thuringia
+choose-if: in_nlp_majority_thuringia or in_bourgeois_coalition_thuringia or in_right_coalition_thuringia or (in_grand_coalition_thuringia and nlp_tl > spd_tl)
 unavailable-subtitle: Leutheusser doesn't have needed support to become the Minister-President.
-on-arrival: saxony_leader = "Leutheusser"; saxony_leader_party = nlp_name;
+on-arrival: thuringia_leader = "Leutheusser"; thuringia_leader_party = nlp_name;
 face-image: img/portraits/LeutheusserRichard.jpg
 
 WIP.
 
 @frolich
 title: August Frölich (<span style="color: #E3000F;">**SPD**</span>).
-view-if: in_united_left_coalition_thuringia or in_grand_coalition_saxony
-on-arrival: saxony_leader = "Frölich"; saxony_leader_party = "SPD";
+view-if: in_united_left_coalition_thuringia or in_grand_coalition_thuringia
+on-arrival: thuringia_leader = "Frölich"; thuringia_leader_party = "SPD";
 face-image: img/portraits/FrölichAugust.jpg
 
 WIP.
 
 @paulssen_fvp
 title: Arnold Paulssen (<span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>).
-view-if: not vldp_formed and (in_bourgeois_coalition_saxony or in_grand_coalition_saxony)
-choose-if: in_bourgeois_coalition_saxony or (in_grand_coalition_saxony and nlp_sl + fvp_sl + z_sl > spd_sl)
+view-if: not vldp_formed and (in_bourgeois_coalition_thuringia or in_grand_coalition_thuringia)
+choose-if: in_bourgeois_coalition_thuringia or (in_grand_coalition_thuringia and nlp_tl + fvp_tl + z_tl > spd_tl)
 unavailable-subtitle: Paulssen doesn't have needed support to become the Minister-President.
-on-arrival: saxony_leader = "Paulssen"; saxony_leader_party = fvp_name;
+on-arrival: thuringia_leader = "Paulssen"; thuringia_leader_party = fvp_name;
 face-image: img/portraits/PaulssenArnold.jpg
 
 WIP.
 
 @baum
 title: Erwin Baum (<span style="color: #209E00;">**ThLB**</span>).
-view-if: in_bourgeois_coalition_saxony or in_right_coalition_saxony
-on-arrival: saxony_leader = "Baum"; saxony_leader_party = "ThLB";
+view-if: in_bourgeois_coalition_thuringia or in_right_coalition_thuringia
+on-arrival: thuringia_leader = "Baum"; thuringia_leader_party = "ThLB";
 face-image: img/portraits/BaumErwin.jpg
 
 WIP.
