@@ -436,6 +436,8 @@ WIP
 
 - @braun
 - @stegerwald
+- @schiele
+- @gayl
 
 @braun
 title: Otto Braun (<span style="color: #E3000F;">**SPD**</span>)
@@ -452,5 +454,23 @@ choose-if: (in_weimar_coalition_prussia and z_pl > spd_pl) or (in_grand_coalitio
 unavailable-subtitle: Stegerwald doesn't have needed support to become the Minister-President.
 on-arrival: prussia_leader = "Stegerwald"; prussia_leader_party = "Z";
 face-image: img/portraits/StegerwaldAdam.jpg
+
+WIP.
+
+@schiele
+title: Martin Schiele ([?if not dnvp_ideology = "Radical":<span style="color: #3F7BC1;">**DNVP**</span>?][?if kvp_exist:<span style="color: #455B95;">**KVP**</span>?]).
+view-if: in_center_right_coalition_prussia and in_right_coalition_prussia
+choose-if: (in_center_right_coalition_prussia and (nlp_pl + dnvp_pl + rlb_pl) > (z_pl + fvp_pl)) or in_right_coalition_prussia
+unavailable-subtitle: Schiele doesn't have needed support to become the Minister-President.
+on-arrival: prussia_leader = "Schiele"; prussia_leader_party = "DNVP" if not dnvp_ideology = "Radical"; prussia_leader_party = "KVP" if kvp_exist;
+face-image: img/portraits/SchieleMartin.jpg
+
+WIP.
+
+@gayl
+title: Wilhelm Gayl ([?if dnvp_ideology = "Radical":<span style="color: #3F7BC1;">**DNVP**</span>?][?if kswr_exist:<span style="color: #003755;">**KSWR**</span>?])
+view-if: in_right_coalition_prussia
+on-arrival: prussia_leader = "Gayl"; prussia_leader_party = "DNVP" if dnvp_ideology = "Radical"; prussia_leader_party = "KSWR" if kswr_exist;
+face-image: img/portraits/GaylWilhelm.jpg
 
 WIP.
