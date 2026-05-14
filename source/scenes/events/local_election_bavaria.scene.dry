@@ -135,7 +135,8 @@ for (var party of Q.parties) {
 
 // coalitions
 Q.grand_coalition_bavaria = parseFloat((Q.nlp_bl + Q.fvp_bl + Q.z_bl + Q.spd_bl + Q.bb_bl).toFixed(1));
-Q.bourgeois_coalition_bavaria = parseFloat((Q.nlp_bl + Q.fvp_bl + Q.z_bl + Q.wp_bl + Q.bb_bl + Q.csvd_bl).toFixed(1));
+Q.bourgeois_coalition_bavaria = parseFloat((Q.nlp_bl + Q.z_bl + Q.wp_bl + Q.bb_bl + Q.csvd_bl).toFixed(1));
+if (!Q.rdp_formed) Q.bourgeois_coalition_bavaria = parseFloat((Q.bourgeois_coalition_bavaria + Q.fvp_bl).toFixed(1));
 Q.right_coalition_bavaria = parseFloat((Q.dnvp_bl + Q.nlp_bl + Q.z_bl + Q.wp_bl + Q.bb_bl + Q.csvd_bl + Q.kvp_bl + Q.kswr_bl).toFixed(1));
 
 
@@ -337,7 +338,7 @@ go-to: bavaria_coalition_menu
 
 Grand Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #69A2BE;">**BVP**</span> + <span style="color: #E3000F;">**SPD**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> + <span style="color: #38C538;">**BB**</span>): [+ grand_coalition_bavaria +]%
 
-Bourgeois Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #69A2BE;">**BVP**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> + <span style="color: #38C538;">**BB**</span>[? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span>?]): [+ bourgeois_coalition_bavaria +]%
+Bourgeois Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #69A2BE;">**BVP**</span>[? if not rdp_formed: + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>?] + <span style="color: #38C538;">**BB**</span>[? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span>?]): [+ bourgeois_coalition_bavaria +]%
 
 Right Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #69A2BE;">**BVP**</span> + <span style="color: #3F7BC1;">**DNVP**</span>[? if kvp_exist: + <span style="color: #455B95;">**KVP**</span>?][? if kswr_exist: + <span style="color: #003755;">**KSWR**</span>?] + <span style="color: #38C538;">**BB**</span>[? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span>?]): [+ right_coalition_bavaria +]%
   
@@ -365,7 +366,7 @@ WIP
 
 @bourgeois_coalition_bavaria
 title: We can form a Bourgeois Coalition.
-subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #69A2BE;">**BVP**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> + <span style="color: #38C538;">**BB**</span>[? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span>?] ([+ bourgeois_coalition_bavaria +]%)
+subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #69A2BE;">**BVP**</span>[? if not rdp_formed: + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>?] + <span style="color: #38C538;">**BB**</span>[? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span>?] ([+ bourgeois_coalition_bavaria +]%)
 view-if: bourgeois_coalition_bavaria > 50
 on-arrival: in_bourgeois_coalition_bavaria = 1; nlp_bavaria = 1;
 go-to: mp
