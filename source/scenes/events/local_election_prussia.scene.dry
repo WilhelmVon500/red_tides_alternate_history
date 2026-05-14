@@ -435,6 +435,7 @@ There is no path to a majority government for now. The current government will s
 WIP
 
 - @braun
+- @fischbeck_fvp
 - @stegerwald
 - @schiele
 - @gayl
@@ -444,6 +445,16 @@ title: Otto Braun (<span style="color: #E3000F;">**SPD**</span>)
 view-if: in_weimar_coalition_prussia or in_grand_coalition_prussia
 on-arrival: prussia_leader = "Braun"; prussia_leader_party = "SPD";
 face-image: img/portraits/BraunOtto.jpg
+
+WIP.
+
+@fischbeck_fvp
+title: Otto Fischbeck (<span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>).
+view-if: not vldp_formed and (in_weimar_coalition_prussia or in_grand_coalition_prussia or in_bourgeois_coalition_prussia or in_center_right_coalition_prussia)
+choose-if: (in_weimar_coalition_prussia and fvp_pl + z_pl > spd_pl) or (in_grand_coalition_prussia and nlp_pl + fvp_pl + z_pl > spd_pl) or in_bourgeois_coalition_prussia or in_center_right_coalition_prussia
+unavailable-subtitle: Fischbeck doesn't have needed support to become the Minister-President.
+on-arrival: prussia_leader = "Fischbeck"; prussia_leader_party = fvp_name;
+face-image: img/portraits/FischbeckOtto.jpg
 
 WIP.
 
