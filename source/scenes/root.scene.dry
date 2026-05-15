@@ -383,10 +383,10 @@ Q.next_election_month_mecklenburg = 2;
 Q.next_election_year_mecklenburg = 1924;
 
 // hansa
-Q.nlp_hansa = 1;
+Q.nlp_hansa = 0;
 Q.hansa_leader = "Petersen";
 Q.hansa_leader_party = Q.fvp_name;
-Q.in_grand_coalition_hansa = 1;
+Q.in_weimar_coalition_hansa = 1;
 Q.next_election_week_hansa = 1;
 Q.next_election_month_hansa = 2;
 Q.next_election_year_hansa = 1925;
