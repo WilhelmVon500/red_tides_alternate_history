@@ -392,3 +392,13 @@ Minister-President: [+ mecklenburg_leader +] ([?if mecklenburg_leader_party = "S
 Government: [? if in_grand_coalition_mecklenburg: Grand Coalition ?][? if in_center_right_coalition_mecklenburg: Center-Right Coalition ?][? if in_right_coalition_mecklenburg: Right Coalition ?][? if in_nlp_majority_mecklenburg: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> majority ?]
 
 Next election: [+ next_election_month_mecklenburg: month +] [+ next_election_year_mecklenburg +]
+
+= Hanseatic League of Cities Hamburg, Bremen and Lübeck
+
+<div style="display: flex; justify-content: center;">[? if hansa_leader = "Petersen": <img src="img/portraits/PetersenCarlWilhelm.jpg" class="hansa-leader"> ?]</div>
+
+Minister-President: [+ hansa_leader +] ([?if hansa_leader_party = fvp_name:<span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>?])
+
+Government: [? if in_grand_coalition_hansa: Grand Coalition ?][? if in_nlp_majority_hansa: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> majority ?]
+
+Next election: [+ next_election_month_hansa: month +] [+ next_election_year_hansa +]
