@@ -373,6 +373,16 @@ Government: [? if in_spd_kpd_toleration_thuringia: <span style="color: #E3000F;"
 
 Next election: [+ next_election_month_thuringia: month +] [+ next_election_year_thuringia +]
 
+= Free People's State of Württemberg
+
+<div style="display: flex; justify-content: center;">[? if wurttemberg_leader = "Hieber": <img src="img/portraits/HieberJohannes.jpg" class="wurttemberg-leader"> ?]</div>
+
+Minister-President: [?if wurttemberg_leader_party = nlp_name: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?]
+
+Government: [? if in_grand_coalition_wurttemberg: Grand Coalition ?][? if in_nlp_majority_wurttemberg: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> majority ?]
+
+Next election: [+ next_election_month_wurttemberg: month +] [+ next_election_year_wurttemberg +]
+
 = Free State of Mecklenburg
 
 <div style="display: flex; justify-content: center;">[? if mecklenburg_leader = "Stelling": <img src="img/portraits/StellingJohannes.jpg" class="mecklenburg-leader"> ?][? if mecklenburg_leader = "Hustaedt": <img src="img/portraits/HustaedtRoderich.jpg" class="mecklenburg-leader"> ?][? if mecklenburg_leader = "Reincke-Bloch": <img src="img/portraits/ReinckeBlochHermann.jpg" class="mecklenburg-leader"> ?][? if mecklenburg_leader = "Brandenstein": <img src="img/portraits/BrandensteinJoachim.jpg" class="mecklenburg-leader"> ?]</div>
