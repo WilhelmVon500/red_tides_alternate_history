@@ -129,3 +129,192 @@ for (var party of Q.parties) {
     Q[party + '_wl'] = parseFloat((Q[party + '_seats_wurttemberg']/0.8).toFixed(1));
 }
 
+
+
+
+
+// coalitions
+Q.weimar_coalition_wurttemberg = parseFloat((Q.spd_wl + Q.fvp_wl + Q.z_wl).toFixed(1));
+Q.grand_coalition_wurttemberg = parseFloat((Q.nlp_wl + Q.spd_wl + Q.fvp_wl + Q.z_wl).toFixed(1));
+Q.bourgeois_coalition_wurttemberg = parseFloat((Q.nlp_wl + Q.z_wl + Q.wp_wl + Q.rlb_wl + Q.csvd_wl).toFixed(1));
+if (!Q.rdp_formed) Q.bourgeois_coalition_wurttemberg = parseFloat((Q.bourgeois_coalition_wurttemberg + Q.fvp_wl).toFixed(1));
+Q.center_right_coalition_wurttemberg = parseFloat((Q.nlp_wl + Q.fvp_wl + Q.z_wl + Q.wp_wl + Q.rlb_wl + Q.csvd_wl + Q.kvp_wl).toFixed(1));
+if (Q.dnvp_ideology != "Radical") Q.center_right_coalition_wurttemberg = parseFloat((Q.center_right_coalition_wurttemberg + Q.dnvp_wl).toFixed(1));
+Q.right_coalition_wurttemberg = parseFloat((Q.dnvp_wl + Q.nlp_wl + Q.z_wl + Q.wp_wl + Q.rlb_wl + Q.csvd_wl + Q.kvp_wl + Q.kswr_wl).toFixed(1));
+
+
+// Reset government
+Q.was_nlp_wurttemberg = 0;
+Q.was_in_nlp_majority_wurttemberg = 0;
+Q.was_in_weimar_coalition_wurttemberg = 0;
+Q.was_in_grand_coalition_wurttemberg = 0;
+Q.was_in_bourgeois_coalition_wurttemberg = 0;
+Q.was_in_center_right_coalition_wurttemberg = 0;
+Q.was_in_right_coalition_wurttemberg = 0;
+
+if (Q.nlp_wurttemberg) Q.was_nlp_wurttemberg = 1;
+if (Q.in_nlp_majority_wurttemberg) Q.was_in_nlp_majority_wurttemberg = 1;
+if (Q.in_weimar_coalition_wurttemberg) Q.was_in_weimar_coalition_wurttemberg = 1;
+if (Q.in_grand_coalition_wurttemberg) Q.was_in_grand_coalition_wurttemberg = 1;
+if (Q.in_bourgeois_coalition_wurttemberg) Q.was_in_bourgeois_coalition_wurttemberg = 1;
+if (Q.in_center_right_coalition_wurttemberg) Q.was_in_center_right_coalition_wurttemberg = 1;
+if (Q.in_right_coalition_wurttemberg) Q.was_in_right_coalition_wurttemberg = 1;
+
+Q.nlp_wurttemberg = 0;
+Q.in_nlp_majority_wurttemberg = 0;
+Q.in_weimar_coalition_wurttemberg = 0;
+Q.in_grand_coalition_wurttemberg = 0;
+Q.in_bourgeois_coalition_wurttemberg = 0;
+Q.in_center_right_coalition_wurttemberg = 0;
+Q.in_right_coalition_wurttemberg = 0;
+!}
+on-display: {!
+data = []
+if (Q.kpd_seats_wurttemberg) {
+    data.push({
+        "id": "kpd",
+        "legend": "KPD",
+        "name": "KPD",
+        "seats": Math.round(Q.kpd_seats_wurttemberg),
+    });
+}
+if (Q.spd_seats_wurttemberg) {
+    data.push({
+        "id": "spd",
+        "legend": "SPD",
+        "name": "SPD",
+        "seats": Math.round(Q.spd_seats_wurttemberg),
+    });
+}
+if (Q.fvp_seats_wurttemberg && Q.rdp_formed) {
+    data.push({
+        "id": "rdp",
+        "legend": Q.fvp_name,
+        "name": Q.fvp_name,
+        "seats": Math.round(Q.fvp_seats_wurttemberg),
+    });
+}
+if (Q.fvp_seats_wurttemberg && !Q.rdp_formed) {
+    data.push({
+        "id": "fvp",
+        "legend": Q.fvp_name,
+        "name": Q.fvp_name,
+        "seats": Math.round(Q.fvp_seats_wurttemberg),
+    });
+}
+if (Q.nlp_seats_wurttemberg && Q.vldp_formed) {
+    data.push({
+        "id": "vldp",
+        "legend": Q.nlp_name,
+        "name": Q.nlp_name,
+        "seats": Math.round(Q.nlp_seats_wurttemberg),
+    });
+}
+if (Q.z_seats_wurttemberg) {
+    data.push({
+        "id": "z",
+        "legend": "Center",
+        "name": "Center",
+        "seats": Math.round(Q.z_seats_wurttemberg),
+    });
+}
+if (Q.nlp_seats_wurttemberg && !Q.vldp_formed) {
+    data.push({
+        "id": "nlp",
+        "legend": Q.nlp_name,
+        "name": Q.nlp_name,
+        "seats": Math.round(Q.nlp_seats_wurttemberg),
+    });
+}
+if (Q.csvd_exist && Q.csvd_seats_wurttemberg) {
+    data.push({
+        "id": "csvd",
+        "legend": "CSVD",
+        "name": "CSVD",
+        "seats": Math.round(Q.csvd_seats_wurttemberg),
+    });
+}
+if (Q.wp_exist && Q.wp_seats_wurttemberg) {
+    data.push({
+        "id": "wp",
+        "legend": "WP",
+        "name": "WP",
+        "seats": Math.round(Q.wp_seats_wurttemberg),
+    });
+}
+if (Q.rlb_exist && Q.rlb_seats_wurttemberg) {
+    data.push({
+        "id": "rlb",
+        "legend": "RLB",
+        "name": "RLB",
+        "seats": Math.round(Q.rlb_seats_wurttemberg),
+    });
+}
+if (Q.other_seats_wurttemberg) {
+    data.push({
+        "id": "other",
+        "legend": "Other",
+        "name": "Other",
+        "seats": Math.round(Q.other_seats_wurttemberg),
+    });
+}
+if (Q.kvp_exist && Q.kvp_seats_wurttemberg) {
+    data.push({
+        "id": "wbp",
+        "legend": "WBP",
+        "name": "WBP",
+        "seats": Math.round(Q.kvp_seats_wurttemberg),
+    });
+}
+if (Q.dnvp_seats_wurttemberg && Q.dnvp_ideology != "Radical") {
+    data.push({
+        "id": "wbp",
+        "legend": "WBP",
+        "name": "WBP",
+        "seats": Math.round(Q.dnvp_seats_wurttemberg),
+    });
+}
+if (Q.dnvp_seats_wurttemberg && Q.dnvp_ideology == "Radical") {
+    data.push({
+        "id": "dnvp",
+        "legend": "DNVP",
+        "name": "DNVP",
+        "seats": Math.round(Q.dnvp_seats_wurttemberg),
+    });
+}
+if (Q.kswr_exist && Q.kswr_seats_wurttemberg) {
+    data.push({
+        "id": "kswr",
+        "legend": "KSWR",
+        "name": "KSWR",
+        "seats": Math.round(Q.kswr_seats_wurttemberg),
+    });
+}
+if (Q.dap_seats_wurttemberg) {
+    data.push({
+        "id": "dap",
+        "legend": "DAP",
+        "name": "DAP",
+        "seats": Math.round(Q.dap_seats_wurttemberg),
+    });
+}
+
+if (window && d3) {
+    var width = 500; 
+    var height = 500;
+    var screenWidth = document.getElementById('content').offsetWidth;
+    if (screenWidth < width - 50) {
+        width = screenWidth - 50; 
+        height = width;
+        document.getElementById("reichstag").style.height = screenWidth/2 + "px";
+    } 
+
+    var parliament = d3.parliament();
+    parliament.width(width).height(height).innerRadiusCoef(0.4);
+    parliament.enter.fromCenter(true).smallToBig(true);
+    parliament.exit.toCenter(false).bigToSmall(true);
+    d3.select("#reichstag").datum(data).call(parliament);
+}
+!}
+go-to: wurttemberg_coalition_menu
+
