@@ -44,6 +44,8 @@ if (Q.year == 1924) {
     Q.adjustmentFactors_other_wurttemberg = 0.1;
 }
 
+if (Q.vldp_formed) Q.adjustmentFactors_nlp_wurttemberg += 0.8;
+
 
 
 // Calculate support for each of the parties
@@ -442,4 +444,85 @@ There is no path to a majority government for now. The current government will s
 @mp
 
 WIP
+
+- @maier_nlp
+- @hieber
+- @bickes
+- @leipart
+- @maier_fvp
+- @bolz
+- @korner
+- @bazille
+
+@maier_nlp
+title: Reinhold Maier (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>, Constitutional Liberal).
+view-if: nlp_wurttemberg and vldp_formed
+choose-if: in_nlp_majority_wurttemberg or (in_grand_coalition_wurttemberg and (nlp_wl + z_wl) > spd_wl) or (in_bourgeois_coalition_wurttemberg and nlp_wl > (z_wl + rlb_wl)) or (in_center_right_coalition_wurttemberg and nlp_wl > (z_wl + rlb_wl))
+unavailable-subtitle: Maier doesn't have needed support to become the State-President.
+on-arrival: wurttemberg_leader = "Maier"; wurttemberg_leader_party = nlp_name;
+face-image: img/portraits/MaierReinhold.jpg
+
+WIP.
+
+@hieber
+title: Johannes Hieber (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>, Left-Wing Stresemannite).
+view-if: nlp_wurttemberg
+choose-if: in_nlp_majority_wurttemberg or (in_grand_coalition_wurttemberg and (nlp_wl + fvp_wl + z_wl) > spd_wl) or (in_bourgeois_coalition_wurttemberg and (nlp_wl + fvp_wl) > (z_wl + rlb_wl)) or (in_center_right_coalition_wurttemberg and (nlp_wl + fvp_wl) > (z_wl + rlb_wl)) or (in_right_coalition_wurttemberg and (nlp_wl + z_wl) > (kvp_wl + dnvp_wl + kswr_wl + rlb_wl))
+unavailable-subtitle: Hieber doesn't have needed support to become the State-President.
+on-arrival: wurttemberg_leader = "Hieber"; wurttemberg_leader_party = nlp_name;
+face-image: img/portraits/HieberJohannes.jpg
+
+WIP.
+
+@bickes
+title: Theodor Bickes (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>, Right-Wing Stresemannite).
+view-if: nlp_wurttemberg
+choose-if: in_nlp_majority_wurttemberg or (in_grand_coalition_wurttemberg and (nlp_wl + fvp_wl + z_wl) > spd_wl) or (in_bourgeois_coalition_wurttemberg and (nlp_wl + fvp_wl) > (z_wl + rlb_wl)) or (in_center_right_coalition_wurttemberg and (nlp_wl + fvp_wl) > (z_wl + rlb_wl)) or (in_right_coalition_wurttemberg and (nlp_wl + z_wl) > (kvp_wl + dnvp_wl + kswr_wl + rlb_wl))
+unavailable-subtitle: Bickes doesn't have needed support to become the State-President.
+on-arrival: wurttemberg_leader = "Bickes"; wurttemberg_leader_party = nlp_name;
+face-image: img/portraits/BickesTheodor.jpg
+
+WIP.
+
+@leipart
+title: Theodor Leipart (<span style="color: #E3000F;">**SPD**</span>).
+view-if: in_weimar_coalition_wurttemberg or in_grand_coalition_wurttemberg
+on-arrival: wurttemberg_leader = "Leipart"; wurttemberg_leader_party = "SPD";
+face-image: img/portraits/LeipartTheodor.jpg
+
+WIP.
+
+@maier_fvp
+title: Reinhold Maier (<span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>).
+view-if: not vldp_formed and (in_weimar_coalition_wurttemberg or in_grand_coalition_wurttemberg or in_bourgeois_coalition_wurttemberg or in_center_right_coalition_wurttemberg)
+choose-if: (in_weimar_coalition_wurttemberg and (fvp_wl + z_wl) > spd_wl) or (in_grand_coalition_wurttemberg and (nlp_wl + fvp_wl + z_wl) > spd_wl) or (in_bourgeois_coalition_wurttemberg and (nlp_wl + fvp_wl) > (z_wl + rlb_wl)) or (in_center_right_coalition_wurttemberg and (nlp_wl + fvp_wl) > (z_wl + rlb_wl))
+unavailable-subtitle: Maier doesn't have needed support to become the State-President.
+on-arrival: wurttemberg_leader = "Maier"; wurttemberg_leader_party = fvp_name;
+face-image: img/portraits/MaierReinhold.jpg
+
+WIP.
+
+@bolz
+title: Eugen Bolz (<span style="color: #000000;">**Z**</span>).
+view-if: in_weimar_coalition_wurttemberg or in_grand_coalition_wurttemberg or in_bourgeois_coalition_wurttemberg or in_center_right_coalition_wurttemberg or in_right_coalition_wurttemberg
+on-arrival: wurttemberg_leader = "Bolz"; wurttemberg_leader_party = "Z";
+face-image: img/portraits/BolzEugen.jpg
+
+WIP.
+
+@korner
+title: Theodor Körner (<span style="color: #006400;">**WBWB**</span>).
+view-if: in_bourgeois_coalition_wurttemberg or in_center_right_coalition_wurttemberg or in_right_coalition_wurttemberg
+on-arrival: wurttemberg_leader = "Körner"; wurttemberg_leader_party = "WBWB";
+face-image: img/portraits/KörnerTheodor.jpg
+
+WIP.
+
+@bazille
+title: Wilhelm Bazille (<span style="color: #63B8FF;">**WBP**</span>).
+view-if: in_center_right_coalition_wurttemberg or in_right_coalition_wurttemberg
+on-arrival: wurttemberg_leader = "Bazille"; wurttemberg_leader_party = "WBP";
+face-image: img/portraits/BazilleWilhelm.jpg
+
+WIP.
 
