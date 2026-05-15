@@ -60,6 +60,10 @@ const tooltipList = [
       explanationText: "Württemberg Farmer's and Winegrower's League <br> <i>Württembergischer Bauern- und Weingärtnerbund</i>"
     },
     {
+      searchString: "WBP",
+      explanationText: "Württemberg Citizens' Party <br> <i>Württembergische Bürgerpartei</i>"
+    },
+    {
       searchString: "KVP",
       explanationText: "Conservative People's Party <br> <i>Konservative Volkspartei</i>"
     },
@@ -140,6 +144,10 @@ const colourList = [
     {
         word: "WBWB",
         style: "color: #006400; font-weight: bold;",
+    },
+    {
+        word: "WBP",
+        style: "color: #63B8FF; font-weight: bold;",
     },
     {
         word: "KVP",
