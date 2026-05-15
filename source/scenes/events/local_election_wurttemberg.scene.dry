@@ -1,0 +1,27 @@
+title: Württemberg Landtag Election
+view-if: (year = next_election_year_wurttemberg and month >= next_election_month_wurttemberg and (week = next_election_week_wurttemberg or not weeks_enabled)) or (year > next_election_year_wurttemberg)
+new-page: true
+tags: event
+priority: 3
+on-arrival: next_election_year_wurttemberg = next_election_year_wurttemberg + 4;
+
+= Württemberg Landtag Elections, [+ month : month +] [+ year +]
+
+The Württembergian state elections are to be held now.
+
+- @wurttemberg: May we do our best...
+  
+@wurttemberg
+on-arrival: {!
+for (var c of Q.classes) {
+    var class_votes = 0;
+    for (var party of Q.parties) {
+        if (Q[c + '_' + party] < 0) {
+            Q[c + '_' + party] = 0;
+        }
+        class_votes += Q[c + '_' + party];
+    }
+    for (var party of Q.parties) {
+        Q[c + '_' + party + '_normalized_wurttemberg'] = Math.round(100 * Q[c + '_' + party] / class_votes);
+    }
+}
