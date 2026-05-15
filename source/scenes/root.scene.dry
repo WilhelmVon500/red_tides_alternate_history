@@ -440,6 +440,10 @@ Q.csvd_ml = 0;
 Q.kvp_ml = 0;
 Q.kswr_ml = 0;
 
+Q.csvd_hl = 0;
+Q.kvp_hl = 0;
+Q.kswr_hl = 0;
+
 
 
 
