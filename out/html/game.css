@@ -586,6 +586,9 @@ table {
 .seat.thlb {
     fill: #209E00;
 }
+.seat.wbwb {
+    fill: #006400;
+}
 .seat.other {
     fill: #909090;
 }
