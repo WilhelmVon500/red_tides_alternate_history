@@ -244,9 +244,9 @@ if (Q.wp_exist && Q.wp_seats_wurttemberg) {
 }
 if (Q.rlb_exist && Q.rlb_seats_wurttemberg) {
     data.push({
-        "id": "rlb",
-        "legend": "RLB",
-        "name": "RLB",
+        "id": "wbwb",
+        "legend": "WBWB",
+        "name": "WBWB",
         "seats": Math.round(Q.rlb_seats_wurttemberg),
     });
 }
@@ -317,4 +317,52 @@ if (window && d3) {
 }
 !}
 go-to: wurttemberg_coalition_menu
+
+= Election results
+
+{!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
+
+{!<table>!} 
+{!<tr><td>Party</td><td>Votes</td><td>Seats</td></tr>!}
+{!<tr><td><div class="box" style='background-color: var(--nlp-color); outline: 2px; outline-style: solid;'> </div> !} **[+nlp_name+]:** {!</td><td>!} **[+ nlp_election_votes_wurttemberg +]%** {!</td><td>!} **[+ nlp_seats_wurttemberg +]** **([+ nlp_wl +]%)** {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#8B0000'> </div> !} KPD: {!</td><td>!} [+ kpd_election_votes_wurttemberg +]% {!</td><td>!} [+ kpd_seats_wurttemberg +] ([+ kpd_wl +]%) {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#E3000F'> </div> !} SPD: {!</td><td>!} [+ spd_election_votes_wurttemberg +]% {!</td><td>!} [+ spd_seats_wurttemberg +] ([+ spd_wl +]%) {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color: var(--fvp-color)'> </div> !} [+fvp_name+]: {!</td><td>!} [+ fvp_election_votes_wurttemberg +]% {!</td><td>!} [+ fvp_seats_wurttemberg +] ([+ fvp_wl +]%) {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#000000'> </div> !} Z: {!</td><td>!} [+ z_election_votes_wurttemberg +]% {!</td><td>!} [+ z_seats_wurttemberg +] ([+ z_wl +]%) {!</td></tr>!}
+
+[? if csvd_exist: {!<tr><td><div class="box" style='background-color:#1DB4E1'> </div> !} CSVD: {!</td><td>!} [+ csvd_election_votes_wurttemberg +]% {!</td><td>!} [+ csvd_seats_wurttemberg +] ([+ csvd_wl +]%) {!</td></tr>!} ?]
+
+[? if wp_exist: {!<tr><td><div class="box" style='background-color:#B8996F'> </div> !} WP: {!</td><td>!} [+ wp_election_votes_wurttemberg +]% {!</td><td>!} [+ wp_seats_wurttemberg +] ([+ wp_wl +]%) {!</td></tr>!} ?]
+
+[? if rlb_exist: {!<tr><td><div class="box" style='background-color:#006400'> </div> !} WBWB: {!</td><td>!} [+ rlb_election_votes_wurttemberg +]% {!</td><td>!} [+ rlb_seats_wurttemberg +] ([+ rlb_wl +]%) {!</td></tr>!} ?]
+
+[? if kvp_exist: {!<tr><td><div class="box" style='background-color:#63B8FF'> </div> !} WBP: {!</td><td>!} [+ kvp_election_votes_wurttemberg +]% {!</td><td>!} [+ kvp_seats_wurttemberg +] ([+ kvp_wl +]%) {!</td></tr>!} ?]
+
+[? if not dnvp_ideology = "Radical": {!<tr><td><div class="box" style='background-color:#63B8FF'> </div> !} WBP: {!</td><td>!} [+ dnvp_election_votes_wurttemberg +]% {!</td><td>!} [+ dnvp_seats_wurttemberg +] ([+ dnvp_wl +]%) {!</td></tr>!} ?]
+[? if dnvp_ideology = "Radical": {!<tr><td><div class="box" style='background-color:#3F7BC1'> </div> !} DNVP: {!</td><td>!} [+ dnvp_election_votes_wurttemberg +]% {!</td><td>!} [+ dnvp_seats_wurttemberg +] ([+ dnvp_wl +]%) {!</td></tr>!} ?]
+
+[? if kswr_exist: {!<tr><td><div class="box" style='background-color:#003755'> </div> !} KSWR: {!</td><td>!} [+ kswr_election_votes_wurttemberg +]% {!</td><td>!} [+ kswr_seats_wurttemberg +] ([+ kswr_wl +]%) {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#096300'> </div> !} DAP: {!</td><td>!} [+ dap_election_votes_wurttemberg +]% {!</td><td>!} [+ dap_seats_wurttemberg +] ([+ dap_wl +]%) {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#909090'> </div> !} Others: {!</td><td>!} [+ other_election_votes_wurttemberg +]% {!</td><td>!} [+ other_seats_wurttemberg +] ([+ other_wl +]%) {!</td></tr>!}
+{!</table>!}
+
+**Potential coalitions:**
+
+Weimar Coalition (<span style="color: #E3000F;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>): [+ weimar_coalition_wurttemberg +]%
+
+Grand Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #E3000F;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>): [+ grand_coalition_wurttemberg +]%
+
+Bourgeois Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span>[? if not rdp_formed: + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?][? if rlb_exist: + <span style="color: #006400;">**WBWB**</span>?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span>?]): [+ bourgeois_coalition_wurttemberg +]%
+
+[? if not fvp_ideology = "Left": Center-Right Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #63B8FF;">**WBP**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>[? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?][? if rlb_exist: + <span style="color: #006400;">**WBWB**</span>?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span>?]): [+ center_right_coalition_wurttemberg +]% ?]
+
+Right Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #63B8FF;">**WBP**</span>[? if dnvp_ideology = "Radical": + <span style="color: #3F7BC1;">**DNVP**</span>?][? if kswr_exist: + <span style="color: #003755;">**KSWR**</span>?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?][? if rlb_exist: + <span style="color: #006400;">**WBWB**</span>?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span>?]): [+ right_coalition_wurttemberg +]%
+
+There are some potential coalition arrangements.
 
