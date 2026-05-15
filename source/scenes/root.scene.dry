@@ -193,8 +193,8 @@ Q.economic_expansion = 0;
 
 Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics'];
 Q.parties = ['nlp', 'kpd', 'uspd', 'spd', 'fvp', 'bb', 'z', 'wp', 'rlb', 'dnvp', 'dap', 'other'];
-Q.states = ['prussia', 'bavaria', 'saxony', 'thuringia', 'wurttemberg', 'mecklenburg'];
-Q.landtags = ['pl', 'bl', 'sl', 'tl', 'wl', 'ml'];
+Q.states = ['prussia', 'bavaria', 'saxony', 'thuringia', 'wurttemberg', 'mecklenburg', 'hansa'];
+Q.landtags = ['pl', 'bl', 'sl', 'tl', 'wl', 'ml', 'hl'];
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
@@ -381,6 +381,15 @@ Q.in_grand_coalition_mecklenburg = 1;
 Q.next_election_week_mecklenburg = 1;
 Q.next_election_month_mecklenburg = 2;
 Q.next_election_year_mecklenburg = 1924;
+
+// hansa
+Q.nlp_hansa = 1;
+Q.hansa_leader = "Petersen";
+Q.hansa_leader_party = Q.fvp_name;
+Q.in_grand_coalition_hansa = 1;
+Q.next_election_week_hansa = 1;
+Q.next_election_month_hansa = 2;
+Q.next_election_year_hansa = 1925;
 
 
 
