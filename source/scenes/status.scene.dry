@@ -379,7 +379,7 @@ Next election: [+ next_election_month_thuringia: month +] [+ next_election_year_
 
 State-President: [+ wurttemberg_leader +] ([?if wurttemberg_leader_party = nlp_name: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?])
 
-Government: [? if in_grand_coalition_wurttemberg: Grand Coalition ?][? if in_nlp_majority_wurttemberg: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> majority ?]
+Government: [? if in_weimar_coalition_wurttemberg: Weimar Coalition ?][? if in_grand_coalition_wurttemberg: Grand Coalition ?][? if in_bourgeois_coalition_wurttemberg: Bourgeois Coalition ?][? if in_center_right_coalition_wurttemberg: Center-Right Coalition ?][? if in_right_coalition_wurttemberg: Right Coalition ?][? if in_nlp_majority_wurttemberg: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> majority ?]
 
 Next election: [+ next_election_month_wurttemberg: month +] [+ next_election_year_wurttemberg +]
 
