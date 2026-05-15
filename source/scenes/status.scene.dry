@@ -377,7 +377,7 @@ Next election: [+ next_election_month_thuringia: month +] [+ next_election_year_
 
 <div style="display: flex; justify-content: center;">[? if wurttemberg_leader = "Hieber": <img src="img/portraits/HieberJohannes.jpg" class="wurttemberg-leader"> ?]</div>
 
-Minister-President: [?if wurttemberg_leader_party = nlp_name: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?]
+State-President: [+ wurttemberg_leader +] ([?if wurttemberg_leader_party = nlp_name: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?])
 
 Government: [? if in_grand_coalition_wurttemberg: Grand Coalition ?][? if in_nlp_majority_wurttemberg: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> majority ?]
 
