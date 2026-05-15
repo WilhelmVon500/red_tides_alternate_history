@@ -367,7 +367,7 @@ Q.next_election_year_thuringia = 1924;
 // wurttemberg
 Q.nlp_wurttemberg = 1;
 Q.wurttemberg_leader = "Hieber";
-Q.wurttemberg_leader_party = nlp_name;
+Q.wurttemberg_leader_party = Q.nlp_name;
 Q.in_grand_coalition_wurttemberg = 1;
 Q.next_election_week_wurttemberg = 1;
 Q.next_election_month_wurttemberg = 6;
