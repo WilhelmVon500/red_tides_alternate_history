@@ -377,7 +377,7 @@ Next election: [+ next_election_month_thuringia: month +] [+ next_election_year_
 
 <div style="display: flex; justify-content: center;">[? if wurttemberg_leader = "Hieber": <img src="img/portraits/HieberJohannes.jpg" class="wurttemberg-leader"> ?]</div>
 
-State-President: [+ wurttemberg_leader +] ([?if wurttemberg_leader_party = nlp_name: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?])
+State-President: [+ wurttemberg_leader +] ([?if wurttemberg_leader_party = "SPD": <span style="color: #E3000F;">**SPD**</span>?][?if wurttemberg_leader_party = fvp_name:<span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>?][?if wurttemberg_leader_party = "Z":<span style="color: #000000;">**Z**</span>?][?if wurttemberg_leader_party = nlp_name: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?][?if wurttemberg_leader_party = "WBWB":<span style="color: #006400;">**WBWB**</span>?][?if wurttemberg_leader_party = "WBP":<span style="color: #63B8FF;">**WBP**</span>?])
 
 Government: [? if in_weimar_coalition_wurttemberg: Weimar Coalition ?][? if in_grand_coalition_wurttemberg: Grand Coalition ?][? if in_bourgeois_coalition_wurttemberg: Bourgeois Coalition ?][? if in_center_right_coalition_wurttemberg: Center-Right Coalition ?][? if in_right_coalition_wurttemberg: Right Coalition ?][? if in_nlp_majority_wurttemberg: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> majority ?]
 
