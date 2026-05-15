@@ -358,11 +358,11 @@ Weimar Coalition (<span style="color: #E3000F;">**SPD**</span> + <span style="co
 
 Grand Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #E3000F;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>): [+ grand_coalition_wurttemberg +]%
 
-Bourgeois Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span>[? if not rdp_formed: + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?][? if rlb_exist: + <span style="color: #006400;">**WBWB**</span>?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span>?]): [+ bourgeois_coalition_wurttemberg +]%
+Bourgeois Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span>[? if not rdp_formed: + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>?][? if rlb_exist: + <span style="color: #006400;">**WBWB**</span>?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span>?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?]): [+ bourgeois_coalition_wurttemberg +]%
 
-[? if not fvp_ideology = "Left": Center-Right Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #63B8FF;">**WBP**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>[? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?][? if rlb_exist: + <span style="color: #006400;">**WBWB**</span>?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span>?]): [+ center_right_coalition_wurttemberg +]% ?]
+[? if not fvp_ideology = "Left": Center-Right Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #63B8FF;">**WBP**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>[? if rlb_exist: + <span style="color: #006400;">**WBWB**</span>?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span>?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?]): [+ center_right_coalition_wurttemberg +]% ?]
 
-Right Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #63B8FF;">**WBP**</span>[? if dnvp_ideology = "Radical": + <span style="color: #3F7BC1;">**DNVP**</span>?][? if kswr_exist: + <span style="color: #003755;">**KSWR**</span>?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?][? if rlb_exist: + <span style="color: #006400;">**WBWB**</span>?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span>?]): [+ right_coalition_wurttemberg +]%
+Right Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #63B8FF;">**WBP**</span>[? if dnvp_ideology = "Radical": + <span style="color: #3F7BC1;">**DNVP**</span>?][? if kswr_exist: + <span style="color: #003755;">**KSWR**</span>?][? if rlb_exist: + <span style="color: #006400;">**WBWB**</span>?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span>?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?]): [+ right_coalition_wurttemberg +]%
 
 There are some potential coalition arrangements.
 
@@ -400,7 +400,7 @@ WIP
 
 @bourgeois_coalition_wurttemberg
 title: We can form a Bourgeois Coalition.
-subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span>[? if not rdp_formed: + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?][? if rlb_exist: + <span style="color: #006400;">**WBWB**</span>?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span>?] ([+ bourgeois_coalition_wurttemberg +]%)
+subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span>[? if not rdp_formed: + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>?][? if rlb_exist: + <span style="color: #006400;">**WBWB**</span>?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span>?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?] ([+ bourgeois_coalition_wurttemberg +]%)
 view-if: bourgeois_coalition_wurttemberg > 50
 on-arrival: in_bourgeois_coalition_wurttemberg = 1; nlp_wurttemberg = 1;
 go-to: mp
@@ -410,7 +410,7 @@ WIP
 
 @center_right_coalition_wurttemberg
 title: We can form a Center-Right Coalition.
-subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #63B8FF;">**WBP**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>[? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?][? if rlb_exist: + <span style="color: #006400;">**WBWB**</span>?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span>?] ([+ center_right_coalition_wurttemberg +]%)
+subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #63B8FF;">**WBP**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>[? if rlb_exist: + <span style="color: #006400;">**WBWB**</span>?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span>?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?] ([+ center_right_coalition_wurttemberg +]%)
 view-if: center_right_coalition_wurttemberg > 50 and not fvp_ideology = "Left"
 on-arrival: in_center_right_coalition_wurttemberg = 1; nlp_wurttemberg = 1;
 go-to: mp
@@ -420,7 +420,7 @@ WIP
 
 @right_coalition_wurttemberg
 title: We can form a Right Coalition.
-subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #63B8FF;">**WBP**</span>[? if dnvp_ideology = "Radical": + <span style="color: #3F7BC1;">**DNVP**</span>?][? if kswr_exist: + <span style="color: #003755;">**KSWR**</span>?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?][? if rlb_exist: + <span style="color: #006400;">**WBWB**</span>?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span>?] ([+ right_coalition_wurttemberg +]%)
+subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #63B8FF;">**WBP**</span>[? if dnvp_ideology = "Radical": + <span style="color: #3F7BC1;">**DNVP**</span>?][? if kswr_exist: + <span style="color: #003755;">**KSWR**</span>?][? if rlb_exist: + <span style="color: #006400;">**WBWB**</span>?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span>?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?] ([+ right_coalition_wurttemberg +]%)
 view-if: right_coalition_wurttemberg > 50
 on-arrival: in_right_coalition_wurttemberg = 1; nlp_wurttemberg = 1;
 go-to: mp
