@@ -396,6 +396,8 @@ WIP
 @reincke_bloch
 title: Hermann Reincke-Bloch (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>, Left-Wing Stresemannite).
 view-if: nlp_mecklenburg
+choose-if: in_grand_coalition_mecklenburg or in_center_right_coalition_mecklenburg or (in_right_coalition_mecklenburg and nlp_ml > (kvp_ml + dnvp_ml + kswr_ml))
+unavailable-subtitle: Reincke-Bloch doesn't have needed support to become the Minister-President.
 on-arrival: mecklenburg_leader = "Reincke-Bloch"; mecklenburg_leader_party = nlp_name;
 face-image: img/portraits/ReinckeBlochHermann.jpg
 
