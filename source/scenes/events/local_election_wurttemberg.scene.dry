@@ -25,3 +25,107 @@ for (var c of Q.classes) {
         Q[c + '_' + party + '_normalized_wurttemberg'] = Math.round(100 * Q[c + '_' + party] / class_votes);
     }
 }
+
+// Define adjustment factors
+if (Q.year == 1924) {
+    Q.adjustmentFactors_kpd_wurttemberg = 0.7;
+    Q.adjustmentFactors_spd_wurttemberg = 0.8;
+    Q.adjustmentFactors_fvp_wurttemberg = 1.9;
+    Q.adjustmentFactors_bb_wurttemberg = 0.0;
+    Q.adjustmentFactors_z_wurttemberg = 1.7;
+    Q.adjustmentFactors_nlp_wurttemberg = 0.6;
+    Q.adjustmentFactors_csvd_wurttemberg = 2.0;
+    Q.adjustmentFactors_wp_wurttemberg = 0.25;
+    Q.adjustmentFactors_rlb_wurttemberg = 5.0;
+    Q.adjustmentFactors_kvp_wurttemberg = 0.7;
+    Q.adjustmentFactors_dnvp_wurttemberg = 0.7;
+    Q.adjustmentFactors_kswr_wurttemberg = 0.7;
+    Q.adjustmentFactors_dap_wurttemberg = 0.8;
+    Q.adjustmentFactors_other_wurttemberg = 0.1;
+}
+
+
+
+// Calculate support for each of the parties
+var total_support = 0;
+for (var party of Q.parties) {
+    var party_support = 0;
+    for (var c of Q.classes) {
+        party_support += Q[c] * Q[c + '_' + party + '_normalized_wurttemberg'];
+    }
+    // Apply adjustment factor
+    Q[party + '_support'] = party_support * Q['adjustmentFactors_' + party + '_wurttemberg'];
+    total_support += Q[party + '_support'];
+}
+console.log(total_support)
+// Normalize support (fraction)
+for (var party of Q.parties) {
+    Q[party + '_normalized_wurttemberg'] = Q[party + '_support'] / total_support;
+    console.log(Q[party + '_support'])
+    console.log(total_support)
+    Q[party + '_votes_wurttemberg'] = Math.round(Q[party + '_normalized_wurttemberg'] * 1000) / 10;
+}
+
+
+var new_party_sum = 0;
+for (var party of Q.parties) {
+    Q[party + '_wl'] = 0;
+    Q[party + '_seats_wurttemberg'] = 0;
+    if (Q[party + '_banned']) {
+        Q[party + '_election_votes_wurttemberg'] = 0;
+    } else {
+        Q[party + '_election_votes_wurttemberg'] = parseFloat((Q[party+'_votes_wurttemberg']).toFixed(1));
+    }
+    new_party_sum += Q[party + '_election_votes_wurttemberg'];
+}
+
+var other_votes_fix = Q.other_election_votes_wurttemberg
+Q.other_election_votes_wurttemberg = parseFloat((Q.other_election_votes_wurttemberg * 0.3).toFixed(1));
+var new_new_party_sum = new_party_sum + Q.other_election_votes_wurttemberg - other_votes_fix;
+
+// calculate new party sum
+if (new_party_sum > 0) {
+    for (var party of Q.parties) {
+        if (Q[party + '_election_votes_wurttemberg'] > 0 && !(Q[party + '_election_votes_wurttemberg'] < Q.electoral_threshold) && !(Q.electoral_threshold > 1 && party == 'other')) {
+            Q[party + '_wl'] = parseFloat((Q[party + '_election_votes_wurttemberg']*100/new_new_party_sum).toFixed(1));
+            Q[party + '_election_votes_wurttemberg'] = parseFloat((Q[party + '_election_votes_wurttemberg']*100/new_party_sum).toFixed(1));
+        } else {
+            Q[party + '_election_votes_wurttemberg'] = parseFloat((Q[party + '_election_votes_wurttemberg']*100/new_party_sum).toFixed(1));
+            Q[party + '_wl'] = 0;
+        }
+        Q[party + '_wl'] = parseFloat((Q[party+'_wl']).toFixed(1));
+    }
+}
+
+Q.other_election_votes_wurttemberg = other_votes_fix;
+
+let allocatedSeats = 0;
+let remainders = [];
+
+for (var party of Q.parties) {
+    let rawSeats = Q[party + '_wl'] * 0.8;
+    let seats = Math.floor(rawSeats);
+    Q[party + '_seats_wurttemberg'] = seats;
+    allocatedSeats += seats;
+    remainders.push({
+        party: party,
+        remainder: rawSeats - seats
+    });
+}
+
+let remainingSeats = 80 - allocatedSeats;
+remainders.sort((a, b) => b.remainder - a.remainder);
+for (let i = 0; i < remainingSeats && i < remainders.length; i++) {
+    let partyObj = remainders[i];
+    if (!partyObj || !partyObj.party) continue;
+
+    let party = partyObj.party;
+    Q[party + '_seats_wurttemberg'] += 1;
+}
+
+
+
+for (var party of Q.parties) {
+    Q[party + '_wl'] = parseFloat((Q[party + '_seats_wurttemberg']/0.8).toFixed(1));
+}
+
