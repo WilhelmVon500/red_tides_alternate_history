@@ -193,14 +193,6 @@ if (Q.fvp_seats_bavaria && !Q.rdp_formed) {
         "seats": Math.round(Q.fvp_seats_bavaria),
     });
 }
-if (Q.nlp_seats_bavaria && Q.vldp_formed) {
-    data.push({
-        "id": "vldp",
-        "legend": Q.nlp_name,
-        "name": Q.nlp_name,
-        "seats": Math.round(Q.nlp_seats_bavaria),
-    });
-}
 if (Q.bb_seats_bavaria) {
     data.push({
         "id": "bb",
@@ -215,6 +207,14 @@ if (Q.z_seats_bavaria) {
         "legend": "BVP",
         "name": "BVP",
         "seats": Math.round(Q.z_seats_bavaria),
+    });
+}
+if (Q.nlp_seats_bavaria && Q.vldp_formed) {
+    data.push({
+        "id": "vldp",
+        "legend": Q.nlp_name,
+        "name": Q.nlp_name,
+        "seats": Math.round(Q.nlp_seats_bavaria),
     });
 }
 if (Q.nlp_seats_bavaria && !Q.vldp_formed) {
