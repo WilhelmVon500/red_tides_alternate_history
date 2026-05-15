@@ -300,14 +300,6 @@ if (Q.fvp_seats && !Q.rdp_formed) {
         "seats": Math.round(Q.fvp_seats),
     });
 }
-if (Q.nlp_seats && Q.vldp_formed) {
-    data.push({
-        "id": "vldp",
-        "legend": Q.nlp_name,
-        "name": Q.nlp_name,
-        "seats": Math.round(Q.nlp_seats),
-    });
-}
 if (Q.bb_seats) {
     data.push({
         "id": "bb",
@@ -330,6 +322,14 @@ if (Q.bvp_seats) {
         "legend": "BVP",
         "name": "BVP",
         "seats": Math.round(Q.bvp_seats),
+    });
+}
+if (Q.nlp_seats && Q.vldp_formed) {
+    data.push({
+        "id": "vldp",
+        "legend": Q.nlp_name,
+        "name": Q.nlp_name,
+        "seats": Math.round(Q.nlp_seats),
     });
 }
 if (Q.nlp_seats && !Q.vldp_formed) {
