@@ -56,6 +56,10 @@ const tooltipList = [
       explanationText: "Thuringian Agricultural League <br> <i>Thüringer Landbund</i>"
     },
     {
+      searchString: "WBWB",
+      explanationText: "Württemberg Farmer's and Winegrower's League <br> <i>Württembergischer Bauern- und Weingärtnerbund</i>"
+    },
+    {
       searchString: "KVP",
       explanationText: "Conservative People's Party <br> <i>Konservative Volkspartei</i>"
     },
@@ -132,6 +136,10 @@ const colourList = [
     {
         word: "ThLB",
         style: "color: #209E00; font-weight: bold;",
+    },
+    {
+        word: "WBWB",
+        style: "color: #006400; font-weight: bold;",
     },
     {
         word: "KVP",
