@@ -202,20 +202,20 @@ if (Q.fvp_seats_wurttemberg && !Q.rdp_formed) {
         "seats": Math.round(Q.fvp_seats_wurttemberg),
     });
 }
-if (Q.nlp_seats_wurttemberg && Q.vldp_formed) {
-    data.push({
-        "id": "vldp",
-        "legend": Q.nlp_name,
-        "name": Q.nlp_name,
-        "seats": Math.round(Q.nlp_seats_wurttemberg),
-    });
-}
 if (Q.z_seats_wurttemberg) {
     data.push({
         "id": "z",
         "legend": "Center",
         "name": "Center",
         "seats": Math.round(Q.z_seats_wurttemberg),
+    });
+}
+if (Q.nlp_seats_wurttemberg && Q.vldp_formed) {
+    data.push({
+        "id": "vldp",
+        "legend": Q.nlp_name,
+        "name": Q.nlp_name,
+        "seats": Math.round(Q.nlp_seats_wurttemberg),
     });
 }
 if (Q.nlp_seats_wurttemberg && !Q.vldp_formed) {
