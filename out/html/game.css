@@ -715,3 +715,10 @@ table {
     box-shadow: gold 0px 0px 0px 4px, red 0px 0px 0px 8px;
     object-fit: cover;
 }
+.hansa-leader {
+    width: 40%;
+    height: 150px;
+    border: 6px solid white;
+    box-shadow: red 0px 0px 0px 6px;
+    object-fit: cover;
+}
