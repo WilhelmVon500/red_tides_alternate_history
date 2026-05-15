@@ -695,6 +695,13 @@ table {
     box-shadow: red 0px 0px 0px 6px;
     object-fit: cover;
 }
+.wurttemberg-leader {
+    width: 40%;
+    height: 150px;
+    border: 6px solid black;
+    box-shadow: #BD1220 0px 0px 0px 6px;
+    object-fit: cover;
+}
 .mecklenburg-leader {
     width: 40%;
     height: 150px;
