@@ -139,6 +139,14 @@ if (Q.dnvp_candidate == "Westarp") {
 if (Q.other_candidate == "Westarp") {
     Q.dnvp_candidate_votes += Q.other_normalized;
 }
+
+if (Q.kpd_candidate != "Brandler") Q.kpd_campaign = 0;
+if (Q.spd_candidate != "Löbe") Q.spd_campaign = 0;
+if (Q.fvp_candidate != "Rathenau") Q.fvp_campaign = 0;
+if (Q.z_candidate != "Marx") Q.z_campaign = 0;
+if (Q.nlp_candidate != "Cuno") Q.nlp_campaign = 0;
+if (Q.dnvp_candidate != "Westarp") Q.dnvp_campaign = 0;
+if (Q.dap_candidate != "Ludendorff") Q.dap_campaign = 0;
              
 Q.kpd_candidate_votes = Math.round(Q.kpd_candidate_votes*1000)/10;
 Q.spd_candidate_votes = Math.round(Q.spd_candidate_votes*1000)/10;
