@@ -75,6 +75,7 @@ header {
   padding-left: 1em;
   box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
   background-color: var(--bg-color);
+  border-radius: 5px;
 }
 #header-links a {
   padding-right: 1em;
