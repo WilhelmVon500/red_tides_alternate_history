@@ -400,3 +400,72 @@ view-if: grand_coalition_hansa <= 50 and bourgeois_coalition_hansa <= 50 and rig
 on-arrival: nlp_hansa = 1 if was_nlp_hansa; in_nlp_majority_hansa = 1 if was_in_nlp_majority_hansa; in_united_left_coalition_hansa = 1 if was_in_united_left_coalition_hansa; in_grand_coalition_hansa = 1 if was_in_grand_coalition_hansa; in_bourgeois_coalition_hansa = 1 if was_in_bourgeois_coalition_hansa; in_right_coalition_hansa = 1 if was_in_right_coalition_hansa;
 
 There is no path to a majority government for now. The current government will stay in power as a minority coalition.
+
+
+
+
+
+@mp
+
+WIP
+
+- @petersen_nlp
+- @dauch
+- @apelt
+- @ross
+- @petersen_fvp
+- @lienau
+
+@petersen_nlp
+title: Carl Wilhelm Petersen (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>, Constitutional Liberal).
+view-if: nlp_hansa and vldp_formed
+choose-if: in_nlp_majority_hansa or in_bourgeois_coalition_hansa or in_right_coalition_hansa or (in_grand_coalition_hansa and nlp_hl > spd_hl)
+unavailable-subtitle: Petersen doesn't have needed support to become the Senate President.
+on-arrival: hansa_leader = "Petersen"; hansa_leader_party = nlp_name;
+face-image: img/portraits/PetersenCarlWilhelm.jpg
+
+WIP.
+
+@dauch
+title: Walther Dauch (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>, Left-Wing Stresemannite/Industrialist).
+view-if: nlp_hansa
+choose-if: in_nlp_majority_hansa or in_bourgeois_coalition_hansa or in_right_coalition_hansa or (in_grand_coalition_hansa and nlp_hl > spd_hl)
+unavailable-subtitle: Dauch doesn't have needed support to become the Senate President.
+on-arrival: hansa_leader = "Dauch"; hansa_leader_party = nlp_name;
+face-image: img/portraits/DauchWalther.jpg
+
+WIP.
+
+@apelt
+title: Hermann Apelt (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>, Right-Wing Stresemannite).
+view-if: nlp_hansa
+choose-if: in_nlp_majority_hansa or in_bourgeois_coalition_hansa or in_right_coalition_hansa or (in_grand_coalition_hansa and nlp_hl > spd_hl)
+unavailable-subtitle: Apelt doesn't have needed support to become the Senate President.
+on-arrival: hansa_leader = "Apelt"; hansa_leader_party = nlp_name;
+face-image: img/portraits/ApeltHermann.jpg
+
+WIP.
+
+@ross
+title: Rudolf Ross (<span style="color: #E3000F;">**SPD**</span>).
+view-if: in_united_left_coalition_hansa or in_grand_coalition_hansa
+on-arrival: hansa_leader = "Ross"; hansa_leader_party = "SPD";
+face-image: img/portraits/RossRudolf.jpg
+
+WIP.
+
+@petersen_fvp
+title: Carl Wilhelm Petersen (<span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>).
+view-if: not vldp_formed and (in_grand_coalition_hansa or in_bourgeois_coalition_hansa)
+on-arrival: hansa_leader = "Petersen"; hansa_leader_party = fvp_name;
+face-image: img/portraits/PetersenCarlWilhelm.jpg
+
+WIP.
+
+@lienau
+title: Cay Diedrich Lienau ([?if not kswr_exist:<span style="color: #3F7BC1;">**DNVP**</span>?][?if kswr_exist:<span style="color: #003755;">**KSWR**</span>?]).
+view-if: in_right_coalition_hansa
+on-arrival: hansa_leader = "Lienau"; hansa_leader_party = "DNVP" if not kswr_exist; hansa_leader_party = "KSWR" if kswr_exist;
+face-image: img/portraits/LienauCayDiedrich.jpg
+
+WIP.
