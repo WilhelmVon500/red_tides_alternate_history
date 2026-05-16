@@ -1,0 +1,402 @@
+title: Hanseatic Bürgerschaft Election
+view-if: (year = next_election_year_hansa and month >= next_election_month_hansa and (week = next_election_week_hansa or not weeks_enabled)) or (year > next_election_year_hansa)
+new-page: true
+tags: event
+priority: 3
+on-arrival: next_election_year_hansa = next_election_year_hansa + 4;
+
+= Hanseatic Bürgerschaft Elections, [+ month : month +] [+ year +]
+
+The Hanseatic state elections are to be held now.
+
+- @hansa: May we do our best...
+  
+@hansa
+on-arrival: {!
+for (var c of Q.classes) {
+    var class_votes = 0;
+    for (var party of Q.parties) {
+        if (Q[c + '_' + party] < 0) {
+            Q[c + '_' + party] = 0;
+        }
+        class_votes += Q[c + '_' + party];
+    }
+    for (var party of Q.parties) {
+        Q[c + '_' + party + '_normalized_hansa'] = Math.round(100 * Q[c + '_' + party] / class_votes);
+    }
+}
+
+// Define adjustment factors
+if (Q.year == 1925) {
+    Q.adjustmentFactors_kpd_hansa = 0.95;
+    Q.adjustmentFactors_spd_hansa = 1.4;
+    Q.adjustmentFactors_fvp_hansa = 1.9;
+    Q.adjustmentFactors_bb_hansa = 0.0;
+    Q.adjustmentFactors_z_hansa = 0.1;
+    Q.adjustmentFactors_nlp_hansa = 1.4;
+    Q.adjustmentFactors_csvd_hansa = 2.2;
+    Q.adjustmentFactors_wp_hansa = 4.0;
+    Q.adjustmentFactors_rlb_hansa = 0.0;
+    Q.adjustmentFactors_kvp_hansa = 0.9;
+    Q.adjustmentFactors_dnvp_hansa = 0.9;
+    Q.adjustmentFactors_kswr_hansa = 0.9;
+    Q.adjustmentFactors_dap_hansa = 0.6;
+    Q.adjustmentFactors_other_hansa = 0.9;
+}
+
+if (Q.vldp_formed) Q.adjustmentFactors_nlp_hansa += 0.3;
+
+
+
+// Calculate support for each of the parties
+var total_support = 0;
+for (var party of Q.parties) {
+    var party_support = 0;
+    for (var c of Q.classes) {
+        party_support += Q[c] * Q[c + '_' + party + '_normalized_hansa'];
+    }
+    // Apply adjustment factor
+    Q[party + '_support'] = party_support * Q['adjustmentFactors_' + party + '_hansa'];
+    total_support += Q[party + '_support'];
+}
+console.log(total_support)
+// Normalize support (fraction)
+for (var party of Q.parties) {
+    Q[party + '_normalized_hansa'] = Q[party + '_support'] / total_support;
+    console.log(Q[party + '_support'])
+    console.log(total_support)
+    Q[party + '_votes_hansa'] = Math.round(Q[party + '_normalized_hansa'] * 1000) / 10;
+}
+
+
+var new_party_sum = 0;
+for (var party of Q.parties) {
+    Q[party + '_hl'] = 0;
+    Q[party + '_seats_hansa'] = 0;
+    if (Q[party + '_banned']) {
+        Q[party + '_election_votes_hansa'] = 0;
+    } else {
+        Q[party + '_election_votes_hansa'] = parseFloat((Q[party+'_votes_hansa']).toFixed(1));
+    }
+    new_party_sum += Q[party + '_election_votes_hansa'];
+}
+
+var other_votes_fix = Q.other_election_votes_hansa
+Q.other_election_votes_hansa = parseFloat((Q.other_election_votes_hansa * 0.3).toFixed(1));
+var new_new_party_sum = new_party_sum + Q.other_election_votes_hansa - other_votes_fix;
+
+// calculate new party sum
+if (new_party_sum > 0) {
+    for (var party of Q.parties) {
+        if (Q[party + '_election_votes_hansa'] > 0 && !(Q[party + '_election_votes_hansa'] < Q.electoral_threshold) && !(Q.electoral_threshold > 1 && party == 'other')) {
+            Q[party + '_hl'] = parseFloat((Q[party + '_election_votes_hansa']*100/new_new_party_sum).toFixed(1));
+            Q[party + '_election_votes_hansa'] = parseFloat((Q[party + '_election_votes_hansa']*100/new_party_sum).toFixed(1));
+        } else {
+            Q[party + '_election_votes_hansa'] = parseFloat((Q[party + '_election_votes_hansa']*100/new_party_sum).toFixed(1));
+            Q[party + '_hl'] = 0;
+        }
+        Q[party + '_hl'] = parseFloat((Q[party+'_hl']).toFixed(1));
+    }
+}
+
+Q.other_election_votes_hansa = other_votes_fix;
+
+let allocatedSeats = 0;
+let remainders = [];
+
+for (var party of Q.parties) {
+    let rawSeats = Q[party + '_hl'] * 2;
+    let seats = Math.floor(rawSeats);
+    Q[party + '_seats_hansa'] = seats;
+    allocatedSeats += seats;
+    remainders.push({
+        party: party,
+        remainder: rawSeats - seats
+    });
+}
+
+let remainingSeats = 200 - allocatedSeats;
+remainders.sort((a, b) => b.remainder - a.remainder);
+for (let i = 0; i < remainingSeats && i < remainders.length; i++) {
+    let partyObj = remainders[i];
+    if (!partyObj || !partyObj.party) continue;
+
+    let party = partyObj.party;
+    Q[party + '_seats_hansa'] += 1;
+}
+
+
+
+for (var party of Q.parties) {
+    Q[party + '_hl'] = parseFloat((Q[party + '_seats_hansa']/2).toFixed(1));
+}
+
+
+
+
+
+// coalitions
+Q.united_left_coalition_hansa = parseFloat((Q.spd_hl + Q.kpd_hl).toFixed(1));
+Q.grand_coalition_hansa = parseFloat((Q.nlp_hl + Q.fvp_hl + Q.z_hl + Q.spd_hl).toFixed(1));
+Q.bourgeois_coalition_hansa = parseFloat((Q.nlp_hl + Q.z_hl + Q.wp_hl + Q.csvd_hl).toFixed(1));
+if (!Q.rdp_formed) Q.bourgeois_coalition_hansa = parseFloat((Q.bourgeois_coalition_hansa + Q.fvp_hl).toFixed(1));
+Q.right_coalition_hansa = parseFloat((Q.dnvp_hl + Q.nlp_hl + Q.z_hl + Q.wp_hl + Q.csvd_hl + Q.kvp_hl + Q.kswr_hl).toFixed(1));
+
+
+// Reset government
+Q.was_nlp_hansa = 0;
+Q.was_in_nlp_majority_hansa = 0;
+Q.was_in_united_left_coalition_hansa = 0;
+Q.was_in_grand_coalition_hansa = 0;
+Q.was_in_bourgeois_coalition_hansa = 0;
+Q.was_in_right_coalition_hansa = 0;
+
+if (Q.nlp_hansa) Q.was_nlp_hansa = 1;
+if (Q.in_nlp_majority_hansa) Q.was_in_nlp_majority_hansa = 1;
+if (Q.in_united_left_coalition_hansa) Q.was_in_united_left_coalition_hansa = 1;
+if (Q.in_grand_coalition_hansa) Q.was_in_grand_coalition_hansa = 1;
+if (Q.in_bourgeois_coalition_hansa) Q.was_in_bourgeois_coalition_hansa = 1;
+if (Q.in_right_coalition_hansa) Q.was_in_right_coalition_hansa = 1;
+
+Q.nlp_hansa = 0;
+Q.in_nlp_majority_hansa = 0;
+Q.in_united_left_coalition_hansa = 0;
+Q.in_grand_coalition_hansa = 0;
+Q.in_bourgeois_coalition_hansa = 0;
+Q.in_right_coalition_hansa = 0;
+Q.in_spd_kpd_toleration_hansa = 0;
+!}
+on-display: {!
+data = []
+if (Q.kpd_seats_hansa) {
+    data.push({
+        "id": "kpd",
+        "legend": "KPD",
+        "name": "KPD",
+        "seats": Math.round(Q.kpd_seats_hansa),
+    });
+}
+if (Q.spd_seats_hansa) {
+    data.push({
+        "id": "spd",
+        "legend": "SPD",
+        "name": "SPD",
+        "seats": Math.round(Q.spd_seats_hansa),
+    });
+}
+if (Q.fvp_seats_hansa && Q.rdp_formed) {
+    data.push({
+        "id": "rdp",
+        "legend": Q.fvp_name,
+        "name": Q.fvp_name,
+        "seats": Math.round(Q.fvp_seats_hansa),
+    });
+}
+if (Q.fvp_seats_hansa && !Q.rdp_formed) {
+    data.push({
+        "id": "fvp",
+        "legend": Q.fvp_name,
+        "name": Q.fvp_name,
+        "seats": Math.round(Q.fvp_seats_hansa),
+    });
+}
+if (Q.z_seats_hansa) {
+    data.push({
+        "id": "z",
+        "legend": "Center",
+        "name": "Center",
+        "seats": Math.round(Q.z_seats_hansa),
+    });
+}
+if (Q.nlp_seats_hansa && Q.vldp_formed) {
+    data.push({
+        "id": "vldp",
+        "legend": Q.nlp_name,
+        "name": Q.nlp_name,
+        "seats": Math.round(Q.nlp_seats_hansa),
+    });
+}
+if (Q.nlp_seats_hansa && !Q.vldp_formed) {
+    data.push({
+        "id": "nlp",
+        "legend": Q.nlp_name,
+        "name": Q.nlp_name,
+        "seats": Math.round(Q.nlp_seats_hansa),
+    });
+}
+if (Q.csvd_exist && Q.csvd_seats_hansa) {
+    data.push({
+        "id": "csvd",
+        "legend": "CSVD",
+        "name": "CSVD",
+        "seats": Math.round(Q.csvd_seats_hansa),
+    });
+}
+if (Q.wp_exist && Q.wp_seats_hansa) {
+    data.push({
+        "id": "wp",
+        "legend": "WP",
+        "name": "WP",
+        "seats": Math.round(Q.wp_seats_hansa),
+    });
+}
+if (Q.other_seats_hansa) {
+    data.push({
+        "id": "other",
+        "legend": "Other",
+        "name": "Other",
+        "seats": Math.round(Q.other_seats_hansa),
+    });
+}
+if (Q.kvp_exist && Q.kvp_seats_hansa) {
+    data.push({
+        "id": "kvp",
+        "legend": "KVP",
+        "name": "KVP",
+        "seats": Math.round(Q.kvp_seats_hansa),
+    });
+}
+if (Q.dnvp_seats_hansa) {
+    data.push({
+        "id": "dnvp",
+        "legend": "DNVP",
+        "name": "DNVP",
+        "seats": Math.round(Q.dnvp_seats_hansa),
+    });
+}
+if (Q.kswr_exist && Q.kswr_seats_hansa) {
+    data.push({
+        "id": "kswr",
+        "legend": "KSWR",
+        "name": "KSWR",
+        "seats": Math.round(Q.kswr_seats_hansa),
+    });
+}
+if (Q.dap_seats_hansa) {
+    data.push({
+        "id": "dap",
+        "legend": "DAP",
+        "name": "DAP",
+        "seats": Math.round(Q.dap_seats_hansa),
+    });
+}
+
+if (window && d3) {
+    var width = 500; 
+    var height = 500;
+    var screenWidth = document.getElementById('content').offsetWidth;
+    if (screenWidth < width - 50) {
+        width = screenWidth - 50; 
+        height = width;
+        document.getElementById("reichstag").style.height = screenWidth/2 + "px";
+    } 
+
+    var parliament = d3.parliament();
+    parliament.width(width).height(height).innerRadiusCoef(0.4);
+    parliament.enter.fromCenter(true).smallToBig(true);
+    parliament.exit.toCenter(false).bigToSmall(true);
+    d3.select("#reichstag").datum(data).call(parliament);
+}
+!}
+go-to: hansa_coalition_menu
+
+= Election results
+
+{!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
+
+{!<table>!} 
+{!<tr><td>Party</td><td>Votes</td><td>Seats</td></tr>!}
+{!<tr><td><div class="box" style='background-color: var(--nlp-color); outline: 2px; outline-style: solid;'> </div> !} **[+nlp_name+]:** {!</td><td>!} **[+ nlp_election_votes_hansa +]%** {!</td><td>!} **[+ nlp_seats_hansa +]** **([+ nlp_hl +]%)** {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#8B0000'> </div> !} KPD: {!</td><td>!} [+ kpd_election_votes_hansa +]% {!</td><td>!} [+ kpd_seats_hansa +] ([+ kpd_hl +]%) {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#E3000F'> </div> !} SPD: {!</td><td>!} [+ spd_election_votes_hansa +]% {!</td><td>!} [+ spd_seats_hansa +] ([+ spd_hl +]%) {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color: var(--fvp-color)'> </div> !} [+fvp_name+]: {!</td><td>!} [+ fvp_election_votes_hansa +]% {!</td><td>!} [+ fvp_seats_hansa +] ([+ fvp_hl +]%) {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#000000'> </div> !} Z: {!</td><td>!} [+ z_election_votes_hansa +]% {!</td><td>!} [+ z_seats_hansa +] ([+ z_hl +]%) {!</td></tr>!}
+
+[? if csvd_exist: {!<tr><td><div class="box" style='background-color:#1DB4E1'> </div> !} CSVD: {!</td><td>!} [+ csvd_election_votes_hansa +]% {!</td><td>!} [+ csvd_seats_hansa +] ([+ csvd_hl +]%) {!</td></tr>!} ?]
+
+[? if wp_exist: {!<tr><td><div class="box" style='background-color:#B8996F'> </div> !} WP: {!</td><td>!} [+ wp_election_votes_hansa +]% {!</td><td>!} [+ wp_seats_hansa +] ([+ wp_hl +]%) {!</td></tr>!} ?]
+
+[? if kvp_exist: {!<tr><td><div class="box" style='background-color:#455B95'> </div> !} KVP: {!</td><td>!} [+ kvp_election_votes_hansa +]% {!</td><td>!} [+ kvp_seats_hansa +] ([+ kvp_hl +]%) {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#3F7BC1'> </div> !} DNVP: {!</td><td>!} [+ dnvp_election_votes_hansa +]% {!</td><td>!} [+ dnvp_seats_hansa +] ([+ dnvp_hl +]%) {!</td></tr>!}
+
+[? if kswr_exist: {!<tr><td><div class="box" style='background-color:#003755'> </div> !} KSWR: {!</td><td>!} [+ kswr_election_votes_hansa +]% {!</td><td>!} [+ kswr_seats_hansa +] ([+ kswr_hl +]%) {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#096300'> </div> !} DAP: {!</td><td>!} [+ dap_election_votes_hansa +]% {!</td><td>!} [+ dap_seats_hansa +] ([+ dap_hl +]%) {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#909090'> </div> !} Others: {!</td><td>!} [+ other_election_votes_hansa +]% {!</td><td>!} [+ other_seats_hansa +] ([+ other_hl +]%) {!</td></tr>!}
+{!</table>!}
+
+**Potential coalitions:**
+
+United Left Coalition (<span style="color: #E3000F;">**SPD**</span> + <span style="color: #8B0000;">**KPD**</span>): [+ united_left_coalition_hansa +]%
+
+Grand Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #E3000F;">**SPD**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> + <span style="color: #000000;">**Z**</span>): [+ grand_coalition_hansa +]%
+
+Bourgeois Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>[? if not rdp_formed: + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> ?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span> ?]+ <span style="color: #000000;">**Z**</span>): [+ bourgeois_coalition_hansa +]%
+
+Right Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #3F7BC1;">**DNVP**</span> [? if kvp_exist: + <span style="color: #455B95;">**KVP**</span> ?][? if kswr_exist: + <span style="color: #003755;">**KSWR**</span> ?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span> ?]+ <span style="color: #000000;">**Z**</span>): [+ right_coalition_hansa +]%
+  
+There are some potential coalition arrangements.
+
+@hansa_coalition_menu
+
+- @united_left_coalition_hansa
+- @grand_coalition_hansa
+- @bourgeois_coalition_hansa
+- @right_coalition_hansa
+- @no_majority_hansa
+
+
+
+
+@united_left_coalition_hansa
+title: The <span style="color: #E3000F;">Social Democrats</span> form a coalition with the <span style="color: #8B0000;">**KPD**</span>!
+subtitle: <span style="color: #E3000F;">**SPD**</span> + <span style="color: #8B0000;">**KPD**</span> ([+ united_left_coalition_hansa +]%)
+view-if: united_left_coalition_hansa > 50
+on-arrival: in_united_left_coalition_hansa = 1;
+go-to: mp
+
+WIP
+
+
+@grand_coalition_hansa
+title: We can form a Grand Coalition.
+subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #E3000F;">**SPD**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> + <span style="color: #000000;">**Z**</span> ([+ grand_coalition_hansa +]%)
+view-if: grand_coalition_hansa > 50
+on-arrival: in_grand_coalition_hansa = 1; nlp_hansa = 1;
+go-to: mp
+
+WIP
+
+
+@bourgeois_coalition_hansa
+title: We can form a Bourgeois Coalition.
+subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>[? if not rdp_formed: + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> ?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span> ?]+ <span style="color: #000000;">**Z**</span> ([+ bourgeois_coalition_hansa +]%)
+view-if: bourgeois_coalition_hansa > 50
+on-arrival: in_bourgeois_coalition_hansa = 1; nlp_hansa = 1;
+go-to: mp
+
+WIP
+
+
+@right_coalition_hansa
+title: We can form a Right Coalition.
+subtitle: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #3F7BC1;">**DNVP**</span> [? if kvp_exist: + <span style="color: #455B95;">**KVP**</span> ?][? if kswr_exist: + <span style="color: #003755;">**KSWR**</span> ?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span> ?]+ <span style="color: #000000;">**Z**</span> ([+ right_coalition_hansa +]%)
+view-if: right_coalition_hansa > 50
+on-arrival: in_right_coalition_hansa = 1; nlp_hansa = 1;
+go-to: mp
+
+WIP
+
+
+@no_majority_hansa
+title: There is no clear governing majority.
+view-if: grand_coalition_hansa <= 50 and bourgeois_coalition_hansa <= 50 and right_coalition_hansa <= 50 and united_left_coalition_hansa <= 50 and nlp_hl <= 50
+on-arrival: nlp_hansa = 1 if was_nlp_hansa; in_nlp_majority_hansa = 1 if was_in_nlp_majority_hansa; in_united_left_coalition_hansa = 1 if was_in_united_left_coalition_hansa; in_grand_coalition_hansa = 1 if was_in_grand_coalition_hansa; in_bourgeois_coalition_hansa = 1 if was_in_bourgeois_coalition_hansa; in_right_coalition_hansa = 1 if was_in_right_coalition_hansa;
+
+There is no path to a majority government for now. The current government will stay in power as a minority coalition.
