@@ -399,6 +399,6 @@ Next election: [+ next_election_month_mecklenburg: month +] [+ next_election_yea
 
 Senate President: [+ hansa_leader +] ([?if hansa_leader_party = "SPD": <span style="color: #E3000F;">**SPD**</span>?][?if hansa_leader_party = fvp_name:<span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>?][?if hansa_leader_party = nlp_name: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?][?if hansa_leader_party = "DNVP": <span style="color: #3F7BC1;">**DNVP**</span>?][?if hansa_leader_party = "KSWR": <span style="color: #003755;">**KSWR**</span>?])
 
-Government: [? if in_united_left_coalition_hansa: United Left ?][? if in_weimar_coalition_hansa: Weimar Coalition ?][? if in_bourgeois_coalition_hansa: Bourgeois Coalition ?][? if in_right_coalition_hansa: Right Coalition ?][? if in_nlp_majority_hansa: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> majority ?]
+Government: [? if in_united_left_coalition_hansa: United Left ?][? if in_weimar_coalition_hansa: Weimar Coalition ?][? if in_grand_coalition_hansa: Grand Coalition ?][? if in_bourgeois_coalition_hansa: Bourgeois Coalition ?][? if in_right_coalition_hansa: Right Coalition ?][? if in_nlp_majority_hansa: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> majority ?]
 
 Next election: [+ next_election_month_hansa: month +] [+ next_election_year_hansa +]
