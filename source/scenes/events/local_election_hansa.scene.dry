@@ -448,7 +448,7 @@ WIP.
 
 @ross
 title: Rudolf Ross (<span style="color: #E3000F;">**SPD**</span>).
-view-if: in_united_left_coalition_hansa or in_grand_coalition_hansa
+view-if: in_united_left_coalition_hansa or in_grand_coalition_hansa or in_weimar_coalition_hansa
 on-arrival: hansa_leader = "Ross"; hansa_leader_party = "SPD";
 face-image: img/portraits/RossRudolf.jpg
 
@@ -456,7 +456,7 @@ WIP.
 
 @petersen_fvp
 title: Carl Wilhelm Petersen (<span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>).
-view-if: not vldp_formed and (in_grand_coalition_hansa or in_bourgeois_coalition_hansa)
+view-if: not vldp_formed and (in_grand_coalition_hansa or in_bourgeois_coalition_hansa or in_weimar_coalition_hansa)
 on-arrival: hansa_leader = "Petersen"; hansa_leader_party = fvp_name;
 face-image: img/portraits/PetersenCarlWilhelm.jpg
 
