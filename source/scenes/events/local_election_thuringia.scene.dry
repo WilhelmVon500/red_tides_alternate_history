@@ -363,7 +363,7 @@ There are some potential coalition arrangements.
 
 
 @united_left_coalition_thuringia
-title: The Social Democrats form a coalition with the <span style="color: #8B0000;">**KPD**</span>!
+title: The <span style="color: #E3000F;">Social Democrats</span> form a coalition with the <span style="color: #8B0000;">**KPD**</span>!
 subtitle: <span style="color: #E3000F;">**SPD**</span> + <span style="color: #8B0000;">**KPD**</span> ([+ united_left_coalition_thuringia +]%)
 view-if: united_left_coalition_thuringia > 50
 on-arrival: in_united_left_coalition_thuringia = 1;
