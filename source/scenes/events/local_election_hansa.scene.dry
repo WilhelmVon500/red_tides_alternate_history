@@ -29,7 +29,7 @@ for (var c of Q.classes) {
 // Define adjustment factors
 if (Q.year == 1925) {
     Q.adjustmentFactors_kpd_hansa = 0.95;
-    Q.adjustmentFactors_spd_hansa = 1.4;
+    Q.adjustmentFactors_spd_hansa = 1.5;
     Q.adjustmentFactors_fvp_hansa = 1.9;
     Q.adjustmentFactors_bb_hansa = 0.0;
     Q.adjustmentFactors_z_hansa = 0.1;
