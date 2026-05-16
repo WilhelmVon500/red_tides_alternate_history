@@ -137,6 +137,7 @@ for (var party of Q.parties) {
 
 // coalitions
 Q.united_left_coalition_hansa = parseFloat((Q.spd_hl + Q.kpd_hl).toFixed(1));
+Q.weimar_coalition_hansa = parseFloat((Q.spd_hl + Q.fvp_hl + Q.z_hl).toFixed(1));
 Q.grand_coalition_hansa = parseFloat((Q.nlp_hl + Q.fvp_hl + Q.z_hl + Q.spd_hl).toFixed(1));
 Q.bourgeois_coalition_hansa = parseFloat((Q.nlp_hl + Q.z_hl + Q.wp_hl + Q.csvd_hl).toFixed(1));
 if (!Q.rdp_formed) Q.bourgeois_coalition_hansa = parseFloat((Q.bourgeois_coalition_hansa + Q.fvp_hl).toFixed(1));
@@ -147,6 +148,7 @@ Q.right_coalition_hansa = parseFloat((Q.dnvp_hl + Q.nlp_hl + Q.z_hl + Q.wp_hl + 
 Q.was_nlp_hansa = 0;
 Q.was_in_nlp_majority_hansa = 0;
 Q.was_in_united_left_coalition_hansa = 0;
+Q.was_in_weimar_coalition_hansa = 0;
 Q.was_in_grand_coalition_hansa = 0;
 Q.was_in_bourgeois_coalition_hansa = 0;
 Q.was_in_right_coalition_hansa = 0;
@@ -154,6 +156,7 @@ Q.was_in_right_coalition_hansa = 0;
 if (Q.nlp_hansa) Q.was_nlp_hansa = 1;
 if (Q.in_nlp_majority_hansa) Q.was_in_nlp_majority_hansa = 1;
 if (Q.in_united_left_coalition_hansa) Q.was_in_united_left_coalition_hansa = 1;
+if (Q.in_weimar_coalition_hansa) Q.was_in_weimar_coalition_hansa = 1;
 if (Q.in_grand_coalition_hansa) Q.was_in_grand_coalition_hansa = 1;
 if (Q.in_bourgeois_coalition_hansa) Q.was_in_bourgeois_coalition_hansa = 1;
 if (Q.in_right_coalition_hansa) Q.was_in_right_coalition_hansa = 1;
@@ -161,6 +164,7 @@ if (Q.in_right_coalition_hansa) Q.was_in_right_coalition_hansa = 1;
 Q.nlp_hansa = 0;
 Q.in_nlp_majority_hansa = 0;
 Q.in_united_left_coalition_hansa = 0;
+Q.in_weimar_coalition_hansa = 0;
 Q.in_grand_coalition_hansa = 0;
 Q.in_bourgeois_coalition_hansa = 0;
 Q.in_right_coalition_hansa = 0;
@@ -335,6 +339,8 @@ go-to: hansa_coalition_menu
 
 United Left Coalition (<span style="color: #E3000F;">**SPD**</span> + <span style="color: #8B0000;">**KPD**</span>): [+ united_left_coalition_hansa +]%
 
+Weimar Coalition (<span style="color: #E3000F;">**SPD**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> + <span style="color: #000000;">**Z**</span>): [+ weimar_coalition_hansa +]%
+
 Grand Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> + <span style="color: #E3000F;">**SPD**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> + <span style="color: #000000;">**Z**</span>): [+ grand_coalition_hansa +]%
 
 Bourgeois Coalition (<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>[? if not rdp_formed: + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> ?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if csvd_exist: + <span style="color: #1DB4E1;">**CSVD**</span> ?]+ <span style="color: #000000;">**Z**</span>): [+ bourgeois_coalition_hansa +]%
@@ -346,6 +352,7 @@ There are some potential coalition arrangements.
 @hansa_coalition_menu
 
 - @united_left_coalition_hansa
+- @weimar_coalition_hansa
 - @grand_coalition_hansa
 - @bourgeois_coalition_hansa
 - @right_coalition_hansa
@@ -359,6 +366,16 @@ title: The <span style="color: #E3000F;">Social Democrats</span> form a coalitio
 subtitle: <span style="color: #E3000F;">**SPD**</span> + <span style="color: #8B0000;">**KPD**</span> ([+ united_left_coalition_hansa +]%)
 view-if: united_left_coalition_hansa > 50
 on-arrival: in_united_left_coalition_hansa = 1;
+go-to: mp
+
+WIP
+
+
+@weimar_coalition_hansa
+title: A Weimar Coalition can be formed.
+subtitle: <span style="color: #E3000F;">**SPD**</span> + <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span> + <span style="color: #000000;">**Z**</span> ([+ weimar_coalition_hansa +]%)
+view-if: weimar_coalition_hansa > 50
+on-arrival: in_weimar_coalition_hansa = 1;
 go-to: mp
 
 WIP
@@ -396,8 +413,8 @@ WIP
 
 @no_majority_hansa
 title: There is no clear governing majority.
-view-if: grand_coalition_hansa <= 50 and bourgeois_coalition_hansa <= 50 and right_coalition_hansa <= 50 and united_left_coalition_hansa <= 50 and nlp_hl <= 50
-on-arrival: nlp_hansa = 1 if was_nlp_hansa; in_nlp_majority_hansa = 1 if was_in_nlp_majority_hansa; in_united_left_coalition_hansa = 1 if was_in_united_left_coalition_hansa; in_grand_coalition_hansa = 1 if was_in_grand_coalition_hansa; in_bourgeois_coalition_hansa = 1 if was_in_bourgeois_coalition_hansa; in_right_coalition_hansa = 1 if was_in_right_coalition_hansa;
+view-if: united_left_coalition_hansa <= 50 and weimar_coalition_hansa <= 50 and grand_coalition_hansa <= 50 and bourgeois_coalition_hansa <= 50 and right_coalition_hansa <= 50 and nlp_hl <= 50
+on-arrival: nlp_hansa = 1 if was_nlp_hansa; in_nlp_majority_hansa = 1 if was_in_nlp_majority_hansa; in_united_left_coalition_hansa = 1 if was_in_united_left_coalition_hansa; in_weimar_coalition_hansa = 1 if was_in_weimar_coalition_hansa; in_grand_coalition_hansa = 1 if was_in_grand_coalition_hansa; in_bourgeois_coalition_hansa = 1 if was_in_bourgeois_coalition_hansa; in_right_coalition_hansa = 1 if was_in_right_coalition_hansa;
 
 There is no path to a majority government for now. The current government will stay in power as a minority coalition.
 
