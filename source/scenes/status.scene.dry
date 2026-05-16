@@ -395,9 +395,9 @@ Next election: [+ next_election_month_mecklenburg: month +] [+ next_election_yea
 
 = Hanseatic League of Cities Hamburg, Bremen and Lübeck
 
-<div style="display: flex; justify-content: center;">[? if hansa_leader = "Petersen": <img src="img/portraits/PetersenCarlWilhelm.jpg" class="hansa-leader"> ?]</div>
+<div style="display: flex; justify-content: center;">[? if hansa_leader = "Petersen": <img src="img/portraits/PetersenCarlWilhelm.jpg" class="hansa-leader"> ?][? if hansa_leader = "Ross": <img src="img/portraits/RossRudolf.jpg" class="hansa-leader"> ?][? if hansa_leader = "Dauch": <img src="img/portraits/DauchWalther.jpg" class="hansa-leader"> ?][? if hansa_leader = "Apelt": <img src="img/portraits/ApeltHermann.jpg" class="hansa-leader"> ?][? if hansa_leader = "Lienau": <img src="img/portraits/LienauCayDiedrich.jpg" class="hansa-leader"> ?]</div>
 
-Senate President: [+ hansa_leader +] ([?if hansa_leader_party = fvp_name:<span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>?])
+Senate President: [+ hansa_leader +] ([?if hansa_leader_party = "SPD": <span style="color: #E3000F;">**SPD**</span>?][?if hansa_leader_party = fvp_name:<span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>?][?if hansa_leader_party = nlp_name: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?][?if hansa_leader_party = "DNVP": <span style="color: #3F7BC1;">**DNVP**</span>?][?if hansa_leader_party = "KSWR": <span style="color: #003755;">**KSWR**</span>?])
 
 Government: [? if in_weimar_coalition_hansa: Weimar Coalition ?][? if in_nlp_majority_hansa: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> majority ?]
 
