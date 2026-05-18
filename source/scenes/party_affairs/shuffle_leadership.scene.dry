@@ -73,6 +73,33 @@ go-to: rm_main
 
 Hamm has been removed as an advisor. The Constitutional Liberal faction disapproves.
 
+@remove_baumer
+title: Remove Bäumer
+view-if: baumer_advisor
+on-arrival: baumer_advisor = 0; constitutional_liberal_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Bäumer has been removed as an advisor. The Constitutional Liberal faction disapproves.
+
+@remove_nuschke
+title: Remove Nuschke
+view-if: nuschke_advisor
+on-arrival: nuschke_advisor = 0; constitutional_liberal_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Nuschke has been removed as an advisor. The Constitutional Liberal faction disapproves.
+
+@remove_hellpach
+title: Remove Hellpach
+view-if: hellpach_advisor
+on-arrival: hellpach_advisor = 0; constitutional_liberal_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Hellpach has been removed as an advisor. The Constitutional Liberal faction disapproves.
+
 
 # left stresemannite
 
@@ -501,6 +528,42 @@ on-arrival: hamm_advisor = 1; n_advisors += 1; constitutional_liberal_strength +
 go-to: advisor_menu
 
 Eduard Hamm is now an advisor.
+
+@add_baumer
+title: Gertrud Bäumer
+subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
+is-card: true
+face-image: img/portraits/BäumerGertrud.jpg
+tags: constitutional_liberal_advisor
+view-if: not baumer_advisor and n_advisors < 3 and constitutional_liberal_nlp
+on-arrival: baumer_advisor = 1; n_advisors += 1; constitutional_liberal_strength += 5;
+go-to: advisor_menu
+
+Gertrud Bäumer is now an advisor.
+
+@add_nuschke
+title: Otto Nuschke
+subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
+is-card: true
+face-image: img/portraits/NuschkeOtto.jpg
+tags: constitutional_liberal_advisor
+view-if: not nuschke_advisor and n_advisors < 3 and constitutional_liberal_nlp
+on-arrival: nuschke_advisor = 1; n_advisors += 1; constitutional_liberal_strength += 5;
+go-to: advisor_menu
+
+Otto Nuschke is now an advisor.
+
+@add_hellpach
+title: Willy Hellpach
+subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
+is-card: true
+face-image: img/portraits/HellpachWilly.jpg
+tags: constitutional_liberal_advisor
+view-if: not hellpach_advisor and n_advisors < 3 and constitutional_liberal_nlp
+on-arrival: hellpach_advisor = 1; n_advisors += 1; constitutional_liberal_strength += 5;
+go-to: advisor_menu
+
+Willy Hellpach is now an advisor.
 
 
 # left stresemannite
