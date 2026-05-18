@@ -46,6 +46,33 @@ go-to: rm_main
 
 Petersen has been removed as an advisor. The Constitutional Liberal faction disapproves.
 
+@remove_fischbeck
+title: Remove Fischbeck
+view-if: fischbeck_advisor
+on-arrival: fischbeck_advisor = 0; constitutional_liberal_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Fischbeck has been removed as an advisor. The Constitutional Liberal faction disapproves.
+
+@remove_reinhold
+title: Remove Reinhold
+view-if: reinhold_advisor
+on-arrival: reinhold_advisor = 0; constitutional_liberal_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Reinhold has been removed as an advisor. The Constitutional Liberal faction disapproves.
+
+@remove_hamm
+title: Remove Hamm
+view-if: hamm_advisor
+on-arrival: hamm_advisor = 0; constitutional_liberal_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Hamm has been removed as an advisor. The Constitutional Liberal faction disapproves.
+
 
 # left stresemannite
 
@@ -438,6 +465,42 @@ on-arrival: petersen_advisor = 1; n_advisors += 1; constitutional_liberal_streng
 go-to: advisor_menu
 
 Carl Wilhelm Petersen is now an advisor.
+
+@add_fischbeck
+title: Otto Fischbeck
+subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
+is-card: true
+face-image: img/portraits/FischbeckOtto.jpg
+tags: constitutional_liberal_advisor
+view-if: not fischbeck_advisor and n_advisors < 3 and constitutional_liberal_nlp
+on-arrival: fischbeck_advisor = 1; n_advisors += 1; constitutional_liberal_strength += 5;
+go-to: advisor_menu
+
+Otto Fischbeck is now an advisor.
+
+@add_reinhold
+title: Peter Reinhold
+subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
+is-card: true
+face-image: img/portraits/ReinholdPeter.jpg
+tags: constitutional_liberal_advisor
+view-if: not reinhold_advisor and n_advisors < 3 and constitutional_liberal_nlp
+on-arrival: reinhold_advisor = 1; n_advisors += 1; constitutional_liberal_strength += 5;
+go-to: advisor_menu
+
+Peter Reinhold is now an advisor.
+
+@add_hamm
+title: Eduard Hamm
+subtitle: WIP. {!<br><br>!}[? if difficulty < 0 : Actions - WIP ?]
+is-card: true
+face-image: img/portraits/HammEduard.jpg
+tags: constitutional_liberal_advisor
+view-if: not hamm_advisor and n_advisors < 3 and constitutional_liberal_nlp
+on-arrival: hamm_advisor = 1; n_advisors += 1; constitutional_liberal_strength += 5;
+go-to: advisor_menu
+
+Eduard Hamm is now an advisor.
 
 
 # left stresemannite
