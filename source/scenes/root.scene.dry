@@ -613,6 +613,8 @@ Q.dingeldey_advisor = 0; // Eduard Dingeldey
 // nonfactional advisors
 Q.mahraun_advisor = 0; // Artur Mahraun
 Q.kempkes_advisor = 0; // Adolf Kempkes
+Q.schubert_advisor = 0; // Carl Schubert
+Q.bernays_advisor = 0; // Marie Bernays
 
 
 // constitutional liberal advisors
