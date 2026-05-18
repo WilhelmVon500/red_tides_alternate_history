@@ -1,0 +1,36 @@
+title: Agricultural Policy
+new-page: true
+is-card: true
+on-arrival: agricultural_policy_timer += 6; month_actions += 1
+view-if: nlp_in_government and agriculture_minister_party = nlp_name and agricultural_policy_timer = 0
+card-image: img/portraits/DietrichHermann.jpg
+tags: govt_affairs, cabinet
+
+= Agricultural Policy
+
+WIP
+
+- @land_reform
+- @bail_out_junkers
+- @root: Do not enact any policies for now.
+- @easy_discard
+- @cancel_advisor_action
+
+@land_reform
+title: Land Reform
+subtitle: -1 budget - Break up the large aristocratic estates and give land to landless workers.
+unavailable-subtitle: [? if budget <= 0 : Requires 1 budget. ?]
+choose-if: budget > 0
+on-arrival: budget -= 1; land_reform += 1; rural_nlp += 5*(1-dissent); unemployed -= 1 if unemployed >= 5; coalition_dissent += 1 if (kvp_in_government or dnvp_in_government); fvp_relation += 5*(1-dissent); spd_relation += 5*(1-dissent); rlb_relation -= 5; kvp_relation -= 3; dnvp_relation -= 3 if not dnvp_ideology = "Radical"; dnvp_relation -= 5 if dnvp_ideology = "Radical"; kswr_relation -= 5; coup_progress += 1;
+max-visits: 4
+
+WIP.
+
+@bail_out_junkers
+title: Bail out junkers.
+subtitle: -1 budget - WIP.
+unavailable-subtitle: [? if budget <= 0 : Requires 1 budget. ?]
+choose-if: budget > 0
+on-arrival: budget -= 1; economic_growth += 0.2; rural_nlp += 2*(1-dissent); rlb_relation += 5*(1-dissent); kvp_relation += 3*(1-dissent); dnvp_relation += 3*(1-dissent) if not dnvp_ideology = "Radical"; spd_relation -= 3;
+
+WIP.
