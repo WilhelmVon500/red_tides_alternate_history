@@ -253,12 +253,7 @@ if ((Q.month_actions >= 1 && !Q.weeks_enabled) || (Q.month_actions >= 4 && Q.wee
         Q.unemployed_uspd -= 3/12;
 
 
-        if (Q.month <= 7) {
-            Q.inflation += 3;
-        }
-        if (Q.month >= 8) {
-            Q.inflation += 20;
-        }
+        Q.inflation += 100;
     }
     if (Q.year == 1923) {
         Q.workers_spd += 1/12;
@@ -273,6 +268,12 @@ if ((Q.month_actions >= 1 && !Q.weeks_enabled) || (Q.month_actions >= 4 && Q.wee
             Q.workers_dap += 3/12;
 
             Q.unemployed_dap += 3/12;
+        }
+
+
+
+        if (!Q.rentenmark) {
+            Q.inflation += 30000;
         }
     }
 
