@@ -79,7 +79,7 @@ Next election: [+ next_election_month : month +] [+ next_election_year +]
 
 [? if nlp_in_government: Budget: [+ budget +] ?]
 
-Inflation: [+ inflation_2 +]%
+Inflation: [? if inflation <= 100: [+ inflation_2 +]% ?][? if inflation > 100 and inflation <= 1000: Hyperinflation ?][? if inflation > 1000 and inflation <= 100000: Extreme Hyperinflation ?][? if inflation > 100000: Immeasurable ?]
 
 Unemployment: [+ unemployed_2 +]%
 
