@@ -536,7 +536,7 @@ Q.timers = ['advisor_action', 'shuffle_leadership',
             'media', 'enemies', 'fundraising', 'rally',
             'schild', 'party_organizations', 'ideology',
             // govt
-            'fiscal_policy',
+            'fiscal_policy', 'agricultural_policy',
             // events
             ];
 Q.advisor_action_timer = 0;
@@ -553,6 +553,7 @@ Q.party_organizations_timer = 0;
 Q.ideology_timer = 0;
 // government affairs timers
 Q.fiscal_policy_timer = 0;
+Q.agricultural_policy_timer = 0;
 // event timers
 
 
