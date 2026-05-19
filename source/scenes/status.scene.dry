@@ -39,8 +39,7 @@ Next presidential election: [+ next_president_election_month : month +] [+ next_
 
 = Reichstag
 
-[? if not vldp_formed: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>: [+ nlp_seats +] seats ([+ nlp_r +]%) ?]
-[? if vldp_formed: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>: [+ nlp_seats +] seats ([+ nlp_r +]%) ?]
+<span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>: [+ nlp_seats +] seats ([+ nlp_r +]%)
 
 <span style="color: #8B0000;">**KPD**</span>: [+ kpd_seats +] seats ([+ kpd_r +]%)
 
@@ -48,8 +47,7 @@ Next presidential election: [+ next_president_election_month : month +] [+ next_
 
 <span style="color: #E3000F;">**SPD**</span>: [+ spd_seats +] seats ([+ spd_r +]%)
 
-[? if not rdp_formed: <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>: [+ fvp_seats +] seats ([+ fvp_r +]%) ?]
-[? if rdp_formed: <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>: [+ fvp_seats +] seats ([+ fvp_r +]%) ?]
+<span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>: [+ fvp_seats +] seats ([+ fvp_r +]%)
 
 <span style="color: #38C538;">**BB**</span>: [+ bb_seats +] seats ([+ bb_r +]%)
 
@@ -133,8 +131,7 @@ Internal dissent: [+ dissent_percent : dissent +]
 
 <span style="color: #E3000F;">**SPD**</span>: [+ spd_relation : relationships +]
 
-[? if not rdp_formed: <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>: [+ fvp_relation : relationships +] ?]
-[? if rdp_formed: <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>: [+ fvp_relation : relationships +] ?]
+<span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>: [+ fvp_relation : relationships +]
 
 <span style="color: #38C538;">**BB**</span>: [+ bb_relation : relationships +]
 
@@ -162,8 +159,7 @@ Internal dissent: [+ dissent_percent : dissent +]
 
 <span style="color: #E3000F;">**SPD**</span>: Democratic Socialism (Wels)
 
-[? if not rdp_formed: <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>: Left Liberalism (Petersen) ?]
-[? if rdp_formed: <span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>: Progressive Liberalism ([+fvp_leader+]) ?]
+<span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>: Left Liberalism ([+fvp_leader+])
 
 <span style="color: #38C538;">**BB**</span>: Liberal Agrarianism (Eisenberger)
 
