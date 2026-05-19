@@ -174,7 +174,7 @@ Q.dap_banned = 0;
 Q.coup_progress = 0;
 Q.capital_strike_progress = 0;
 
-Q.budget = 0;
+Q.budget = -2;
 
 // Proportion of different social groups
 Q.workers = 48; // industry and trade
