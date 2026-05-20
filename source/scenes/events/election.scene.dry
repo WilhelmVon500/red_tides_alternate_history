@@ -568,10 +568,10 @@ go-to: ministries
 Choose the Vice-Chancellor.
 
 - @stresemann_vice_chancellor: Gustav Stresemann
-- @petersen_vice_chancellor: Carl Wilhelm Petersen
-- @dietrich_vice_chancellor: Hermann Dietrich
-- @jarres_vice_chancellor: Karl Jarres
-- @raumer_vice_chancellor: Hans Raumer
+- @petersen_vice_chancellor: Carl Wilhelm Petersen (Constitutional Liberal)
+- @dietrich_vice_chancellor: Hermann Dietrich (Left-Wing Stresemannite)
+- @jarres_vice_chancellor: Karl Jarres (Right-Wing Stresemannite)
+- @raumer_vice_chancellor: Hans Raumer (Industrialist)
 
 @stresemann_vice_chancellor
 on-arrival: vice_chancellor = "Stresemann";
@@ -584,6 +584,7 @@ Gustav Stresemann of the <span style="color: var(--nlp-color);">**[+ nlp_name +]
 on-arrival: vice_chancellor = "Petersen";
 go-to: ministries
 face-image: img/portraits/PetersenCarlWilhelm.jpg
+view-if: constitutional_liberal_nlp
 
 Carl Wilhelm Petersen of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Vice-Chancellor Minister.
 
