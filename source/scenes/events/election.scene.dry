@@ -563,7 +563,6 @@ tags: mins_1922
 choose-if: leverage >= 10
 view-if: vice_chancellor != nlp_name
 on-arrival: leverage -= 10; vice_chancellor_party = nlp_name;
-go-to: ministries
 
 Choose the Vice-Chancellor.
 
