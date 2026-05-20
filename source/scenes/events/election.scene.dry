@@ -614,7 +614,7 @@ Hans Raumer of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</sp
 
 @labor
 title: Labor Ministry
-subtitle: Taking the Labor Ministry is expected of us.
+subtitle: This is not our usual domain
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1922
 choose-if: leverage >= 5
