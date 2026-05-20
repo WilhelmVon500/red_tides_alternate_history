@@ -577,7 +577,7 @@ on-arrival: vice_chancellor = "Stresemann";
 go-to: ministries
 face-image: img/portraits/StresemannGustav.jpg
 
-Gustav Stresemann of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Vice-Chancellor Minister.
+Gustav Stresemann of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Vice-Chancellor.
 
 @petersen_vice_chancellor
 on-arrival: vice_chancellor = "Petersen";
@@ -585,14 +585,14 @@ go-to: ministries
 face-image: img/portraits/PetersenCarlWilhelm.jpg
 view-if: constitutional_liberal_nlp
 
-Carl Wilhelm Petersen of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Vice-Chancellor Minister.
+Carl Wilhelm Petersen of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Vice-Chancellor.
 
 @dietrich_vice_chancellor
 on-arrival: vice_chancellor = "Dietrich";
 go-to: ministries
 face-image: img/portraits/DietrichHermann.jpg
 
-Hermann Dietrich of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Vice-Chancellor Minister.
+Hermann Dietrich of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Vice-Chancellor.
 
 @jarres_vice_chancellor
 on-arrival: vice_chancellor = "Jarres";
@@ -600,14 +600,14 @@ go-to: ministries
 face-image: img/portraits/JarresKarl.jpg
 view-if: year >= 1924
 
-Karl Jarres of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Vice-Chancellor Minister.
+Karl Jarres of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Vice-Chancellor.
 
 @raumer_vice_chancellor
 on-arrival: vice_chancellor = "Raumer";
 go-to: ministries
 face-image: img/portraits/RaumerHans.jpg
 
-Hans Raumer of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Vice-Chancellor Minister.
+Hans Raumer of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Vice-Chancellor.
 
 
 
