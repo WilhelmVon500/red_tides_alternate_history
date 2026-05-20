@@ -562,10 +562,54 @@ unavailable-subtitle: We do not have enough leverage.
 tags: mins_1922
 choose-if: leverage >= 10
 view-if: vice_chancellor != nlp_name
-on-arrival: leverage -= 10; vice_chancellor_party = nlp_name; vice_chancellor = "TBD"
+on-arrival: leverage -= 10; vice_chancellor_party = nlp_name;
 go-to: ministries
 
-TBD of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Vice-Chancellor.
+Choose the Vice-Chancellor.
+
+- @stresemann_vice_chancellor: Gustav Stresemann
+- @petersen_vice_chancellor: Carl Wilhelm Petersen
+- @dietrich_vice_chancellor: Hermann Dietrich
+- @jarres_vice_chancellor: Karl Jarres
+- @raumer_vice_chancellor: Hans Raumer
+
+@stresemann_vice_chancellor
+on-arrival: vice_chancellor = "Stresemann";
+go-to: ministries
+face-image: img/portraits/StresemannGustav.jpg
+
+Gustav Stresemann of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Vice-Chancellor Minister.
+
+@petersen_vice_chancellor
+on-arrival: vice_chancellor = "Petersen";
+go-to: ministries
+face-image: img/portraits/PetersenCarlWilhelm.jpg
+
+Carl Wilhelm Petersen of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Vice-Chancellor Minister.
+
+@dietrich_vice_chancellor
+on-arrival: vice_chancellor = "Dietrich";
+go-to: ministries
+face-image: img/portraits/DietrichHermann.jpg
+
+Hermann Dietrich of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Vice-Chancellor Minister.
+
+@jarres_vice_chancellor
+on-arrival: vice_chancellor = "Jarres";
+go-to: ministries
+face-image: img/portraits/JarresKarl.jpg
+view-if: year >= 1924
+
+Karl Jarres of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Vice-Chancellor Minister.
+
+@raumer_vice_chancellor
+on-arrival: vice_chancellor = "Raumer";
+go-to: ministries
+face-image: img/portraits/RaumerHans.jpg
+
+Hans Raumer of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Vice-Chancellor Minister.
+
+
 
 @labor
 title: Labor Ministry
