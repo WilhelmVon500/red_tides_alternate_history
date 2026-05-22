@@ -59,6 +59,4 @@ is-deck: true
 @regional
 title: Regional Affairs
 card-image: img/bavarian_landtag.jpg
-is-deck: true
-
-- #regional_affairs
+go-to: regional_affairs
