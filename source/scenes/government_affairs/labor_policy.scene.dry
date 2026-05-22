@@ -1,0 +1,18 @@
+title: Labor Policy
+new-page: true
+is-card: true
+on-arrival: labor_policy_timer += 6; month_actions += 1
+view-if: nlp_in_government and labor_minister_party = nlp_name and labor_policy_timer = 0
+card-image: img/portraits/ThielOtto.jpg
+tags: govt_affairs, cabinet
+
+= Labor Policy
+
+WIP
+
+- @strengthen_unions: Strengthen the liberal unions influence in labor affairs.
+
+@strengthen_unions
+on-arrival: workers_nlp += 1*(1-dissent); new_middle_nlp += 3*(1-dissent); labor_strength += 5; labor_dissent -= 5;
+  
+WIP
