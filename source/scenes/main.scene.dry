@@ -37,7 +37,6 @@ max-cards: 6
 
 - @party
 - @govt
-- @regional
 - #advisor
 - @shuffle_leadership_pinned
 
