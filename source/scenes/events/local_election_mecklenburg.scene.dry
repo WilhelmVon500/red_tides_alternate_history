@@ -321,7 +321,7 @@ go-to: mecklenburg_coalition_menu
 
 {!<tr><td><div class="box" style='background-color:#096300'> </div> !} DAP: {!</td><td>!} [+ dap_election_votes_mecklenburg +]% {!</td><td>!} [+ dap_seats_mecklenburg +] ([+ dap_ml +]%) {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#909090'> </div> !} Others: {!</td><td>!} [+ other_election_votes_mecklenburg +]% {!</td><td>!} [+ other_seats_mecklenburg +] ([+ other_ml +]%) {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#909090'> </div> !} <span style="color: #909090;">**Others**</span>: {!</td><td>!} [+ other_election_votes_mecklenburg +]% {!</td><td>!} [+ other_seats_mecklenburg +] ([+ other_ml +]%) {!</td></tr>!}
 {!</table>!}
 
 **Potential coalitions:**
