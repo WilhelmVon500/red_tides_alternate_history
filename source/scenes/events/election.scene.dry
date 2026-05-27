@@ -461,7 +461,7 @@ go-to: coalition_menu
 
 {!<tr><td><div class="box" style='background-color:#096300'> </div> !} DAP: {!</td><td>!} [+ dap_election_votes +]% {!</td><td>!} [+ votes_change_dap +] {!</td><td>!} [+ dap_seats +] ([+ dap_r +]%) {!</td><td>!} [+ str_seats_change_dap +] ([+ str_change_dap +]%) {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#909090'> </div> !} Others: {!</td><td>!} [+ other_election_votes +]% {!</td><td>!} [+ votes_change_other +] {!</td><td>!} [+ other_seats +] ([+ other_r +]%) {!</td><td>!} [+ str_seats_change_other +] ([+ str_change_other +]%) {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#909090'> </div> !} <span style="color: #909090;">**Others**</span>: {!</td><td>!} [+ other_election_votes +]% {!</td><td>!} [+ votes_change_other +] {!</td><td>!} [+ other_seats +] ([+ other_r +]%) {!</td><td>!} [+ str_seats_change_other +] ([+ str_change_other +]%) {!</td></tr>!}
 {!</table>!}
 
 **Potential coalitions:**
