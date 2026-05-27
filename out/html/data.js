@@ -78,10 +78,6 @@ const tooltipList = [
     {
       searchString: "DAP",
       explanationText: "German Workers' Party <br> <i>Deutsche Arbeiterpartei</i>"
-    },
-    {
-      searchString: "Others",
-      explanationText: "Other Parties <br> <i>Sonstige Parteien</i>"
     }
 ];
 const colourList = [
@@ -164,9 +160,5 @@ const colourList = [
     {
         word: "DAP",
         style: "color: #096300; font-weight: bold;",
-    },
-    {
-        word: "Others",
-        style: "color: #909090; font-weight: bold;",
     }
 ];
