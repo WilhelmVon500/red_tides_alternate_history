@@ -146,11 +146,11 @@ if (window && d3) {
 
 <div style="text-align:center; margin-bottom:5px;"><img src="img/prussiaflag.jpg" style="max-width:240px; border: 4px solid black;"></div>
 
-Minister-President: [+ prussia_leader +] ([?if prussia_leader_party = "SPD": <span style="color: #E3000F;">**SPD**</span>?][?if prussia_leader_party = fvp_name:<span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>?][?if prussia_leader_party = "Z":<span style="color: #000000;">**Z**</span>?][?if prussia_leader_party = nlp_name: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?][?if prussia_leader_party = "KVP": <span style="color: #455B95;">**KVP**</span>?][?if prussia_leader_party = "DNVP": <span style="color: #3F7BC1;">**DNVP**</span>?][?if prussia_leader_party = "KSWR": <span style="color: #003755;">**KSWR**</span>?])
+<div style="text-align:center; margin-bottom:2px;">Minister-President: [+ prussia_leader +] ([?if prussia_leader_party = "SPD": <span style="color: #E3000F;">**SPD**</span>?][?if prussia_leader_party = fvp_name:<span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>?][?if prussia_leader_party = "Z":<span style="color: #000000;">**Z**</span>?][?if prussia_leader_party = nlp_name: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?][?if prussia_leader_party = "KVP": <span style="color: #455B95;">**KVP**</span>?][?if prussia_leader_party = "DNVP": <span style="color: #3F7BC1;">**DNVP**</span>?][?if prussia_leader_party = "KSWR": <span style="color: #003755;">**KSWR**</span>?])</div>
 
-Government: [? if in_weimar_coalition_prussia: Weimar Coalition ?][? if in_grand_coalition_prussia: Grand Coalition ?][? if in_bourgeois_coalition_prussia: Bourgeois Coalition ?][? if in_center_right_coalition_prussia: Center-Right Coalition ?][? if in_right_coalition_prussia: Right Coalition ?][? if in_nlp_majority_prussia: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> majority ?]
+<div style="text-align:center; margin-bottom:2px;">Government: [? if in_weimar_coalition_prussia: Weimar Coalition ?][? if in_grand_coalition_prussia: Grand Coalition ?][? if in_bourgeois_coalition_prussia: Bourgeois Coalition ?][? if in_center_right_coalition_prussia: Center-Right Coalition ?][? if in_right_coalition_prussia: Right Coalition ?][? if in_nlp_majority_prussia: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> majority ?]</div>
 
-Next election: [+ next_election_month_prussia: month +] [+ next_election_year_prussia +]
+<div style="text-align:center;">Next election: [+ next_election_month_prussia: month +] [+ next_election_year_prussia +]</div>
 
 = Landtag
 
