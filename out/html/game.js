@@ -158,6 +158,93 @@
     }
   };
 
+  // dendrynexus - custom card/deck display.
+  // Pinned cards normally render in their own separate list. A pinned
+  // card's scene can opt into rendering inside the .decks row instead by
+  // setting `falseDeck: true` on that scene in the game data. Cards
+  // without that flag keep the original separate pinned-cards list.
+  window.displayPinnedCards = function(cards) {
+    if (!cards || cards.length === 0) return null;
+    var scenes = window.dendryUI.dendryEngine.game.scenes;
+
+    var deckLike = [];
+    var normal = [];
+    for (var card of cards) {
+        var scene = scenes[card.id];
+        if (scene && scene.tags && scene.tags.indexOf('false-deck') !== -1) {
+            deckLike.push(card);
+        } else {
+            normal.push(card);
+        }
+    }
+
+    // deckLike cards: merge into the existing .decks row (creating it
+    // if displayDecks hasn't run / there were no real decks this turn).
+    if (deckLike.length > 0) {
+        var $decksEl = $('#content .decks').last();
+        if ($decksEl.length === 0) {
+            $decksEl = $('<ul>').addClass('decks');
+            $('#content').append($decksEl);
+        }
+        for (var card of deckLike) {
+            var $cardEl = $('<li>').addClass('deck pinned-card');
+            var $cardLink = $('<a>').addClass('card').attr({href: '#', 'card-id': card.id, title: card.title});
+            var $title = $('<span>').addClass('card-caption').text(card.title);
+            if (card.image) {
+                $cardLink.append($('<img>').addClass('card-img').attr({src: card.image}));
+            }
+            if (card.subtitle) {
+                $cardLink.append($('<span>').addClass('card-tooltip').text(card.subtitle));
+            }
+            $cardEl.append($cardLink).append($title);
+            $decksEl.append($cardEl);
+        }
+    }
+
+    // normal pinned cards: original separate pinned-cards list, unchanged.
+    if (normal.length > 0) {
+        var pinnedCardsDescription = window.pinnedCardsDescription || 'Pinned cards - click a card to play.';
+        $('#content').append($('<hr>'));
+        $('#content').append($('<p>').addClass('pinned-text-description').text(pinnedCardsDescription));
+        var $cardsEl = $('<ul>').addClass('pinned-cards');
+        for (var card of normal) {
+            var $cardEl = $('<li>').addClass('pinned-card');
+            var $cardLink = $('<a>').addClass('card').attr({href: '#', 'card-id': card.id, title: card.title});
+            var $title = $('<span>').addClass('card-caption').text(card.title);
+            if (card.image) {
+                $cardLink.append($('<img>').addClass('card-img').attr({src: card.image}));
+            }
+            if (card.subtitle) {
+                $cardLink.append($('<span>').addClass('card-tooltip').text(card.subtitle));
+            }
+            $cardEl.append($cardLink).append($title);
+            $cardsEl.append($cardEl);
+        }
+        $('#content').append($cardsEl);
+    }
+};
+
+  // Intercepts clicks on pinned cards that have been merged into the
+  // .decks row (see displayPinnedCards above). browser.js binds its own
+  // delegated handler on 'ul.decks li a' (bubble phase, via jQuery) that
+  // calls drawCard() -- wrong for these, since they're not real decks.
+  // game.js's main() always runs AFTER browser.js's _registerEvents, so a
+  // second bubble-phase handler here would fire too late, after drawCard()
+  // already ran. Instead we attach a native capture-phase listener on
+  // #content, which always runs before any bubble-phase handler regardless
+  // of registration order, letting us intercept and stop the click first.
+  document.addEventListener('click', function(event) {
+    var link = event.target.closest && event.target.closest('a[card-id]');
+    if (!link) return;
+    var li = link.closest('li.pinned-card');
+    if (!li || !li.classList.contains('deck')) return;
+    var content = document.getElementById('content');
+    if (!content || !content.contains(li)) return;
+    event.preventDefault();
+    event.stopPropagation();
+    window.dendryUI.dendryEngine.playPinnedCard(link.getAttribute('card-id'));
+  }, true); // true = capture phase, runs before browser.js's bubble-phase handler
+
   
   // This function allows you to modify the text before it's displayed.
   // E.g. wrapping chat-like messages in spans.
