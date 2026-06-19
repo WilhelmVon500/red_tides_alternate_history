@@ -192,6 +192,8 @@ if (window && d3) {
 new-page: true
 view-if: nlp_prussia
 
+= Prussian Affairs
+
 WIP
 
 [? if prussia_action_timer > 0: Our action is expected to take [+ prussia_action_timer +] more months. ?]
