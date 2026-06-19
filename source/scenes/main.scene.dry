@@ -60,5 +60,4 @@ is-deck: true
 @regional
 title: Regional Affairs
 card-image: img/prussia_landtag.jpg
-is-deck: true
 go-to: regional_affairs
