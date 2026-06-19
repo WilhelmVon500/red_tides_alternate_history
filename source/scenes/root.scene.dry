@@ -337,6 +337,30 @@ Q.next_election_week_prussia = 1;
 Q.next_election_month_prussia = 2;
 Q.next_election_year_prussia = 1925;
 
+Q.kpd_seats_prussia = 31;
+Q.uspd_seats_prussia = 28;
+Q.spd_seats_prussia = 114;
+Q.fvp_seats_prussia = 26;
+Q.z_seats_prussia = 81;
+Q.nlp_seats_prussia = 58;
+Q.wp_seats_prussia = 4;
+Q.rlb_seats_prussia = 0;
+Q.dnvp_seats_prussia = 75;
+Q.dap_seats_prussia = 0;
+Q.other_seats_prussia = 11;
+
+Q.kpd_pl = 7.2;
+Q.uspd_pl = 6.6;
+Q.spd_pl = 26.6;
+Q.fvp_pl = 6.1;
+Q.z_pl = 18.9;
+Q.nlp_pl = 13.6;
+Q.wp_pl = 0.9;
+Q.rlb_pl = 0;
+Q.dnvp_pl = 17.5;
+Q.dap_pl = 0;
+Q.other_pl = 2.6;
+
 // bavaria
 Q.nlp_bavaria = 1;
 Q.bavaria_leader = "Kahr";
