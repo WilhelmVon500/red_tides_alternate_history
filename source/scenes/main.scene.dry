@@ -59,6 +59,6 @@ is-deck: true
 
 @regional
 title: Regional Affairs
-card-image: img/reichstag_2.jpg
+card-image: img/prussian_landtag.jpg
 is-deck: true
 go-to: regional_affairs
