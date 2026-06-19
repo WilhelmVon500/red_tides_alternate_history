@@ -156,7 +156,7 @@ if (window && d3) {
 
 {!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
 
-{!<table>!} 
+{!<table style="width:100%;">!} 
 {!<tr><td>Party</td><td>Seats</td><td>Seat Share</td></tr>!}
 {!<tr><td><div class="box" style='background-color: var(--nlp-color); outline: 2px; outline-style: solid;'> </div> !} **[+nlp_name+]** {!</td><td>!} **[+ nlp_seats_prussia +]** {!</td><td>!} **[+ nlp_pl +]%** {!</td></tr>!}
 
