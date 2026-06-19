@@ -158,11 +158,6 @@
     }
   };
 
-  // dendrynexus - custom card/deck display.
-  // Pinned cards normally render in their own separate list. A pinned
-  // card's scene can opt into rendering inside the .decks row instead by
-  // setting `falseDeck: true` on that scene in the game data. Cards
-  // without that flag keep the original separate pinned-cards list.
   window.displayPinnedCards = function(cards) {
     if (!cards || cards.length === 0) return null;
     var scenes = window.dendryUI.dendryEngine.game.scenes;
@@ -178,8 +173,6 @@
         }
     }
 
-    // deckLike cards: merge into the existing .decks row (creating it
-    // if displayDecks hasn't run / there were no real decks this turn).
     if (deckLike.length > 0) {
         var $decksEl = $('#content .decks').last();
         if ($decksEl.length === 0) {
@@ -201,9 +194,14 @@
         }
     }
 
-    // normal pinned cards: original separate pinned-cards list, unchanged.
     if (normal.length > 0) {
-        var pinnedCardsDescription = window.pinnedCardsDescription || 'Pinned cards - click a card to play.';
+        var pinnedCardsDescription = 'Pinned cards - click a card to play.';
+        if (window.pinnedCardsDescription) {
+            pinnedCardsDescription = window.pinnedCardsDescription;
+        }
+        if (window.dendryUI.dendryEngine.state.qualities.pinnedCardsDescription) {
+            pinnedCardsDescription = window.dendryUI.dendryEngine.state.qualities.pinnedCardsDescription;
+        }
         $('#content').append($('<hr>'));
         $('#content').append($('<p>').addClass('pinned-text-description').text(pinnedCardsDescription));
         var $cardsEl = $('<ul>').addClass('pinned-cards');
@@ -224,15 +222,6 @@
     }
 };
 
-  // Intercepts clicks on pinned cards that have been merged into the
-  // .decks row (see displayPinnedCards above). browser.js binds its own
-  // delegated handler on 'ul.decks li a' (bubble phase, via jQuery) that
-  // calls drawCard() -- wrong for these, since they're not real decks.
-  // game.js's main() always runs AFTER browser.js's _registerEvents, so a
-  // second bubble-phase handler here would fire too late, after drawCard()
-  // already ran. Instead we attach a native capture-phase listener on
-  // #content, which always runs before any bubble-phase handler regardless
-  // of registration order, letting us intercept and stop the click first.
   document.addEventListener('click', function(event) {
     var link = event.target.closest && event.target.closest('a[card-id]');
     if (!link) return;
