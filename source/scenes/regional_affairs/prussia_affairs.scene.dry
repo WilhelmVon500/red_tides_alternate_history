@@ -202,7 +202,7 @@ WIP
 @appease_labor
 subtitle: WIP.
 view-if: prussia_action_timer <= 0
-on-arrival: prussia_action_timer = workers_nlp += 1*(1-dissent); labor_strength += 3; labor_dissent -= 3; industrialist_dissent += 3; spd_relation += 3*(1-dissent);
+on-arrival: prussia_action_timer = 6; workers_nlp += 1*(1-dissent); labor_strength += 3; labor_dissent -= 3; industrialist_dissent += 3; spd_relation += 3*(1-dissent);
 go-to: policies
 
 WIP
