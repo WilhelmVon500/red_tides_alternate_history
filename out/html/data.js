@@ -77,7 +77,7 @@ const tooltipList = [
     },
     {
       searchString: "DAP",
-      explanationText: "German Workers' Party <br> <i>Deutsche Arbeiterpartei</i>"
+      explanationText: "German National Workers' Party <br> <i>Deutschnationale Arbeiterpartei</i>"
     }
 ];
 const colourList = [
