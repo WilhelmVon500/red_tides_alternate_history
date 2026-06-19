@@ -190,3 +190,5 @@ if (window && d3) {
 
 @policies
 view-if: nlp_prussia
+
+- @prussia_affairs: Return to the overview of Prussia.
