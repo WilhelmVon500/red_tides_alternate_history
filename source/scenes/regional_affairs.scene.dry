@@ -3,6 +3,7 @@ card-image: img/prussia_landtag.jpg
 new-page: true
 is-card: true
 is-pinned-card: true
+tags: false-deck
 
 = Regional Affairs
 
