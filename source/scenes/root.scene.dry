@@ -583,6 +583,14 @@ Q.ideology_timer = 0;
 Q.fiscal_policy_timer = 0;
 Q.agricultural_policy_timer = 0;
 Q.labor_policy_timer = 0;
+// regional timers
+Q.prussia_action_timer = 0;
+Q.bavaria_action_timer = 0;
+Q.saxony_action_timer = 0;
+Q.thuringia_action_timer = 0;
+Q.wurttemberg_action_timer = 0;
+Q.mecklenburg_action_timer = 0;
+Q.hansa_action_timer = 0;
 // event timers
 
 
