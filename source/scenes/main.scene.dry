@@ -16,7 +16,7 @@ max-cards: 6
 
 - @party
 - @govt
-- @regional
+- @regional_affairs
 - #advisor
 - @shuffle_leadership_pinned
 
@@ -38,7 +38,7 @@ max-cards: 6
 
 - @party
 - @govt
-- @regional
+- @regional_affairs
 - #advisor
 - @shuffle_leadership_pinned
 
@@ -56,8 +56,3 @@ card-image: img/reichstag_2.jpg
 is-deck: true
 
 - #govt_affairs
-
-@regional
-title: Regional Affairs
-card-image: img/prussia_landtag.jpg
-go-to: regional_affairs
