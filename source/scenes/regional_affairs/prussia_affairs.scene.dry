@@ -185,4 +185,8 @@ if (window && d3) {
 {!<tr><td><div class="box" style='background-color:#909090'> </div> !} <span style="color: #909090;">**Others**</span> {!</td><td>!} [+ other_seats_prussia +] {!</td><td>!} [+ other_pl +]% {!</td></tr>!}
 {!</table>!}
 
+- @policies: Enact new policies in Prussia.
 - @regional_affairs: Return to regional affairs.
+
+@policies
+view-if: nlp_prussia
