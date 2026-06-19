@@ -190,6 +190,7 @@ if (window && d3) {
 
 @policies
 unavailable-subtitle: We are enacting a policy...
+new-page: true
 choose-if: prussia_action_timer <= 0
 view-if: nlp_prussia
 
