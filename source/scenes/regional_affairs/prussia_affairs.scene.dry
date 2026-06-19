@@ -189,6 +189,19 @@ if (window && d3) {
 - @regional_affairs: Return to regional affairs.
 
 @policies
+unavailable-subtitle: We are enacting a policy...
+choose-if: prussia_action_timer <= 0
 view-if: nlp_prussia
 
+WIP
+
+[? if prussia_action_timer > 0: Our action is expected to take [+ prussia_action_timer +] more months. ?]
+
+- @appease_labor: Appease trade unions.
 - @prussia_affairs: Return to the overview of Prussia.
+
+@appease_labor
+subtitle: WIP.
+on-arrival: prussia_action_timer = workers_nlp += 1*(1-dissent); labor_strength += 3; labor_dissent -= 3; industrialist_dissent += 3; spd_relation += 3*(1-dissent);
+
+WIP
