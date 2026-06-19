@@ -184,3 +184,5 @@ Next election: [+ next_election_month_prussia: month +] [+ next_election_year_pr
 
 {!<tr><td><div class="box" style='background-color:#909090'> </div> !} <span style="color: #909090;">**Others**</span> {!</td><td>!} [+ other_seats_prussia +] {!</td><td>!} [+ other_pl +]% {!</td></tr>!}
 {!</table>!}
+
+- @regional_affairs: Return to regional affairs.
