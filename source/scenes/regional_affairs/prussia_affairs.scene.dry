@@ -211,7 +211,7 @@ WIP
 - @subsidies_to_industrialists: Provide subsidies to Ruhr industrialists.
 - @appease_labor: Appease trade unions.
 - @purge_bureaucracy: Purge the Prussian senior bureaucracy from overly socialist civil servants.
-- @prussia_affairs: Return to the overview of Prussia.
+- @overview: Return to the overview of Prussia.
 
 @subsidies_to_industrialists
 subtitle: WIP.
@@ -238,3 +238,6 @@ on-arrival: prussia_action = "purging the Prussian senior bureaucracy from overl
 go-to: policies
 
 WIP
+
+@overview
+go-to: prussia_affairs
