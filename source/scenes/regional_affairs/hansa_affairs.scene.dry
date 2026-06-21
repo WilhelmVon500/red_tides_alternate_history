@@ -1,0 +1,189 @@
+title: Hanseatic League of Cities Hamburg, Bremen and Lübeck
+subtitle: Hansebund der Städte Hamburg, Bremen und Lübeck
+new-page: true
+on-display: {!
+data = []
+if (Q.kpd_seats_hansa) {
+    data.push({
+        "id": "kpd",
+        "legend": "KPD",
+        "name": "KPD",
+        "seats": Math.round(Q.kpd_seats_hansa),
+    });
+}
+if (Q.uspd_exist && Q.uspd_seats_hansa) {
+    data.push({
+        "id": "uspd",
+        "legend": "USPD",
+        "name": "USPD",
+        "seats": Math.round(Q.uspd_seats_hansa),
+    });
+}
+if (Q.spd_seats_hansa) {
+    data.push({
+        "id": "spd",
+        "legend": "SPD",
+        "name": "SPD",
+        "seats": Math.round(Q.spd_seats_hansa),
+    });
+}
+if (Q.fvp_seats_hansa && Q.rdp_formed) {
+    data.push({
+        "id": "rdp",
+        "legend": Q.fvp_name,
+        "name": Q.fvp_name,
+        "seats": Math.round(Q.fvp_seats_hansa),
+    });
+}
+if (Q.fvp_seats_hansa && !Q.rdp_formed) {
+    data.push({
+        "id": "fvp",
+        "legend": Q.fvp_name,
+        "name": Q.fvp_name,
+        "seats": Math.round(Q.fvp_seats_hansa),
+    });
+}
+if (Q.z_seats_hansa) {
+    data.push({
+        "id": "z",
+        "legend": "Center",
+        "name": "Center",
+        "seats": Math.round(Q.z_seats_hansa),
+    });
+}
+if (Q.nlp_seats_hansa && Q.vldp_formed) {
+    data.push({
+        "id": "vldp",
+        "legend": Q.nlp_name,
+        "name": Q.nlp_name,
+        "seats": Math.round(Q.nlp_seats_hansa),
+    });
+}
+if (Q.nlp_seats_hansa && !Q.vldp_formed) {
+    data.push({
+        "id": "nlp",
+        "legend": Q.nlp_name,
+        "name": Q.nlp_name,
+        "seats": Math.round(Q.nlp_seats_hansa),
+    });
+}
+if (Q.csvd_exist && Q.csvd_seats_hansa) {
+    data.push({
+        "id": "csvd",
+        "legend": "CSVD",
+        "name": "CSVD",
+        "seats": Math.round(Q.csvd_seats_hansa),
+    });
+}
+if (Q.wp_exist && Q.wp_seats_hansa) {
+    data.push({
+        "id": "wp",
+        "legend": "WP",
+        "name": "WP",
+        "seats": Math.round(Q.wp_seats_hansa),
+    });
+}
+if (Q.other_seats_hansa) {
+    data.push({
+        "id": "other",
+        "legend": "Other",
+        "name": "Other",
+        "seats": Math.round(Q.other_seats_hansa),
+    });
+}
+if (Q.kvp_exist && Q.kvp_seats_hansa) {
+    data.push({
+        "id": "kvp",
+        "legend": "KVP",
+        "name": "KVP",
+        "seats": Math.round(Q.kvp_seats_hansa),
+    });
+}
+if (Q.dnvp_seats_hansa) {
+    data.push({
+        "id": "dnvp",
+        "legend": "DNVP",
+        "name": "DNVP",
+        "seats": Math.round(Q.dnvp_seats_hansa),
+    });
+}
+if (Q.kswr_exist && Q.kswr_seats_hansa) {
+    data.push({
+        "id": "kswr",
+        "legend": "KSWR",
+        "name": "KSWR",
+        "seats": Math.round(Q.kswr_seats_hansa),
+    });
+}
+if (Q.dap_seats_hansa) {
+    data.push({
+        "id": "dap",
+        "legend": "DAP",
+        "name": "DAP",
+        "seats": Math.round(Q.dap_seats_hansa),
+    });
+}
+
+if (window && d3) {
+    var width = 500; 
+    var height = 500;
+    var screenWidth = document.getElementById('content').offsetWidth;
+    if (screenWidth < width - 50) {
+        width = screenWidth - 50; 
+        height = width;
+        document.getElementById("reichstag").style.height = screenWidth/2 + "px";
+    } 
+
+    var parliament = d3.parliament();
+    parliament.width(width).height(height).innerRadiusCoef(0.4);
+    parliament.enter.fromCenter(true).smallToBig(true);
+    parliament.exit.toCenter(false).bigToSmall(true);
+    d3.select("#reichstag").datum(data).call(parliament);
+}
+!}
+
+= Hanseatic League of Cities Hamburg, Bremen and Lübeck
+
+<div style="text-align:center; margin-bottom:5px;"><img src="img/hansaflag.jpg" style="max-width:240px; border: 4px solid black;"></div>
+
+<div style="text-align:center; margin-bottom:2px;">Senate President: [+ hansa_leader +] ([?if hansa_leader_party = "SPD": <span style="color: #E3000F;">**SPD**</span>?][?if hansa_leader_party = fvp_name:<span style="color: var(--fvp-color);">**[+ fvp_name +]**</span>?][?if hansa_leader_party = nlp_name: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span>?][?if hansa_leader_party = "DNVP": <span style="color: #3F7BC1;">**DNVP**</span>?][?if hansa_leader_party = "KSWR": <span style="color: #003755;">**KSWR**</span>?])</div>
+
+<div style="text-align:center; margin-bottom:2px;">Government: [? if in_united_left_coalition_hansa: United Left ?][? if in_weimar_coalition_hansa: Weimar Coalition ?][? if in_grand_coalition_hansa: Grand Coalition ?][? if in_bourgeois_coalition_hansa: Bourgeois Coalition ?][? if in_right_coalition_hansa: Right Coalition ?][? if in_nlp_majority_hansa: <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> majority ?]</div>
+
+<div style="text-align:center;">Next election: [+ next_election_month_hansa: month +] [+ next_election_year_hansa +]</div>
+
+= Landtag
+
+{!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
+
+{!<table style="width:100%;">!} 
+{!<tr><td>Party</td><td>Seats</td><td>Seat Share</td></tr>!}
+{!<tr><td><div class="box" style='background-color: var(--nlp-color); outline: 2px; outline-style: solid;'> </div> !} **[+nlp_name+]** {!</td><td>!} **[+ nlp_seats_hansa +]** {!</td><td>!} **[+ nlp_pl +]%** {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#8B0000'> </div> !} KPD {!</td><td>!} [+ kpd_seats_hansa +] {!</td><td>!} [+ kpd_pl +]% {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#E3000F'> </div> !} SPD {!</td><td>!} [+ spd_seats_hansa +] {!</td><td>!} [+ spd_pl +]% {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color: var(--fvp-color)'> </div> !} [+fvp_name+] {!</td><td>!} [+ fvp_seats_hansa +] {!</td><td>!} [+ fvp_pl +]% {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#000000'> </div> !} Z {!</td><td>!} [+ z_seats_hansa +] {!</td><td>!} [+ z_pl +]% {!</td></tr>!}
+
+[? if csvd_exist: {!<tr><td><div class="box" style='background-color:#1DB4E1'> </div> !} CSVD {!</td><td>!} [+ csvd_seats_hansa +] {!</td><td>!} [+ csvd_pl +]% {!</td></tr>!} ?]
+
+[? if wp_exist: {!<tr><td><div class="box" style='background-color:#B8996F'> </div> !} WP {!</td><td>!} [+ wp_seats_hansa +] {!</td><td>!} [+ wp_pl +]% {!</td></tr>!} ?]
+
+[? if rlb_exist: {!<tr><td><div class="box" style='background-color:#52AE6F'> </div> !} RLB {!</td><td>!} [+ rlb_seats_hansa +] {!</td><td>!} [+ rlb_pl +]% {!</td></tr>!} ?]
+
+[? if kvp_exist: {!<tr><td><div class="box" style='background-color:#455B95'> </div> !} KVP {!</td><td>!} [+ kvp_seats_hansa +] {!</td><td>!} [+ kvp_pl +]% {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#3F7BC1'> </div> !} DNVP {!</td><td>!} [+ dnvp_seats_hansa +] {!</td><td>!} [+ dnvp_pl +]% {!</td></tr>!}
+
+[? if kswr_exist: {!<tr><td><div class="box" style='background-color:#003755'> </div> !} KSWR {!</td><td>!} [+ kswr_seats_hansa +] {!</td><td>!} [+ kswr_pl +]% {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#096300'> </div> !} DAP {!</td><td>!} [+ dap_seats_hansa +] {!</td><td>!} [+ dap_pl +]% {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#909090'> </div> !} <span style="color: #909090;">**Others**</span> {!</td><td>!} [+ other_seats_hansa +] {!</td><td>!} [+ other_pl +]% {!</td></tr>!}
+{!</table>!}
+
+- @policies: Enact new policies in Hanseatic Cities.
+- @regional_affairs: Return to regional affairs.
