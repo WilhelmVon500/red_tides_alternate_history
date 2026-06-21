@@ -415,6 +415,30 @@ Q.next_election_week_hansa = 1;
 Q.next_election_month_hansa = 2;
 Q.next_election_year_hansa = 1925;
 
+Q.kpd_seats_hansa = 19;
+Q.uspd_seats_hansa = 13;
+Q.spd_seats_hansa = 71;
+Q.fvp_seats_hansa = 35;
+Q.z_seats_hansa = 1;
+Q.nlp_seats_hansa = 29;
+Q.wp_seats_hansa = 10;
+Q.rlb_seats_hansa = 0;
+Q.dnvp_seats_hansa = 22;
+Q.dap_seats_hansa = 0;
+Q.other_seats_hansa = 0;
+
+Q.kpd_hl = 9.5;
+Q.uspd_hl = 6.5;
+Q.spd_hl = 35.5;
+Q.fvp_hl = 17.5;
+Q.z_hl = 0.5;
+Q.nlp_hl = 14.5;
+Q.wp_hl = 5.0;
+Q.rlb_hl = 0;
+Q.dnvp_hl = 11.0;
+Q.dap_hl = 0;
+Q.other_hl = 0;
+
 
 
 
