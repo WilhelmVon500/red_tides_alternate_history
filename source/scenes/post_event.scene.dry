@@ -76,15 +76,17 @@ if (Q.unemployed <= 1) {
 }
 
 // re-calculate dissent.
-var total_strength = Q.left_stresemannite_strength + Q.right_stresemannite_strength + Q.labor_strength + Q.industrialist_strength;
+var total_strength = Q.constitutional_liberal_strength + Q.left_stresemannite_strength + Q.right_stresemannite_strength + Q.labor_strength + Q.mittelstand_strength + Q.industrialist_strength;
 
 // normalize strength for the different factions
+Q.constitutional_liberal_strength = 100*Q.constitutional_liberal_strength/total_strength;
 Q.left_stresemannite_strength = 100*Q.left_stresemannite_strength/total_strength;
 Q.right_stresemannite_strength = 100*Q.right_stresemannite_strength/total_strength;
 Q.labor_strength = 100*Q.labor_strength/total_strength;
+Q.mittelstand_strength = 100*Q.mittelstand_strength/total_strength;
 Q.industrialist_strength = 100*Q.industrialist_strength/total_strength;
 
-var total_dissent = Q.left_stresemannite_strength*Q.left_stresemannite_dissent + Q.right_stresemannite_strength*Q.right_stresemannite_dissent + Q.labor_strength*Q.labor_dissent + Q.industrialist_strength*Q.industrialist_dissent;
+var total_dissent = Q.constitutional_liberal_strength*Q.constitutional_liberal_dissent + Q.left_stresemannite_strength*Q.left_stresemannite_dissent + Q.right_stresemannite_strength*Q.right_stresemannite_dissent + Q.labor_strength*Q.labor_dissent + Q.mittelstand_strength*Q.mittelstand_dissent + Q.industrialist_strength*Q.industrialist_dissent;
 
 
 Q.dissent = 0.01*total_dissent/total_strength;
