@@ -11,6 +11,14 @@ if (Q.kpd_seats_prussia) {
         "seats": Math.round(Q.kpd_seats_prussia),
     });
 }
+if (Q.uspd_exist && Q.uspd_seats_prussia) {
+    data.push({
+        "id": "uspd",
+        "legend": "USPD",
+        "name": "USPD",
+        "seats": Math.round(Q.uspd_seats_prussia),
+    });
+}
 if (Q.spd_seats_prussia) {
     data.push({
         "id": "spd",
