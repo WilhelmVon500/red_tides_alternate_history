@@ -314,7 +314,7 @@ go-to: prussia_coalition_menu
 
 {!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
 
-{!<table>!} 
+{!<table style="width:100%;">!} 
 {!<tr><td>Party</td><td>Votes</td><td>Seats</td></tr>!}
 {!<tr><td><div class="box" style='background-color: var(--nlp-color); outline: 2px; outline-style: solid;'> </div> !} **[+nlp_name+]** {!</td><td>!} **[+ nlp_election_votes_prussia +]%** {!</td><td>!} **[+ nlp_seats_prussia +]** **([+ nlp_pl +]%)** {!</td></tr>!}
 
