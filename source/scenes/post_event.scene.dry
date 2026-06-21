@@ -136,6 +136,42 @@ if (Q.weeks_enabled && Q.month_actions >= 1 && Q.month_actions != Q.month_action
         }
         Q.unemployed += 4/12;
     }
+
+
+
+
+
+    if (!Q.uspd_exist) {
+        Q.workers_uspd = 0;
+        Q.new_middle_uspd = 0;
+        Q.old_middle_uspd = 0;
+        Q.rural_uspd = 0;
+        Q.unemployed_uspd = 0;
+        Q.catholics_uspd = 0;
+    }
+    if (!Q.wp_exist) {
+        Q.workers_wp = 0;
+        Q.new_middle_wp = 0;
+        Q.old_middle_wp = 0;
+        Q.rural_wp = 0;
+        Q.unemployed_wp = 0;
+        Q.catholics_wp = 0;
+    }
+    if (!Q.rlb_exist) {
+        Q.workers_rlb = 0;
+        Q.new_middle_rlb = 0;
+        Q.old_middle_rlb = 0;
+        Q.rural_rlb = 0;
+        Q.unemployed_rlb = 0;
+        Q.catholics_rlb = 0;
+    }
+
+    if (!Q.industrialist_nlp) Q.industrialist_funding = 0;
+    if (Q.industrialist_nlp && Q.industrialist_strength < 5) Q.industrialist_funding = 1;
+    if (Q.industrialist_nlp && Q.industrialist_strength >= 5 && Q.industrialist_strength < 15) Q.industrialist_funding = 2;
+    if (Q.industrialist_nlp && Q.industrialist_strength >= 15 && Q.industrialist_strength < 30) Q.industrialist_funding = 3;
+    if (Q.industrialist_nlp && Q.industrialist_strength >= 30 && Q.industrialist_strength < 45) Q.industrialist_funding = 4;
+    if (Q.industrialist_nlp && Q.industrialist_strength >= 45) Q.industrialist_funding = 5;
 }
 
 
@@ -332,6 +368,13 @@ if ((Q.month_actions >= 1 && !Q.weeks_enabled) || (Q.month_actions >= 4 && Q.wee
         Q.unemployed_rlb = 0;
         Q.catholics_rlb = 0;
     }
+
+    if (!Q.industrialist_nlp) Q.industrialist_funding = 0;
+    if (Q.industrialist_nlp && Q.industrialist_strength < 5) Q.industrialist_funding = 1;
+    if (Q.industrialist_nlp && Q.industrialist_strength >= 5 && Q.industrialist_strength < 15) Q.industrialist_funding = 2;
+    if (Q.industrialist_nlp && Q.industrialist_strength >= 15 && Q.industrialist_strength < 30) Q.industrialist_funding = 3;
+    if (Q.industrialist_nlp && Q.industrialist_strength >= 30 && Q.industrialist_strength < 45) Q.industrialist_funding = 4;
+    if (Q.industrialist_nlp && Q.industrialist_strength >= 45) Q.industrialist_funding = 5;
 }
 Q.has_event = 0;
 
