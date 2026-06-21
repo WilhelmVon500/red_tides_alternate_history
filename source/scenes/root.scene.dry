@@ -562,9 +562,6 @@ Q.timers = ['advisor_action', 'shuffle_leadership',
             // govt
             'fiscal_policy', 'agricultural_policy',
             'labor_policy',
-            // regional
-            'prussia_action', 'bavaria_action', 'saxony_action', 'thuringia_action',
-            'wurttemberg_action', 'mecklenburg_action', 'hansa_action'
             // events
             ];
 Q.advisor_action_timer = 0;
