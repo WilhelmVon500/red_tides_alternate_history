@@ -316,31 +316,31 @@ go-to: prussia_coalition_menu
 
 {!<table>!} 
 {!<tr><td>Party</td><td>Votes</td><td>Seats</td></tr>!}
-{!<tr><td><div class="box" style='background-color: var(--nlp-color); outline: 2px; outline-style: solid;'> </div> !} **[+nlp_name+]:** {!</td><td>!} **[+ nlp_election_votes_prussia +]%** {!</td><td>!} **[+ nlp_seats_prussia +]** **([+ nlp_pl +]%)** {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color: var(--nlp-color); outline: 2px; outline-style: solid;'> </div> !} **[+nlp_name+]** {!</td><td>!} **[+ nlp_election_votes_prussia +]%** {!</td><td>!} **[+ nlp_seats_prussia +]** **([+ nlp_pl +]%)** {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#8B0000'> </div> !} KPD: {!</td><td>!} [+ kpd_election_votes_prussia +]% {!</td><td>!} [+ kpd_seats_prussia +] ([+ kpd_pl +]%) {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#8B0000'> </div> !} KPD {!</td><td>!} [+ kpd_election_votes_prussia +]% {!</td><td>!} [+ kpd_seats_prussia +] ([+ kpd_pl +]%) {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#E3000F'> </div> !} SPD: {!</td><td>!} [+ spd_election_votes_prussia +]% {!</td><td>!} [+ spd_seats_prussia +] ([+ spd_pl +]%) {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#E3000F'> </div> !} SPD {!</td><td>!} [+ spd_election_votes_prussia +]% {!</td><td>!} [+ spd_seats_prussia +] ([+ spd_pl +]%) {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color: var(--fvp-color)'> </div> !} [+fvp_name+]: {!</td><td>!} [+ fvp_election_votes_prussia +]% {!</td><td>!} [+ fvp_seats_prussia +] ([+ fvp_pl +]%) {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color: var(--fvp-color)'> </div> !} [+fvp_name+] {!</td><td>!} [+ fvp_election_votes_prussia +]% {!</td><td>!} [+ fvp_seats_prussia +] ([+ fvp_pl +]%) {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#000000'> </div> !} Z: {!</td><td>!} [+ z_election_votes_prussia +]% {!</td><td>!} [+ z_seats_prussia +] ([+ z_pl +]%) {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#000000'> </div> !} Z {!</td><td>!} [+ z_election_votes_prussia +]% {!</td><td>!} [+ z_seats_prussia +] ([+ z_pl +]%) {!</td></tr>!}
 
-[? if csvd_exist: {!<tr><td><div class="box" style='background-color:#1DB4E1'> </div> !} CSVD: {!</td><td>!} [+ csvd_election_votes_prussia +]% {!</td><td>!} [+ csvd_seats_prussia +] ([+ csvd_pl +]%) {!</td></tr>!} ?]
+[? if csvd_exist: {!<tr><td><div class="box" style='background-color:#1DB4E1'> </div> !} CSVD {!</td><td>!} [+ csvd_election_votes_prussia +]% {!</td><td>!} [+ csvd_seats_prussia +] ([+ csvd_pl +]%) {!</td></tr>!} ?]
 
-[? if wp_exist: {!<tr><td><div class="box" style='background-color:#B8996F'> </div> !} WP: {!</td><td>!} [+ wp_election_votes_prussia +]% {!</td><td>!} [+ wp_seats_prussia +] ([+ wp_pl +]%) {!</td></tr>!} ?]
+[? if wp_exist: {!<tr><td><div class="box" style='background-color:#B8996F'> </div> !} WP {!</td><td>!} [+ wp_election_votes_prussia +]% {!</td><td>!} [+ wp_seats_prussia +] ([+ wp_pl +]%) {!</td></tr>!} ?]
 
-[? if rlb_exist: {!<tr><td><div class="box" style='background-color:#52AE6F'> </div> !} RLB: {!</td><td>!} [+ rlb_election_votes_prussia +]% {!</td><td>!} [+ rlb_seats_prussia +] ([+ rlb_pl +]%) {!</td></tr>!} ?]
+[? if rlb_exist: {!<tr><td><div class="box" style='background-color:#52AE6F'> </div> !} RLB {!</td><td>!} [+ rlb_election_votes_prussia +]% {!</td><td>!} [+ rlb_seats_prussia +] ([+ rlb_pl +]%) {!</td></tr>!} ?]
 
-[? if kvp_exist: {!<tr><td><div class="box" style='background-color:#455B95'> </div> !} KVP: {!</td><td>!} [+ kvp_election_votes_prussia +]% {!</td><td>!} [+ kvp_seats_prussia +] ([+ kvp_pl +]%) {!</td></tr>!} ?]
+[? if kvp_exist: {!<tr><td><div class="box" style='background-color:#455B95'> </div> !} KVP {!</td><td>!} [+ kvp_election_votes_prussia +]% {!</td><td>!} [+ kvp_seats_prussia +] ([+ kvp_pl +]%) {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#3F7BC1'> </div> !} DNVP: {!</td><td>!} [+ dnvp_election_votes_prussia +]% {!</td><td>!} [+ dnvp_seats_prussia +] ([+ dnvp_pl +]%) {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#3F7BC1'> </div> !} DNVP {!</td><td>!} [+ dnvp_election_votes_prussia +]% {!</td><td>!} [+ dnvp_seats_prussia +] ([+ dnvp_pl +]%) {!</td></tr>!}
 
-[? if kswr_exist: {!<tr><td><div class="box" style='background-color:#003755'> </div> !} KSWR: {!</td><td>!} [+ kswr_election_votes_prussia +]% {!</td><td>!} [+ kswr_seats_prussia +] ([+ kswr_pl +]%) {!</td></tr>!} ?]
+[? if kswr_exist: {!<tr><td><div class="box" style='background-color:#003755'> </div> !} KSWR {!</td><td>!} [+ kswr_election_votes_prussia +]% {!</td><td>!} [+ kswr_seats_prussia +] ([+ kswr_pl +]%) {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#096300'> </div> !} DAP: {!</td><td>!} [+ dap_election_votes_prussia +]% {!</td><td>!} [+ dap_seats_prussia +] ([+ dap_pl +]%) {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#096300'> </div> !} DAP {!</td><td>!} [+ dap_election_votes_prussia +]% {!</td><td>!} [+ dap_seats_prussia +] ([+ dap_pl +]%) {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#909090'> </div> !} <span style="color: #909090;">**Others**</span>: {!</td><td>!} [+ other_election_votes_prussia +]% {!</td><td>!} [+ other_seats_prussia +] ([+ other_pl +]%) {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#909090'> </div> !} <span style="color: #909090;">**Others**</span> {!</td><td>!} [+ other_election_votes_prussia +]% {!</td><td>!} [+ other_seats_prussia +] ([+ other_pl +]%) {!</td></tr>!}
 {!</table>!}
 
 **Potential coalitions:**
