@@ -429,7 +429,7 @@ go-to: coalition_menu
 
 {!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
 
-{!<table>!} 
+{!<table style="width:100%;">!} 
 {!<tr><td>Party</td><td>Votes</td><td>% Change</td><td>Seats</td><td>Change</td></tr>!}
 {!<tr><td><div class="box" style='background-color: var(--nlp-color); outline: 2px; outline-style: solid;'> </div> !} **[+nlp_name+]:** {!</td><td>!} **[+ nlp_election_votes +]%** {!</td><td>!} **[+ votes_change_nlp +]** {!</td><td>!} **[+ nlp_seats +]** **([+ nlp_r +]%)** {!</td><td>!} **[+ str_seats_change_nlp +]** **([+ str_change_nlp +]%)** {!</td></tr>!}
 
