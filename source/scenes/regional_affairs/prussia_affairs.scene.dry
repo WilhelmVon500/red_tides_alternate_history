@@ -208,7 +208,7 @@ subtitle: WIP.
 unavailable-subtitle: WIP. [? if (industrialist_strength < (labor_strength + mittelstand_strength)): Our party doesn't want this. ?][? if in_grand_coalition_prussia: The <span style="color: #E3000F;">**SPD**</span> will block this. ?]
 choose-if: not in_grand_coalition_prussia and not (industrialist_strength < (labor_strength + mittelstand_strength))
 view-if: prussia_action_timer <= 0
-on-arrival: prussia_action = "providing subsidies to Ruhr industrialists"; prussia_action_timer = 6; resources += 2; industrialist_strength += 5; industrialist_dissent -= 3; labor_dissent += 3; spd_relation -= 2;
+on-arrival: prussia_action = "providing subsidies to Ruhr industrialists"; prussia_action_timer = 6; resources += 2; workers_nlp -= 4; new_middle_nlp -= 3; industrialist_strength += 5; industrialist_dissent -= 5; labor_dissent += 5; spd_relation -= 2; economic_growth += 0.1;
 go-to: policies
 
 WIP
