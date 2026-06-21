@@ -166,6 +166,16 @@ if ((Q.month_actions >= 1 && !Q.weeks_enabled) || (Q.month_actions >= 4 && Q.wee
             }
         }
     }
+    
+    // state action timers
+    for (state of Q.states) {
+        if (Q[state+'_timer'] && Q[state+'_timer'] > 0) {
+            Q[state+'_timer'] -= 1;
+        }
+        if (Q[state+'_timer'] <= 0) {
+            Q[state+'_action'] = 0;
+        }
+    }
     // append to historical party support records
     var party_support_results = {'date': new Date(Q.year, Q.month - 1)};
     for (var party of Q.parties) {
