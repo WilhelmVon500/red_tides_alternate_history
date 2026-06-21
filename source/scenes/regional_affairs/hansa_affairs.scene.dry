@@ -152,7 +152,7 @@ if (window && d3) {
 
 <div style="text-align:center;">Next election: [+ next_election_month_hansa: month +] [+ next_election_year_hansa +]</div>
 
-= Landtag
+= Bürgerschaft
 
 {!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
 
