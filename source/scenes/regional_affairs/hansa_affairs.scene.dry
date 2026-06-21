@@ -199,3 +199,8 @@ view-if: nlp_hansa
 WIP
 
 [? if hansa_action_timer > 0: Our action of [+ hansa_action +] is expected to take [+ hansa_action_timer +] more months. ?]
+
+- @overview: Return to the overview of Hanseatic Cities.
+
+@overview
+go-to: hansa_affairs
