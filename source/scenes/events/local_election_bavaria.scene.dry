@@ -305,33 +305,33 @@ go-to: bavaria_coalition_menu
 
 {!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
 
-{!<table>!} 
+{!<table style="width:100%;">!} 
 {!<tr><td>Party</td><td>Votes</td><td>Seats</td></tr>!}
-{!<tr><td><div class="box" style='background-color: var(--nlp-color); outline: 2px; outline-style: solid;'> </div> !} **[+nlp_name+]:** {!</td><td>!} **[+ nlp_election_votes_bavaria +]%** {!</td><td>!} **[+ nlp_seats_bavaria +]** **([+ nlp_bl +]%)** {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color: var(--nlp-color); outline: 2px; outline-style: solid;'> </div> !} **[+nlp_name+]** {!</td><td>!} **[+ nlp_election_votes_bavaria +]%** {!</td><td>!} **[+ nlp_seats_bavaria +]** **([+ nlp_bl +]%)** {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#8B0000'> </div> !} KPD: {!</td><td>!} [+ kpd_election_votes_bavaria +]% {!</td><td>!} [+ kpd_seats_bavaria +] ([+ kpd_bl +]%) {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#8B0000'> </div> !} KPD {!</td><td>!} [+ kpd_election_votes_bavaria +]% {!</td><td>!} [+ kpd_seats_bavaria +] ([+ kpd_bl +]%) {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#E3000F'> </div> !} SPD: {!</td><td>!} [+ spd_election_votes_bavaria +]% {!</td><td>!} [+ spd_seats_bavaria +] ([+ spd_bl +]%) {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#E3000F'> </div> !} SPD {!</td><td>!} [+ spd_election_votes_bavaria +]% {!</td><td>!} [+ spd_seats_bavaria +] ([+ spd_bl +]%) {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color: var(--fvp-color)'> </div> !} [+fvp_name+]: {!</td><td>!} [+ fvp_election_votes_bavaria +]% {!</td><td>!} [+ fvp_seats_bavaria +] ([+ fvp_bl +]%) {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color: var(--fvp-color)'> </div> !} [+fvp_name+] {!</td><td>!} [+ fvp_election_votes_bavaria +]% {!</td><td>!} [+ fvp_seats_bavaria +] ([+ fvp_bl +]%) {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#38C538'> </div> !} BB: {!</td><td>!} [+ bb_election_votes_bavaria +]% {!</td><td>!} [+ bb_seats_bavaria +] ([+ bb_bl +]%) {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#38C538'> </div> !} BB {!</td><td>!} [+ bb_election_votes_bavaria +]% {!</td><td>!} [+ bb_seats_bavaria +] ([+ bb_bl +]%) {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#69A2BE'> </div> !} BVP: {!</td><td>!} [+ z_election_votes_bavaria +]% {!</td><td>!} [+ z_seats_bavaria +] ([+ z_bl +]%) {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#69A2BE'> </div> !} BVP {!</td><td>!} [+ z_election_votes_bavaria +]% {!</td><td>!} [+ z_seats_bavaria +] ([+ z_bl +]%) {!</td></tr>!}
 
-[? if csvd_exist: {!<tr><td><div class="box" style='background-color:#1DB4E1'> </div> !} CSVD: {!</td><td>!} [+ csvd_election_votes_bavaria +]% {!</td><td>!} [+ csvd_seats_bavaria +] ([+ csvd_bl +]%) {!</td></tr>!} ?]
+[? if csvd_exist: {!<tr><td><div class="box" style='background-color:#1DB4E1'> </div> !} CSVD {!</td><td>!} [+ csvd_election_votes_bavaria +]% {!</td><td>!} [+ csvd_seats_bavaria +] ([+ csvd_bl +]%) {!</td></tr>!} ?]
 
-[? if wp_exist: {!<tr><td><div class="box" style='background-color:#B8996F'> </div> !} WP: {!</td><td>!} [+ wp_election_votes_bavaria +]% {!</td><td>!} [+ wp_seats_bavaria +] ([+ wp_bl +]%) {!</td></tr>!} ?]
+[? if wp_exist: {!<tr><td><div class="box" style='background-color:#B8996F'> </div> !} WP {!</td><td>!} [+ wp_election_votes_bavaria +]% {!</td><td>!} [+ wp_seats_bavaria +] ([+ wp_bl +]%) {!</td></tr>!} ?]
 
-[? if kvp_exist: {!<tr><td><div class="box" style='background-color:#455B95'> </div> !} KVP: {!</td><td>!} [+ kvp_election_votes_bavaria +]% {!</td><td>!} [+ kvp_seats_bavaria +] ([+ kvp_bl +]%) {!</td></tr>!} ?]
+[? if kvp_exist: {!<tr><td><div class="box" style='background-color:#455B95'> </div> !} KVP {!</td><td>!} [+ kvp_election_votes_bavaria +]% {!</td><td>!} [+ kvp_seats_bavaria +] ([+ kvp_bl +]%) {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#3F7BC1'> </div> !} DNVP: {!</td><td>!} [+ dnvp_election_votes_bavaria +]% {!</td><td>!} [+ dnvp_seats_bavaria +] ([+ dnvp_bl +]%) {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#3F7BC1'> </div> !} DNVP {!</td><td>!} [+ dnvp_election_votes_bavaria +]% {!</td><td>!} [+ dnvp_seats_bavaria +] ([+ dnvp_bl +]%) {!</td></tr>!}
 
-[? if kswr_exist: {!<tr><td><div class="box" style='background-color:#003755'> </div> !} KSWR: {!</td><td>!} [+ kswr_election_votes_bavaria +]% {!</td><td>!} [+ kswr_seats_bavaria +] ([+ kswr_bl +]%) {!</td></tr>!} ?]
+[? if kswr_exist: {!<tr><td><div class="box" style='background-color:#003755'> </div> !} KSWR {!</td><td>!} [+ kswr_election_votes_bavaria +]% {!</td><td>!} [+ kswr_seats_bavaria +] ([+ kswr_bl +]%) {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#096300'> </div> !} DAP: {!</td><td>!} [+ dap_election_votes_bavaria +]% {!</td><td>!} [+ dap_seats_bavaria +] ([+ dap_bl +]%) {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#096300'> </div> !} DAP {!</td><td>!} [+ dap_election_votes_bavaria +]% {!</td><td>!} [+ dap_seats_bavaria +] ([+ dap_bl +]%) {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#909090'> </div> !} <span style="color: #909090;">**Others**</span>: {!</td><td>!} [+ other_election_votes_bavaria +]% {!</td><td>!} [+ other_seats_bavaria +] ([+ other_bl +]%) {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#909090'> </div> !} <span style="color: #909090;">**Others**</span> {!</td><td>!} [+ other_election_votes_bavaria +]% {!</td><td>!} [+ other_seats_bavaria +] ([+ other_bl +]%) {!</td></tr>!}
 {!</table>!}
 
 **Potential coalitions:**
