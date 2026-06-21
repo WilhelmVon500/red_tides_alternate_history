@@ -198,9 +198,18 @@ WIP
 
 [? if prussia_action_timer > 0: Our action of [+ prussia_action +] is expected to take [+ prussia_action_timer +] more months. ?]
 
+- @subsidies_to_industrialists: Provide subsidies to Ruhr industrialists.
 - @appease_labor: Appease trade unions.
 - @purge_bureaucracy: Purge the Prussian senior bureaucracy from overly socialist civil servants.
 - @prussia_affairs: Return to the overview of Prussia.
+
+@subsidies_to_industrialists
+subtitle: WIP.
+view-if: prussia_action_timer <= 0
+on-arrival: prussia_action = "providing subsidies to Ruhr industrialists"; prussia_action_timer = 6; resources += 2; industrialist_strength += 5; industrialist_dissent -= 3; labor_dissent += 3; spd_relation -= 2;
+go-to: policies
+
+WIP
 
 @appease_labor
 subtitle: WIP.
