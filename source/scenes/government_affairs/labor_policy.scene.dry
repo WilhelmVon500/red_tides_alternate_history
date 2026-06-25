@@ -13,6 +13,6 @@ WIP
 - @strengthen_unions: Strengthen the liberal unions influence in labor affairs.
 
 @strengthen_unions
-on-arrival: workers_nlp += 1*(1-dissent); new_middle_nlp += 3*(1-dissent); labor_strength += 5; labor_dissent -= 5;
+on-arrival: workers_nlp += 1*(1-dissent); new_middle_nlp += 4*(1-dissent); labor_strength += 5; labor_dissent -= 5; industrialist_dissent += 3;
   
 WIP
