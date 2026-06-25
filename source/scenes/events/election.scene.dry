@@ -652,6 +652,7 @@ view-if: finance_minister_party != nlp_name
 on-arrival: leverage -= 10; finance_minister_party = nlp_name; finance_minister = "Moldenhauer"
 go-to: ministries
 
+Choose the Finance Minister.
 Paul Moldenhauer of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Finance Minister.
 
 @economic
@@ -664,6 +665,7 @@ view-if: economic_minister_party != nlp_name
 on-arrival: leverage -= 10; economic_minister_party = nlp_name; economic_minister = "Raumer"
 go-to: ministries
 
+Choose the Economic Minister.
 Hans Raumer of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Economic Minister.
 
 @justice
@@ -676,6 +678,7 @@ view-if: justice_minister_party != nlp_name
 on-arrival: leverage -= 10; justice_minister_party = nlp_name; justice_minister = "Heinze"
 go-to: ministries
 
+Choose the Justice Minister.
 Rudolf Heinze of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Justice Minister.
 
 @labor
@@ -688,6 +691,7 @@ view-if: labor_minister_party != nlp_name
 on-arrival: leverage -= 5; labor_minister_party = nlp_name; labor_minister = "Thiel"
 go-to: ministries
 
+Choose the Labor Minister.
 Otto Thiel of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Labor Minister.
 
 @foreign
@@ -700,6 +704,7 @@ view-if: foreign_minister_party != nlp_name
 on-arrival: leverage -= 10; foreign_minister_party = nlp_name; foreign_minister = "Stresemann"
 go-to: ministries
 
+Choose the Foreign Minister.
 Gustav Stresemann of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Foreign Minister.
 
 @agriculture
@@ -712,6 +717,7 @@ on-arrival: leverage -= 10; agriculture_minister_party = nlp_name; agriculture_m
 go-to: ministries
 tags: mins_1922
 
+Choose the Agriculture Minister.
 Hermann Dietrich of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Agriculture Minister.
 
 @postal
@@ -724,6 +730,7 @@ on-arrival: leverage -= 10; postal_minister_party = nlp_name; postal_minister = 
 go-to: ministries
 tags: mins_1922
 
+Choose the Postal Minister.
 Albrecht Morath of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Postal Minister.
 
 #@reichswehr
@@ -736,6 +743,7 @@ Albrecht Morath of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**
 #on-arrival: leverage -= 15; reichswehr_minister_party = nlp_name; reichswehr_minister = "Leber"
 #go-to: ministries
 
+#Choose the Reichswehr Minister.
 #Julius Leber of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Reichswehr Minister.
 
 
