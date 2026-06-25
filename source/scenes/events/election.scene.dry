@@ -611,18 +611,6 @@ Hans Raumer of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</sp
 
 
 
-@labor
-title: Labor Ministry
-subtitle: This is not our usual domain
-unavailable-subtitle: We do not have enough leverage.
-tags: mins_1922
-choose-if: leverage >= 5
-view-if: labor_minister_party != nlp_name
-on-arrival: leverage -= 5; labor_minister_party = nlp_name; labor_minister = "Thiel"
-go-to: ministries
-
-Otto Thiel of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Labor Minister.
-
 @interior
 title: Interior Ministry
 subtitle: Taking the Interior Ministry is expected of us. The Interior Ministry controls domestic security.
@@ -630,10 +618,21 @@ unavailable-subtitle: We do not have enough leverage.
 tags: mins_1922
 choose-if: leverage >= 5
 view-if: interior_minister_party != nlp_name
-on-arrival: leverage -= 5; interior_minister_party = nlp_name; interior_minister = "Jarres"
+on-arrival: leverage -= 5; interior_minister_party = nlp_name;
 go-to: ministries
 
-Karl Jarres of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Interior Minister.
+Choose the Interior Minister.
+
+- @kulz_interior: Wilhelm Külz (Left-Wing Stresemannite)
+
+@kulz_interior
+on-arrival: interior_minister = "Külz";
+go-to: ministries
+face-image: img/portraits/KülzWilhelm.jpg
+
+Wilhelm Külz of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Interior Minister.
+
+
 
 @finance
 title: Finance Ministry
@@ -670,6 +669,18 @@ on-arrival: leverage -= 10; justice_minister_party = nlp_name; justice_minister 
 go-to: ministries
 
 Rudolf Heinze of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Justice Minister.
+
+@labor
+title: Labor Ministry
+subtitle: This is not our usual domain
+unavailable-subtitle: We do not have enough leverage.
+tags: mins_1922
+choose-if: leverage >= 5
+view-if: labor_minister_party != nlp_name
+on-arrival: leverage -= 5; labor_minister_party = nlp_name; labor_minister = "Thiel"
+go-to: ministries
+
+Otto Thiel of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Labor Minister.
 
 @foreign
 title: Foreign Ministry
