@@ -8,6 +8,26 @@ new-page: true
 
 = Eduard Dingeldey
 
-WIP.
+A lawyer and one of the first members of the party, Dingeldey holds influence in the party as charirman of the party organization in Hesse.
 
+- @party_discipline
+- @right_cooperation
 - @root: Return to main
+
+@party_discipline
+title: Party Discipline
+subtitle: Reduce dissent across the party.
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; constitutional_liberal_dissent -= 10; left_stresemannite_dissent -= 10; right_stresemannite_dissent -= 10; labor_dissent -= 10; mittelstand_dissent -= 10; industrialist_dissent -= 10;
+
+We have enforced party discipline to reduce dissent across all factions.
+
+@right_cooperation
+title: Cooperation with the moderate right
+subtitle: WIP
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+choose-if: advisor_action_timer = 0
+on-arrival: advisor_action_timer = 6; industrialist_strength += 5; constitutional_liberal_dissent += 3; left_stresemannite_dissent += 3; kvp_relation += 5*(1-dissent); dnvp_relation += 5*(1-dissent) if not dnvp_ideology = "Radical";
+
+WIP
