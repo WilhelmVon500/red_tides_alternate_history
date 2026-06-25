@@ -726,12 +726,21 @@ subtitle: This is not our usual domain.
 unavailable-subtitle: We do not have enough leverage.
 choose-if: leverage >= 10 
 view-if: postal_minister_party != nlp_name
-on-arrival: leverage -= 10; postal_minister_party = nlp_name; postal_minister = "Morath"
-go-to: ministries
+on-arrival: leverage -= 10; postal_minister_party = nlp_name;
 tags: mins_1922
 
 Choose the Postal Minister.
+
+- @morath_postal: Albrecht Morath (Left-Wing Stresemannite)
+
+@morath_postal
+on-arrival: postal_minister = "Morath"
+go-to: ministries
+face-image: img/portraits/MorathAlbrecht.jpg
+
 Albrecht Morath of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Postal Minister.
+
+
 
 #@reichswehr
 #title: Reichswehr Ministry
