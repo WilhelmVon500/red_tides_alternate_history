@@ -619,7 +619,6 @@ tags: mins_1922
 choose-if: leverage >= 5
 view-if: interior_minister_party != nlp_name
 on-arrival: leverage -= 5; interior_minister_party = nlp_name;
-go-to: ministries
 
 Choose the Interior Minister.
 
