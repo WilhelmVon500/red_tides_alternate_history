@@ -649,10 +649,26 @@ unavailable-subtitle: We do not have enough leverage.
 tags: mins_1922
 choose-if: leverage >= 10 
 view-if: finance_minister_party != nlp_name
-on-arrival: leverage -= 10; finance_minister_party = nlp_name; finance_minister = "Moldenhauer"
-go-to: ministries
+on-arrival: leverage -= 10; finance_minister_party = nlp_name;
 
 Choose the Finance Minister.
+
+- @reinhold_finance: Peter Reinhold (Constitutional Liberal)
+- @moldenhauer_finance: Paul Moldenhauer (Right-Wing Stresemannite)
+
+@reinhold_finance
+on-arrival: finance_minister = "Reinhold";
+go-to: ministries
+face-image: img/portraits/ReinholdPeter.jpg
+view-if: constitutional_liberal_nlp
+
+Peter Reinhold of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Finance Minister.
+
+@moldenhauer_finance
+on-arrival: finance_minister = "Moldenhauer";
+go-to: ministries
+face-image: img/portraits/MoldenhauerPaul.jpg
+
 Paul Moldenhauer of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Finance Minister.
 
 @economic
