@@ -624,6 +624,7 @@ go-to: ministries
 Choose the Interior Minister.
 
 - @kulz_interior: Wilhelm Külz (Left-Wing Stresemannite)
+- @jarres_interior: Karl Jarres (Right-Wing Stresemannite)
 
 @kulz_interior
 on-arrival: interior_minister = "Külz";
@@ -631,6 +632,14 @@ go-to: ministries
 face-image: img/portraits/KülzWilhelm.jpg
 
 Wilhelm Külz of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Interior Minister.
+
+@jarres_interior
+on-arrival: interior_minister = "Jarres";
+go-to: ministries
+face-image: img/portraits/JarresKarl.jpg
+view-if: year >= 1924
+
+Karl Jarres of the <span style="color: var(--nlp-color);">**[+ nlp_name +]**</span> has been appointed Interior Minister.
 
 
 
