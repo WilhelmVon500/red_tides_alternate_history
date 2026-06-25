@@ -19,7 +19,7 @@ title: Organizing white-collar workers
 subtitle: Improve our standing among the new middle class.
 choose-if: advisor_action_timer <= 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] 
-on-arrival: advisor_action_timer = 6; new_middle_dvp += 6*(1-dissent); labor_strength += 5;
+on-arrival: advisor_action_timer = 6; new_middle_nlp += 6*(1-dissent); labor_strength += 5;
 
 We have increased our organizing among white-collar workers.
 
