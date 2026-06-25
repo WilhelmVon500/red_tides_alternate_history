@@ -28,6 +28,6 @@ title: Cooperation with the moderate right
 subtitle: WIP
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer = 0
-on-arrival: advisor_action_timer = 6; industrialist_strength += 5; constitutional_liberal_dissent += 3; left_stresemannite_dissent += 3; kvp_relation += 5*(1-dissent); dnvp_relation += 5*(1-dissent) if not dnvp_ideology = "Radical";
+on-arrival: advisor_action_timer = 6; industrialist_strength += 5; constitutional_liberal_dissent += 3; left_stresemannite_dissent += 3; kvp_relation += 5*(1-dissent); dnvp_relation += 5*(1-dissent) if not dnvp_ideology = "Radical"; spd_relation -= 3;
 
 WIP
