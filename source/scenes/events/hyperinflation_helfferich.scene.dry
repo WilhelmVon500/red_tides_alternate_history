@@ -11,3 +11,10 @@ face-image: img/portraits/HelfferichKarl.jpg
 = Helfferich's Plan
 
 WIP
+
+- @rejection: Helfferich's plan is rejected!
+
+@rejection
+subtitle: WIP.
+
+WIP
