@@ -6,6 +6,7 @@ on-arrival: rye_mark_proposed = 1;
 priority: 1
 max-visits: 1
 new-page: true
+face-image: img/portraits/HelfferichKarl.jpg
 
 = Helfferich's Plan
 
