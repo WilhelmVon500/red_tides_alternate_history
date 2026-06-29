@@ -2,7 +2,6 @@ title: Helfferich's Plan
 subtitle: Karl Helfferich proposes creation of a "Rye Mark" that would tie the currency to rye grain.
 tags: event
 view-if: year = 1923 and month = 8
-on-arrival: rye_mark_proposed = 1;
 priority: 1
 max-visits: 1
 new-page: true
