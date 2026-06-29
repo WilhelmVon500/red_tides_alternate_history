@@ -3,7 +3,7 @@ subtitle: WIP.
 view-if: year = 1923 and month = 11 and week = 3
 priority: 2
 max-visits: 1
-on-arrival: inflation = 300; rentenmark = 1; rentenmark_implemented = 1;
+on-arrival: inflation = 0; rentenmark = 1; rentenmark_implemented = 1;
 tags: event
 new-page: true
 face-image: img/portraits/HavensteinRudolf.jpg
