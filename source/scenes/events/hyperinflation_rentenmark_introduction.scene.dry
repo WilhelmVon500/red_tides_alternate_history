@@ -6,7 +6,7 @@ max-visits: 1
 on-arrival: inflation = 0; rentenmark = 1; rentenmark_implemented = 1;
 tags: event
 new-page: true
-face-image: img/portraits/HavensteinRudolf.jpg
+face-image: img/portraits/SchachtHjalmar.jpg
 
 = Rentenmark Introduced
 
