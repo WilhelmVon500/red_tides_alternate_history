@@ -13,6 +13,7 @@ Paul Levi, the Reichsbank President, has died. He was one of the people to blame
 
 Who will replace him?
   
+- @helfferich: Karl Helfferich.
 - @schacht: Hjalmar Schacht.
 
 @schacht
@@ -21,3 +22,7 @@ on-arrival: reichsbank_president = "Schacht"; reichsbank_president_party = "I";
 face-image: img/portraits/SchachtHjalmar.jpg
 
 WIP
+
+@helfferich
+unavailable-subtitle: WIP.
+choose-if: false
