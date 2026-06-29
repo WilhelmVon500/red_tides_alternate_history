@@ -2,7 +2,6 @@ title: Luther's Plan
 subtitle: WIP.
 tags: event
 view-if: year = 1923 and month = 9
-on-arrival: rentenmark_proposed = 1;
 priority: 1
 max-visits: 1
 new-page: true
